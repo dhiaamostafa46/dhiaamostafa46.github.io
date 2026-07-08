@@ -1,0 +1,65 @@
+DHIAA MOSTAFA
+Senior Technical Lead  ·  Full-Stack Engineering  ·  Microservices Architecture
+📍 Riyadh, KSA   |   📞 0533166742   |   ✉ dhiaamostafa46@gmail.com   |   linkedin.com/in/dhiaamostafa   |   github.com/dhiaamostafa46
+
+PROFESSIONAL SUMMARY
+Senior Technical Lead and Full-Stack Engineer with 5+ years of end-to-end product delivery on shared microservices platforms — spanning backend, frontend, and mobile — and a strong track record of leading cross-functional squads, owning architecture decisions, and shipping at scale. Hands-on technical leader who drives engineering quality (PR standards, branching discipline, test coverage, migration safety), translates product roadmaps into sequenced engineering work, and stays deeply involved in critical-path code, incident response, and root-cause analysis. Experienced with multi-tenant SaaS, ERP integrations, real-time systems, performance optimization, and CI/CD automation across enterprise environments.
+KEY ACHIEVEMENTS
+Led cross-functional engineering as sole integration and platform architect at Bander Trading Co. — owning backend, frontend, mobile (Flutter), and DevOps delivery across 10+ concurrent production systems.
+Architected and shipped a multi-tenant SaaS logistics platform scaling to 7,000+ active delivery agents with real-time WebSocket tracking — zero reported downtime during peak operations.
+Owned end-to-end technical delivery of Evix ERP integrations across 500+ enterprise clients — architecture design, squad coordination, deployment, documentation, and incident response.
+Drove 40%+ API response time improvement through Redis caching, strategic indexing, and query restructuring — hands-on performance engineering on high-traffic production endpoints.
+Established CI/CD pipelines (GitHub Actions, Docker) with branching and deployment discipline, maintaining 99%+ production uptime across all multi-tenant environments.
+TECHNICAL SKILLS
+Backend
+Node.js, NestJS, Laravel/PHP, RESTful APIs, GraphQL, WebSockets, Microservices, API Gateway
+Frontend
+TypeScript (strict), React.js, Next.js (App Router, SSR/ISR), MUI, Tailwind CSS, JavaScript
+Databases
+PostgreSQL (schema design, indexing, query optimisation), MySQL, Redis, Elasticsearch, Sequelize ORM
+Cloud &amp; DevOps
+AWS (EC2, S3, RDS), Azure (Container Apps, App Services, Function Apps, Service Bus, Storage Blob), Docker, Kubernetes
+CI/CD
+GitHub Actions, GitLab CI, Azure DevOps Pipelines, ACR, automated build → deploy workflows, cherry-pick discipline
+AI Integration
+Azure OpenAI (chat, embeddings), prompt design, structured JSON response_format, retries/fallbacks
+Search
+Elasticsearch (mappings, aggregations, dashboards), Azure AI Search
+Architecture
+SaaS Multi-Tenancy, Microservices, NestJS monorepos (apps + libs), Clean Architecture, RBAC, ERP Integration
+Queue &amp; Async
+Redis Queues, BullMQ, async job processing, event-driven architecture
+Mobile
+Flutter (cross-platform iOS &amp; Android)
+Practices
+Squad Leadership, Sprint Planning, PR Reviews, Performance Management, Incident Response, Post-mortems, Agile/Scrum
+WORK EXPERIENCE
+Senior Technical Lead &amp; Integration Architect  ·  Bander Trading Company	Riyadh, SA  |  2023 – Present
+Cross-functional technical lead owning architecture, delivery, and engineering quality across backend, frontend, and mobile product areas on a shared microservices platform.
+Led cross-functional squad delivery across backend, frontend, and mobile — running sprint planning, architecture reviews, PR reviews, and performance management as the sole platform tech lead.
+Owned architecture decisions for multiple product areas including the multi-tenant logistics SaaS, ERP integration layer, HR management system, and e-commerce verticals — partnering with stakeholders on platform-wide platform concerns.
+Set and enforced engineering quality bars: PR review standards, branching / deployment discipline between QA and production, migration safety, and incident response protocols.
+Drove technical roadmap delivery — breaking down product requirements into sequenced engineering work, estimating, prioritizing, and shipping consistently across all product areas.
+Hands-on on critical paths: wrote code for high-risk features, prototyped architectural changes, shipped hotfixes under production pressure, and personally resolved performance bottlenecks.
+Ran incident response for production issues — root-cause analysis, post-mortems, and prevention measures across all integrated systems with 99%+ uptime maintained.
+Architected multi-tenant SaaS logistics platform (microservices + sub-domain architecture) with real-time WebSocket tracking — scaling to 7,000+ active delivery agents, zero downtime.
+Led end-to-end ERP integration with 500+ enterprise clients via RESTful APIs — managing data mapping, transformation, synchronization, and full integration lifecycle.
+Optimized database performance (Redis caching, strategic indexing, query restructuring) — 40%+ reduction in API response times on high-traffic production endpoints.
+Established CI/CD pipelines (GitHub Actions + Docker) for automated build, test, and deployment workflows; managed branching strategy and environment promotion discipline.
+Built HR Management System with automated payroll, attendance, and leave management; delivered multi-vertical e-commerce platforms with payment gateway integrations.
+Implemented RBAC and enterprise authentication systems with strict data isolation, security governance, and compliance across all multi-tenant environments.
+Full-Stack Developer  ·  Smart System	Riyadh, SA  |  2022 – 2023
+Contributed to architecture design and engineering quality standards across concurrent projects in Agile/Scrum squads — running code reviews and performance optimization.
+Developed and enhanced Restaurant Management Systems and Hotel Reservation Systems — full-stack Laravel + React with third-party API integrations and payment gateways.
+Built entrepreneurship platform managing full SDLC: system design, backend APIs, frontend, and production deployment.
+Delivered responsive UIs (React, TypeScript, Tailwind CSS, Bootstrap) fully integrated with RESTful back-end services.
+Freelance Software Developer  ·  Self-Employed	Remote  |  2021 – 2022
+Delivered custom web applications and API integrations independently — owning requirements analysis, architecture, development, and client delivery end-to-end.
+Maintained and upgraded legacy codebases, improving security, reliability, and performance across multiple production systems.
+Full-Stack Developer  ·  SKYSOFT	Sanaa, Yemen  |  2020 – 2021
+Developed cross-platform mobile applications using Flutter (iOS &amp; Android): School Management System, E-commerce Platform, Hotel Booking System — integrated with RESTful API and Laravel back-end.
+Maintained code quality, responsive UI/UX standards, and Agile delivery discipline within a structured engineering team.
+EDUCATION
+Bachelor of Information Technology	IBB University, Yemen  |  May 2020
+LANGUAGES
+Arabic — Native     English — Professional Working Proficiency
