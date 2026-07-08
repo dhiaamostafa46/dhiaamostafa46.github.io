@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased scroll-smooth">
-      <body className="min-h-full flex flex-col bg-[#040816] text-[#f8fafc] overflow-x-hidden">
+      <body className="min-h-full flex flex-col bg-[#020202] text-[#f8fafc] overflow-x-hidden selection:bg-brand-blue selection:text-[#020202]">
         <I18nProvider>
           <Navbar />
           <div className="flex-grow flex flex-col">

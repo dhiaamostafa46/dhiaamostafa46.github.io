@@ -10,16 +10,15 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t('nav_home'), href: '/' },
-    { name: t('nav_about'), href: '/about' },
-    { name: t('nav_projects'), href: '/projects' },
-    { name: t('nav_services'), href: '/services' },
-    { name: t('nav_stack'), href: '/stack' },
-    { name: t('nav_ai'), href: '/ai' },
-    { name: t('nav_contact'), href: '/contact' },
+    { name: t('nav_about'), href: '/#about' },
+    { name: t('nav_services'), href: '/#services' },
+    { name: t('nav_projects'), href: '/#projects' },
+    { name: t('nav_ai'), href: '/#ai-ops' },
+    { name: t('nav_contact'), href: '/#contact' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#040816]/70 backdrop-blur-md border-b border-white/5">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#020202]/80 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         
         {/* Left Side: Logo & Status */}

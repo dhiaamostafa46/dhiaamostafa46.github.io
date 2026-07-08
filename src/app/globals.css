@@ -1,72 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Cairo:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-background-primary: #040816;
-  --color-background-secondary: #07111f;
-  --color-panel-glass: rgba(10, 18, 35, 0.45);
-  --color-cyber-cyan: #22d3ee;
-  --color-electric-blue: #3b82f6;
-  --color-royal-indigo: #6366f1;
-  --color-ai-purple: #8b5cf6;
-  --color-success-green: #10b981;
+  --color-background-primary: #020202;
+  --color-background-secondary: #0a0a0a;
+  --color-panel-glass: rgba(10, 10, 10, 0.6);
+  --color-primary-text: #f8fafc;
+  --color-secondary-text: #94a3b8;
+  --color-brand-blue: #00f0ff;
+  --color-brand-indigo: #8b5cf6;
 }
 
 :root {
-  --background-primary: #040816;
-  --background-secondary: #07111f;
-  --panel-glass: rgba(10, 18, 35, 0.55);
-  --border-glow: rgba(99, 102, 241, 0.15);
-  --glow-cyan: rgba(34, 211, 238, 0.3);
-  --glow-violet: rgba(99, 102, 241, 0.35);
+  --background-primary: #020202;
+  --background-secondary: #0a0a0a;
+  --panel-glass: rgba(10, 10, 10, 0.6);
 }
 
 body {
   background-color: var(--background-primary);
   color: #f8fafc;
   overflow-x: hidden;
-  transition: background-color 0.3s ease;
+  overflow-y: auto;
 }
 
 /* Custom fonts setup mapped to tags */
 .font-outfit {
   font-family: 'Outfit', sans-serif;
 }
-
 .font-cairo {
   font-family: 'Cairo', sans-serif;
 }
 
-/* Glassmorphism Panel styles */
+/* Clean, borderless glass for the new theme */
 .glass-panel {
   background: var(--panel-glass);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.03);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-panel:hover {
-  border-color: rgba(99, 102, 241, 0.25);
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.12);
-}
 
-/* Glowing outline effects */
-.glow-cyan-hover:hover {
-  border-color: #22d3ee;
-  box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
-}
-
-.glow-violet-hover:hover {
-  border-color: #6366f1;
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.35);
-}
-
-/* Background Cyber Grid */
-.cyber-grid {
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 50px 50px;
-}
