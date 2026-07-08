@@ -6,11 +6,11 @@ import { notFound, useParams } from 'next/navigation';
 import React from 'react';
 import { ArrowLeft, Server, Cpu, Database, Webhook, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
 
 export default function ProjectDetailClient() {

@@ -39,7 +39,7 @@ const NeuralCore = ({ scrollProgress }: { scrollProgress: number }) => {
           attenuationDistance={0.5}
           attenuationColor="#ffffff"
           color="#0f172a" // Dark base
-          bg="#020202"
+          background={new THREE.Color("#020202")}
         />
       </mesh>
     </Float>
