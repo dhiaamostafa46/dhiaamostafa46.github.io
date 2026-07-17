@@ -121,14 +121,13 @@ function showProjects(lang = "en") {
     let projectHTML = "";
     projectsData
         .filter(project => project.category !== "android")
-        .slice(0, 9)
         .forEach(project => {
             const pName = lang === "ar" && project.name_ar ? project.name_ar : project.name;
             const pDesc = lang === "ar" && project.desc_ar ? project.desc_ar : project.desc;
             const viewText = lang === "ar" ? "عرض" : "View";
             projectHTML += `
         <div class="box tilt">
-          <img draggable="false" src="assets/images/projects/${project.image}.png" alt="${pName}" />
+          <img draggable="false" src="${project.image}" alt="${pName}" />
           <div class="content">
             <div class="tag">
               <h3>${pName}</h3>

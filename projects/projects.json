@@ -1,74 +1,155 @@
 [
   {
     "name": "Evix ERP Integrations",
-    "desc": "Led full architectural design and API integration of Evix ERP for 500+ subscribed enterprise clients via RESTful APIs — ensuring high availability, seamless data synchronization, and strict tenant isolation.",
-    "image": "portfolioimage",
+    "desc": "Architectural design and API integration of Evix ERP for enterprise clients via RESTful APIs.",
+    "image": "./projects/img/2026-05-16_evix-sa-ar_01.png",
     "category": "Enterprise Solutions",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
+    "links": { "view": "#", "code": "#" },
     "name_ar": "تكامل نظام Evix ERP",
-    "desc_ar": "قيادة التصميم المعماري الكامل وربط واجهات Evix ERP لأكثر من 500 شركة مشتركة عبر RESTful APIs — مما يضمن التوافر العالي، ومزامنة البيانات بسلاسة، والعزل التام للبيانات بين المستأجرين."
+    "desc_ar": "التصميم المعماري وربط واجهات Evix ERP للشركات عبر RESTful APIs."
+  },
+  {
+    "name": "Musaned United",
+    "desc": "Musaned United platform using NestJS and Next.js, delivering a scalable production-ready solution.",
+    "image": "./projects/img/2025-02-05_musanid-sa_01.png",
+    "category": "Full Stack",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "مساند المتطورة",
+    "desc_ar": "منصة مساند المتطورة باستخدام NestJS و Next.js لتقديم حلول متكاملة."
+  },
+  {
+    "name": "Eyein Platform",
+    "desc": "Enterprise web platforms and digital solutions for corporate, nonprofit, and commercial organizations.",
+    "image": "./projects/img/2026-05-16_eyein-sa-home_01.png",
+    "category": "Enterprise Solutions",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "منصة آي إن",
+    "desc_ar": "منصات الويب للمؤسسات والحلول الرقمية للشركات والمنظمات."
+  },
+  {
+    "name": "Eyein Technology",
+    "desc": "Corporate website and digital presence for Eyein Technology.",
+    "image": "./projects/img/2026-05-16_eyeintec-home_01.png",
+    "category": "Full Stack",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "آي إن لتقنية المعلومات",
+    "desc_ar": "موقع الشركات والتواجد الرقمي لشركة آي إن لتقنية المعلومات."
+  },
+  {
+    "name": "Eyein Code",
+    "desc": "Digital platform for Eyein Code.",
+    "image": "./projects/img/2026-05-16_eyeincode_01.png",
+    "category": "Full Stack",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "آي إن كود",
+    "desc_ar": "المنصة الرقمية لشركة آي إن كود."
+  },
+  {
+    "name": "Watan Tumuh Foundation",
+    "desc": "Digital presence and platform for Watan Tumuh Foundation.",
+    "image": "./projects/img/2026-05-16_watantumuh-org-sa_01.png",
+    "category": "Full Stack",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "مؤسسة وطن طموح",
+    "desc_ar": "التواجد الرقمي والمنصة الخاصة بمؤسسة وطن طموح."
+  },
+  {
+    "name": "ACTES Group",
+    "desc": "Enterprise website and platform for ACTES Group.",
+    "image": "./projects/img/2024-07-03_actesgroup_01.png",
+    "category": "Enterprise Solutions",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "مجموعة أكتس",
+    "desc_ar": "موقع الشركة والمنصة الخاصة بمجموعة أكتس."
+  },
+  {
+    "name": "Barmgely",
+    "desc": "Custom web application and business portal for Barmgely.",
+    "image": "./projects/img/2024-07-03_barmgely_01.png",
+    "category": "Full Stack",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "برمجلي",
+    "desc_ar": "تطبيق ويب مخصص وبوابة أعمال لمنصة برمجلي."
+  },
+  {
+    "name": "Miran Edu",
+    "desc": "Educational platform and management system for Miran.",
+    "image": "./projects/img/2024-07-03_miranedu_01.png",
+    "category": "Full Stack",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "ميران التعليمية",
+    "desc_ar": "منصة تعليمية ونظام إدارة لميران."
+  },
+  {
+    "name": "HASTI Research Priorities",
+    "desc": "Research priorities portal for HASTI (Higher Authority for Science, Technology and Innovation).",
+    "image": "./projects/img/2024-07-03_research-priorities-hasti-gov-ye_01.png",
+    "category": "Enterprise Solutions",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "الأولويات البحثية - HASTI",
+    "desc_ar": "بوابة الأولويات البحثية للهيئة العليا للعلوم والتكنولوجيا والابتكار."
+  },
+  {
+    "name": "Eyein Lenses",
+    "desc": "E-commerce platform for Eyein Lenses.",
+    "image": "./projects/img/2024-07-07_lenses-eyein-sa_01.png",
+    "category": "E-commerce",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "عدسات آي إن",
+    "desc_ar": "منصة التجارة الإلكترونية لعدسات آي إن."
+  },
+  {
+    "name": "Evix ERP Admin Dashboard",
+    "desc": "Admin dashboard for Evix ERP platform.",
+    "image": "./projects/img/2026-05-16_evix-sa-ar-admin_01.png",
+    "category": "Enterprise Solutions",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "لوحة تحكم Evix ERP",
+    "desc_ar": "لوحة تحكم للمسؤولين لمنصة Evix ERP."
   },
   {
     "name": "SaaS Logistics Platform",
-    "desc": "Owned end-to-end architecture and delivery of a multi-tenant SaaS logistics platform, scaling to 7,000+ active delivery agents with real-time tracking via WebSockets — designed for zero-downtime under high-traffic peak load.",
-    "image": "portfolioimage",
+    "desc": "Multi-tenant SaaS logistics platform, scaling to 7,000+ active delivery agents.",
+    "image": "./projects/img/2026-05-16_127-0-0-1-5566_01.png",
     "category": "Enterprise Solutions",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
+    "links": { "view": "#", "code": "#" },
     "name_ar": "منصة لوجستية SaaS",
-    "desc_ar": "إدارة المعمارية الشاملة والتسليم لمنصة لوجستية متعددة المستأجرين (SaaS)، مع التوسع لخدمة أكثر من 7000 مندوب توصيل نشط مع التتبع في الوقت الفعلي عبر WebSockets — مصممة للعمل بدون توقف تحت أحمال الزيارات العالية."
+    "desc_ar": "منصة لوجستية متعددة المستأجرين (SaaS)، مع التوسع لخدمة أكثر من 7000 مندوب توصيل نشط."
   },
   {
     "name": "HR Management System",
-    "desc": "Architected and built a comprehensive HR Management System covering automated payroll processing, attendance tracking, leave management, and configurable policy management.",
-    "image": "portfolioimage",
+    "desc": "HR Management System covering automated payroll processing, attendance tracking, and leave management.",
+    "image": "./projects/img/2026-05-16_127-0-0-1-5566_02.png",
     "category": "Enterprise Solutions",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
+    "links": { "view": "#", "code": "#" },
     "name_ar": "نظام إدارة الموارد البشرية",
-    "desc_ar": "تصميم وبناء نظام شامل لإدارة الموارد البشرية يغطي معالجة مسيرات الرواتب الآلية، وتتبع الحضور، وإدارة الإجازات، وإدارة السياسات القابلة للتخصيص."
+    "desc_ar": "نظام شامل لإدارة الموارد البشرية يغطي معالجة مسيرات الرواتب الآلية، وتتبع الحضور، وإدارة الإجازات."
   },
   {
     "name": "Restaurant Management System",
-    "desc": "Developed and enhanced Restaurant Management Systems and Hotel Reservation Systems — improving operational workflows through full-stack Laravel + React solutions.",
-    "image": "portfolioimage",
+    "desc": "Restaurant Management Systems and Hotel Reservation Systems through full-stack Laravel + React solutions.",
+    "image": "./projects/img/2024-07-06_capture-11_01.png",
     "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
+    "links": { "view": "#", "code": "#" },
     "name_ar": "نظام إدارة المطاعم",
-    "desc_ar": "تطوير وتحسين أنظمة إدارة المطاعم وأنظمة حجز الفنادق — تحسين مسارات العمل التشغيلية من خلال حلول متكاملة باستخدام Laravel و React."
+    "desc_ar": "أنظمة إدارة المطاعم وأنظمة حجز الفنادق بحلول متكاملة باستخدام Laravel و React."
   },
   {
     "name": "E-commerce Platforms",
-    "desc": "Developed multi-vertical e-commerce platforms with secure payment gateway integration and inventory management across multiple industries.",
-    "image": "portfolioimage",
+    "desc": "Multi-vertical e-commerce platforms with secure payment gateway integration.",
+    "image": "./projects/img/2024-07-06_capture-3_01.png",
     "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
+    "links": { "view": "#", "code": "#" },
     "name_ar": "منصات التجارة الإلكترونية",
-    "desc_ar": "تطوير منصات تجارة إلكترونية متعددة القطاعات مع دمج بوابات دفع آمنة وإدارة المخزون عبر مختلف الصناعات."
+    "desc_ar": "تطوير منصات تجارة إلكترونية متعددة القطاعات مع دمج بوابات دفع آمنة."
   },
   {
     "name": "School Management System",
-    "desc": "Developed cross-platform mobile applications using Flutter: School Management System, E-commerce Platform, and Hotel Booking System.",
-    "image": "portfolioimage",
+    "desc": "School Management System, E-commerce Platform, and Hotel Booking System.",
+    "image": "./projects/img/2024-07-06_capture-6_01.png",
     "category": "Mobile App",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
+    "links": { "view": "#", "code": "#" },
     "name_ar": "نظام إدارة المدارس",
-    "desc_ar": "تطوير تطبيقات هواتف محمولة تعمل على عدة منصات باستخدام Flutter: نظام إدارة المدارس، منصة تجارة إلكترونية، ونظام حجز فنادق."
+    "desc_ar": "نظام إدارة المدارس، ومنصة تجارة إلكترونية، ونظام حجز فنادق."
   }
 ]
