@@ -113,15 +113,12 @@ const translations = {
     "exp3_li2": "Maintained and upgraded legacy codebases, improving security and overall system performance.",
 
     "exp4_company": "SKYSOFT — Sana'a, Yemen",
-    "exp4_role": "Full-Stack & Mobile Developer",
+    "exp4_role": "Flutter Developer",
     "exp4_date": "<i class=\"far fa-calendar-alt\"></i> 2020 — 2021",
-    "exp4_li1": "Developed cross-platform mobile applications using Flutter for Education, Hospitality, and E-commerce sectors, including School Management, Hotel Booking, and E-commerce platforms.",
-    "exp4_li2": "Designed and integrated RESTful APIs with Laravel/PHP backend services, ensuring reliable communication between mobile applications and enterprise systems.",
-    "exp4_li3": "Contributed to the full software development lifecycle (SDLC), including requirements analysis, system design, development, testing, deployment, and post-release maintenance.",
-    "exp4_li4": "Collaborated within Agile teams to deliver high-quality software solutions on time while meeting client requirements and business objectives.",
-    "exp4_li5": "Participated in developing and enhancing web-based systems, including school management platforms, e-commerce solutions, hotel reservation systems, and corporate websites.",
-    "exp4_li6": "Maintained high development standards by improving application performance, reliability, and code quality throughout the development process.",
-    "exp4_tech": "<strong>Technologies:</strong> Flutter, Dart, Laravel, PHP, RESTful APIs, MySQL, Git, Agile/Scrum",
+    "exp4_li1": "Developed cross-platform mobile applications using <strong>Flutter (Dart)</strong> across education, hospitality, and e-commerce domains.",
+    "exp4_li2": "Contributed to the delivery of projects including <strong>Miran</strong>, <strong>Khibra</strong>, <strong>Toolars</strong>, <strong>Falaqh</strong>, <strong>Spare</strong>, and other business solutions.",
+    "exp4_li3": "Integrated Flutter applications with Laravel-based RESTful APIs and collaborated within Agile teams to deliver production-ready software.",
+    "exp4_tech": "<strong>Technologies:</strong> Flutter, Dart, Laravel, PHP, RESTful APIs, MySQL, Git.",
 
     // Contact Section
     "contact_eyebrow": "07 — Contact",
@@ -260,15 +257,12 @@ const translations = {
     "exp3_li2": "صيانة وتحديث الأنظمة القديمة (Legacy)، مما أدى إلى تحسين الأمان والأداء العام للأنظمة.",
 
     "exp4_company": "SKYSOFT — صنعاء، اليمن",
-    "exp4_role": "مطور تطبيقات هواتف و Full-Stack",
+    "exp4_role": "مطور فلاتر (Flutter Developer)",
     "exp4_date": "<i class=\"far fa-calendar-alt\"></i> 2020 — 2021",
-    "exp4_li1": "تطوير تطبيقات هواتف ذكية عبر الأنظمة الأساسية باستخدام Flutter لقطاعات التعليم، الضيافة، والتجارة الإلكترونية، بما في ذلك إدارة المدارس، حجوزات الفنادق، ومنصات التجارة الإلكترونية.",
-    "exp4_li2": "تصميم ودمج واجهات برمجة التطبيقات (RESTful APIs) مع خدمات الواجهة الخلفية باستخدام Laravel/PHP، مما يضمن اتصالاً موثوقاً بين تطبيقات الهواتف وأنظمة المؤسسات.",
-    "exp4_li3": "المساهمة في دورة حياة تطوير البرمجيات بالكامل (SDLC)، بما في ذلك تحليل المتطلبات، تصميم النظام، التطوير، الاختبار، النشر، وصيانة ما بعد الإطلاق.",
-    "exp4_li4": "التعاون ضمن فرق أجايل (Agile) لتقديم حلول برمجية عالية الجودة في الوقت المحدد مع تلبية متطلبات العملاء وأهداف العمل.",
-    "exp4_li5": "المشاركة في تطوير وتحسين الأنظمة القائمة على الويب، بما في ذلك منصات إدارة المدارس، حلول التجارة الإلكترونية، أنظمة حجوزات الفنادق، ومواقع الشركات.",
-    "exp4_li6": "الحفاظ على معايير تطوير عالية من خلال تحسين أداء التطبيقات، الموثوقية، وجودة الكود طوال عملية التطوير.",
-    "exp4_tech": "<strong>التقنيات:</strong> Flutter, Dart, Laravel, PHP, RESTful APIs, MySQL, Git, Agile/Scrum",
+    "exp4_li1": "تطوير تطبيقات هواتف محمولة عبر الأنظمة الأساسية باستخدام <strong>Flutter (Dart)</strong> في قطاعات التعليم، الضيافة، والتجارة الإلكترونية.",
+    "exp4_li2": "المساهمة في تسليم العديد من المشاريع بما في ذلك <strong>Miran</strong>، <strong>Khibra</strong>، <strong>Toolars</strong>، <strong>Falaqh</strong>، <strong>Spare</strong>، وحلول أعمال أخرى.",
+    "exp4_li3": "ربط تطبيقات Flutter مع واجهات RESTful APIs مبنية بـ Laravel، والتعاون ضمن فرق أجايل (Agile) لتقديم برمجيات جاهزة للإنتاج.",
+    "exp4_tech": "<strong>التقنيات:</strong> Flutter, Dart, Laravel, PHP, RESTful APIs, MySQL, Git.",
 
     // Contact Section
     "contact_eyebrow": "07 — تواصل معي",
