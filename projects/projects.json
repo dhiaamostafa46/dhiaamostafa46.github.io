@@ -82,12 +82,21 @@
   },
   {
     "name": "HASTI Research Priorities",
-    "desc": "Research priorities portal for HASTI (Higher Authority for Science, Technology and Innovation).",
+    "desc": "Research priorities portal for HASTI.",
     "image": "./projects/img/2024-07-03_research-priorities-hasti-gov-ye_01.png",
     "category": "Enterprise Solutions",
     "links": { "view": "#", "code": "#" },
     "name_ar": "الأولويات البحثية - HASTI",
-    "desc_ar": "بوابة الأولويات البحثية للهيئة العليا للعلوم والتكنولوجيا والابتكار."
+    "desc_ar": "بوابة الأولويات البحثية للهيئة العليا للعلوم."
+  },
+  {
+    "name": "HASTI Portal 2",
+    "desc": "Secondary view for HASTI research priorities.",
+    "image": "./projects/img/2024-07-03_research-priorities-hasti-gov-ye_02.png",
+    "category": "Enterprise Solutions",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "بوابة HASTI (2)",
+    "desc_ar": "عرض إضافي لبوابة الأولويات البحثية."
   },
   {
     "name": "Eyein Lenses",
@@ -109,47 +118,101 @@
   },
   {
     "name": "SaaS Logistics Platform",
-    "desc": "Multi-tenant SaaS logistics platform, scaling to 7,000+ active delivery agents.",
+    "desc": "Multi-tenant SaaS logistics platform.",
     "image": "./projects/img/2026-05-16_127-0-0-1-5566_01.png",
     "category": "Enterprise Solutions",
     "links": { "view": "#", "code": "#" },
     "name_ar": "منصة لوجستية SaaS",
-    "desc_ar": "منصة لوجستية متعددة المستأجرين (SaaS)، مع التوسع لخدمة أكثر من 7000 مندوب توصيل نشط."
+    "desc_ar": "منصة لوجستية متعددة المستأجرين (SaaS)."
   },
   {
     "name": "HR Management System",
-    "desc": "HR Management System covering automated payroll processing, attendance tracking, and leave management.",
+    "desc": "HR Management System covering automated payroll.",
     "image": "./projects/img/2026-05-16_127-0-0-1-5566_02.png",
     "category": "Enterprise Solutions",
     "links": { "view": "#", "code": "#" },
     "name_ar": "نظام إدارة الموارد البشرية",
-    "desc_ar": "نظام شامل لإدارة الموارد البشرية يغطي معالجة مسيرات الرواتب الآلية، وتتبع الحضور، وإدارة الإجازات."
+    "desc_ar": "نظام شامل لإدارة الموارد البشرية."
   },
   {
-    "name": "Restaurant Management System",
-    "desc": "Restaurant Management Systems and Hotel Reservation Systems through full-stack Laravel + React solutions.",
+    "name": "Project Dashboard",
+    "desc": "Advanced project dashboard and management tool.",
     "image": "./projects/img/2024-07-06_capture-11_01.png",
     "category": "Full Stack",
     "links": { "view": "#", "code": "#" },
-    "name_ar": "نظام إدارة المطاعم",
-    "desc_ar": "أنظمة إدارة المطاعم وأنظمة حجز الفنادق بحلول متكاملة باستخدام Laravel و React."
+    "name_ar": "لوحة إدارة المشاريع",
+    "desc_ar": "لوحة متقدمة لإدارة المشاريع والأعمال."
   },
   {
-    "name": "E-commerce Platforms",
-    "desc": "Multi-vertical e-commerce platforms with secure payment gateway integration.",
+    "name": "E-commerce System",
+    "desc": "Multi-vertical e-commerce platform integration.",
     "image": "./projects/img/2024-07-06_capture-3_01.png",
     "category": "Full Stack",
     "links": { "view": "#", "code": "#" },
-    "name_ar": "منصات التجارة الإلكترونية",
-    "desc_ar": "تطوير منصات تجارة إلكترونية متعددة القطاعات مع دمج بوابات دفع آمنة."
+    "name_ar": "نظام التجارة الإلكترونية",
+    "desc_ar": "منصة تجارة إلكترونية متعددة القطاعات."
+  },
+  {
+    "name": "Booking System",
+    "desc": "Integrated booking and reservation system.",
+    "image": "./projects/img/2024-07-06_capture-4_01.png",
+    "category": "Enterprise Solutions",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "نظام الحجوزات",
+    "desc_ar": "نظام متكامل للحجوزات وإدارة المواعيد."
   },
   {
     "name": "School Management System",
-    "desc": "School Management System, E-commerce Platform, and Hotel Booking System.",
+    "desc": "School Management System platform.",
     "image": "./projects/img/2024-07-06_capture-6_01.png",
     "category": "Mobile App",
     "links": { "view": "#", "code": "#" },
     "name_ar": "نظام إدارة المدارس",
-    "desc_ar": "نظام إدارة المدارس، ومنصة تجارة إلكترونية، ونظام حجز فنادق."
+    "desc_ar": "نظام إدارة المدارس."
+  },
+  {
+    "name": "Evix SA v1",
+    "desc": "Previous version of Evix SA platform.",
+    "image": "./projects/img/2024-07-07_evix-sa-ar_01.png",
+    "category": "Enterprise Solutions",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "منصة Evix الإصدار الأول",
+    "desc_ar": "الإصدار السابق من منصة Evix."
+  },
+  {
+    "name": "Eyein SA v1",
+    "desc": "Previous version of Eyein SA.",
+    "image": "./projects/img/2024-07-07_eyein-sa-home_01.png",
+    "category": "Enterprise Solutions",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "منصة آي إن الإصدار الأول",
+    "desc_ar": "الإصدار السابق لمنصة آي إن."
+  },
+  {
+    "name": "Eyeintec v1",
+    "desc": "Previous version of Eyeintec.",
+    "image": "./projects/img/2024-07-07_eyeintec_01.png",
+    "category": "Full Stack",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "آي إن لتقنية المعلومات الإصدار الأول",
+    "desc_ar": "موقع شركة آي إن لتقنية المعلومات (سابقاً)."
+  },
+  {
+    "name": "System UI",
+    "desc": "System UI screenshot.",
+    "image": "./projects/img/2026-05-09_screenshot_01.jpg",
+    "category": "Full Stack",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "واجهة النظام",
+    "desc_ar": "واجهة مستخدم لأحد الأنظمة المطورة."
+  },
+  {
+    "name": "Restaurant Management",
+    "desc": "Restaurant Management System dashboard.",
+    "image": "./projects/img/screencapture-127-0-0-1-5566-2026-05-16-18_09_28.png",
+    "category": "Full Stack",
+    "links": { "view": "#", "code": "#" },
+    "name_ar": "إدارة المطاعم",
+    "desc_ar": "لوحة تحكم نظام إدارة المطاعم."
   }
 ]
