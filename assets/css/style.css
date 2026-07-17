@@ -1858,6 +1858,71 @@ html[dir="rtl"] .nav-hire-btn {
   margin-left: 0;
 }
 
+/* RTL overrides for Experience Timeline */
+html[dir="rtl"] .education .box-container .box {
+  border-left: 1px solid var(--border);
+  border-right: 2px solid var(--accent);
+}
+@media screen and (max-width: 600px) {
+  html[dir="rtl"] .education .box-container .box {
+    border-right: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+  }
+}
+html[dir="rtl"] .stat-item {
+  border-left: 1px solid var(--border);
+  border-right: 2px solid var(--accent);
+}
+html[dir="rtl"] .experience .left {
+  right: 0;
+  left: auto;
+}
+html[dir="rtl"] .experience .right {
+  right: 50%;
+  left: auto;
+}
+html[dir="rtl"] .experience .left::after {
+  left: -0.65rem;
+  right: auto;
+}
+html[dir="rtl"] .experience .right::after {
+  right: -0.65rem;
+  left: auto;
+}
+html[dir="rtl"] .experience .content .desc ul li {
+  padding-left: 0;
+  padding-right: 1.6rem;
+}
+html[dir="rtl"] .experience .content .desc ul li::before {
+  left: auto;
+  right: 0;
+  content: "◂";
+}
+html[dir="rtl"] .experience .current-badge {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+@media screen and (max-width: 768px) {
+  html[dir="rtl"] .experience .timeline::after {
+    left: auto;
+    right: 1.8rem;
+  }
+  html[dir="rtl"] .experience .container {
+    padding-left: 1rem;
+    padding-right: 5rem;
+  }
+  html[dir="rtl"] .experience .container::after,
+  html[dir="rtl"] .experience .right::after {
+    left: auto;
+    right: 1.15rem;
+  }
+  html[dir="rtl"] .experience .right,
+  html[dir="rtl"] .experience .left {
+    left: auto;
+    right: 0;
+  }
+}
+
 /* ===== 3D TILT & POP-OUT EFFECTS ===== */
 
 /* Base 3D space for cards */
