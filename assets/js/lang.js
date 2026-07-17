@@ -106,6 +106,15 @@ const translations = {
     "exp2_li3": "Built fully responsive, modern UIs using React, Bootstrap, Tailwind CSS, and SASS — integrated with RESTful back-end APIs.",
     "exp2_li4": "Contributed to platform architecture design, code reviews, and performance optimization across concurrent Agile/Scrum projects.",
 
+    "exp5_company": "Musaned United — Riyadh, SA",
+    "exp5_role": "Full-Stack Engineer (Remote Contract)",
+    "exp5_date": "<i class=\"far fa-calendar-alt\"></i> 2022 — 2023 (5 Months)",
+    "exp5_li1": "Architected and developed the Musaned United platform using NestJS and Next.js, delivering a scalable production-ready solution.",
+    "exp5_li2": "Designed and implemented RESTful APIs, secure multi-authentication, and Role-Based Access Control (RBAC).",
+    "exp5_li3": "Integrated payment gateway services and third-party APIs to support business operations.",
+    "exp5_li4": "Containerized backend services with Docker and collaborated throughout the development lifecycle to ensure reliable deployment and maintainability.",
+    "exp5_tech": "<strong>Technologies:</strong> NestJS, Node.js, Next.js, TypeScript, RESTful APIs, Docker, Multi-Auth, RBAC, Payment Gateway.",
+
     "exp3_company": "Self-Employed — Remote",
     "exp3_role": "Freelance Full-Stack Developer",
     "exp3_date": "<i class=\"far fa-calendar-alt\"></i> Mar 2019 — Present",
@@ -252,6 +261,15 @@ const translations = {
     "exp2_li2": "تصميم وبناء منصة لريادة الأعمال ومواقع إلكترونية لعدة شركات، مع إدارة دورة حياة تطوير البرمجيات (SDLC) بالكامل.",
     "exp2_li3": "بناء واجهات مستخدم متجاوبة وحديثة بالكامل باستخدام React، و Bootstrap، و Tailwind CSS، و SASS — مدمجة مع واجهات RESTful خلفية.",
     "exp2_li4": "المساهمة في تصميم معمارية المنصات، ومراجعة الأكواد، وتحسين الأداء ضمن مشاريع متزامنة باستخدام منهجية Agile/Scrum.",
+
+    "exp5_company": "مساند المتحدة — الرياض، السعودية",
+    "exp5_role": "مهندس Full-Stack (عقد عن بُعد)",
+    "exp5_date": "<i class=\"far fa-calendar-alt\"></i> 2022 — 2023 (5 أشهر)",
+    "exp5_li1": "تصميم وتطوير منصة \"مساند المتحدة\" باستخدام NestJS و Next.js، مع تقديم حل قابل للتوسع وجاهز للإنتاج.",
+    "exp5_li2": "تصميم وتنفيذ واجهات RESTful APIs، مع مصادقة متعددة آمنة، ونظام تحكم بالوصول مبني على الأدوار (RBAC).",
+    "exp5_li3": "دمج خدمات بوابات الدفع وواجهات برمجية لجهات خارجية لدعم العمليات التجارية.",
+    "exp5_li4": "وضع خدمات الواجهة الخلفية في حاويات (Docker) والتعاون عبر دورة حياة التطوير لضمان النشر الموثوق وسهولة الصيانة.",
+    "exp5_tech": "<strong>التقنيات:</strong> NestJS, Node.js, Next.js, TypeScript, RESTful APIs, Docker, Multi-Auth, RBAC, Payment Gateway.",
 
     "exp3_company": "عمل حر — عن بُعد",
     "exp3_role": "مطور Full-Stack مستقل",
