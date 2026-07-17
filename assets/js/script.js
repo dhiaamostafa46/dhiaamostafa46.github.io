@@ -65,52 +65,62 @@ var typed = new Typed(".typing-text", {
     backDelay: 1400,
 });
 
-async function fetchData(type = "skills") {
-    let response;
-    type === "skills"
-        ? (response = await fetch("stack.json"))
-        : (response = await fetch("./projects/projects.json"));
-    const data = await response.json();
-    return data;
+
+let stackData = [];
+let projectsData = [];
+
+async function fetchData() {
+    const stackRes = await fetch("stack.json");
+    stackData = await stackRes.json();
+
+    const projRes = await fetch("./projects/projects.json");
+    projectsData = await projRes.json();
 }
 
-function showSkills(groups) {
+function showSkills(lang = "en") {
     let skillsContainer = document.getElementById("skillsContainer");
     let html = "";
-    groups.forEach(group => {
+    stackData.forEach(group => {
+        const catName = lang === "ar" && group.category_ar ? group.category_ar : group.category;
         html += `
         <div class="stack-group">
-          <p class="stack-group-title">${group.category}</p>
+          <p class="stack-group-title">${catName}</p>
           <div class="stack-chips">
-            ${group.items.map(item => `
-            <span class="stack-chip">
-              <img src="${item.icon}" alt="${item.name}" />
-              ${item.name}
-            </span>`).join("")}
+            ${group.items.map(item => {
+                const itemName = lang === "ar" && item.name_ar ? item.name_ar : item.name;
+                return `
+                <span class="stack-chip">
+                  <img src="${item.icon}" alt="${itemName}" />
+                  ${itemName}
+                </span>`;
+            }).join("")}
           </div>
         </div>`;
     });
     skillsContainer.innerHTML = html;
 }
 
-function showProjects(projects) {
+function showProjects(lang = "en") {
     let projectsContainer = document.getElementById("projectsContainer");
     let projectHTML = "";
-    projects
+    projectsData
         .filter(project => project.category !== "android")
         .slice(0, 9)
         .forEach(project => {
+            const pName = lang === "ar" && project.name_ar ? project.name_ar : project.name;
+            const pDesc = lang === "ar" && project.desc_ar ? project.desc_ar : project.desc;
+            const viewText = lang === "ar" ? "عرض" : "View";
             projectHTML += `
         <div class="box tilt">
-          <img draggable="false" src="assets/images/projects/${project.image}.png" alt="${project.name}" />
+          <img draggable="false" src="assets/images/projects/${project.image}.png" alt="${pName}" />
           <div class="content">
             <div class="tag">
-              <h3>${project.name}</h3>
+              <h3>${pName}</h3>
             </div>
             <div class="desc">
-              <p>${project.desc}</p>
+              <p>${pDesc}</p>
               <div class="btns">
-                <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+                <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> ${viewText}</a>
               </div>
             </div>
           </div>
@@ -122,12 +132,15 @@ function showProjects(projects) {
     srtop.reveal('.work .box', { interval: 200 });
 }
 
-fetchData().then(data => {
-    showSkills(data);
+fetchData().then(() => {
+    const currentLang = localStorage.getItem("lang") || "en";
+    showSkills(currentLang);
+    showProjects(currentLang);
 });
 
-fetchData("projects").then(data => {
-    showProjects(data);
+document.addEventListener('languageChanged', (e) => {
+    showSkills(e.detail.lang);
+    showProjects(e.detail.lang);
 });
 
 /* ===== SCROLL REVEAL ANIMATION ===== */

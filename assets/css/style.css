@@ -1829,3 +1829,31 @@ header .navbar ul li a.nav-hire-btn:hover {
 .loader-container.fade-out {
   top: -120%;
 }
+
+/* ===== RTL Support ===== */
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap");
+
+html[dir="rtl"] {
+  font-family: 'Tajawal', var(--body-font);
+}
+html[dir="rtl"] .logo {
+  font-family: 'Tajawal', var(--display);
+}
+html[dir="rtl"] .heading, html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3 {
+  font-family: 'Tajawal', var(--display);
+}
+html[dir="rtl"] .hero-btns i {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+html[dir="rtl"] .btn i, html[dir="rtl"] .btn-primary i, html[dir="rtl"] .btn-outline i {
+  margin-left: 0;
+  margin-right: 0.8rem;
+}
+html[dir="rtl"] .code-card-body p {
+  direction: ltr;
+  text-align: left;
+}
+html[dir="rtl"] .nav-hire-btn {
+  margin-left: 0;
+}
