@@ -1857,3 +1857,56 @@ html[dir="rtl"] .code-card-body p {
 html[dir="rtl"] .nav-hire-btn {
   margin-left: 0;
 }
+
+/* ===== 3D TILT & POP-OUT EFFECTS ===== */
+
+/* Base 3D space for cards */
+.service-card,
+.experience .box,
+.stack-group,
+.contact-info-card,
+.work .box {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+/* Inner elements pop out */
+.service-card h3,
+.service-card i,
+.service-card p,
+.experience .box h3,
+.experience .box p,
+.experience .box ul,
+.stack-group .stack-group-title,
+.stack-group .stack-chips,
+.contact-info-card .card-icon,
+.contact-info-card .card-content,
+.work .box .content {
+  transform: translateZ(30px);
+  transition: transform 0.3s ease;
+}
+
+/* Enhance pop-out on hover */
+.service-card:hover h3,
+.service-card:hover i,
+.experience .box:hover h3,
+.stack-group:hover .stack-group-title,
+.contact-info-card:hover .card-icon {
+  transform: translateZ(50px);
+}
+
+/* Button 3D Effects */
+.btn-primary, .btn-outline, .btn-hire {
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover, .btn-hire:hover {
+  transform: translateY(-4px) translateZ(10px);
+  box-shadow: 0 10px 25px rgba(74, 217, 192, 0.3);
+}
+
+.btn-primary:active, .btn-hire:active {
+  transform: translateY(2px) translateZ(0px);
+  box-shadow: 0 2px 5px rgba(74, 217, 192, 0.2);
+}

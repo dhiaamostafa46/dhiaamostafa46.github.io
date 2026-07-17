@@ -37,6 +37,14 @@ $(document).ready(function () {
         }, 500, 'linear')
     });
 
+    // 3D Tilt initialization for static cards
+    VanillaTilt.init(document.querySelectorAll(".service-card, .experience .box, .contact-info-card"), {
+        max: 10,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2
+    });
+
 });
 
 document.addEventListener('visibilitychange', function () {
@@ -98,6 +106,14 @@ function showSkills(lang = "en") {
         </div>`;
     });
     skillsContainer.innerHTML = html;
+
+    // 3D Tilt for dynamically loaded stack-groups
+    VanillaTilt.init(document.querySelectorAll(".stack-group"), {
+        max: 10,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2
+    });
 }
 
 function showProjects(lang = "en") {
@@ -148,7 +164,9 @@ const srtop = ScrollReveal({
     origin: 'top',
     distance: '50px',
     duration: 800,
-    reset: false
+    reset: false,
+    rotate: { x: 30, y: 0, z: 0 },
+    scale: 0.95
 });
 
 /* Hero */

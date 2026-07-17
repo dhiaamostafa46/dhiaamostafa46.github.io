@@ -122,8 +122,8 @@
   function setTargetFromPoint(x, y) {
     const nx = (x / window.innerWidth) * 2 - 1;
     const ny = (y / window.innerHeight) * 2 - 1;
-    targetRotY = nx * 0.35;
-    targetRotX = ny * 0.2;
+    targetRotY = nx * 0.65;
+    targetRotX = ny * 0.45;
   }
 
   window.addEventListener("mousemove", (e) => setTargetFromPoint(e.clientX, e.clientY));
