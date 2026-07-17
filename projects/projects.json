@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Evix ERP Integrations",
+    "desc": "Led full architectural design and API integration of Evix ERP for 500+ subscribed enterprise clients via RESTful APIs — ensuring high availability, seamless data synchronization, and strict tenant isolation.",
+    "image": "portfolioimage",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "SaaS Logistics Platform",
+    "desc": "Owned end-to-end architecture and delivery of a multi-tenant SaaS logistics platform, scaling to 7,000+ active delivery agents with real-time tracking via WebSockets — designed for zero-downtime under high-traffic peak load.",
+    "image": "portfolioimage",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "HR Management System",
+    "desc": "Architected and built a comprehensive HR Management System covering automated payroll processing, attendance tracking, leave management, and configurable policy management.",
+    "image": "portfolioimage",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Restaurant Management System",
+    "desc": "Developed and enhanced Restaurant Management Systems and Hotel Reservation Systems — improving operational workflows through full-stack Laravel + React solutions.",
+    "image": "portfolioimage",
+    "category": "Full Stack",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "E-commerce Platforms",
+    "desc": "Developed multi-vertical e-commerce platforms with secure payment gateway integration and inventory management across multiple industries.",
+    "image": "portfolioimage",
+    "category": "Full Stack",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "School Management System",
+    "desc": "Developed cross-platform mobile applications using Flutter: School Management System, E-commerce Platform, and Hotel Booking System.",
+    "image": "portfolioimage",
+    "category": "Mobile App",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  }
+]

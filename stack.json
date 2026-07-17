@@ -1,0 +1,77 @@
+[
+  {
+    "category": "Backend Engineering",
+    "items": [
+      { "name": "PHP (Laravel)", "icon": "https://img.icons8.com/color/48/000000/laravel.png" },
+      { "name": "Node.js & Express.js", "icon": "https://img.icons8.com/color/48/000000/nodejs.png" },
+      { "name": "RESTful API Design & GraphQL", "icon": "https://img.icons8.com/color/48/000000/api-settings.png" },
+      { "name": "WebSockets", "icon": "https://img.icons8.com/color/48/000000/network.png" },
+      { "name": "Auth & RBAC", "icon": "https://img.icons8.com/color/48/000000/security-checked.png" },
+      { "name": "Microservices", "icon": "https://img.icons8.com/color/48/000000/module.png" },
+      { "name": "Event-Driven Architecture", "icon": "https://img.icons8.com/color/48/000000/process.png" }
+    ]
+  },
+  {
+    "category": "Data & Persistence",
+    "items": [
+      { "name": "PostgreSQL", "icon": "https://img.icons8.com/color/48/000000/postgreesql.png" },
+      { "name": "MySQL", "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png" },
+      { "name": "MongoDB", "icon": "https://img.icons8.com/color/48/000000/mongodb.png" },
+      { "name": "Redis (Caching & Queues)", "icon": "https://img.icons8.com/color/48/000000/redis.png" },
+      { "name": "Database Design & Opt.", "icon": "https://img.icons8.com/color/48/000000/database.png" },
+      { "name": "Multi-Tenant Modeling", "icon": "https://img.icons8.com/color/48/000000/schema.png" }
+    ]
+  },
+  {
+    "category": "Enterprise Integrations",
+    "items": [
+      { "name": "ERP & CRM Integrations", "icon": "https://img.icons8.com/color/48/000000/business-network.png" },
+      { "name": "Payment Gateways", "icon": "https://img.icons8.com/color/48/000000/bank-cards.png" },
+      { "name": "Logistics Systems", "icon": "https://img.icons8.com/color/48/000000/in-transit.png" },
+      { "name": "Third-Party APIs", "icon": "https://img.icons8.com/color/48/000000/api-settings.png" },
+      { "name": "ZATCA E-Invoicing", "icon": "https://img.icons8.com/color/48/000000/invoice.png" },
+      { "name": "Event-Driven Workflows", "icon": "https://img.icons8.com/color/48/000000/workflow.png" },
+      { "name": "Retry & Resiliency", "icon": "https://img.icons8.com/color/48/000000/shield.png" }
+    ]
+  },
+  {
+    "category": "Cloud & DevOps",
+    "items": [
+      { "name": "AWS (EC2, S3, RDS)", "icon": "https://img.icons8.com/color/48/000000/amazon-web-services.png" },
+      { "name": "Docker", "icon": "assets/images/skills/docker.png" },
+      { "name": "CI/CD (GitHub/GitLab)", "icon": "https://img.icons8.com/color/48/000000/workflow.png" },
+      { "name": "Git", "icon": "https://img.icons8.com/color/48/000000/git.png" },
+      { "name": "Linux", "icon": "https://img.icons8.com/color/48/000000/linux.png" }
+    ]
+  },
+  {
+    "category": "AI & Intelligent Automation",
+    "items": [
+      { "name": "OpenAI (GPT)", "icon": "https://img.icons8.com/color/48/000000/artificial-intelligence.png" },
+      { "name": "Google Gemini", "icon": "https://img.icons8.com/color/48/000000/google-logo.png" },
+      { "name": "Anthropic Claude APIs", "icon": "https://img.icons8.com/color/48/000000/robot.png" },
+      { "name": "AI Workflow Automation", "icon": "https://img.icons8.com/color/48/000000/flow-chart.png" },
+      { "name": "Prompt Engineering & RAG", "icon": "https://img.icons8.com/color/48/000000/brain.png" },
+      { "name": "Document Processing", "icon": "https://img.icons8.com/color/48/000000/document.png" }
+    ]
+  },
+  {
+    "category": "Frontend & Mobile",
+    "items": [
+      { "name": "React.js", "icon": "https://img.icons8.com/color/48/000000/react-native.png" },
+      { "name": "TypeScript & JS", "icon": "https://img.icons8.com/color/48/000000/typescript.png" },
+      { "name": "Flutter", "icon": "https://img.icons8.com/color/48/000000/flutter.png" },
+      { "name": "Firebase & Supabase", "icon": "https://img.icons8.com/color/48/000000/firebase.png" }
+    ]
+  },
+  {
+    "category": "Software Architecture",
+    "items": [
+      { "name": "SaaS Multi-Tenancy", "icon": "https://img.icons8.com/color/48/000000/cloud-network.png" },
+      { "name": "Distributed Systems", "icon": "https://img.icons8.com/color/48/000000/network.png" },
+      { "name": "Scalable System Design", "icon": "https://img.icons8.com/color/48/000000/expand.png" },
+      { "name": "Clean Architecture", "icon": "https://img.icons8.com/color/48/000000/architecture.png" },
+      { "name": "SDLC", "icon": "https://img.icons8.com/color/48/000000/process.png" }
+    ]
+  }
+]
