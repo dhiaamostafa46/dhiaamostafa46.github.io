@@ -1,3 +1,130 @@
+// Comprehensive Stack Data Array for Instant Rendering
+const stackData = [
+  {
+    category: "Backend Engineering",
+    category_ar: "هندسة الواجهات الخلفية",
+    items: [
+      { name: "Laravel", name_ar: "لارافل", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
+      { name: "Node.js", name_ar: "نود جي إس", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "NestJS", name_ar: "نيست جي إس", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" },
+      { name: "PHP", name_ar: "بي إتش بي", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+      { name: "TypeScript", name_ar: "تايب سكريبت", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { name: "Express.js", name_ar: "إكسبريس", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+      { name: "RESTful APIs", name_ar: "واجهات REST", icon: "https://img.icons8.com/color/48/api.png" },
+      { name: "GraphQL", name_ar: "جراف كيو إيل", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
+      { name: "WebSockets", name_ar: "ويب سوكيتس", icon: "https://img.icons8.com/color/48/websocket.png" }
+    ]
+  },
+  {
+    category: "Data & Persistence",
+    category_ar: "قواعد البيانات والتخزين",
+    items: [
+      { name: "PostgreSQL", name_ar: "بوستجري إس كيو إيل", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { name: "MySQL", name_ar: "ماي إس كيو إيل", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { name: "Redis Cache & Queue", name_ar: "ريديس كاش وطوابير", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+      { name: "MongoDB", name_ar: "مونجو دي بي", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
+    ]
+  },
+  {
+    category: "Enterprise Integrations",
+    category_ar: "تكامل أنظمة الشركات",
+    items: [
+      { name: "Evix ERP Sync", name_ar: "ربط إيفكس ERP", icon: "https://img.icons8.com/color/48/system-task.png" },
+      { name: "ZATCA E-Invoicing Phase 2", name_ar: "الفوترة الضريبية زاتكا", icon: "https://img.icons8.com/color/48/bill.png" },
+      { name: "Tabby BNPL", name_ar: "تابي للدفع الآجل", icon: "https://img.icons8.com/color/48/bank-cards.png" },
+      { name: "HyperPay / Payment Gateways", name_ar: "بوابات الدفع الإلكتروني", icon: "https://img.icons8.com/color/48/card-in-use.png" }
+    ]
+  },
+  {
+    category: "AI & Intelligent Automation",
+    category_ar: "الذكاء الاصطناعي والأتمتة",
+    items: [
+      { name: "Azure OpenAI APIs", name_ar: "أزور أوبن إيه آي", icon: "https://img.icons8.com/color/48/brain.png" },
+      { name: "PDF OCR & Line Extraction", name_ar: "استخراج بيانات الفواتير OCR", icon: "https://img.icons8.com/color/48/document.png" },
+      { name: "RAG & Vector Search", name_ar: "البحث الشعاعي RAG", icon: "https://img.icons8.com/color/48/search-database.png" },
+      { name: "Python Automation", name_ar: "أتمتة بايثون", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" }
+    ]
+  },
+  {
+    category: "Cloud & DevOps",
+    category_ar: "السحابة وهندسة التشغيل",
+    items: [
+      { name: "Docker Containerization", name_ar: "حاويات دوكر", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+      { name: "AWS Cloud Services", name_ar: "خدمات أبلود السحابية", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "Git & GitHub CI/CD", name_ar: "جيت وجيت هاب", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { name: "Nginx & Linux Admin", name_ar: "خوادم لينكس ونجينكس", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" }
+    ]
+  }
+];
+
+// Comprehensive Projects Data Array for Instant Rendering
+const projectsData = [
+  {
+    name: "Multi-Tenant Fleet Logistics Platform",
+    name_ar: "منصة اللوجستيات وإدارة الأسطول المتعددة المشتركين",
+    category: "Full Stack",
+    desc: "Architected a high-concurrency SaaS logistics dispatcher supporting 7,000+ active fleet agents across Saudi Arabia with real-time WebSockets vehicle tracking.",
+    desc_ar: "تصميم وبناء منصة سحابية لوجستية تخدم أكثر من 7000 مندوب توصيل مع التتبع اللحظي عبر خوادم WebSockets في السعودية.",
+    image: "./projects/img/2026-05-16_eyein-sa-home_01.png"
+  },
+  {
+    name: "Evix ERP Enterprise Integration Hub",
+    name_ar: "مركز ربط وتكامل نظام Evix ERP للشركات",
+    category: "Enterprise Solutions",
+    desc: "Connected 500+ subscribed corporate businesses to Evix ERP with double-entry ledger sync, automated inventory updates, and ZATCA E-Invoicing Phase 2.",
+    desc_ar: "ربط أكثر من 500 شركة مشتركة بنظام Evix ERP مع مزامنة القيود المحاسبية المزدوجة والفوترة الضريبية زاتكا المرحلة الثانية.",
+    image: "./projects/img/2026-05-16_evix-sa-ar-admin_01.png"
+  },
+  {
+    name: "Azure OpenAI PDF Invoice OCR Ledger Pipeline",
+    name_ar: "مسارات قراءة الفواتير بالذكاء الاصطناعي Azure OpenAI",
+    category: "Full Stack",
+    desc: "Automated invoice parsing from unstructured PDFs into structured ERP ledgers using Azure OpenAI Vision and Python document pipelines.",
+    desc_ar: "أتمتة قراءة الفواتير غير المنظمة من ملفات PDF وحساب القيود المحاسبية تلقائياً عبر نماذج الذكاء الاصطناعي أزور أوبن إيه آي.",
+    image: "./projects/img/2024-07-07_eyeintec_01.png"
+  },
+  {
+    name: "Eyein Code Commercial Platform",
+    name_ar: "منصة أين كود التجارية البرمجية",
+    category: "Full Stack",
+    desc: "Engineered scalable digital commerce platform with multi-channel authentication, Role-Based Access Control (RBAC), and Tabby BNPL payment integration.",
+    desc_ar: "بناء منصة أين كود الرقمية المتكاملة مع صلاحيات المستخدمين المتقدمة وتكامل بوابات الدفع تابي والدفع الإلكتروني.",
+    image: "./projects/img/2026-05-16_eyeincode_01.png"
+  },
+  {
+    name: "Musaned United HRMS & Payroll Portal",
+    name_ar: "منصة مساند المتحدة لإدارة الموارد البشرية والرواتب",
+    category: "Enterprise Solutions",
+    desc: "Architected NestJS + Next.js enterprise portal for automated payroll processing, employee attendance tracking, and leave management.",
+    desc_ar: "تصميم منصة مؤسسية بـ NestJS و Next.js لمعالجة مسيرات الرواتب الآلية وتتبع حضور الموظفين والإجازات.",
+    image: "./projects/img/2025-02-05_musanid-sa_01.png"
+  },
+  {
+    name: "ACTES Group Commercial Solutions",
+    name_ar: "منصة مجموعة أكتس التجارية",
+    category: "Enterprise Solutions",
+    desc: "Built corporate solution platform for commercial clients with optimized database query structures and high performance.",
+    desc_ar: "تطوير منصة الأعمال التجارية لمجموعة أكتس مع تحسين استعلامات قواعد البيانات والأداء العالي.",
+    image: "./projects/img/2024-07-03_actesgroup_01.png"
+  },
+  {
+    name: "Barmgely Software Solutions Portal",
+    name_ar: "منصة برمجيلي للحلول البرمجية",
+    category: "Full Stack",
+    desc: "Custom web platform built with Laravel RESTful APIs, responsive React frontend, and automated email deployment triggers.",
+    desc_ar: "منصة ويب مخصصة مبنية بـ Laravel APIs وواجهة React متجاوبة لدعم حلول البرمجة والتطوير.",
+    image: "./projects/img/2024-07-03_barmgely_01.png"
+  },
+  {
+    name: "Miran Mobile E-Commerce & Hospitality App",
+    name_ar: "تطبيق ميران للهواتف والضيافة",
+    category: "Mobile App",
+    desc: "Cross-platform Flutter application for mobile ordering, e-commerce catalog browsing, and real-time order status tracking.",
+    desc_ar: "تطبيق موبايل متعدد المنصات بإستخدام Flutter للطلب والتصفح المباشر ومتابعة حالة الطلبات.",
+    image: "./projects/img/2024-07-03_miranedu_01.png"
+  }
+];
+
 $(document).ready(function () {
 
   // Theme Toggle Initialization
@@ -60,6 +187,7 @@ $(document).ready(function () {
   initSkillsSection();
   initProjectsSection();
   initIntakeForm();
+  initArchSpecInspector();
 
   // Listen to Language Changes
   document.addEventListener('languageChanged', function (e) {
@@ -69,6 +197,38 @@ $(document).ready(function () {
     updateCodeCardContent(currentCodeTab, lang);
   });
 });
+
+const archSpecs = {
+  client: {
+    title: "[ COMPONENT_TELEMETRY ]: Client UI (React / Next.js)",
+    desc: "Single Page Application with server-side rendering (SSR), WebSockets live driver tracking HUD, and sub-100ms client route transitions."
+  },
+  gateway: {
+    title: "[ COMPONENT_TELEMETRY ]: API Gateway (Laravel / Node.js)",
+    desc: "Event-driven RESTful gateway handling OAuth2 authentication, Role-Based Access Control (RBAC), rate-limiting, and microservices routing."
+  },
+  db: {
+    title: "[ COMPONENT_TELEMETRY ]: PostgreSQL & Redis Cache",
+    desc: "Relational transactional database with B-Tree indexes, automated master-replica failover, and Redis in-memory cache queues for sub-40ms queries."
+  },
+  ai: {
+    title: "[ COMPONENT_TELEMETRY ]: Azure OpenAI LLM & Document Intelligence",
+    desc: "AI automation pipeline extracting structured ledger JSON from PDF invoices, powering natural language database queries and automated support routing."
+  }
+};
+
+function initArchSpecInspector() {
+  $('.arch-node.clickable').on('click', function () {
+    $('.arch-node.clickable').removeClass('active');
+    $(this).addClass('active');
+    const key = $(this).attr('data-arch');
+    const spec = archSpecs[key];
+    if (spec) {
+      $('#archSpecTitle').text(spec.title);
+      $('#archSpecDesc').text(spec.desc);
+    }
+  });
+}
 
 // Dynamic Page Title when tab changes
 document.addEventListener('visibilitychange', function () {
@@ -235,7 +395,7 @@ function renderSkills(lang = 'en') {
         const itemName = (lang === 'ar' && item.name_ar) ? item.name_ar : item.name;
         html += `
           <div class="skill-chip">
-            <img src="${item.icon}" alt="${itemName}" onerror="this.src='https://img.icons8.com/color/48/000000/code.png'">
+            <img src="${item.icon}" alt="${itemName}" onerror="this.src='https://img.icons8.com/color/48/code.png'">
             <span>${itemName}</span>
           </div>
         `;
@@ -311,20 +471,18 @@ function renderProjects(lang = 'en') {
     const btnText = lang === 'ar' ? 'عرض التفاصيل والمعمارية' : 'View Architecture Specs';
 
     const cardHtml = `
-      <div class="col-md-6 col-lg-4">
-        <div class="box h-100" data-index="${idx}">
-          <div class="image">
-            <img src="${proj.image}" alt="${title}" onerror="this.src='./assets/images/profile2_enhanced.jpg'">
-            <span class="category-badge">${proj.category}</span>
-          </div>
-          <div class="content">
-            <h3>${title}</h3>
-            <p>${desc}</p>
-            <span class="btn-case-study">
-              <span>${btnText}</span>
-              <i class="fas fa-arrow-right ms-1"></i>
-            </span>
-          </div>
+      <div class="box" data-index="${idx}">
+        <div class="image">
+          <img src="${proj.image}" alt="${title}" onerror="this.src='./assets/images/profile2_enhanced.jpg'">
+          <span class="category-badge">${proj.category}</span>
+        </div>
+        <div class="content">
+          <h3>${title}</h3>
+          <p>${desc}</p>
+          <span class="btn-case-study">
+            <span>${btnText}</span>
+            <i class="fas fa-arrow-right"></i>
+          </span>
         </div>
       </div>
     `;
@@ -386,34 +544,46 @@ function initProjectsSection() {
 
 /* ===== INTERACTIVE SYSTEM INTAKE PORTAL ===== */
 function initIntakeForm() {
-  $('#btn-intake-wa').on('click', function () {
-    const name = $('#intake-name').val() || 'Client';
-    const contact = $('#intake-contact').val() || 'N/A';
+  $('#btn-intake-wa').on('click', function (e) {
+    e.preventDefault();
+    const name = $('#intake-name').val().trim();
+    const contact = $('#intake-contact').val().trim();
     const core = $('#intake-system-core').val();
     const concurrency = $('input[name="concurrency"]:checked').val();
     
+    if (!name || !contact) {
+      alert(localStorage.getItem('lang') === 'ar' ? 'يرجى إدخال الاسم ووسيلة التواصل أولاً.' : 'Please enter your Name and Contact Info first.');
+      return;
+    }
+
     let features = [];
     $('.checkbox-options input:checked').each(function () {
       features.push($(this).val());
     });
-    const details = $('#intake-details').val() || 'No specific notes.';
+    const details = $('#intake-details').val().trim() || 'No specific notes.';
 
     const message = `Hello Dhiaa,%0A%0A*SYSTEM SPEC INTAKE REQUEST*%0A- *Client Name:* ${encodeURIComponent(name)}%0A- *Contact Info:* ${encodeURIComponent(contact)}%0A- *Architecture Core:* ${encodeURIComponent(core)}%0A- *Concurrency Scale:* ${encodeURIComponent(concurrency)}%0A- *Required Capabilities:* ${encodeURIComponent(features.join(', '))}%0A- *Project Details:* ${encodeURIComponent(details)}`;
 
-    window.open(`https://wa.me/966533166742?text=${message}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=966533166742&text=${message}`, '_blank');
   });
 
-  $('#btn-intake-email').on('click', function () {
-    const name = $('#intake-name').val() || 'Client';
-    const contact = $('#intake-contact').val() || 'N/A';
+  $('#btn-intake-email').on('click', function (e) {
+    e.preventDefault();
+    const name = $('#intake-name').val().trim();
+    const contact = $('#intake-contact').val().trim();
     const core = $('#intake-system-core').val();
     const concurrency = $('input[name="concurrency"]:checked').val();
     
+    if (!name || !contact) {
+      alert(localStorage.getItem('lang') === 'ar' ? 'يرجى إدخال الاسم ووسيلة التواصل أولاً.' : 'Please enter your Name and Contact Info first.');
+      return;
+    }
+
     let features = [];
     $('.checkbox-options input:checked').each(function () {
       features.push($(this).val());
     });
-    const details = $('#intake-details').val() || 'No specific notes.';
+    const details = $('#intake-details').val().trim() || 'No specific notes.';
 
     const subject = `[System Intake Request] - ${name} (${core})`;
     const body = `SYSTEM SPEC INTAKE REQUEST\n\nClient Name: ${name}\nContact Info: ${contact}\nArchitecture Core: ${core}\nConcurrency Scale: ${concurrency}\nRequired Capabilities: ${features.join(', ')}\n\nProject Details:\n${details}`;
