@@ -536,50 +536,40 @@ function initProjectsSection() {
 
 /* ===== INTERACTIVE SYSTEM INTAKE PORTAL ===== */
 function initIntakeForm() {
-  $('#btn-intake-wa').on('click', function (e) {
+  $('#intakeForm').on('submit', function (e) {
     e.preventDefault();
-    const name = $('#intake-name').val().trim();
     const contact = $('#intake-contact').val().trim();
-    const core = $('#intake-system-core').val();
-    const concurrency = $('input[name="concurrency"]:checked').val();
+    const details = $('#intake-details').val().trim();
+
+    if (!contact || !details) return;
+
+    const btn = $('#btn-submit-form');
+    const originalContent = btn.html();
     
-    if (!name || !contact) {
-      alert(localStorage.getItem('lang') === 'ar' ? 'يرجى إدخال الاسم ووسيلة التواصل أولاً.' : 'Please enter your Name and Contact Info first.');
-      return;
-    }
+    // Show sending state
+    btn.html('<i class="fas fa-spinner fa-spin"></i> <span data-i18n="btn_sending">Sending...</span>').prop('disabled', true);
 
-    let features = [];
-    $('.checkbox-options input:checked').each(function () {
-      features.push($(this).val());
-    });
-    const details = $('#intake-details').val().trim() || 'No specific notes.';
+    // Prepare message
+    const message = `Hello Dhiaa,%0A%0A*NEW PROJECT REQUEST*%0A- *Contact Info:* ${encodeURIComponent(contact)}%0A- *Project Details:* ${encodeURIComponent(details)}`;
 
-    const message = `Hello Dhiaa,%0A%0A*SYSTEM SPEC INTAKE REQUEST*%0A- *Client Name:* ${encodeURIComponent(name)}%0A- *Contact Info:* ${encodeURIComponent(contact)}%0A- *Architecture Core:* ${encodeURIComponent(core)}%0A- *Concurrency Scale:* ${encodeURIComponent(concurrency)}%0A- *Required Capabilities:* ${encodeURIComponent(features.join(', '))}%0A- *Project Details:* ${encodeURIComponent(details)}`;
-
+    // Open WhatsApp in a new tab
     window.open(`https://api.whatsapp.com/send?phone=966533166742&text=${message}`, '_blank');
-  });
 
-  $('#btn-intake-email').on('click', function (e) {
-    e.preventDefault();
-    const name = $('#intake-name').val().trim();
-    const contact = $('#intake-contact').val().trim();
-    const core = $('#intake-system-core').val();
-    const concurrency = $('input[name="concurrency"]:checked').val();
-    
-    if (!name || !contact) {
-      alert(localStorage.getItem('lang') === 'ar' ? 'يرجى إدخال الاسم ووسيلة التواصل أولاً.' : 'Please enter your Name and Contact Info first.');
-      return;
-    }
+    // Simulate background sending completion for UI
+    setTimeout(() => {
+      // Show success message
+      $('#form-success-msg').slideDown();
+      
+      // Clear form
+      $('#intakeForm')[0].reset();
 
-    let features = [];
-    $('.checkbox-options input:checked').each(function () {
-      features.push($(this).val());
-    });
-    const details = $('#intake-details').val().trim() || 'No specific notes.';
+      // Reset button
+      btn.html(originalContent).prop('disabled', false);
 
-    const subject = `[System Intake Request] - ${name} (${core})`;
-    const body = `SYSTEM SPEC INTAKE REQUEST\n\nClient Name: ${name}\nContact Info: ${contact}\nArchitecture Core: ${core}\nConcurrency Scale: ${concurrency}\nRequired Capabilities: ${features.join(', ')}\n\nProject Details:\n${details}`;
-
-    window.open(`mailto:dhiaamostafa46@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        $('#form-success-msg').slideUp();
+      }, 5000);
+    }, 1000);
   });
 }

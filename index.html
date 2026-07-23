@@ -730,89 +730,33 @@
         <!-- Operations Intake Console Form -->
         <div class="intake-form-wrapper">
           <form class="intake-form" id="intakeForm">
-            <div class="form-header">
-              <span class="form-title" data-i18n="intake_title">[ OPERATIONS_CONSOLE_INTAKE ]</span>
-              <span class="form-status">● CONFIGURE_REQUEST</span>
-            </div>
+              <div class="form-header">
+                <span class="form-title" data-i18n="intake_title">[ OPERATIONS_CONSOLE_INTAKE ]</span>
+                <span class="form-status">■ CONFIGURE_REQUEST</span>
+              </div>
+              
+              <!-- Success Message Container -->
+              <div id="form-success-msg" style="display: none; padding: 1rem; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--emerald-green); color: var(--emerald-green); border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-family: var(--font-mono); font-size: 0.9rem;">
+                <i class="fas fa-check-circle"></i> <span data-i18n="msg_success">تم الإرسال بنجاح! سيتم التواصل معك قريباً.</span>
+              </div>
 
-            <div class="form-row-2">
               <div class="form-group">
-                <label data-i18n="lbl_name">Your Name</label>
-                <input type="text" id="intake-name" required placeholder="e.g. Eng. Khalid Al-Otaibi" data-i18n-placeholder="ph_name">
+                <label data-i18n="lbl_email">الاسم او Corporate Email / WhatsApp</label>
+                <input type="text" id="intake-contact" required placeholder="e.g. Eng. Khalid or khalid@company.sa" data-i18n-placeholder="ph_email">
               </div>
+
               <div class="form-group">
-                <label data-i18n="lbl_email">Corporate Email / WhatsApp</label>
-                <input type="text" id="intake-contact" required placeholder="e.g. khalid@company.sa" data-i18n-placeholder="ph_email">
+                <label data-i18n="lbl_details">Project Overview & Requirements</label>
+                <textarea id="intake-details" rows="5" required placeholder="Briefly describe your requirements..." data-i18n-placeholder="ph_details"></textarea>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label data-i18n="lbl_system_core">System Architecture Core</label>
-              <select id="intake-system-core" class="form-select">
-                <option value="ERP Integration Layer (Evix/SAP/ZATCA)">ERP Integration Layer (Evix/SAP/ZATCA)</option>
-                <option value="Multi-Tenant SaaS Platform">Multi-Tenant SaaS Platform</option>
-                <option value="Real-Time Fleet & Logistics Dispatcher">Real-Time Fleet & Logistics Dispatcher</option>
-                <option value="AI Workflow & OCR Document Intelligence">AI Workflow & OCR Document Intelligence</option>
-                <option value="Custom High-Performance API & Database">Custom High-Performance API & Database</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label data-i18n="lbl_concurrency">Estimated Daily Concurrency / Scale</label>
-              <div class="radio-options">
-                <label class="radio-chip">
-                  <input type="radio" name="concurrency" value="< 1,000 active daily users" checked>
-                  <span>&lt; 1,000 Users</span>
-                </label>
-                <label class="radio-chip">
-                  <input type="radio" name="concurrency" value="1,000 - 10,000 active users">
-                  <span>1k - 10k Users</span>
-                </label>
-                <label class="radio-chip">
-                  <input type="radio" name="concurrency" value="10,000+ active users">
-                  <span>10k+ Users</span>
-                </label>
+              <div class="form-actions">
+                <button type="submit" class="btn-primary" id="btn-submit-form" style="width: 100%; justify-content: center;">
+                  <i class="fas fa-paper-plane"></i>
+                  <span data-i18n="btn_send">Send Request</span>
+                </button>
               </div>
-            </div>
-
-            <div class="form-group">
-              <label data-i18n="lbl_features">Required Capabilities</label>
-              <div class="checkbox-options">
-                <label class="check-chip">
-                  <input type="checkbox" value="Real-time WebSockets" checked>
-                  <span>WebSockets</span>
-                </label>
-                <label class="check-chip">
-                  <input type="checkbox" value="ZATCA E-Invoicing">
-                  <span>ZATCA E-Invoicing</span>
-                </label>
-                <label class="check-chip">
-                  <input type="checkbox" value="Payment Gateways (Tabby/HyperPay)">
-                  <span>Payment Gateways</span>
-                </label>
-                <label class="check-chip">
-                  <input type="checkbox" value="Azure OpenAI LLM OCR">
-                  <span>AI / LLM Ingestion</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label data-i18n="lbl_details">Project Overview & Requirements</label>
-              <textarea id="intake-details" rows="3" placeholder="Briefly describe your database, accounting, or system requirements..." data-i18n-placeholder="ph_details"></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="button" class="btn-primary" id="btn-intake-wa">
-                <i class="fab fa-whatsapp"></i>
-                <span data-i18n="btn_send_wa">Deploy to WhatsApp</span>
-              </button>
-              <button type="button" class="btn-outline" id="btn-intake-email">
-                <i class="fas fa-envelope"></i>
-                <span data-i18n="btn_send_email">Send via Email</span>
-              </button>
-            </div>
-          </form>
+            </form>
         </div>
       </div>
     </div>
