@@ -267,21 +267,12 @@
   <!-- skills section starts -->
   <section class="skills" id="skills">
     <div class="section-head">
-      <!-- <span class="eyebrow">03 — Skills</span> -->
       <h2 class="heading" data-i18n="skills_heading">Tech <span>Stack</span></h2>
       <p class="section-subtitle" data-i18n="skills_subtitle">Technologies and tools I work with professionally</p>
     </div>
 
-    <div class="container">
-      <div class="stack-panel">
-        <div class="stack-panel-head">
-          <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
-          <span class="stack-panel-title">stack.json</span>
-        </div>
-        <div class="stack-panel-body" id="skillsContainer">
-          <!-- dynamically populated from stack.json -->
-        </div>
-      </div>
+    <div class="container" id="skillsContainer">
+      <!-- dynamically populated from JS -->
     </div>
   </section>
   <!-- skills section ends -->
@@ -294,28 +285,21 @@
     </div>
     <p class="qoute" data-i18n="edu_quote">"Education is not the learning of facts, but the training of the mind to think."</p>
 
-    <div class="box-container">
+    <div class="box-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
       <!-- Degree -->
-      <div class="box" style="flex: 1 1 100%; max-width: 100%; flex-direction: row; align-items: center; text-align: left; gap: 2rem; padding: 2rem;">
-        <div class="image" style="width: 300px; height: 200px; flex-shrink: 0; margin-bottom: 0;">
+      <div class="box" style="grid-column: 1 / -1; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; text-align: left; gap: 2rem; padding: 2rem; border-radius: 1rem; border-top: 4px solid var(--accent); background: var(--surface); border-left: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="image" style="width: 250px; height: 180px; flex-shrink: 0; margin-bottom: 0;">
           <img draggable="false" src="./assets/images/educat/college.jpg" alt="IBB University" style="width: 100%; height: 100%; object-fit: cover; border-radius: 1rem;">
         </div>
-        <div class="content">
-          <h3 style="font-size: 2.5rem;" data-i18n="edu_degree">Bachelor of Information Technology</h3>
-          <p style="font-size: 1.5rem; color: #666; margin: 1rem 0;" data-i18n="edu_uni">IBB University, Yemen</p>
+        <div class="content" style="flex: 1; min-width: 250px;">
+          <h3 style="font-size: 2.5rem; margin-bottom: 0.8rem;" data-i18n="edu_degree">Bachelor of Information Technology</h3>
+          <p style="font-size: 1.5rem; color: #666; margin-bottom: 1.5rem;" data-i18n="edu_uni">IBB University, Yemen</p>
           <div class="date-range" style="justify-content: flex-start;" data-i18n="edu_grad_span">
-            <span class="start-year">Graduated</span> <span class="dash">in</span> <span class="end-year">May 2020</span>
+            <span class="start-year" style="font-weight: bold; color: var(--accent);">Graduated</span> <span class="dash">in</span> <span class="end-year">May 2020</span>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="section-head" style="margin-top: 5rem;">
-      <h2 class="heading" data-i18n="edu_bootcamp_heading">Professional <span>Bootcamps</span></h2>
-      <p class="section-subtitle" data-i18n="edu_bootcamp_sub">Continuous learning and professional development</p>
-    </div>
-
-    <div class="box-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+      
       
       <!-- React Course -->
       <div class="box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-radius: 1rem; padding: 2rem; border-top: 4px solid var(--main-color);">
@@ -382,6 +366,11 @@
 
     <div class="box-container" id="projectsContainer">
       <!-- dynamically populated from projects.json -->
+    </div>
+    <div class="viewall" id="viewMoreProjectsBtn" style="display: none;">
+      <button class="btn" style="cursor: pointer; display: flex; align-items: center; gap: 0.8rem; margin: 0 auto; margin-top: 3rem; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 2rem; padding: 1rem 2.5rem; font-size: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
+        <i class="fas fa-th-large"></i> <span data-i18n="proj_view_more">View More Projects</span>
+      </button>
     </div>
   </section>
   <!-- work project section ends -->

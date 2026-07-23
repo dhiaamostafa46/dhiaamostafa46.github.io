@@ -78,7 +78,7 @@ let stackData = [
   {
     "category": "Backend Engineering",
     "items": [
-      { "name": "PHP (Laravel)", "icon": "https://img.icons8.com/color/48/000000/laravel.png", "name_ar": "PHP (Laravel)" },
+      { "name": "PHP (Laravel)", "icon": "assets/images/skills/laravel.png", "name_ar": "PHP (Laravel)" },
       { "name": "Node.js & Express.js", "icon": "https://img.icons8.com/color/48/000000/nodejs.png", "name_ar": "Node.js & Express.js" },
       { "name": "RESTful API Design & GraphQL", "icon": "https://img.icons8.com/color/48/000000/api-settings.png", "name_ar": "تصميم واجهات RESTful و GraphQL" },
       { "name": "WebSockets", "icon": "https://img.icons8.com/color/48/000000/network.png", "name_ar": "WebSockets" },
@@ -91,19 +91,19 @@ let stackData = [
   {
     "category": "Data & Persistence",
     "items": [
-      { "name": "PostgreSQL", "icon": "https://img.icons8.com/color/48/000000/postgreesql.png", "name_ar": "PostgreSQL" },
+      { "name": "PostgreSQL", "icon": "assets/images/skills/postgresql.png", "name_ar": "PostgreSQL" },
       { "name": "MySQL", "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png", "name_ar": "MySQL" },
       { "name": "MongoDB", "icon": "https://img.icons8.com/color/48/000000/mongodb.png", "name_ar": "MongoDB" },
       { "name": "Redis (Caching & Queues)", "icon": "https://img.icons8.com/color/48/000000/redis.png", "name_ar": "Redis (تخزين مؤقت وطوابير)" },
       { "name": "Database Design & Opt.", "icon": "https://img.icons8.com/color/48/000000/database.png", "name_ar": "تصميم وتحسين قواعد البيانات" },
-      { "name": "Multi-Tenant Modeling", "icon": "https://img.icons8.com/color/48/000000/schema.png", "name_ar": "نمذجة تعدد المستأجرين" }
+      { "name": "Multi-Tenant Modeling", "icon": "assets/images/skills/schema.png", "name_ar": "نمذجة تعدد المستأجرين" }
     ],
     "category_ar": "قواعد البيانات والتخزين"
   },
   {
     "category": "Enterprise Integrations",
     "items": [
-      { "name": "ERP & CRM Integrations", "icon": "https://img.icons8.com/color/48/000000/business-network.png", "name_ar": "تكامل أنظمة ERP و CRM" },
+      { "name": "ERP & CRM Integrations", "icon": "assets/images/skills/business-network.png", "name_ar": "تكامل أنظمة ERP و CRM" },
       { "name": "Payment Gateways", "icon": "https://img.icons8.com/color/48/000000/bank-cards.png", "name_ar": "بوابات الدفع" },
       { "name": "Logistics Systems", "icon": "https://img.icons8.com/color/48/000000/in-transit.png", "name_ar": "أنظمة الخدمات اللوجستية" },
       { "name": "Third-Party APIs", "icon": "https://img.icons8.com/color/48/000000/api-settings.png", "name_ar": "واجهات برمجية لجهات خارجية" },
@@ -149,10 +149,10 @@ let stackData = [
   {
     "category": "Software Architecture",
     "items": [
-      { "name": "SaaS Multi-Tenancy", "icon": "https://img.icons8.com/color/48/000000/cloud-network.png", "name_ar": "SaaS متعدد المستأجرين" },
+      { "name": "SaaS Multi-Tenancy", "icon": "assets/images/skills/cloud-network.png", "name_ar": "SaaS متعدد المستأجرين" },
       { "name": "Distributed Systems", "icon": "https://img.icons8.com/color/48/000000/network.png", "name_ar": "الأنظمة الموزعة" },
       { "name": "Scalable System Design", "icon": "https://img.icons8.com/color/48/000000/expand.png", "name_ar": "تصميم الأنظمة القابلة للتوسع" },
-      { "name": "Clean Architecture", "icon": "https://img.icons8.com/color/48/000000/architecture.png", "name_ar": "المعمارية النظيفة" },
+      { "name": "Clean Architecture", "icon": "assets/images/skills/architecture.png", "name_ar": "المعمارية النظيفة" },
       { "name": "SDLC", "icon": "https://img.icons8.com/color/48/000000/process.png", "name_ar": "دورة حياة تطوير البرمجيات" }
     ],
     "category_ar": "معمارية البرمجيات"
@@ -193,29 +193,32 @@ async function fetchData() {
 
 function showSkills(lang = "en") {
     let skillsContainer = document.getElementById("skillsContainer");
-    let html = "";
+    let html = '<div class="skills-grid-container">';
     stackData.forEach(group => {
         const catName = lang === "ar" && group.category_ar ? group.category_ar : group.category;
         html += `
-        <div class="stack-group">
-          <p class="stack-group-title">${catName}</p>
-          <div class="stack-chips">
+        <div class="skill-category">
+          <h3 class="category-title">${catName}</h3>
+          <div class="skills-grid">
             ${group.items.map(item => {
                 const itemName = lang === "ar" && item.name_ar ? item.name_ar : item.name;
                 return `
-                <span class="stack-chip">
-                  <img src="${item.icon}" alt="${itemName}" />
-                  ${itemName}
-                </span>`;
+                <div class="skill-card">
+                  <div class="skill-icon-wrapper">
+                    <img src="${item.icon}" alt="${itemName}" />
+                  </div>
+                  <span class="skill-name">${itemName}</span>
+                </div>`;
             }).join("")}
           </div>
         </div>`;
     });
+    html += '</div>';
     skillsContainer.innerHTML = html;
 
-    // 3D Tilt for dynamically loaded stack-groups
-    VanillaTilt.init(document.querySelectorAll(".stack-group"), {
-        max: 10,
+    // 3D Tilt for dynamically loaded skill cards
+    VanillaTilt.init(document.querySelectorAll(".skill-card"), {
+        max: 15,
         speed: 400,
         glare: true,
         "max-glare": 0.2
@@ -225,32 +228,62 @@ function showSkills(lang = "en") {
 function showProjects(lang = "en") {
     let projectsContainer = document.getElementById("projectsContainer");
     let projectHTML = "";
-    projectsData
-        .filter(project => project.category !== "android")
-        .forEach(project => {
-            const pName = lang === "ar" && project.name_ar ? project.name_ar : project.name;
-            const pDesc = lang === "ar" && project.desc_ar ? project.desc_ar : project.desc;
-            const viewText = lang === "ar" ? "عرض" : "View";
-            projectHTML += `
-        <div class="box tilt">
+    
+    const filteredProjects = projectsData.filter(project => project.category !== "android");
+    
+    filteredProjects.forEach((project, index) => {
+        const pName = lang === "ar" && project.name_ar ? project.name_ar : project.name;
+        const pDesc = lang === "ar" && project.desc_ar ? project.desc_ar : project.desc;
+        const viewText = lang === "ar" ? "عرض المشروع" : "View Project";
+        const hiddenClass = index >= 6 ? 'hidden-project' : '';
+        
+        projectHTML += `
+    <div class="project-card tilt ${hiddenClass}">
+      <div class="device-frame">
+        <div class="device-header">
+          <span class="device-dot red"></span>
+          <span class="device-dot yellow"></span>
+          <span class="device-dot green"></span>
+        </div>
+        <div class="device-screen">
           <img draggable="false" src="${project.image}" alt="${pName}" />
-          <div class="content">
-            <div class="tag">
-              <h3>${pName}</h3>
-            </div>
-            <div class="desc">
-              <p>${pDesc}</p>
-              <div class="btns">
-                <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> ${viewText}</a>
-              </div>
-            </div>
-          </div>
-        </div>`;
-        });
+        </div>
+      </div>
+      <div class="project-details">
+        <h3>${pName}</h3>
+        <p>${pDesc}</p>
+        <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> ${viewText}</a>
+      </div>
+    </div>`;
+    });
     projectsContainer.innerHTML = projectHTML;
 
-    VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 8 });
-    srtop.reveal('.work .box', { interval: 200 });
+    // View More Logic
+    const viewMoreBtn = document.getElementById("viewMoreProjectsBtn");
+    if (filteredProjects.length > 6) {
+        viewMoreBtn.style.display = "flex";
+        viewMoreBtn.onclick = function() {
+            const hiddenProjects = document.querySelectorAll('.hidden-project');
+            hiddenProjects.forEach(p => {
+                p.classList.remove('hidden-project');
+                // Override ScrollReveal inline styles that keep it hidden
+                p.style.visibility = 'visible';
+                p.style.opacity = '1';
+                p.style.transform = 'none';
+            });
+            viewMoreBtn.style.display = "none";
+            VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 5, speed: 400, glare: true, "max-glare": 0.1 });
+            // Re-sync scroll reveal
+            if (typeof srtop !== 'undefined' && srtop.sync) {
+                srtop.sync();
+            }
+        };
+    } else {
+        viewMoreBtn.style.display = "none";
+    }
+
+    VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 5, speed: 400, glare: true, "max-glare": 0.1 });
+    srtop.reveal('.work .project-card', { interval: 200 });
 }
 
 fetchData().then(() => {
