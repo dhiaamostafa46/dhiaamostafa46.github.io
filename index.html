@@ -6,647 +6,810 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords"
-    content="Dhiaa Mostafa, portfolio, Senior Full-Stack Engineer, Backend, AI Integration, Laravel, Node.js, SaaS Platforms" />
-  <meta name="description" content="Dhiaa Mostafa — Senior Full-Stack Engineer. 6+ years experience architecting, building, and scaling high-performance SaaS platforms, enterprise systems, and distributed applications." />
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    content="Dhiaa Mostafa, Senior Systems Architect, Senior Full-Stack Engineer, Backend Architect, ERP Integrations, SaaS Multi-Tenant, AI Automation, Laravel, Node.js, Next.js, React, Riyadh, Saudi Arabia" />
+  <meta name="description"
+    content="Dhiaa Mostafa — Senior Systems Architect & Senior Full-Stack Engineer. 6+ years experience architecting SaaS platforms, ERP integrations (Evix), high-concurrency WebSockets, and AI workflows." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS Design System -->
+  <link rel="stylesheet" href="./assets/css/style.css?v=6">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
   <!-- Favicon -->
   <link id='favicon' rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-png">
-  <title>Portfolio | Dhiaa Mostafa</title>
+  <title>Dhiaa Mostafa | Senior Systems Architect & Full-Stack Engineer</title>
 </head>
 
 <body>
 
-  <!-- navbar starts -->
-  <header>
-    <a href="./" class="logo">Dhiaa <span>Mostafa</span></a>
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
 
-    <div id="menu" class="fas fa-bars"></div>
-    <nav class="navbar">
-      <ul>
-        <li><a class="active" href="#home" data-i18n="nav_home">Home</a></li>
-        <li><a href="#about" data-i18n="nav_about">About</a></li>
-        <li><a href="#services" data-i18n="nav_services">Services</a></li>
-        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
-        <li><a href="#work" data-i18n="nav_projects">Projects</a></li>
-        <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
-        <li><a href="#contact" class="nav-hire-btn" data-i18n="nav_hire">Hire Me</a></li>
-        <li><a href="#" id="lang-toggle"><i class="fas fa-language"></i> <span id="lang-toggle-text">العربية</span></a></li>
-      </ul>
-    </nav>
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <a href="./" class="logo">
+        <span class="logo-terminal">[</span>Dhiaa<span class="logo-accent">.Architect</span><span class="logo-terminal">]</span>
+      </a>
+
+      <div id="menu" class="fas fa-bars"></div>
+
+      <nav class="navbar">
+        <ul>
+          <li><a class="active" href="#home" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#services" data-i18n="nav_services">Services</a></li>
+          <li><a href="#skills" data-i18n="nav_skills">Stack</a></li>
+          <li><a href="#work" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+          <li><a href="#contact" class="nav-hire-btn" data-i18n="nav_hire">System Intake</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-btn">
+              <i class="fas fa-moon"></i>
+              <span id="theme-toggle-text">Dark</span>
+            </button>
+          </li>
+          <li>
+            <a href="#" id="lang-toggle" class="lang-btn">
+              <i class="fas fa-globe"></i>
+              <span id="lang-toggle-text">العربية</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <!-- navbar ends -->
 
 
-  <!-- hero section starts -->
+  <!-- Section 1: Hero -->
   <section class="home" id="home">
     <canvas id="network-canvas"></canvas>
 
-    <div class="content">
-      <div class="availability-badge">
-        <span data-i18n="hero_badge"><span class="badge-dot"></span> Craft innovative & reliable software solutions.</span>
-      </div>
-      <p class="greeting" data-i18n="hero_greeting">Senior Full-Stack Engineer</p>
-      <h2 data-i18n="hero_title">I'm Dhiaa <span>Mostafa</span></h2>
-      <p class="hero-subtitle" data-i18n="hero_subtitle">Senior Full-Stack Engineer with 6+ years of experience architecting, building, and scaling high-performance SaaS platforms, enterprise systems, and distributed applications across Saudi Arabia and the Gulf region.</p>
-      <p class="hero-typed-line"><span class="prompt">&gt;</span><span class="typing-text"></span></p>
-
-      <div class="hero-btns">
-        <a href="#experience" class="btn-primary" data-i18n="hero_btn_exp">
-          <span>View Experience</span>
-          <i class="fas fa-arrow-down"></i>
-        </a>
-        <a href="./Dhiaa_Mostafa_Senior_SE.pdf" target="_blank" class="btn-outline" data-i18n="hero_btn_res">
-          <i class="fas fa-file-alt"></i>
-          <span>Resume</span>
-        </a>
-      </div>
-
-      <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://linkedin.com/in/dhiaamostafa" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-          <li><a class="GitHub" aria-label="GitHub" href="https://github.com/dhiaamostafa46" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a aria-label="Mail" href="mailto:dhiaamostafa46@gmail.com?subject=Approaching via Portfolio" target="_blank"><i class="fas fa-envelope"></i></a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="hero-widget">
-      <div class="code-card">
-        <div class="code-card-head">
-          <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
-          <span class="code-card-title">profile.ts</span>
-        </div>
-        <div class="code-card-body">
-          <p><span class="c-key">whoami</span><span class="c-punc">:</span> <span class="c-str">"Dhiaa Mostafa"</span></p>
-          <p><span class="c-key">role</span><span class="c-punc">:</span> <span class="c-str">"Senior Full-Stack Engineer"</span></p>
-          <p><span class="c-key">current</span><span class="c-punc">:</span> <span class="c-str">"Bander Trading Company"</span></p>
-          <p><span class="c-key">experience</span><span class="c-punc">:</span> <span class="c-num">6</span><span class="c-str">+ years</span></p>
-          <p><span class="c-key">stack</span><span class="c-punc">:</span> [<span class="c-str">"Microservices"</span>, <span class="c-str">"Laravel"</span>, <span class="c-str">"Node.js"</span>, <span class="c-str">"React"</span>, <span class="c-str">"Flutter"</span>, <span class="c-str">"AI/LLM"</span>, <span class="c-str">"AWS"</span>, <span class="c-str">"SaaS"</span>]</p>
-          <p><span class="c-key">location</span><span class="c-punc">:</span> <span class="c-str">"Riyadh, SA"</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- hero section ends -->
-
-
-  <!-- about section starts -->
-  <section class="about" id="about">
-    <div class="section-head">
-      <h2 class="heading" data-i18n="about_heading">About <span>Me</span></h2>
-    </div>
-
-    <div class="row">
-      <div class="image">
-        <!-- Kept the original image path since I don't have a specific image of Dhiaa -->
-        <img draggable="false" src="./assets/images/profile2_enhanced.jpg" alt="Dhiaa Mostafa">
-      </div>
-      <div class="content">
-        <h3>Dhiaa Mostafa</h3>
-        <span class="tag" data-i18n="about_role_tag">// Senior Full-Stack Engineer · 6+ Years</span>
-
-        <div class="stats-row">
-          <div class="stat-item">
-            <span class="stat-number" data-i18n="about_stat1_num">6+</span>
-            <span class="stat-label" data-i18n="about_stat1_lbl">Years Experience</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-i18n="about_stat2_num">SAR 4M+</span>
-            <span class="stat-label" data-i18n="about_stat2_lbl">Solutions Value</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-i18n="about_stat3_num">500+</span>
-            <span class="stat-label" data-i18n="about_stat3_lbl">Enterprise Clients</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-i18n="about_stat4_num">7k+</span>
-            <span class="stat-label" data-i18n="about_stat4_lbl">Active Agents</span>
-          </div>
+    <div class="hero-container">
+      <!-- Left Column: Hero Intro -->
+      <div class="hero-text-col">
+        <div class="availability-badge">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero_badge">Senior Systems Architect · Available for High-Impact Projects</span>
         </div>
 
-        <div class="profile-intro">
-          <p data-i18n="about_p1">I am a Senior Full-Stack Engineer specialized in multi-tenant architecture, backend engineering, ERP/CRM integrations, and production-grade RESTful APIs. I have a proven track record of translating complex business requirements into scalable, reliable, and high-impact software solutions.</p>
-          <p data-i18n="about_p2">At <strong>Bander Trading Company</strong>, I led the development of a SaaS logistics platform serving 7,000+ active delivery agents and architected Evix ERP integrations for 500+ enterprise clients, delivering solutions valued at over SAR 4 million. My work improved API performance by 40%+ through Redis optimization, database tuning, and caching strategies.</p>
-          <p data-i18n="about_p3">Build intelligent workflows using modern LLMs to automate document processing, extract structured data from unstructured content, and enhance business decision-making through AI-powered insights.</p>
-        </div>
+        <p class="greeting" data-i18n="hero_greeting">Senior Systems & Full-Stack Architect</p>
+        <h1 class="hero-title" data-i18n="hero_title">Dhiaa <span>Mostafa</span></h1>
+        
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          Architecting high-performance enterprise systems, multi-tenant SaaS platforms, ERP integrations (Evix), and AI-powered automation workflows. 6+ years delivering solutions for 7,000+ active fleet agents and 500+ corporate clients across Saudi Arabia & the Gulf.
+        </p>
 
-        <div class="box-container">
-          <div class="box">
-            <p data-i18n="about_email"><span>email</span> dhiaamostafa46@gmail.com</p>
-            <p data-i18n="about_based"><span>based_in</span> Riyadh, Saudi Arabia</p>
-            <p data-i18n="about_origin"><span>origin</span> Yemen</p>
-          </div>
-        </div>
+        <p class="hero-typed-line">
+          <span class="prompt">&gt;</span>
+          <span class="typing-text"></span>
+        </p>
 
-        <div class="resumebtn">
-          <a href="./Dhiaa_Mostafa_Senior_SE.pdf" target="_blank" class="btn" data-i18n="about_btn_res">
-            <i class="fas fa-file-download"></i>
-            <span>Download Resume</span>
+        <div class="hero-btns">
+          <a href="#services" class="btn-primary" data-i18n="hero_btn_exp">
+            <span>Explore Architecture</span>
+            <i class="fas fa-arrow-down"></i>
+          </a>
+          <a href="./Dhiaa_Mostafa_Senior_SE.pdf" target="_blank" class="btn-outline" data-i18n="hero_btn_res">
+            <i class="fas fa-file-alt"></i>
+            <span>Resume PDF</span>
           </a>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- about section ends -->
 
-
-  <!-- services section starts -->
-  <section class="services" id="services">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="services_eyebrow">02 — Services</span>
-      <h2 class="heading" data-i18n="services_heading">Where I Create <span>Business Impact</span></h2>
-      <p class="section-subtitle" data-i18n="services_subtitle">The engineering capabilities I bring to help teams build, scale, and modernize software products.</p>
-    </div>
-
-    <div class="services-grid">
-
-      <div class="service-card featured">
-        <div class="service-icon"><i class="fas fa-server"></i></div>
-        <h3 data-i18n="srv1_title">Backend Engineering</h3>
-        <p data-i18n="srv1_desc">Design and build scalable, production-grade backend systems with a focus on performance, reliability, and maintainability. From RESTful APIs and event-driven services to multi-tenant SaaS architectures and enterprise integrations.</p>
-        <div class="service-tags">
-          <span class="service-tag">Laravel</span>
-          <span class="service-tag">Node.js</span>
-          <span class="service-tag">REST APIs</span>
-          <span class="service-tag">GraphQL</span>
-          <span class="service-tag">Microservices</span>
-          <span class="service-tag">WebSockets</span>
+        <div class="socials">
+          <ul class="social-icons">
+            <li><a class="linkedin" aria-label="LinkedIn" href="https://linkedin.com/in/dhiaamostafa" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a class="GitHub" aria-label="GitHub" href="https://github.com/dhiaamostafa46" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a aria-label="WhatsApp" href="https://wa.me/966533166742?text=Hello%20Dhiaa,%20I%20reviewed%20your%20portfolio" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a aria-label="Mail" href="mailto:dhiaamostafa46@gmail.com?subject=Approaching via Portfolio" target="_blank"><i class="fas fa-envelope"></i></a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
-        <h3 data-i18n="srv2_title">Enterprise Systems &amp; Integrations</h3>
-        <p data-i18n="srv2_desc">Connect business-critical platforms through secure, scalable integrations. Extensive experience integrating ERP, CRM, payment gateways, logistics providers, and government-compliant invoicing systems.</p>
-        <div class="service-tags">
-          <span class="service-tag">ERP</span>
-          <span class="service-tag">CRM</span>
-          <span class="service-tag">ZATCA</span>
-          <span class="service-tag">Payment Gateways</span>
-          <span class="service-tag">Third-Party APIs</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-brain"></i></div>
-        <h3 data-i18n="srv3_title">AI-Powered Automation</h3>
-        <p data-i18n="srv3_desc">Build intelligent workflows using modern LLMs to automate document processing, extract structured data from unstructured content, and enhance business decision-making through AI-powered insights.</p>
-        <div class="service-tags">
-          <span class="service-tag">OpenAI (GPT)</span>
-          <span class="service-tag">Claude</span>
-          <span class="service-tag">Gemini</span>
-          <span class="service-tag">Prompt Engineering</span>
-          <span class="service-tag">Function Calling</span>
-          <span class="service-tag">LLM Integrations</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-        <h3 data-i18n="srv4_title">Frontend Engineering</h3>
-        <p data-i18n="srv4_desc">Develop responsive, modern web applications with intuitive user experiences using React and TypeScript, fully integrated with scalable backend services.</p>
-        <div class="service-tags">
-          <span class="service-tag">React.js</span>
-          <span class="service-tag">Next.js</span>
-          <span class="service-tag">TypeScript</span>
-          <span class="service-tag">Tailwind CSS</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-database"></i></div>
-        <h3 data-i18n="srv5_title">Database Engineering</h3>
-        <p data-i18n="srv5_desc">Design efficient database architectures optimized for scale, availability, and performance. Improve response times through indexing, caching, and query optimization.</p>
-        <div class="service-tags">
-          <span class="service-tag">PostgreSQL</span>
-          <span class="service-tag">MySQL</span>
-          <span class="service-tag">MongoDB</span>
-          <span class="service-tag">Redis</span>
-          <span class="service-tag">Elasticsearch</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fab fa-aws"></i></div>
-        <h3 data-i18n="srv6_title">Cloud &amp; DevOps</h3>
-        <p data-i18n="srv6_desc">Deploy and maintain reliable production environments using modern DevOps practices, automated CI/CD pipelines, containerization, and AWS cloud infrastructure.</p>
-        <div class="service-tags">
-          <span class="service-tag">AWS</span>
-          <span class="service-tag">Docker</span>
-          <span class="service-tag">CI/CD</span>
-          <span class="service-tag">GitHub Actions</span>
-          <span class="service-tag">GitLab CI</span>
-          <span class="service-tag">Linux</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-sitemap"></i></div>
-        <h3 data-i18n="srv7_title">Software Architecture</h3>
-        <p data-i18n="srv7_desc">Architect scalable software platforms with clean architecture principles, multi-tenancy, asynchronous processing, and secure authentication for enterprise-grade applications.</p>
-        <div class="service-tags">
-          <span class="service-tag">SaaS</span>
-          <span class="service-tag">Multi-Tenancy</span>
-          <span class="service-tag">Distributed Systems</span>
-          <span class="service-tag">RBAC</span>
-          <span class="service-tag">Event-Driven Architecture</span>
-          <span class="service-tag">Redis Queues</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  <!-- services section ends -->
-
-
-  <!-- skills section starts -->
-  <section class="skills" id="skills">
-    <div class="section-head">
-      <h2 class="heading" data-i18n="skills_heading">Tech <span>Stack</span></h2>
-      <p class="section-subtitle" data-i18n="skills_subtitle">Technologies and tools I work with professionally</p>
-    </div>
-
-    <div class="container" id="skillsContainer">
-      <!-- dynamically populated from JS -->
-    </div>
-  </section>
-  <!-- skills section ends -->
-
-
-  <!-- education section starts -->
-  <section class="education" id="education">
-    <div class="section-head">
-      <h1 class="heading" data-i18n="edu_heading">Education &amp; <span>Courses</span></h1>
-    </div>
-    <p class="qoute" data-i18n="edu_quote">"Education is not the learning of facts, but the training of the mind to think."</p>
-
-    <div class="box-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
-      <!-- Degree -->
-      <div class="box" style="grid-column: 1 / -1; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; text-align: left; gap: 2rem; padding: 2rem; border-radius: 1rem; border-top: 4px solid var(--accent); background: var(--surface); border-left: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-        <div class="image" style="width: 250px; height: 180px; flex-shrink: 0; margin-bottom: 0;">
-          <img draggable="false" src="./assets/images/educat/college.jpg" alt="IBB University" style="width: 100%; height: 100%; object-fit: cover; border-radius: 1rem;">
-        </div>
-        <div class="content" style="flex: 1; min-width: 250px;">
-          <h3 style="font-size: 2.5rem; margin-bottom: 0.8rem;" data-i18n="edu_degree">Bachelor of Information Technology</h3>
-          <p style="font-size: 1.5rem; color: #666; margin-bottom: 1.5rem;" data-i18n="edu_uni">IBB University, Yemen</p>
-          <div class="date-range" style="justify-content: flex-start;" data-i18n="edu_grad_span">
-            <span class="start-year" style="font-weight: bold; color: var(--accent);">Graduated</span> <span class="dash">in</span> <span class="end-year">May 2020</span>
-          </div>
-        </div>
-      </div>
-      
-      
-      <!-- React Course -->
-      <div class="box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-radius: 1rem; padding: 2rem; border-top: 4px solid var(--main-color);">
-        <div class="content" style="width: 100%;">
-          <i class="fas fa-code" style="color:var(--main-color); font-size: 4rem; margin-bottom: 1.5rem;"></i>
-          <h3 style="font-size: 1.8rem; margin-bottom: 1rem;" data-i18n="edu_c1_title">Pro Frontend Engineer</h3>
-          <p style="font-size: 1.3rem; color: #666;" data-i18n="edu_c1_sub">ReactJS + TypeScript + Redux</p>
-          <div style="margin-top: 1.5rem;"><span style="background: #f4f4f4; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: bold; color: var(--main-color); font-size: 1.2rem;">Udemy</span></div>
-        </div>
-      </div>
-
-      <!-- Deep Learning -->
-      <div class="box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-radius: 1rem; padding: 2rem; border-top: 4px solid var(--main-color);">
-        <div class="content" style="width: 100%;">
-          <i class="fas fa-brain" style="color:var(--main-color); font-size: 4rem; margin-bottom: 1.5rem;"></i>
-          <h3 style="font-size: 1.8rem; margin-bottom: 1rem;" data-i18n="edu_c2_title">Deep Learning Minicamp</h3>
-          <p style="font-size: 1.3rem; color: #666;" data-i18n="edu_c2_sub">AI &amp; Machine Learning (Arabic)</p>
-          <div style="margin-top: 1.5rem;"><span style="background: #f4f4f4; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: bold; color: var(--main-color); font-size: 1.2rem;">Udemy</span></div>
-        </div>
-      </div>
-      
-      <!-- Flutter -->
-      <div class="box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-radius: 1rem; padding: 2rem; border-top: 4px solid var(--main-color);">
-        <div class="content" style="width: 100%;">
-          <i class="fas fa-mobile-alt" style="color:var(--main-color); font-size: 4rem; margin-bottom: 1.5rem;"></i>
-          <h3 style="font-size: 1.8rem; margin-bottom: 1rem;" data-i18n="edu_c3_title">Flutter Development</h3>
-          <p style="font-size: 1.3rem; color: #666;" data-i18n="edu_c3_sub">Multiple comprehensive courses</p>
-          <div style="margin-top: 1.5rem;"><span style="background: #f4f4f4; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: bold; color: var(--main-color); font-size: 1.2rem;">Udemy</span></div>
-        </div>
-      </div>
-
-      <!-- Pricing -->
-      <div class="box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-radius: 1rem; padding: 2rem; border-top: 4px solid var(--main-color);">
-        <div class="content" style="width: 100%;">
-          <i class="fas fa-chart-line" style="color:var(--main-color); font-size: 4rem; margin-bottom: 1.5rem;"></i>
-          <h3 style="font-size: 1.8rem; margin-bottom: 1rem;" data-i18n="edu_c4_title">Basics of Pricing</h3>
-          <p style="font-size: 1.3rem; color: #666;" data-i18n="edu_c4_sub">Business &amp; Strategy (Arabic)</p>
-          <div style="margin-top: 1.5rem;"><span style="background: #f4f4f4; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: bold; color: var(--main-color); font-size: 1.2rem;">Udemy</span></div>
-        </div>
-      </div>
-
-      <!-- English Course -->
-      <div class="box" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-radius: 1rem; padding: 2rem; border-top: 4px solid var(--main-color);">
-        <div class="content" style="width: 100%;">
-          <i class="fas fa-language" style="color:var(--main-color); font-size: 4rem; margin-bottom: 1.5rem;"></i>
-          <h3 style="font-size: 1.8rem; margin-bottom: 1rem;" data-i18n="edu_c5_title">Advanced English</h3>
-          <p style="font-size: 1.3rem; color: #666;" data-i18n="edu_c5_sub">Professional Communication</p>
-          <div style="margin-top: 1.5rem;"><span style="background: #f4f4f4; padding: 0.5rem 1.5rem; border-radius: 2rem; font-weight: bold; color: var(--main-color); font-size: 1.2rem;">Udemy</span></div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  <!-- education section ends -->
-
-
-  <!-- work project section starts -->
-  <section class="work" id="work">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="proj_eyebrow">05 — Projects</span>
-      <h2 class="heading" data-i18n="proj_heading">Professional <span>Projects</span></h2>
-      <p class="section-subtitle" data-i18n="proj_subtitle">Enterprise systems and products I've contributed to</p>
-    </div>
-
-    <div class="box-container" id="projectsContainer">
-      <!-- dynamically populated from projects.json -->
-    </div>
-    <div class="viewall" id="viewMoreProjectsBtn" style="display: none;">
-      <button class="btn" style="cursor: pointer; display: flex; align-items: center; gap: 0.8rem; margin: 0 auto; margin-top: 3rem; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 2rem; padding: 1rem 2.5rem; font-size: 1.5rem; transition: all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';">
-        <i class="fas fa-th-large"></i> <span data-i18n="proj_view_more">View More Projects</span>
-      </button>
-    </div>
-  </section>
-  <!-- work project section ends -->
-
-
-  <!-- experience section starts -->
-  <section class="experience" id="experience">
-    <div class="section-head">
-      <!-- <span class="eyebrow" data-i18n="exp_eyebrow">06 — Experience</span> -->
-      <h2 class="heading" data-i18n="exp_heading">Work <span>Experience</span></h2>
-      <p class="section-subtitle" data-i18n="exp_subtitle">My professional journey over the years</p>
-    </div>
-
-    <div class="timeline">
-
-      
-      <div class="container left">
-        <div class="content current">
-          <div class="tag">
-            <h2 data-i18n="exp1_company">Bander Trading Company — Riyadh, SA</h2> <span class="current-badge" data-i18n="exp_current"><span class="badge-dot"></span>Current</span>
-          </div>
-          <div class="desc">
-            <h3 data-i18n="exp1_role">Senior Software Engineer</h3>
-            <p class="exp-date" data-i18n="exp1_date"><i class="far fa-calendar-alt"></i> 2023 — Present</p>
-            <ul>
-              <li data-i18n="exp1_li1">Owned end-to-end architecture and delivery of a multi-tenant SaaS logistics platform, scaling to 7,000+ active delivery agents with real-time tracking via WebSockets.</li>
-              <li data-i18n="exp1_li2">Led full architectural design and API integration of Evix ERP for 500+ subscribed enterprise clients via RESTful APIs.</li>
-              <li data-i18n="exp1_li3">Architected and built a comprehensive HR Management System covering automated payroll processing, attendance tracking, and leave management.</li>
-              <li data-i18n="exp1_li4">Developed multi-vertical e-commerce platforms with secure payment gateway integration and inventory management.</li>
-              <li data-i18n="exp1_li5">Designed event-driven workflows using Redis Queues and Laravel Queue workers to handle asynchronous jobs at scale.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="container right">
-        <div class="content current">
-          <div class="tag">
-            <h2 data-i18n="exp6_company">Eyein Information Technology — Riyadh, SA</h2> <span class="current-badge" data-i18n="exp_current"><span class="badge-dot"></span>Current</span>
-          </div>
-          <div class="desc">
-            <h3 data-i18n="exp6_role">Senior Full-Stack Engineer (Remote)</h3>
-            <p class="exp-date" data-i18n="exp6_date"><i class="far fa-calendar-alt"></i> 2023 — Present</p>
-            <ul>
-              <li data-i18n="exp6_li1">Developed and maintained enterprise web platforms and digital solutions for corporate, nonprofit, and commercial organizations using <strong>Node.js</strong>, <strong>TypeScript</strong>, and modern JavaScript frameworks.</li>
-              <li data-i18n="exp6_li2">Designed scalable RESTful APIs and implemented secure authentication, Role-Based Access Control (RBAC), and third-party integrations.</li>
-              <li data-i18n="exp6_li3">Integrated payment gateways, <strong>Tabby</strong>, and real-time communication using <strong>WebSockets</strong> and event-driven architecture.</li>
-              <li data-i18n="exp6_li4">Designed scalable backend services using <strong>PostgreSQL</strong> and <strong>MongoDB</strong>, focusing on performance, maintainability, and reliability.</li>
-              <li data-i18n="exp6_li5">Collaborated with cross-functional teams to deliver production-ready solutions from architecture and development through deployment and ongoing support.</li>
-            </ul>
-            <p style="margin-top: 1.5rem; font-size: 1.3rem; font-family: var(--body-font); color: var(--text-muted);" data-i18n="exp6_projects"><strong>Selected Projects:</strong> Eyein, Eyein Technology, Eyein Code, Watan Tumuh Foundation, Emarl Booking Platform.</p>
-            <p style="margin-top: 1rem; font-size: 1.25rem; font-family: var(--mono); color: var(--text-dim);" data-i18n="exp6_tech"><strong>Technologies:</strong> Node.js, TypeScript, JavaScript, PostgreSQL, MongoDB, RESTful APIs, WebSockets, Event-Driven Architecture, Docker, Payment Gateway, Tabby.</p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="container left">
-        <div class="content">
-          <div class="tag">
-            <h2 data-i18n="exp5_company">Musaned United — Riyadh, SA</h2>
-          </div>
-          <div class="desc">
-            <h3 data-i18n="exp5_role">Full-Stack Engineer (Remote Contract)</h3>
-            <p class="exp-date" data-i18n="exp5_date"><i class="far fa-calendar-alt"></i> 2022 — 2023 (5 Months)</p>
-            <ul>
-              <li data-i18n="exp5_li1">Architected and developed the Musaned United platform using NestJS and Next.js, delivering a scalable production-ready solution.</li>
-              <li data-i18n="exp5_li2">Designed and implemented RESTful APIs, secure multi-authentication, and Role-Based Access Control (RBAC).</li>
-              <li data-i18n="exp5_li3">Integrated payment gateway services and third-party APIs to support business operations.</li>
-              <li data-i18n="exp5_li4">Containerized backend services with Docker and collaborated throughout the development lifecycle to ensure reliable deployment and maintainability.</li>
-            </ul>
-            <p style="margin-top: 1.5rem; font-size: 1.25rem; font-family: var(--mono); color: var(--text-dim);" data-i18n="exp5_tech"><strong>Technologies:</strong> NestJS, Node.js, Next.js, TypeScript, RESTful APIs, Docker, Multi-Auth, RBAC, Payment Gateway.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container right">
-        <div class="content">
-          <div class="tag">
-            <h2 data-i18n="exp2_company">Smart System — Riyadh, SA</h2>
-          </div>
-          <div class="desc">
-            <h3 data-i18n="exp2_role">Full-Stack Developer</h3>
-            <p class="exp-date" data-i18n="exp2_date"><i class="far fa-calendar-alt"></i> 2022 — 2023</p>
-            <ul>
-              <li data-i18n="exp2_li1">Developed and enhanced Restaurant Management Systems and Hotel Reservation Systems through full-stack Laravel + React solutions.</li>
-              <li data-i18n="exp2_li2">Designed and built an entrepreneurship platform and multiple corporate business websites, managing full SDLC.</li>
-              <li data-i18n="exp2_li3">Built fully responsive, modern UIs using React, Bootstrap, Tailwind CSS, and SASS — integrated with RESTful back-end APIs.</li>
-              <li data-i18n="exp2_li4">Contributed to platform architecture design, code reviews, and performance optimization across concurrent Agile/Scrum projects.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="container left">
-        <div class="content">
-          <div class="tag">
-            <h2 data-i18n="exp4_company">SKYSOFT — Sana'a, Yemen</h2>
-          </div>
-          <div class="desc">
-            <h3 data-i18n="exp4_role">Flutter Developer</h3>
-            <p class="exp-date" data-i18n="exp4_date"><i class="far fa-calendar-alt"></i> 2020 — 2021</p>
-            <ul>
-              <li data-i18n="exp4_li1">Developed cross-platform mobile applications using <strong>Flutter (Dart)</strong> across education, hospitality, and e-commerce domains.</li>
-              <li data-i18n="exp4_li2">Contributed to the delivery of projects including <strong>Miran</strong>, <strong>Khibra</strong>, <strong>Toolars</strong>, <strong>Falaqh</strong>, <strong>Spare</strong>, and other business solutions.</li>
-              <li data-i18n="exp4_li3">Integrated Flutter applications with Laravel-based RESTful APIs and collaborated within Agile teams to deliver production-ready software.</li>
-            </ul>
-            <p style="margin-top: 1.5rem; font-size: 1.25rem; font-family: var(--mono); color: var(--text-dim);" data-i18n="exp4_tech"><strong>Technologies:</strong> Flutter, Dart, Laravel, PHP, RESTful APIs, MySQL, Git.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container right">
-        <div class="content current">
-          <div class="tag">
-            <h2 data-i18n="exp3_company">Self-Employed — Remote</h2> <span class="current-badge" data-i18n="exp_current"><span class="badge-dot"></span>Current</span>
-          </div>
-          <div class="desc">
-            <h3 data-i18n="exp3_role">Freelance Full-Stack Developer</h3>
-            <p class="exp-date" data-i18n="exp3_date"><i class="far fa-calendar-alt"></i> Mar 2019 — Present</p>
-            <ul>
-              <li data-i18n="exp3_li1">Delivered custom web applications, SaaS platforms, and enterprise websites for clients across Saudi Arabia and Yemen.</li>
-              <li data-i18n="exp3_li2">Built end-to-end solutions, including system design, backend development, RESTful API integrations, deployment, and long-term maintenance.</li>
-              <li data-i18n="exp3_li3">Developed e-commerce platforms, POS systems, corporate websites, and business portals with performance optimization and SEO best practices.</li>
-              <li data-i18n="exp3_li4">Delivered projects for organizations including <strong>Miran</strong>, <strong>Barmgely</strong>, <strong>Musanid</strong>, <strong>ACTES Group</strong>, <strong>Darzmord</strong>, and other commercial clients.</li>
-            </ul>
-            <p style="margin-top: 1.5rem; font-size: 1.25rem; font-family: var(--mono); color: var(--text-dim);" data-i18n="exp3_tech"><strong>Technologies:</strong> Laravel, PHP, Node.js, React.js, JavaScript, MySQL, RESTful APIs, Docker, Git.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  <!-- experience section ends -->
-
-
-  <!-- contact section starts -->
-  <section class="contact" id="contact">
-    <div class="section-head">
-      <!-- <span class="eyebrow" data-i18n="contact_eyebrow">07 — Contact</span> -->
-      <h2 class="heading" data-i18n="contact_heading">Contact <span>Me</span></h2>
-      <!-- <p class="section-subtitle" data-i18n="contact_subtitle">Ready to start your project? Let's talk — I typically respond within 24 hours</p> -->
-    </div>
-
-
-    <div class="contact-wrapper">
-      <div class="contact-info">
-
-        <a href="mailto:dhiaamostafa46@gmail.com?subject=Approaching via Portfolio" class="contact-info-card">
-          <div class="card-icon"><i class="fas fa-envelope"></i></div>
-          <div class="card-content">
-            <span class="card-label" data-i18n="contact_lbl_email">Email</span>
-            <span class="card-value">dhiaamostafa46@gmail.com</span>
-          </div>
-        </a>
-
-        <a href="https://wa.me/966533166742?text=Hello%20I%20found%20your%20portfolio" target="_blank" class="contact-info-card">
-          <div class="card-icon"><i class="fab fa-whatsapp"></i></div>
-          <div class="card-content">
-            <span class="card-label" data-i18n="contact_lbl_wa">WhatsApp</span>
-            <span class="card-value">+966 533 166 742</span>
-          </div>
-        </a>
-
-        <a href="https://linkedin.com/in/dhiaamostafa" target="_blank" class="contact-info-card">
-          <div class="card-icon"><i class="fab fa-linkedin"></i></div>
-          <div class="card-content">
-            <span class="card-label" data-i18n="contact_lbl_li">LinkedIn</span>
-            <span class="card-value">linkedin.com/in/dhiaamostafa</span>
-          </div>
-        </a>
-
-        <div class="contact-info-card" style="cursor: default;">
-          <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="card-content">
-            <span class="card-label" data-i18n="contact_lbl_loc">Location</span>
-            <span class="card-value" data-i18n="contact_val_loc">Riyadh, Saudi Arabia</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="contact-image">
+      <!-- Right Column: Interactive Code Card -->
+      <div class="hero-widget-col">
         <div class="code-card">
           <div class="code-card-head">
-            <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
-            <span class="code-card-title">contact.json</span>
+            <div class="dots">
+              <span class="dot red"></span>
+              <span class="dot amber"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="code-tabs">
+              <button class="code-tab active" data-tab="profile">profile.ts</button>
+              <button class="code-tab" data-tab="system">system.json</button>
+              <button class="code-tab" data-tab="ai">ai_orb.py</button>
+            </div>
           </div>
-          <div class="code-card-body">
-            <p><span class="c-punc">{</span></p>
-            <p>&nbsp;&nbsp;<span class="c-key">"status"</span><span class="c-punc">:</span> <span class="c-str">"available"</span><span class="c-punc">,</span></p>
-            <p>&nbsp;&nbsp;<span class="c-key">"response_time"</span><span class="c-punc">:</span> <span class="c-str">"&lt; 24h"</span><span class="c-punc">,</span></p>
-            <p>&nbsp;&nbsp;<span class="c-key">"timezone"</span><span class="c-punc">:</span> <span class="c-str">"GMT+3"</span><span class="c-punc">,</span></p>
-            <p>&nbsp;&nbsp;<span class="c-key">"open_to"</span><span class="c-punc">:</span> <span class="c-punc">[</span></p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"full-stack builds"</span><span class="c-punc">,</span></p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"backend architecture"</span><span class="c-punc">,</span></p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"API integrations"</span></p>
-            <p>&nbsp;&nbsp;<span class="c-punc">]</span></p>
-            <p><span class="c-punc">}</span></p>
+          <div class="code-card-body" id="code-card-content">
+            <!-- Populated via script.js -->
+          </div>
+          <div class="code-card-footer">
+            <span class="status-indicator">● OPERATIONAL</span>
+            <span class="latency-indicator">LATENCY: 22ms</span>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- contact section ends -->
 
 
-  <!-- footer section starts -->
-  <section class="footer">
-    <div class="box-container">
-
-      <div class="box">
-        <h3>Dhiaa Mostafa</h3>
-        <p data-i18n="footer_desc1">Senior Software Engineer specializing in backend architecture, Laravel, Node.js, and Event-Driven Design. Based in Riyadh, Saudi Arabia.</p>
-        <p data-i18n="footer_desc2">Let's build something great together.</p>
+  <!-- Section 2: About -->
+  <section class="about" id="about">
+    <div class="site-container">
+      <div class="section-head text-center">
+        <span class="eyebrow" data-i18n="about_eyebrow">01 — about.md</span>
+        <h2 class="heading" data-i18n="about_heading">About <span>Me</span></h2>
       </div>
 
-      <div class="box">
-        <h3 data-i18n="footer_links">Quick Links</h3>
-        <a href="#home"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_home">Home</span></a>
-        <a href="#about"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_about">About</span></a>
-        <a href="#services"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_services">Services</span></a>
-        <a href="#skills"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_skills">Skills</span></a>
-        <a href="#work"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_projects">Projects</span></a>
-        <a href="#experience"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_experience">Experience</span></a>
-        <a href="#contact"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_hire">Hire Me</span></a>
+      <div class="about-grid">
+        <div class="about-img-col">
+          <div class="img-wrapper">
+            <img draggable="false" src="./assets/images/profile2_enhanced.jpg" alt="Dhiaa Mostafa">
+            <div class="img-badge">
+              <i class="fas fa-shield-alt"></i>
+              <span>6+ YRS EXP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text-col">
+          <div class="content">
+            <h3>Dhiaa Mostafa</h3>
+            <span class="tag" data-i18n="about_role_tag">// Senior Systems & Full-Stack Architect</span>
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number" data-i18n="about_stat1_num">6+</span>
+                <span class="stat-label" data-i18n="about_stat1_lbl">Years Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-i18n="about_stat2_num">SAR 4M+</span>
+                <span class="stat-label" data-i18n="about_stat2_lbl">Solutions Value</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-i18n="about_stat3_num">500+</span>
+                <span class="stat-label" data-i18n="about_stat3_lbl">Enterprise Clients</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-i18n="about_stat4_num">7k+</span>
+                <span class="stat-label" data-i18n="about_stat4_lbl">Active Fleet Agents</span>
+              </div>
+            </div>
+
+            <div class="profile-intro">
+              <p data-i18n="about_p1">
+                I am a Senior Software Engineer & Systems Architect specialized in multi-tenant SaaS platforms, backend engineering, ERP/CRM integrations, and production-grade RESTful APIs. I translate complex business operations into resilient, high-performance software.
+              </p>
+              <p data-i18n="about_p2">
+                At <strong>Bander Trading Company</strong>, I architected and deployed a multi-tenant logistics platform serving 7,000+ active delivery agents with real-time WebSocket vehicle mapping, alongside Evix ERP integrations for 500+ corporate subscribers. My database and Redis queue optimizations reduced API latency by over 40%.
+              </p>
+              <p data-i18n="about_p3">
+                I also build AI-driven automation pipelines using modern LLMs (Azure OpenAI, Gemini) to extract structured ledger data from unstructured documents, automate ZATCA e-invoicing workflows, and enable natural language business querying.
+              </p>
+            </div>
+
+            <div class="box-container">
+              <div class="box">
+                <p data-i18n="about_email"><span>email</span> dhiaamostafa46@gmail.com</p>
+                <p data-i18n="about_based"><span>location</span> Riyadh, Saudi Arabia</p>
+                <p data-i18n="about_origin"><span>phone</span> +966 533 166 742</p>
+              </div>
+            </div>
+
+            <div class="resumebtn">
+              <a href="./Dhiaa_Mostafa_Senior_SE.pdf" target="_blank" class="btn-primary" data-i18n="about_btn_res">
+                <i class="fas fa-file-download"></i>
+                <span>Download Full Resume (PDF)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 3: Services -->
+  <section class="services" id="services">
+    <div class="site-container">
+      <div class="section-head text-center">
+        <span class="eyebrow" data-i18n="services_eyebrow">02 — services.json</span>
+        <h2 class="heading" data-i18n="services_heading">Architectural <span>Capabilities</span></h2>
+        <p class="section-subtitle" data-i18n="services_subtitle">Enterprise software services engineered for scale, reliability, and business impact.</p>
       </div>
 
-      <div class="box">
-        <h3 data-i18n="footer_contact">Contact Info</h3>
-        <p><i class="fas fa-phone"></i>+966 533 166 742</p>
-        <p><i class="fas fa-envelope"></i>dhiaamostafa46@gmail.com</p>
-        <p><i class="fas fa-map-marked-alt"></i>Riyadh, Saudi Arabia</p>
-        <div class="share">
-          <a href="https://linkedin.com/in/dhiaamostafa" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-          <a href="https://github.com/dhiaamostafa46" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-          <a href="mailto:dhiaamostafa46@gmail.com?subject=Approaching via Portfolio" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card featured">
+          <div class="service-header">
+            <div class="service-icon"><i class="fas fa-server"></i></div>
+            <span class="service-number">01</span>
+          </div>
+          <h3 data-i18n="srv1_title">Backend & Microservices Systems</h3>
+          <p data-i18n="srv1_desc">Designing scalable production-grade backends with high concurrency. Event-driven Laravel and Node.js microservices, RESTful APIs, GraphQL endpoints, and WebSockets.</p>
+          <div class="service-tags">
+            <span class="service-tag">Laravel</span>
+            <span class="service-tag">Node.js</span>
+            <span class="service-tag">NestJS</span>
+            <span class="service-tag">REST / GraphQL</span>
+            <span class="service-tag">WebSockets</span>
+          </div>
+          <a href="#contact" class="service-link"><span data-i18n="srv_inquire">Request Spec</span> <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+            <span class="service-number">02</span>
+          </div>
+          <h3 data-i18n="srv2_title">ERP & Enterprise Integrations</h3>
+          <p data-i18n="srv2_desc">Connecting core enterprise software (Evix ERP, SAP, Odoo) with checkout portals, payment gateways (Tabby, HyperPay), and ZATCA Phase-2 tax invoicing frameworks.</p>
+          <div class="service-tags">
+            <span class="service-tag">Evix ERP</span>
+            <span class="service-tag">ZATCA Tax</span>
+            <span class="service-tag">Payment Gateways</span>
+            <span class="service-tag">Webhooks Sync</span>
+          </div>
+          <a href="#contact" class="service-link"><span data-i18n="srv_inquire">Request Spec</span> <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon"><i class="fas fa-sitemap"></i></div>
+            <span class="service-number">03</span>
+          </div>
+          <h3 data-i18n="srv7_title">SaaS Multi-Tenant Architecture</h3>
+          <p data-i18n="srv7_desc">Architecting cloud platforms with strict tenant data isolation, tenant-specific subdomains, automated double-entry ledger bookkeeping, and global RBAC controls.</p>
+          <div class="service-tags">
+            <span class="service-tag">Multi-Tenancy</span>
+            <span class="service-tag">Data Isolation</span>
+            <span class="service-tag">RBAC</span>
+            <span class="service-tag">Subdomains</span>
+          </div>
+          <a href="#contact" class="service-link"><span data-i18n="srv_inquire">Request Spec</span> <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon"><i class="fas fa-brain"></i></div>
+            <span class="service-number">04</span>
+          </div>
+          <h3 data-i18n="srv3_title">AI-Powered Automation & LLMs</h3>
+          <p data-i18n="srv3_desc">Building intelligent document pipelines using Azure OpenAI APIs to extract line items from PDFs into ERP ledgers, route support tickets, and query databases in plain language.</p>
+          <div class="service-tags">
+            <span class="service-tag">Azure OpenAI</span>
+            <span class="service-tag">PDF OCR to JSON</span>
+            <span class="service-tag">RAG Pipelines</span>
+            <span class="service-tag">Prompt Engineering</span>
+          </div>
+          <a href="#contact" class="service-link"><span data-i18n="srv_inquire">Request Spec</span> <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+            <span class="service-number">05</span>
+          </div>
+          <h3 data-i18n="srv_fleet_title">Real-Time Operations Dashboards</h3>
+          <p data-i18n="srv_fleet_desc">High-concurrency dispatcher panels featuring real-time WebSockets vehicle mapping, live fleet status feeds, and instant inventory adjustments.</p>
+          <div class="service-tags">
+            <span class="service-tag">WebSockets</span>
+            <span class="service-tag">Live Fleet Map</span>
+            <span class="service-tag">HUD Dashboards</span>
+            <span class="service-tag">Real-Time Events</span>
+          </div>
+          <a href="#contact" class="service-link"><span data-i18n="srv_inquire">Request Spec</span> <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon"><i class="fas fa-database"></i></div>
+            <span class="service-number">06</span>
+          </div>
+          <h3 data-i18n="srv5_title">Database Engineering & Optimization</h3>
+          <p data-i18n="srv5_desc">Auditing slow database queries, indexing SQL structures, designing Redis caching strategies, and refactoring legacy codebases for 40%+ performance gains.</p>
+          <div class="service-tags">
+            <span class="service-tag">PostgreSQL</span>
+            <span class="service-tag">MySQL</span>
+            <span class="service-tag">Redis Caching</span>
+            <span class="service-tag">Index Tuning</span>
+          </div>
+          <a href="#contact" class="service-link"><span data-i18n="srv_inquire">Request Spec</span> <i class="fas fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 4: Skills -->
+  <section class="skills" id="skills">
+    <div class="site-container">
+      <div class="section-head text-center">
+        <span class="eyebrow" data-i18n="skills_eyebrow">03 — stack.config</span>
+        <h2 class="heading" data-i18n="skills_heading">Technological <span>Matrix</span></h2>
+        <p class="section-subtitle" data-i18n="skills_subtitle">Languages, databases, frameworks, cloud services, and integration tools I work with professionally.</p>
+      </div>
+
+      <!-- Controls -->
+      <div class="skills-controls">
+        <div class="skills-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="skills-search-input" placeholder="Search stack (e.g. Laravel, PostgreSQL, Docker)..." data-i18n-placeholder="skills_search_ph">
+        </div>
+        <div class="skills-category-tabs" id="skills-tabs">
+          <button class="skills-tab active" data-cat="all" data-i18n="tab_all">All Stack</button>
+          <button class="skills-tab" data-cat="Backend Engineering" data-i18n="tab_backend">Backend</button>
+          <button class="skills-tab" data-cat="Data & Persistence" data-i18n="tab_databases">Databases</button>
+          <button class="skills-tab" data-cat="Enterprise Integrations" data-i18n="tab_integrations">Integrations</button>
+          <button class="skills-tab" data-cat="AI & Intelligent Automation" data-i18n="tab_ai">AI & Automation</button>
+          <button class="skills-tab" data-cat="Cloud & DevOps" data-i18n="tab_cloud">Cloud & DevOps</button>
         </div>
       </div>
 
+      <div id="skillsContainer">
+        <!-- Dynamically rendered via script.js -->
+      </div>
     </div>
-
-    <h1 class="credit" data-i18n="footer_credit">Designed &amp; Built by <a href="https://linkedin.com/in/dhiaamostafa" target="_blank">Dhiaa Mostafa</a> &nbsp;·&nbsp; &copy; 2026</h1>
   </section>
-  <!-- footer section ends -->
 
 
-  <!-- scroll top btn -->
+  <!-- Section 5: Projects -->
+  <section class="work" id="work">
+    <div class="site-container">
+      <div class="section-head text-center">
+        <span class="eyebrow" data-i18n="proj_eyebrow">04 — deployments.json</span>
+        <h2 class="heading" data-i18n="proj_heading">Featured <span>Projects</span></h2>
+        <p class="section-subtitle" data-i18n="proj_subtitle">Enterprise systems, SaaS platforms, and digital solutions I've architected & built.</p>
+      </div>
+
+      <!-- Controls -->
+      <div class="projects-controls">
+        <div class="project-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="project-search-input" placeholder="Search projects by name or technology..." data-i18n-placeholder="proj_search_ph">
+        </div>
+        <div class="project-filters" id="project-filters">
+          <button class="filter-btn active" data-filter="all" data-i18n="proj_filter_all">All Projects</button>
+          <button class="filter-btn" data-filter="Enterprise Solutions" data-i18n="proj_filter_ent">Enterprise & ERP</button>
+          <button class="filter-btn" data-filter="Full Stack" data-i18n="proj_filter_fs">Full Stack SaaS</button>
+          <button class="filter-btn" data-filter="E-commerce" data-i18n="proj_filter_ecom">E-Commerce</button>
+          <button class="filter-btn" data-filter="Mobile App" data-i18n="proj_filter_mob">Mobile Apps</button>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projectsContainer">
+        <!-- Dynamically rendered via script.js -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Project Details Modal -->
+  <div class="modal-backdrop" id="projectModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      <div class="modal-header">
+        <span class="modal-category" id="modalCategory">Category</span>
+        <h2 class="modal-title" id="modalTitle">Project Title</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image-container">
+          <img id="modalImage" src="" alt="Project Screenshot">
+        </div>
+        <div class="modal-info">
+          <h3 data-i18n="modal_arch_highlights">Architectural Highlights</h3>
+          <p id="modalDescription">Detailed breakdown...</p>
+
+          <div class="modal-metrics">
+            <div class="modal-metric">
+              <span class="metric-val">7k+</span>
+              <span class="metric-lbl">Active Users</span>
+            </div>
+            <div class="modal-metric">
+              <span class="metric-val">99.99%</span>
+              <span class="metric-lbl">Uptime</span>
+            </div>
+            <div class="modal-metric">
+              <span class="metric-val">ZATCA</span>
+              <span class="metric-lbl">Compliance</span>
+            </div>
+          </div>
+
+          <h4 data-i18n="modal_stack_used">Tech Stack Used</h4>
+          <div class="modal-tags" id="modalTags">
+            <!-- Badges -->
+          </div>
+
+          <div class="modal-actions">
+            <a href="#contact" class="btn-primary" id="modalInquireBtn">
+              <i class="fas fa-paper-plane me-2"></i>
+              <span data-i18n="modal_btn_inquire">Inquire Similar Architecture</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Section 6: Experience -->
+  <section class="experience" id="experience">
+    <div class="site-container">
+      <div class="section-head text-center">
+        <span class="eyebrow" data-i18n="exp_eyebrow">05 — experience.sh</span>
+        <h2 class="heading" data-i18n="exp_heading">Work <span>Experience</span></h2>
+        <p class="section-subtitle" data-i18n="exp_subtitle">My professional software engineering journey across Saudi Arabia and the Gulf.</p>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Job 1 -->
+        <div class="timeline-item left">
+          <div class="content current">
+            <div class="tag">
+              <h2 data-i18n="exp1_company">Bander Trading Company — Riyadh, SA</h2>
+              <span class="current-badge" data-i18n="exp_current"><span class="badge-dot"></span>Current</span>
+            </div>
+            <div class="desc">
+              <h3 data-i18n="exp1_role">Senior Software Engineer & Systems Lead</h3>
+              <p class="exp-date" data-i18n="exp1_date"><i class="far fa-calendar-alt"></i> 2023 — Present</p>
+              <ul>
+                <li data-i18n="exp1_li1">Owned end-to-end architecture and delivery of a multi-tenant SaaS logistics platform, scaling to 7,000+ active delivery agents with real-time tracking via WebSockets.</li>
+                <li data-i18n="exp1_li2">Led full architectural design and API integration of Evix ERP for 500+ subscribed enterprise clients via RESTful APIs.</li>
+                <li data-i18n="exp1_li3">Architected and built a comprehensive HR Management System covering automated payroll processing, attendance tracking, and leave management.</li>
+                <li data-i18n="exp1_li4">Developed multi-vertical e-commerce platforms with secure payment gateway integration and automated inventory adjustments.</li>
+                <li data-i18n="exp1_li5">Designed event-driven workflows using Redis Queues and Laravel Queue workers to handle asynchronous jobs at scale.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item right">
+          <div class="content current">
+            <div class="tag">
+              <h2 data-i18n="exp6_company">Eyein Information Technology — Riyadh, SA</h2>
+              <span class="current-badge" data-i18n="exp_current"><span class="badge-dot"></span>Current</span>
+            </div>
+            <div class="desc">
+              <h3 data-i18n="exp6_role">Senior Full-Stack Engineer (Remote)</h3>
+              <p class="exp-date" data-i18n="exp6_date"><i class="far fa-calendar-alt"></i> 2023 — Present</p>
+              <ul>
+                <li data-i18n="exp6_li1">Developed and maintained enterprise web platforms and digital solutions for corporate, nonprofit, and commercial organizations using Node.js, TypeScript, and modern JS.</li>
+                <li data-i18n="exp6_li2">Designed scalable RESTful APIs and implemented secure authentication, Role-Based Access Control (RBAC), and third-party integrations.</li>
+                <li data-i18n="exp6_li3">Integrated payment gateways (Tabby) and real-time communication using WebSockets and event-driven architecture.</li>
+                <li data-i18n="exp6_li4">Designed scalable backend services using PostgreSQL and MongoDB, focusing on query performance and uptime.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item left">
+          <div class="content">
+            <div class="tag">
+              <h2 data-i18n="exp5_company">Musaned United — Riyadh, SA</h2>
+            </div>
+            <div class="desc">
+              <h3 data-i18n="exp5_role">Full-Stack Engineer (Remote Contract)</h3>
+              <p class="exp-date" data-i18n="exp5_date"><i class="far fa-calendar-alt"></i> 2022 — 2023</p>
+              <ul>
+                <li data-i18n="exp5_li1">Architected and developed the Musaned United platform using NestJS and Next.js, delivering a scalable production-ready solution.</li>
+                <li data-i18n="exp5_li2">Designed and implemented RESTful APIs, secure multi-authentication, and Role-Based Access Control (RBAC).</li>
+                <li data-i18n="exp5_li3">Containerized backend services with Docker and collaborated throughout the development lifecycle to ensure reliable deployment.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="timeline-item right">
+          <div class="content">
+            <div class="tag">
+              <h2 data-i18n="exp2_company">Smart System — Riyadh, SA</h2>
+            </div>
+            <div class="desc">
+              <h3 data-i18n="exp2_role">Full-Stack Developer</h3>
+              <p class="exp-date" data-i18n="exp2_date"><i class="far fa-calendar-alt"></i> 2022 — 2023</p>
+              <ul>
+                <li data-i18n="exp2_li1">Developed and enhanced Restaurant Management Systems and Hotel Reservation Systems through full-stack Laravel + React solutions.</li>
+                <li data-i18n="exp2_li2">Built fully responsive, modern UIs using React, Bootstrap, and Tailwind CSS integrated with RESTful back-end APIs.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="timeline-item left">
+          <div class="content">
+            <div class="tag">
+              <h2 data-i18n="exp4_company">SKYSOFT — Sana'a, Yemen</h2>
+            </div>
+            <div class="desc">
+              <h3 data-i18n="exp4_role">Flutter Mobile Developer</h3>
+              <p class="exp-date" data-i18n="exp4_date"><i class="far fa-calendar-alt"></i> 2020 — 2021</p>
+              <ul>
+                <li data-i18n="exp4_li1">Developed cross-platform mobile applications using Flutter (Dart) across education, hospitality, and e-commerce domains.</li>
+                <li data-i18n="exp4_li2">Delivered applications including Miran, Khibra, Toolars, and Falaqh integrated with Laravel RESTful backends.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 7: Education -->
+  <section class="education" id="education">
+    <div class="site-container">
+      <div class="section-head text-center">
+        <span class="eyebrow" data-i18n="edu_eyebrow">06 — education.log</span>
+        <h2 class="heading" data-i18n="edu_heading">Education & <span>Certifications</span></h2>
+        <p class="section-subtitle" data-i18n="edu_subtitle">Academic degree & professional engineering bootcamps</p>
+      </div>
+
+      <div class="education-grid">
+        <!-- Degree Box -->
+        <div class="degree-card">
+          <i class="fas fa-graduation-cap edu-icon"></i>
+          <div>
+            <h3 data-i18n="edu_degree">Bachelor of Information Technology</h3>
+            <p class="edu-uni" data-i18n="edu_uni">IBB University, Yemen</p>
+            <div class="date-range" data-i18n="edu_grad_span">
+              <span class="start-year">Graduated</span> <span class="dash">in</span> <span class="end-year">May 2020</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certs -->
+        <div class="certs-grid">
+          <div class="cert-card">
+            <i class="fas fa-code cert-icon"></i>
+            <h3 data-i18n="edu_c1_title">Pro Frontend Engineer</h3>
+            <p data-i18n="edu_c1_sub">ReactJS + TypeScript + Redux Toolkit</p>
+            <div class="badge-tag">Udemy Certified</div>
+          </div>
+
+          <div class="cert-card">
+            <i class="fas fa-brain cert-icon"></i>
+            <h3 data-i18n="edu_c2_title">Deep Learning Minicamp</h3>
+            <p data-i18n="edu_c2_sub">AI, Machine Learning & Neural Networks</p>
+            <div class="badge-tag">AI Certified</div>
+          </div>
+
+          <div class="cert-card">
+            <i class="fas fa-mobile-alt cert-icon"></i>
+            <h3 data-i18n="edu_c3_title">Flutter Development</h3>
+            <p data-i18n="edu_c3_sub">Cross-Platform Mobile Architecture</p>
+            <div class="badge-tag">Udemy Certified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 8: Contact & Intake -->
+  <section class="contact" id="contact">
+    <div class="site-container">
+      <div class="section-head text-center">
+        <span class="eyebrow" data-i18n="contact_eyebrow">07 — ping.json</span>
+        <h2 class="heading" data-i18n="contact_heading">System Intake <span>Portal</span></h2>
+        <p class="section-subtitle" data-i18n="contact_subtitle">Configure your project specifications below to generate an instant technical brief, or contact me directly.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Direct Contact Cards -->
+        <div class="contact-info">
+          <a href="mailto:dhiaamostafa46@gmail.com?subject=Approaching via Portfolio" class="contact-info-card">
+            <div class="card-icon"><i class="fas fa-envelope"></i></div>
+            <div class="card-content">
+              <span class="card-label" data-i18n="contact_lbl_email">Email</span>
+              <span class="card-value">dhiaamostafa46@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://wa.me/966533166742?text=Hello%20Dhiaa,%20I%20want%20to%20discuss%20a%20project" target="_blank" class="contact-info-card">
+            <div class="card-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="card-content">
+              <span class="card-label" data-i18n="contact_lbl_wa">WhatsApp / Phone</span>
+              <span class="card-value">+966 533 166 742</span>
+            </div>
+          </a>
+
+          <a href="https://linkedin.com/in/dhiaamostafa" target="_blank" class="contact-info-card">
+            <div class="card-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="card-content">
+              <span class="card-label" data-i18n="contact_lbl_li">LinkedIn</span>
+              <span class="card-value">linkedin.com/in/dhiaamostafa</span>
+            </div>
+          </a>
+
+          <div class="contact-info-card cursor-default">
+            <div class="card-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="card-content">
+              <span class="card-label" data-i18n="contact_lbl_loc">Location</span>
+              <span class="card-value" data-i18n="contact_val_loc">Riyadh, Saudi Arabia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intake Portal Form -->
+        <div class="intake-form-wrapper">
+          <form class="intake-form" id="intakeForm">
+            <div class="form-header">
+              <span class="form-title" data-i18n="intake_title">[ SYSTEM_SPEC_INTAKE ]</span>
+              <span class="form-status">● CONFIGURE_REQUEST</span>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label data-i18n="lbl_name">Your Name</label>
+                <input type="text" id="intake-name" required placeholder="e.g. Eng. Khalid Al-Otaibi" data-i18n-placeholder="ph_name">
+              </div>
+              <div class="form-group">
+                <label data-i18n="lbl_email">Corporate Email / WhatsApp</label>
+                <input type="text" id="intake-contact" required placeholder="e.g. khalid@company.sa" data-i18n-placeholder="ph_email">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="lbl_system_core">System Architecture Core</label>
+              <select id="intake-system-core" class="form-select">
+                <option value="ERP Integration Layer (Evix/SAP/ZATCA)">ERP Integration Layer (Evix/SAP/ZATCA)</option>
+                <option value="Multi-Tenant SaaS Platform">Multi-Tenant SaaS Platform</option>
+                <option value="Real-Time Fleet & Logistics Dispatcher">Real-Time Fleet & Logistics Dispatcher</option>
+                <option value="AI Workflow & OCR Document Intelligence">AI Workflow & OCR Document Intelligence</option>
+                <option value="Custom High-Performance API & Database">Custom High-Performance API & Database</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="lbl_concurrency">Estimated Daily Concurrency / Scale</label>
+              <div class="radio-options">
+                <label class="radio-chip">
+                  <input type="radio" name="concurrency" value="< 1,000 active daily users" checked>
+                  <span>&lt; 1,000 Users</span>
+                </label>
+                <label class="radio-chip">
+                  <input type="radio" name="concurrency" value="1,000 - 10,000 active users">
+                  <span>1k - 10k Users</span>
+                </label>
+                <label class="radio-chip">
+                  <input type="radio" name="concurrency" value="10,000+ active users">
+                  <span>10k+ Users</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="lbl_features">Required Capabilities</label>
+              <div class="checkbox-options">
+                <label class="check-chip">
+                  <input type="checkbox" value="Real-time WebSockets" checked>
+                  <span>WebSockets</span>
+                </label>
+                <label class="check-chip">
+                  <input type="checkbox" value="ZATCA E-Invoicing">
+                  <span>ZATCA E-Invoicing</span>
+                </label>
+                <label class="check-chip">
+                  <input type="checkbox" value="Payment Gateways (Tabby/HyperPay)">
+                  <span>Payment Gateways</span>
+                </label>
+                <label class="check-chip">
+                  <input type="checkbox" value="Azure OpenAI LLM OCR">
+                  <span>AI / LLM Ingestion</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="lbl_details">Project Overview & Requirements</label>
+              <textarea id="intake-details" rows="3" placeholder="Briefly describe your database, accounting, or system requirements..." data-i18n-placeholder="ph_details"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn-primary" id="btn-intake-wa">
+                <i class="fab fa-whatsapp"></i>
+                <span data-i18n="btn_send_wa">Deploy to WhatsApp</span>
+              </button>
+              <button type="button" class="btn-outline" id="btn-intake-email">
+                <i class="fas fa-envelope"></i>
+                <span data-i18n="btn_send_email">Send via Email</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="site-container">
+      <div class="footer-grid">
+        <div class="footer-box">
+          <h3>Dhiaa Mostafa</h3>
+          <p data-i18n="footer_desc1">Senior Systems Architect specializing in backend engineering, multi-tenant SaaS, ERP integrations, and AI workflows. Based in Riyadh, Saudi Arabia.</p>
+          <p data-i18n="footer_desc2">Let's build scalable systems together.</p>
+        </div>
+
+        <div class="footer-box">
+          <h3 data-i18n="footer_links">Navigation Links</h3>
+          <ul>
+            <li><a href="#home"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_home">Home</span></a></li>
+            <li><a href="#about"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_about">About</span></a></li>
+            <li><a href="#services"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_services">Services</span></a></li>
+            <li><a href="#skills"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_skills">Stack</span></a></li>
+            <li><a href="#work"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_projects">Projects</span></a></li>
+            <li><a href="#experience"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_experience">Experience</span></a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_hire">System Intake</span></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-box">
+          <h3 data-i18n="footer_contact">Contact Channels</h3>
+          <p><i class="fas fa-phone"></i> +966 533 166 742</p>
+          <p><i class="fas fa-envelope"></i> dhiaamostafa46@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia</p>
+          <div class="share">
+            <a href="https://linkedin.com/in/dhiaamostafa" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/dhiaamostafa46" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/966533166742" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:dhiaamostafa46@gmail.com" aria-label="Mail" target="_blank"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-diagnostics">
+        <span class="pulse-dot"></span>
+        <span data-i18n="foot_log">SYSTEM ARCHITECTURE: STABLE · ALL INTEGRATION ENDPOINTS OPERATIONAL</span>
+      </div>
+
+      <p class="credit" data-i18n="footer_credit">Architected & Built by <a href="https://linkedin.com/in/dhiaamostafa" target="_blank">Dhiaa Mostafa</a> &nbsp;·&nbsp; &copy; 2026</p>
+    </div>
+  </footer>
+
+
+  <!-- Scroll Top Button -->
   <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
 
 
-  <!-- jQuery CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
 
-  <!-- Typed.js CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
-    integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Typed.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" crossorigin="anonymous"></script>
 
-  <!-- Three.js (hero network graph) -->
+  <!-- Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="./assets/js/network-graph.js"></script>
+  <script src="./assets/js/network-graph.js?v=6"></script>
 
   <!-- Vanilla Tilt.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"
-    integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" crossorigin="anonymous"></script>
 
-  <!-- ScrollReveal -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-
-  <script src="./assets/js/lang.js?v=2"></script>
-  <script src="./assets/js/i18n.js?v=2"></script>
-  <script src="./assets/js/script.js?v=2"></script>
+  <!-- i18n & Core Scripts -->
+  <script src="./assets/js/lang.js?v=6"></script>
+  <script src="./assets/js/i18n.js?v=6"></script>
+  <script src="./assets/js/script.js?v=6"></script>
 
 </body>
 

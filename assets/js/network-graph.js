@@ -1,7 +1,7 @@
 /*
- * Interactive 3D microservices/network graph for the hero background.
- * Nodes = services/nodes in a distributed system, edges = connections,
- * traveling pulses = requests/data flowing between them.
+ * Upgraded 3D Holographic Orbital Core Engine for Hero Background.
+ * Renders a rotating 3D system core with interactive orbital rings,
+ * glowing service nodes (ERP, SaaS, AI, WebSockets, DB), and data streams.
  */
 (function () {
   const canvas = document.getElementById("network-canvas");
@@ -10,8 +10,8 @@
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-  camera.position.set(0, 0, 34);
+  const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+  camera.position.set(0, 0, 32);
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -24,164 +24,190 @@
     camera.updateProjectionMatrix();
   }
 
-  const group = new THREE.Group();
-  scene.add(group);
+  const mainGroup = new THREE.Group();
+  scene.add(mainGroup);
 
-  const NODE_COUNT = window.innerWidth < 700 ? 26 : 46;
-  const RADIUS_X = 26;
-  const RADIUS_Y = 16;
-  const RADIUS_Z = 14;
+  // Colors dynamically based on theme or defaults
+  const cyanColor = 0x00f2fe;
+  const violetColor = 0x8b5cf6;
+  const indigoColor = 0x6366f1;
+  const emeraldColor = 0x10b981;
 
-  const nodes = [];
-  const nodeGeometry = new THREE.SphereGeometry(0.24, 12, 12);
-  const hubGeometry = new THREE.SphereGeometry(0.4, 14, 14);
-  const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0xff6b4a, transparent: true, opacity: 0.9 });
-  const hubMaterial = new THREE.MeshBasicMaterial({ color: 0x4ad9c0, transparent: true, opacity: 0.95 });
+  // 1. Central Core Sphere (Wireframe + Inner Glow)
+  const coreGeometry = new THREE.IcosahedronGeometry(3.2, 2);
+  const coreMaterial = new THREE.MeshBasicMaterial({
+    color: cyanColor,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.45
+  });
+  const centralCore = new THREE.Mesh(coreGeometry, coreMaterial);
+  mainGroup.add(centralCore);
 
-  for (let i = 0; i < NODE_COUNT; i++) {
-    const isHub = i % 7 === 0;
-    const mesh = new THREE.Mesh(isHub ? hubGeometry : nodeGeometry, isHub ? hubMaterial : nodeMaterial);
-    const pos = new THREE.Vector3(
-      (Math.random() - 0.5) * 2 * RADIUS_X,
-      (Math.random() - 0.5) * 2 * RADIUS_Y,
-      (Math.random() - 0.5) * 2 * RADIUS_Z
-    );
-    mesh.position.copy(pos);
-    group.add(mesh);
-    nodes.push({ mesh, isHub, basePos: pos.clone(), phase: Math.random() * Math.PI * 2 });
+  const innerGeometry = new THREE.SphereGeometry(2.2, 16, 16);
+  const innerMaterial = new THREE.MeshBasicMaterial({
+    color: violetColor,
+    transparent: true,
+    opacity: 0.7
+  });
+  const innerCore = new THREE.Mesh(innerGeometry, innerMaterial);
+  mainGroup.add(innerCore);
+
+  // 2. Concentric Orbital Rings
+  function createOrbitalRing(radius, color, rotX, rotY) {
+    const ringGeo = new THREE.TorusGeometry(radius, 0.04, 16, 100);
+    const ringMat = new THREE.MeshBasicMaterial({
+      color: color,
+      transparent: true,
+      opacity: 0.35
+    });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.rotation.x = rotX;
+    ring.rotation.y = rotY;
+    mainGroup.add(ring);
+    return ring;
   }
 
-  // Build edges: connect each node to its nearest few neighbours
-  const edges = [];
-  const MAX_DIST = 13;
-  const MAX_LINKS_PER_NODE = 3;
+  const ring1 = createOrbitalRing(7.5, cyanColor, Math.PI / 3, 0);
+  const ring2 = createOrbitalRing(11.0, violetColor, Math.PI / 4, Math.PI / 6);
+  const ring3 = createOrbitalRing(14.5, indigoColor, Math.PI / 2.5, -Math.PI / 4);
 
-  nodes.forEach((n, i) => {
-    const distances = nodes
-      .map((other, j) => ({ j, d: n.basePos.distanceTo(other.basePos) }))
-      .filter((e) => e.j !== i && e.d < MAX_DIST)
-      .sort((a, b) => a.d - b.d)
-      .slice(0, MAX_LINKS_PER_NODE);
+  // 3. Orbiting Service Nodes (ERP, SaaS, AI, WebSockets, DB, ZATCA)
+  const serviceNodesData = [
+    { label: "Evix ERP", color: cyanColor, radius: 7.5, speed: 0.8, phase: 0 },
+    { label: "SaaS Tenancy", color: violetColor, radius: 11.0, speed: 0.6, phase: 1.2 },
+    { label: "AI Workflows", color: emeraldColor, radius: 14.5, speed: 0.4, phase: 2.5 },
+    { label: "WebSockets 7k+", color: cyanColor, radius: 7.5, speed: 0.7, phase: 3.8 },
+    { label: "ZATCA Tax", color: violetColor, radius: 11.0, speed: 0.5, phase: 4.6 },
+    { label: "Redis & Postgres", color: indigoColor, radius: 14.5, speed: 0.45, phase: 5.4 }
+  ];
 
-    distances.forEach(({ j }) => {
-      const key = i < j ? `${i}-${j}` : `${j}-${i}`;
-      if (!edges.find((e) => e.key === key)) {
-        edges.push({ key, a: i, b: j });
-      }
+  const serviceNodeMeshes = [];
+  const nodeGeo = new THREE.SphereGeometry(0.55, 16, 16);
+
+  serviceNodesData.forEach((data) => {
+    const mat = new THREE.MeshBasicMaterial({
+      color: data.color,
+      transparent: true,
+      opacity: 0.9
+    });
+    const mesh = new THREE.Mesh(nodeGeo, mat);
+    mainGroup.add(mesh);
+
+    // Connecting beam line to central core
+    const beamGeo = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(0, 0, 0)
+    ]);
+    const beamMat = new THREE.LineBasicMaterial({
+      color: data.color,
+      transparent: true,
+      opacity: 0.25
+    });
+    const beamLine = new THREE.Line(beamGeo, beamMat);
+    mainGroup.add(beamLine);
+
+    serviceNodeMeshes.push({
+      mesh,
+      beamLine,
+      data
     });
   });
 
-  const lineMaterial = new THREE.LineBasicMaterial({ color: 0x8a8d99, transparent: true, opacity: 0.18 });
-  const linePositions = new Float32Array(edges.length * 6);
-  const lineGeometry = new THREE.BufferGeometry();
-  lineGeometry.setAttribute("position", new THREE.BufferAttribute(linePositions, 3));
-  const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
-  group.add(lines);
+  // 4. Background Floating Particle Dust Field
+  const particleCount = 120;
+  const particleGeo = new THREE.BufferGeometry();
+  const particlePositions = new Float32Array(particleCount * 3);
 
-  function updateLinePositions() {
-    edges.forEach((edge, idx) => {
-      const a = nodes[edge.a].mesh.position;
-      const b = nodes[edge.b].mesh.position;
-      const off = idx * 6;
-      linePositions[off] = a.x;
-      linePositions[off + 1] = a.y;
-      linePositions[off + 2] = a.z;
-      linePositions[off + 3] = b.x;
-      linePositions[off + 4] = b.y;
-      linePositions[off + 5] = b.z;
-    });
-    lineGeometry.attributes.position.needsUpdate = true;
+  for (let i = 0; i < particleCount * 3; i += 3) {
+    particlePositions[i] = (Math.random() - 0.5) * 50;
+    particlePositions[i + 1] = (Math.random() - 0.5) * 35;
+    particlePositions[i + 2] = (Math.random() - 0.5) * 30;
   }
 
-  // Traveling data pulses along random edges
-  const MAX_PULSES = 6;
-  const pulseGeometry = new THREE.SphereGeometry(0.32, 10, 10);
-  const pulseMaterial = new THREE.MeshBasicMaterial({ color: 0xffb454, transparent: true, opacity: 0 });
-  const pulses = [];
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+  const particleMat = new THREE.PointsMaterial({
+    color: 0x94a3b8,
+    size: 0.2,
+    transparent: true,
+    opacity: 0.4
+  });
+  const particleSystem = new THREE.Points(particleGeo, particleMat);
+  mainGroup.add(particleSystem);
 
-  for (let i = 0; i < MAX_PULSES; i++) {
-    const mesh = new THREE.Mesh(pulseGeometry, pulseMaterial.clone());
-    group.add(mesh);
-    pulses.push({ mesh, edge: null, t: 1, speed: 0 });
-  }
-
-  function launchPulse(pulse) {
-    if (!edges.length) return;
-    pulse.edge = edges[Math.floor(Math.random() * edges.length)];
-    pulse.t = 0;
-    pulse.speed = 0.006 + Math.random() * 0.006;
-    pulse.mesh.material.opacity = 0;
-  }
-
-  pulses.forEach((p, i) => setTimeout(() => launchPulse(p), i * 700));
-
-  // Pointer parallax — mouse on desktop, touch drag on mobile
+  // Pointer Parallax Lerp
   let targetRotX = 0;
   let targetRotY = 0;
 
-  function setTargetFromPoint(x, y) {
+  function onPointerMove(x, y) {
     const nx = (x / window.innerWidth) * 2 - 1;
     const ny = (y / window.innerHeight) * 2 - 1;
-    targetRotY = nx * 0.65;
-    targetRotX = ny * 0.45;
+    targetRotY = nx * 0.45;
+    targetRotX = ny * 0.3;
   }
 
-  window.addEventListener("mousemove", (e) => setTargetFromPoint(e.clientX, e.clientY));
-  window.addEventListener(
-    "touchmove",
-    (e) => {
-      if (!e.touches.length) return;
-      setTargetFromPoint(e.touches[0].clientX, e.touches[0].clientY);
-    },
-    { passive: true }
-  );
+  window.addEventListener("mousemove", (e) => onPointerMove(e.clientX, e.clientY));
+  window.addEventListener("touchmove", (e) => {
+    if (e.touches.length) onPointerMove(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
 
-  let visible = true;
+  let isVisible = true;
   document.addEventListener("visibilitychange", () => {
-    visible = document.visibilityState === "visible";
+    isVisible = document.visibilityState === "visible";
   });
 
   const clock = new THREE.Clock();
-
-  // Respect reduced-motion by dropping the idle auto-drift, but keep the
-  // graph interactive (pointer parallax + data pulses) either way — freezing
-  // the whole scene made the hero look broken/static rather than accessible.
-  const idleSpin = prefersReducedMotion ? 0 : 0.0009;
-  const floatAmount = prefersReducedMotion ? 0 : 0.6;
+  const idleSpeed = prefersReducedMotion ? 0 : 0.003;
 
   function animate() {
     requestAnimationFrame(animate);
-    if (!visible) return;
+    if (!isVisible) return;
 
-    const t = clock.getElapsedTime();
+    const elapsedTime = clock.getElapsedTime();
 
-    group.rotation.y += (targetRotY - group.rotation.y) * 0.02 + idleSpin;
-    group.rotation.x += (targetRotX - group.rotation.x) * 0.02;
+    // Smooth rotation of main group
+    mainGroup.rotation.y += (targetRotY - mainGroup.rotation.y) * 0.03 + idleSpeed;
+    mainGroup.rotation.x += (targetRotX - mainGroup.rotation.x) * 0.03;
 
-    nodes.forEach((n) => {
-      n.mesh.position.x = n.basePos.x + Math.sin(t * 0.4 + n.phase) * floatAmount;
-      n.mesh.position.y = n.basePos.y + Math.cos(t * 0.35 + n.phase) * floatAmount;
+    // Pulse core
+    const scale = 1 + Math.sin(elapsedTime * 1.5) * 0.05;
+    centralCore.scale.set(scale, scale, scale);
+    innerCore.rotation.y -= 0.008;
+
+    // Rotate Orbital Rings
+    ring1.rotation.z = elapsedTime * 0.15;
+    ring2.rotation.z = -elapsedTime * 0.12;
+    ring3.rotation.z = elapsedTime * 0.08;
+
+    // Update Orbiting Nodes & Beams
+    serviceNodeMeshes.forEach((item) => {
+      const d = item.data;
+      const angle = elapsedTime * d.speed + d.phase;
+      
+      const x = Math.cos(angle) * d.radius;
+      const y = Math.sin(angle * 0.7) * (d.radius * 0.4);
+      const z = Math.sin(angle) * d.radius;
+
+      item.mesh.position.set(x, y, z);
+
+      // Update beam line positions
+      const positions = item.beamLine.geometry.attributes.position.array;
+      positions[0] = 0;
+      positions[1] = 0;
+      positions[2] = 0;
+      positions[3] = x;
+      positions[4] = y;
+      positions[5] = z;
+      item.beamLine.geometry.attributes.position.needsUpdate = true;
     });
-    updateLinePositions();
 
-    pulses.forEach((p) => {
-      if (!p.edge) return;
-      p.t += p.speed;
-      if (p.t >= 1) {
-        launchPulse(p);
-        return;
-      }
-      const a = nodes[p.edge.a].mesh.position;
-      const b = nodes[p.edge.b].mesh.position;
-      p.mesh.position.lerpVectors(a, b, p.t);
-      p.mesh.material.opacity = Math.sin(p.t * Math.PI) * 0.9;
-    });
+    // Particle subtle float
+    particleSystem.rotation.y = elapsedTime * 0.02;
 
     renderer.render(scene, camera);
   }
 
   resize();
-  updateLinePositions();
   window.addEventListener("resize", resize);
   animate();
 })();
