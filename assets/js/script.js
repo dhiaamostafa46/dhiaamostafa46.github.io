@@ -187,7 +187,6 @@ $(document).ready(function () {
   initSkillsSection();
   initProjectsSection();
   initIntakeForm();
-  initArchSpecInspector();
 
   // Listen to Language Changes
   document.addEventListener('languageChanged', function (e) {
@@ -197,38 +196,6 @@ $(document).ready(function () {
     updateCodeCardContent(currentCodeTab, lang);
   });
 });
-
-const archSpecs = {
-  client: {
-    title: "[ COMPONENT_TELEMETRY ]: Client UI (React / Next.js)",
-    desc: "Single Page Application with server-side rendering (SSR), WebSockets live driver tracking HUD, and sub-100ms client route transitions."
-  },
-  gateway: {
-    title: "[ COMPONENT_TELEMETRY ]: API Gateway (Laravel / Node.js)",
-    desc: "Event-driven RESTful gateway handling OAuth2 authentication, Role-Based Access Control (RBAC), rate-limiting, and microservices routing."
-  },
-  db: {
-    title: "[ COMPONENT_TELEMETRY ]: PostgreSQL & Redis Cache",
-    desc: "Relational transactional database with B-Tree indexes, automated master-replica failover, and Redis in-memory cache queues for sub-40ms queries."
-  },
-  ai: {
-    title: "[ COMPONENT_TELEMETRY ]: Azure OpenAI LLM & Document Intelligence",
-    desc: "AI automation pipeline extracting structured ledger JSON from PDF invoices, powering natural language database queries and automated support routing."
-  }
-};
-
-function initArchSpecInspector() {
-  $('.arch-node.clickable').on('click', function () {
-    $('.arch-node.clickable').removeClass('active');
-    $(this).addClass('active');
-    const key = $(this).attr('data-arch');
-    const spec = archSpecs[key];
-    if (spec) {
-      $('#archSpecTitle').text(spec.title);
-      $('#archSpecDesc').text(spec.desc);
-    }
-  });
-}
 
 // Dynamic Page Title when tab changes
 document.addEventListener('visibilitychange', function () {
@@ -254,8 +221,8 @@ function applyTheme(themeName) {
 }
 
 function initThemeToggle() {
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  currentThemeIndex = themes.indexOf(savedTheme) !== -1 ? themes.indexOf(savedTheme) : 0;
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  currentThemeIndex = themes.indexOf(savedTheme) !== -1 ? themes.indexOf(savedTheme) : 1;
   applyTheme(themes[currentThemeIndex]);
 
   $('#theme-toggle').on('click', function () {
@@ -337,8 +304,17 @@ const codeSnippets = {
 
 function updateCodeCardContent(tab, lang = 'en') {
   currentCodeTab = tab;
-  const content = codeSnippets[tab] ? (codeSnippets[tab][lang] || codeSnippets[tab]['en']) : '';
-  $('#code-card-content').html(content);
+  // Always force 'en' for the code card to maintain standard IDE format
+  const content = codeSnippets[tab] ? codeSnippets[tab]['en'] : '';
+  
+  const container = $('#code-card-content');
+  container.removeClass('anim-fade-up');
+  
+  // Trigger reflow for animation restart
+  void container[0].offsetWidth;
+  
+  container.html(content);
+  container.addClass('anim-fade-up');
 }
 
 function initCodeCard() {
@@ -351,6 +327,22 @@ function initCodeCard() {
     const tab = $(this).data('tab');
     const currentLang = localStorage.getItem('lang') || 'en';
     updateCodeCardContent(tab, currentLang);
+  });
+
+  $('#copyCodeBtn').on('click', function() {
+    // extract pure text from the html snippet for copying
+    const textToCopy = $('#code-card-content').text().trim();
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      const btn = $(this);
+      const icon = btn.find('i');
+      icon.removeClass('fa-copy').addClass('fa-check');
+      btn.addClass('copied');
+      
+      setTimeout(() => {
+        icon.removeClass('fa-check').addClass('fa-copy');
+        btn.removeClass('copied');
+      }, 2000);
+    });
   });
 }
 

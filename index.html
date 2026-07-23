@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -217,29 +217,23 @@
         <h2 class="heading" data-i18n="about_heading">About <span>Me</span></h2>
       </div>
 
-      <!-- Real System Architecture Diagram Strip -->
-      <div class="arch-diagram-wrapper mb-2">
-        <div class="arch-node clickable active" data-arch="client"><i class="fas fa-desktop"></i><span>Client UI (React/Next)</span></div>
-        <div class="arch-line">⟶</div>
-        <div class="arch-node highlight clickable" data-arch="gateway"><i class="fas fa-network-wired"></i><span>API Gateway (Laravel/Node)</span></div>
-        <div class="arch-line">⟶</div>
-        <div class="arch-node clickable" data-arch="db"><i class="fas fa-database"></i><span>PostgreSQL & Redis</span></div>
-        <div class="arch-line">⟶</div>
-        <div class="arch-node highlight clickable" data-arch="ai"><i class="fas fa-brain"></i><span>Azure OpenAI LLM</span></div>
-      </div>
-
-      <div class="arch-spec-box mb-4" id="archSpecBox">
-        <div class="arch-spec-title" id="archSpecTitle">[ COMPONENT_TELEMETRY ]: Client UI (React/Next)</div>
-        <div class="arch-spec-desc" id="archSpecDesc">Responsive Single Page Application with server-side rendering (SSR), WebSockets live driver tracking HUD, and sub-100ms client route transitions.</div>
-      </div>
 
       <div class="about-grid">
         <div class="about-img-col">
-          <div class="img-wrapper">
-            <img draggable="false" src="./assets/images/profile2_enhanced.jpg" alt="Dhiaa Mostafa" loading="lazy" width="400" height="400">
-            <div class="img-badge">
-              <i class="fas fa-shield-alt"></i>
-              <span>6+ YRS EXP</span>
+          <div class="img-wrapper monitor-screen">
+            <div class="monitor-head">
+              <div class="dots">
+                <span class="dot red"></span>
+                <span class="dot amber"></span>
+                <span class="dot green"></span>
+              </div>
+            </div>
+            <div class="monitor-body">
+              <img draggable="false" src="./assets/images/profile2_enhanced.jpg" alt="Dhiaa Mostafa" loading="lazy" width="400" height="400">
+              <div class="img-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>6+ YRS EXP</span>
+              </div>
             </div>
           </div>
         </div>
@@ -308,21 +302,6 @@
         <span class="eyebrow" data-i18n="services_eyebrow">02 — Service Data Pipeline Workflow</span>
         <h2 class="heading" data-i18n="services_heading">Architectural <span>Capabilities</span></h2>
         <p class="section-subtitle" data-i18n="services_subtitle">Enterprise software services engineered for scale, reliability, and business impact.</p>
-      </div>
-
-      <!-- Real Workflow Pipeline Stream -->
-      <div class="pipeline-flow-banner mb-4">
-        <span class="p-step">Client Request</span>
-        <span class="p-arrow">➔</span>
-        <span class="p-step active">API Gateway (Laravel/Node)</span>
-        <span class="p-arrow">➔</span>
-        <span class="p-step">Microservice & Redis Queue</span>
-        <span class="p-arrow">➔</span>
-        <span class="p-step active">PostgreSQL Ledger</span>
-        <span class="p-arrow">➔</span>
-        <span class="p-step">Azure OpenAI LLM</span>
-        <span class="p-arrow">➔</span>
-        <span class="p-step active">ZATCA / Client Response</span>
       </div>
 
       <div class="services-grid">
