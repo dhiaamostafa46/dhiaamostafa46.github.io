@@ -366,6 +366,8 @@ function initSkillsSection() {
 /* ===== PROJECTS CATALOG COMPONENT ===== */
 let currentProjectFilter = 'all';
 let currentProjectSearch = '';
+let projectsShowAll = false;
+const PROJECTS_PAGE_SIZE = 9;
 
 function renderProjects(lang = 'en') {
   const container = $('#projectsContainer');
@@ -392,19 +394,25 @@ function renderProjects(lang = 'en') {
     return;
   }
 
-  filtered.forEach((proj, idx) => {
+  // Show limited or all projects
+  const toShow = projectsShowAll ? filtered : filtered.slice(0, PROJECTS_PAGE_SIZE);
+  const hasMore = !projectsShowAll && filtered.length > PROJECTS_PAGE_SIZE;
+
+  toShow.forEach((proj, idx) => {
     const title = (lang === 'ar' && proj.name_ar) ? proj.name_ar : proj.name;
     const desc = (lang === 'ar' && proj.desc_ar) ? proj.desc_ar : proj.desc;
     const btnText = lang === 'ar' ? 'عرض المشروع' : 'View Project';
     const viewLink = proj.links && proj.links.view && proj.links.view !== '#'
       ? proj.links.view : null;
+    const num = String(idx + 1).padStart(2, '0');
 
     const cardHtml = `
       <div class="box" data-index="${idx}">
         <div class="image">
           <img src="${proj.image}" alt="${title}" onerror="this.parentElement.classList.add('no-img'); this.style.display='none';">
-          <span class="category-badge">${proj.category}</span>
         </div>
+        <span class="category-badge">${proj.category}</span>
+        <span class="project-num">#${num}</span>
         <div class="content">
           <h3>${title}</h3>
           <p>${desc}</p>
@@ -413,7 +421,7 @@ function renderProjects(lang = 'en') {
                 <span>${btnText}</span>
                 <i class="fas fa-external-link-alt"></i>
               </a>`
-            : `<span class="btn-case-study">
+            : `<span class="btn-case-study" onclick="event.stopPropagation()">
                 <span>${lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
                 <i class="fas fa-arrow-right"></i>
               </span>`
@@ -424,10 +432,28 @@ function renderProjects(lang = 'en') {
     container.append(cardHtml);
   });
 
+  // Show "View More" button if there are more projects
+  if (hasMore) {
+    const remaining = filtered.length - PROJECTS_PAGE_SIZE;
+    const viewMoreText = lang === 'ar'
+      ? `<i class="fas fa-th"></i> عرض الباقي (${remaining} مشروع)`
+      : `<i class="fas fa-th"></i> View More (${remaining} projects)`;
+    const viewMoreBtn = $(`
+      <div class="projects-view-more" style="grid-column: 1/-1; text-align: center; margin-top: 1rem;">
+        <button class="btn-view-more" id="btnViewMoreProjects">${viewMoreText}</button>
+      </div>
+    `);
+    container.append(viewMoreBtn);
+    $('#btnViewMoreProjects').on('click', function () {
+      projectsShowAll = true;
+      renderProjects(localStorage.getItem('lang') || 'en');
+    });
+  }
+
   // Attach click listener for modal
   $('.work .box').on('click', function () {
     const index = $(this).data('index');
-    openProjectModal(filtered[index], lang);
+    openProjectModal(toShow[index], lang);
   });
 }
 
@@ -467,12 +493,14 @@ function initProjectsSection() {
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
     currentProjectFilter = $(this).data('filter');
+    projectsShowAll = false; // reset on filter change
     const currentLang = localStorage.getItem('lang') || 'en';
     renderProjects(currentLang);
   });
 
   $('#project-search-input').on('keyup input', function () {
     currentProjectSearch = $(this).val();
+    projectsShowAll = false; // reset on search change
     const currentLang = localStorage.getItem('lang') || 'en';
     renderProjects(currentLang);
   });

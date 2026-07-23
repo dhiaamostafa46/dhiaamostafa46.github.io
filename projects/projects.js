@@ -291,7 +291,7 @@ window.externalProjectsData = [
     "name": "Arab Goals Trading Co.",
     "desc": "Digital platform and enterprise systems for Arab Goals Trading Company.",
     "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "movies GWA",
+    "category": "Full Stack",
     "links": {
       "view": "#",
       "code": "#"
@@ -303,7 +303,7 @@ window.externalProjectsData = [
     "name": "Khibrah Platform",
     "desc": "Educational and expertise exchange platform.",
     "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "movies GWA",
+    "category": "Full Stack",
     "links": {
       "view": "#",
       "code": "#"
@@ -315,7 +315,7 @@ window.externalProjectsData = [
     "name": "Toolars",
     "desc": "Innovative digital tools and services.",
     "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "movies GWA",
+    "category": "Mobile App",
     "links": {
       "view": "#",
       "code": "#"
@@ -327,7 +327,7 @@ window.externalProjectsData = [
     "name": "GWA Anime Platform",
     "desc": "Anime streaming and community platform.",
     "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "movies GWA",
+    "category": "Full Stack",
     "links": {
       "view": "#",
       "code": "#"
@@ -339,7 +339,7 @@ window.externalProjectsData = [
     "name": "Spare Parts App",
     "desc": "Mobile application for automobile spare parts.",
     "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "Spare websidi",
+    "category": "Mobile App",
     "links": {
       "view": "#",
       "code": "#"
@@ -351,7 +351,7 @@ window.externalProjectsData = [
     "name": "Falaqah Platform",
     "desc": "Digital platform for Spare websidi.",
     "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "Spare websidi",
+    "category": "Mobile App",
     "links": {
       "view": "#",
       "code": "#"
