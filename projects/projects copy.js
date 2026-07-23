@@ -1,4 +1,4 @@
-[
+window.externalProjectsData = [
   {
     "name": "Evix ERP Integrations",
     "desc": "Architectural design and API integration of Evix ERP for enterprise clients via RESTful APIs.",
@@ -215,4 +215,4 @@
     "name_ar": "إدارة المطاعم",
     "desc_ar": "لوحة تحكم نظام إدارة المطاعم."
   }
-]
+];

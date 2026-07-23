@@ -58,72 +58,7 @@ const stackData = [
 ];
 
 // Comprehensive Projects Data Array for Instant Rendering
-const projectsData = [
-  {
-    name: "Multi-Tenant Fleet Logistics Platform",
-    name_ar: "منصة اللوجستيات وإدارة الأسطول المتعددة المشتركين",
-    category: "Full Stack",
-    desc: "Architected a high-concurrency SaaS logistics dispatcher supporting 7,000+ active fleet agents across Saudi Arabia with real-time WebSockets vehicle tracking.",
-    desc_ar: "تصميم وبناء منصة سحابية لوجستية تخدم أكثر من 7000 مندوب توصيل مع التتبع اللحظي عبر خوادم WebSockets في السعودية.",
-    image: "./projects/img/2026-05-16_eyein-sa-home_01.png"
-  },
-  {
-    name: "Evix ERP Enterprise Integration Hub",
-    name_ar: "مركز ربط وتكامل نظام Evix ERP للشركات",
-    category: "Enterprise Solutions",
-    desc: "Connected 500+ subscribed corporate businesses to Evix ERP with double-entry ledger sync, automated inventory updates, and ZATCA E-Invoicing Phase 2.",
-    desc_ar: "ربط أكثر من 500 شركة مشتركة بنظام Evix ERP مع مزامنة القيود المحاسبية المزدوجة والفوترة الضريبية زاتكا المرحلة الثانية.",
-    image: "./projects/img/2026-05-16_evix-sa-ar-admin_01.png"
-  },
-  {
-    name: "Azure OpenAI PDF Invoice OCR Ledger Pipeline",
-    name_ar: "مسارات قراءة الفواتير بالذكاء الاصطناعي Azure OpenAI",
-    category: "Full Stack",
-    desc: "Automated invoice parsing from unstructured PDFs into structured ERP ledgers using Azure OpenAI Vision and Python document pipelines.",
-    desc_ar: "أتمتة قراءة الفواتير غير المنظمة من ملفات PDF وحساب القيود المحاسبية تلقائياً عبر نماذج الذكاء الاصطناعي أزور أوبن إيه آي.",
-    image: "./projects/img/2024-07-07_eyeintec_01.png"
-  },
-  {
-    name: "Eyein Code Commercial Platform",
-    name_ar: "منصة أين كود التجارية البرمجية",
-    category: "Full Stack",
-    desc: "Engineered scalable digital commerce platform with multi-channel authentication, Role-Based Access Control (RBAC), and Tabby BNPL payment integration.",
-    desc_ar: "بناء منصة أين كود الرقمية المتكاملة مع صلاحيات المستخدمين المتقدمة وتكامل بوابات الدفع تابي والدفع الإلكتروني.",
-    image: "./projects/img/2026-05-16_eyeincode_01.png"
-  },
-  {
-    name: "Musaned United HRMS & Payroll Portal",
-    name_ar: "منصة مساند المتحدة لإدارة الموارد البشرية والرواتب",
-    category: "Enterprise Solutions",
-    desc: "Architected NestJS + Next.js enterprise portal for automated payroll processing, employee attendance tracking, and leave management.",
-    desc_ar: "تصميم منصة مؤسسية بـ NestJS و Next.js لمعالجة مسيرات الرواتب الآلية وتتبع حضور الموظفين والإجازات.",
-    image: "./projects/img/2025-02-05_musanid-sa_01.png"
-  },
-  {
-    name: "ACTES Group Commercial Solutions",
-    name_ar: "منصة مجموعة أكتس التجارية",
-    category: "Enterprise Solutions",
-    desc: "Built corporate solution platform for commercial clients with optimized database query structures and high performance.",
-    desc_ar: "تطوير منصة الأعمال التجارية لمجموعة أكتس مع تحسين استعلامات قواعد البيانات والأداء العالي.",
-    image: "./projects/img/2024-07-03_actesgroup_01.png"
-  },
-  {
-    name: "Barmgely Software Solutions Portal",
-    name_ar: "منصة برمجيلي للحلول البرمجية",
-    category: "Full Stack",
-    desc: "Custom web platform built with Laravel RESTful APIs, responsive React frontend, and automated email deployment triggers.",
-    desc_ar: "منصة ويب مخصصة مبنية بـ Laravel APIs وواجهة React متجاوبة لدعم حلول البرمجة والتطوير.",
-    image: "./projects/img/2024-07-03_barmgely_01.png"
-  },
-  {
-    name: "Miran Mobile E-Commerce & Hospitality App",
-    name_ar: "تطبيق ميران للهواتف والضيافة",
-    category: "Mobile App",
-    desc: "Cross-platform Flutter application for mobile ordering, e-commerce catalog browsing, and real-time order status tracking.",
-    desc_ar: "تطبيق موبايل متعدد المنصات بإستخدام Flutter للطلب والتصفح المباشر ومتابعة حالة الطلبات.",
-    image: "./projects/img/2024-07-03_miranedu_01.png"
-  }
-];
+let projectsData = [];
 
 $(document).ready(function () {
 
@@ -460,21 +395,29 @@ function renderProjects(lang = 'en') {
   filtered.forEach((proj, idx) => {
     const title = (lang === 'ar' && proj.name_ar) ? proj.name_ar : proj.name;
     const desc = (lang === 'ar' && proj.desc_ar) ? proj.desc_ar : proj.desc;
-    const btnText = lang === 'ar' ? 'عرض التفاصيل والمعمارية' : 'View Architecture Specs';
+    const btnText = lang === 'ar' ? 'عرض المشروع' : 'View Project';
+    const viewLink = proj.links && proj.links.view && proj.links.view !== '#'
+      ? proj.links.view : null;
 
     const cardHtml = `
       <div class="box" data-index="${idx}">
         <div class="image">
-          <img src="${proj.image}" alt="${title}" onerror="this.src='./assets/images/profile2_enhanced.jpg'">
+          <img src="${proj.image}" alt="${title}" onerror="this.parentElement.classList.add('no-img'); this.style.display='none';">
           <span class="category-badge">${proj.category}</span>
         </div>
         <div class="content">
           <h3>${title}</h3>
           <p>${desc}</p>
-          <span class="btn-case-study">
-            <span>${btnText}</span>
-            <i class="fas fa-arrow-right"></i>
-          </span>
+          ${viewLink
+            ? `<a class="btn-case-study" href="${viewLink}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                <span>${btnText}</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>`
+            : `<span class="btn-case-study">
+                <span>${lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
+                <i class="fas fa-arrow-right"></i>
+              </span>`
+          }
         </div>
       </div>
     `;
@@ -511,6 +454,13 @@ function openProjectModal(proj, lang = 'en') {
 
 function initProjectsSection() {
   const lang = localStorage.getItem('lang') || 'en';
+  
+  if (window.externalProjectsData) {
+    projectsData = window.externalProjectsData;
+  } else {
+    console.error('No external projects data found.');
+  }
+
   renderProjects(lang);
 
   $('.filter-btn').on('click', function () {
