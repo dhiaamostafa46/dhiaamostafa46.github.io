@@ -1401,6 +1401,7 @@ html[dir="rtl"] .about-text-col h3,
 html[dir="rtl"] .service-card h3,
 html[dir="rtl"] .work .box .content h3,
 html[dir="rtl"] .timeline-item .desc h2,
+html[dir="rtl"] .timeline-item .desc h3,
 html[dir="rtl"] .degree-card h3,
 html[dir="rtl"] .cert-card h3,
 html[dir="rtl"] .footer-box h3 { font-family: var(--font-arabic); }
@@ -1415,12 +1416,99 @@ html[dir="rtl"] .filter-btn,
 html[dir="rtl"] .form-title,
 html[dir="rtl"] .code-tab { font-family: var(--font-arabic); }
 
+/* Search input RTL */
 html[dir="rtl"] .skills-search input,
-html[dir="rtl"] .project-search input { padding: 0.7rem 3rem 0.7rem 1.2rem; }
+html[dir="rtl"] .project-search input { padding: 0.9rem 3.4rem 0.9rem 1.5rem; }
 html[dir="rtl"] .skills-search i,
-html[dir="rtl"] .project-search i { left: auto; right: 1.2rem; }
+html[dir="rtl"] .project-search i { left: auto; right: 1.4rem; }
 
-html[dir="rtl"] .timeline-item .desc ul li { padding-left: 0; padding-right: 1.2rem; }
-html[dir="rtl"] .timeline-item .desc ul li::before { left: auto; right: 0; content: "◂"; }
+/* ===== EXPERIENCE TIMELINE RTL ===== */
 
+/* Timeline center line stays centered */
+html[dir="rtl"] .experience .timeline::after {
+  left: 50%;
+  right: auto;
+  margin-left: -1px;
+  margin-right: 0;
+}
+
+/* Swap left/right items */
+html[dir="rtl"] .timeline-item.left {
+  left: auto;
+  right: 0;
+  padding-right: 2.5rem;
+  padding-left: 1rem;
+  text-align: right;
+}
+html[dir="rtl"] .timeline-item.right {
+  left: auto;
+  right: 50%;
+  padding-right: 1rem;
+  padding-left: 2.5rem;
+  text-align: right;
+}
+
+/* Swap the dot position */
+html[dir="rtl"] .timeline-item.left::after {
+  right: auto;
+  left: -6px;
+}
+html[dir="rtl"] .timeline-item.right::after {
+  left: auto;
+  right: -6px;
+}
+
+/* Fix mobile RTL timeline */
+@media (max-width: 768px) {
+  html[dir="rtl"] .timeline-item,
+  html[dir="rtl"] .timeline-item.left,
+  html[dir="rtl"] .timeline-item.right {
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding-right: 3.5rem;
+    padding-left: 1rem;
+    text-align: right;
+  }
+  html[dir="rtl"] .experience .timeline::after {
+    right: 16px;
+    left: auto;
+  }
+  html[dir="rtl"] .timeline-item::after,
+  html[dir="rtl"] .timeline-item.right::after {
+    right: 10px;
+    left: auto;
+  }
+}
+
+/* Fix list bullets in RTL */
+html[dir="rtl"] .timeline-item .desc ul li {
+  padding-left: 0;
+  padding-right: 1.4rem;
+  list-style: none;
+}
+html[dir="rtl"] .timeline-item .desc ul li::before {
+  left: auto;
+  right: 0;
+  content: "◂";
+}
+
+/* Current badge RTL */
+html[dir="rtl"] .current-badge { float: right; }
+
+/* Exp date RTL */
+html[dir="rtl"] .exp-date { text-align: right; }
+
+/* ===== OTHER RTL FIXES ===== */
 html[dir="rtl"] .code-card-body p { direction: ltr; text-align: left; }
+
+html[dir="rtl"] .section-head,
+html[dir="rtl"] .section-subtitle { text-align: center; }
+
+html[dir="rtl"] .degree-card { flex-direction: row-reverse; }
+
+html[dir="rtl"] .about-columns { flex-direction: row-reverse; }
+
+html[dir="rtl"] .hero-actions { justify-content: flex-end; }
+html[dir="rtl"] .stat-item { text-align: right; }
+
