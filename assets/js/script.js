@@ -442,7 +442,7 @@ function renderProjects(lang = 'en') {
         </div>
 
         <div class="mac-screen">
-          <img src="${proj.image}" alt="${title}" onerror="this.parentElement.classList.add('no-img'); this.style.display='none';" />
+          <img src="${proj.image}" alt="${title}" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80';" />
           <div class="mac-screen-overlay">
             ${viewLink
               ? `<a href="${viewLink}" target="_blank" rel="noopener noreferrer" class="mac-overlay-btn" onclick="event.stopPropagation()">
