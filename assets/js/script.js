@@ -156,8 +156,8 @@ function applyTheme(themeName) {
 }
 
 function initThemeToggle() {
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  currentThemeIndex = themes.indexOf(savedTheme) !== -1 ? themes.indexOf(savedTheme) : 1;
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  currentThemeIndex = themes.indexOf(savedTheme) !== -1 ? themes.indexOf(savedTheme) : 0;
   applyTheme(themes[currentThemeIndex]);
 
   $('#theme-toggle').on('click', function () {
@@ -408,27 +408,21 @@ function renderProjects(lang = 'en') {
 
     const cardHtml = `
       <div class="box" data-index="${idx}">
-        <div class="image">
-          <img src="${proj.image}" alt="${title}" onerror="this.parentElement.classList.add('no-img'); this.style.display='none';">
-        </div>
-        <span class="category-badge">${proj.category}</span>
-        <span class="project-num">#${num}</span>
-        <div class="content">
-          <h3>${title}</h3>
-          <p>${desc}</p>
-          ${viewLink
-            ? `<a class="btn-case-study" href="${viewLink}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
-                <span>${btnText}</span>
-                <i class="fas fa-external-link-alt"></i>
-              </a>`
-            : `<span class="btn-case-study" onclick="event.stopPropagation()">
-                <span>${lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
-                <i class="fas fa-arrow-right"></i>
-              </span>`
-          }
-        </div>
-      </div>
-    `;
+        ${viewLink ? `<a href="${viewLink}" target="_blank" rel="noopener noreferrer" class="project-link">` : ''}
+          <div class="image">
+            <img src="${proj.image}" alt="${title}" onerror="this.parentElement.classList.add('no-img'); this.style.display='none';" />
+            <span class="category-badge">${proj.category}</span>
+            <span class="project-num">#${num}</span>
+          </div>
+          <div class="content">
+            <h3>${title}</h3>
+            <p>${desc}</p>
+            ${viewLink
+              ? `<a class="btn-case-study" href="${viewLink}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><span>${btnText}</span> <i class="fas fa-external-link-alt"></i></a>`
+              : `<span class="btn-case-study" onclick="event.stopPropagation()"><span>${lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span> <i class="fas fa-arrow-right"></i></span>`}
+          </div>
+        ${viewLink ? `</a>` : ''}
+      </div>`;
     container.append(cardHtml);
   });
 
