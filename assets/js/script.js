@@ -389,39 +389,62 @@ function renderProjects(lang = 'en') {
   });
 
   if (filtered.length === 0) {
-    const emptyText = lang === 'ar' ? 'لم يتم العثور على مشاريع مطابقة للبحث' : 'No matching projects found.';
-    container.html(`<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); font-size: 1.4rem; padding: 4rem;">${emptyText}</p>`);
+    const emptyText = lang === 'ar' ? 'لم يتم العثور على مشاريع مطابقة' : 'No matching projects found.';
+    container.append(`<div class="no-projects-msg text-center" style="grid-column: 1/-1; padding: 3rem 1rem;"><p style="color: var(--text-muted); font-size: 1.1rem;">${emptyText}</p></div>`);
     return;
   }
 
-  // Show limited or all projects
-  const toShow = projectsShowAll ? filtered : filtered.slice(0, PROJECTS_PAGE_SIZE);
   const hasMore = !projectsShowAll && filtered.length > PROJECTS_PAGE_SIZE;
+  const toShow = projectsShowAll ? filtered : filtered.slice(0, PROJECTS_PAGE_SIZE);
 
   toShow.forEach((proj, idx) => {
-    const title = (lang === 'ar' && proj.name_ar) ? proj.name_ar : proj.name;
-    const desc = (lang === 'ar' && proj.desc_ar) ? proj.desc_ar : proj.desc;
-    const btnText = lang === 'ar' ? 'عرض المشروع' : 'View Project';
-    const viewLink = proj.links && proj.links.view && proj.links.view !== '#'
-      ? proj.links.view : null;
-    const num = String(idx + 1).padStart(2, '0');
+    const title = lang === 'ar' ? (proj.name_ar || proj.name) : proj.name;
+    const desc = lang === 'ar' ? (proj.desc_ar || proj.desc) : proj.desc;
+    const viewLink = proj.link || (proj.links && proj.links.view !== '#' ? proj.links.view : '') || proj.demo_url || proj.github_url || '';
+    const num = (idx + 1).toString().padStart(2, '0');
 
     const cardHtml = `
-      <div class="box" data-index="${idx}">
-        ${viewLink ? `<a href="${viewLink}" target="_blank" rel="noopener noreferrer" class="project-link">` : ''}
-          <div class="image">
-            <img src="${proj.image}" alt="${title}" onerror="this.parentElement.classList.add('no-img'); this.style.display='none';" />
-            <span class="category-badge">${proj.category}</span>
-            <span class="project-num">#${num}</span>
+      <div class="box mac-card" data-index="${idx}">
+        <div class="mac-header">
+          <div class="mac-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
           </div>
-          <div class="content">
-            <h3>${title}</h3>
-            <p>${desc}</p>
+          <span class="mac-badge">${proj.category}</span>
+          <span class="mac-num">#${num}</span>
+        </div>
+
+        <div class="mac-screen">
+          <img src="${proj.image}" alt="${title}" onerror="this.parentElement.classList.add('no-img'); this.style.display='none';" />
+          <div class="mac-screen-overlay">
             ${viewLink
-              ? `<a class="btn-case-study" href="${viewLink}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><span>${btnText}</span> <i class="fas fa-external-link-alt"></i></a>`
-              : `<span class="btn-case-study" onclick="event.stopPropagation()"><span>${lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span> <i class="fas fa-arrow-right"></i></span>`}
+              ? `<a href="${viewLink}" target="_blank" rel="noopener noreferrer" class="mac-overlay-btn" onclick="event.stopPropagation()">
+                  <span>${lang === 'ar' ? 'زيارة الموقع' : 'Visit Platform'}</span>
+                  <i class="fas fa-external-link-alt"></i>
+                 </a>`
+              : `<span class="mac-overlay-btn">
+                  <span>${lang === 'ar' ? 'عرض التفاصيل' : 'View Details'}</span>
+                  <i class="fas fa-eye"></i>
+                 </span>`}
           </div>
-        ${viewLink ? `</a>` : ''}
+        </div>
+
+        <div class="mac-body">
+          <h3 class="mac-title">${title}</h3>
+          <p class="mac-desc">${desc}</p>
+          <div class="mac-footer">
+            ${viewLink
+              ? `<a href="${viewLink}" target="_blank" rel="noopener noreferrer" class="mac-action-link" onclick="event.stopPropagation()">
+                  <span>${lang === 'ar' ? 'رابط المشروع' : 'Project Link'}</span>
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+                 </a>`
+              : `<span class="mac-action-link secondary">
+                  <span>${lang === 'ar' ? 'تفاصيل المشروع' : 'Project Details'}</span>
+                  <i class="fas fa-arrow-right"></i>
+                 </span>`}
+          </div>
+        </div>
       </div>`;
     container.append(cardHtml);
   });
