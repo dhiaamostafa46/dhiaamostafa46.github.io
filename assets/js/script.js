@@ -285,6 +285,14 @@ function initCodeCard() {
 let currentSkillCategory = 'all';
 let currentSkillSearch = '';
 
+const catIcons = {
+  "Backend Engineering": "fa-server",
+  "Data & Persistence": "fa-database",
+  "Enterprise Integrations": "fa-network-wired",
+  "AI & Intelligent Automation": "fa-brain",
+  "Cloud & DevOps": "fa-cloud"
+};
+
 function renderSkills(lang = 'en') {
   const container = $('#skillsContainer');
   container.empty();
@@ -301,6 +309,7 @@ function renderSkills(lang = 'en') {
 
   filteredGroups.forEach(group => {
     const catName = (lang === 'ar' && group.category_ar) ? group.category_ar : group.category;
+    const catIcon = catIcons[group.category] || "fa-code";
     
     // Filter items by search query if typed
     let items = group.items.filter(item => {
@@ -315,14 +324,22 @@ function renderSkills(lang = 'en') {
       count++;
       html += `
         <div class="skill-category">
-          <h3 class="skill-category-title">${catName}</h3>
+          <div class="skill-category-header">
+            <div class="cat-title-wrap">
+              <i class="fas ${catIcon} cat-icon"></i>
+              <h3 class="skill-category-title">${catName}</h3>
+            </div>
+            <span class="skill-count-badge">${items.length} ${lang === 'ar' ? 'تقنيات' : 'Techs'}</span>
+          </div>
           <div class="skill-chips">
       `;
       items.forEach(item => {
         const itemName = (lang === 'ar' && item.name_ar) ? item.name_ar : item.name;
         html += `
           <div class="skill-chip">
-            <img src="${item.icon}" alt="${itemName}" onerror="this.src='https://img.icons8.com/color/48/code.png'">
+            <div class="chip-icon-box">
+              <img src="${item.icon}" alt="${itemName}" onerror="this.src='https://img.icons8.com/color/48/code.png'">
+            </div>
             <span>${itemName}</span>
           </div>
         `;
@@ -338,7 +355,7 @@ function renderSkills(lang = 'en') {
 
   if (count === 0) {
     const noResultsText = lang === 'ar' ? 'لم يتم العثور على تقنيات مطابقة' : 'No matching technologies found.';
-    container.html(`<p style="text-align: center; color: var(--text-muted); font-size: 1.4rem; padding: 4rem;">${noResultsText}</p>`);
+    container.html(`<p style="text-align: center; color: var(--text-muted); font-size: 1.2rem; padding: 4rem;">${noResultsText}</p>`);
   } else {
     container.html(html);
   }
@@ -386,6 +403,15 @@ function renderProjects(lang = 'en') {
       return name.includes(q) || nameAr.includes(q) || desc.includes(q) || descAr.includes(q);
     }
     return true;
+  });
+
+  // Sort projects: Projects with valid links first, projects without links second
+  filtered.sort((a, b) => {
+    const hasLinkA = !!(a.link || (a.links && a.links.view && a.links.view !== '#') || a.demo_url || a.github_url);
+    const hasLinkB = !!(b.link || (b.links && b.links.view && b.links.view !== '#') || b.demo_url || b.github_url);
+    if (hasLinkA && !hasLinkB) return -1;
+    if (!hasLinkA && hasLinkB) return 1;
+    return 0;
   });
 
   if (filtered.length === 0) {

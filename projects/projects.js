@@ -12,18 +12,6 @@ window.externalProjectsData = [
     "desc_ar": "التصميم المعماري وربط واجهات Evix ERP للشركات عبر RESTful APIs."
   },
   {
-    "name": "Musaned United",
-    "desc": "Musaned United platform using NestJS and Next.js, delivering a scalable production-ready solution.",
-    "image": "./projects/img/2025-02-05_musanid-sa_01.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "مساند المتطورة",
-    "desc_ar": "منصة مساند المتطورة باستخدام NestJS و Next.js لتقديم حلول متكاملة."
-  },
-  {
     "name": "Eyein Platform",
     "desc": "Enterprise web platforms and digital solutions for corporate, nonprofit, and commercial organizations.",
     "image": "./projects/img/2026-05-16_eyein-sa-home_01.png",
@@ -60,18 +48,6 @@ window.externalProjectsData = [
     "desc_ar": "المنصة الرقمية لشركة آي إن كود."
   },
   {
-    "name": "Watan Tumuh Foundation",
-    "desc": "Digital presence and platform for Watan Tumuh Foundation.",
-    "image": "./projects/img/2026-05-16_watantumuh-org-sa_01.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "مؤسسة وطن طموح",
-    "desc_ar": "التواجد الرقمي والمنصة الخاصة بمؤسسة وطن طموح."
-  },
-  {
     "name": "ACTES Group",
     "desc": "Enterprise website and platform for ACTES Group.",
     "image": "./projects/img/2024-07-03_actesgroup_01.png",
@@ -96,54 +72,6 @@ window.externalProjectsData = [
     "desc_ar": "تطبيق ويب مخصص وبوابة أعمال لمنصة برمجلي."
   },
   {
-    "name": "Miran Edu",
-    "desc": "Educational platform and management system for Miran.",
-    "image": "./projects/img/2024-07-03_miranedu_01.png",
-    "category": "movies GWA",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "???? ???? ?????????",
-    "desc_ar": "منصة تعليمية ونظام إدارة لميران."
-  },
-  {
-    "name": "HASTI Research Priorities",
-    "desc": "Research priorities portal for HASTI.",
-    "image": "./projects/img/2024-07-03_research-priorities-hasti-gov-ye_01.png",
-    "category": "movies GWA",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "?????? ?????? ?????? ?????????",
-    "desc_ar": "بوابة الأولويات البحثية للهيئة العليا للعلوم."
-  },
-  {
-    "name": "HASTI Portal 2",
-    "desc": "Secondary view for HASTI research priorities.",
-    "image": "./projects/img/2024-07-03_research-priorities-hasti-gov-ye_02.png",
-    "category": "Enterprise Solutions",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "بوابة HASTI (2)",
-    "desc_ar": "عرض إضافي لبوابة الأولويات البحثية."
-  },
-  {
-    "name": "Eyein Lenses",
-    "desc": "E-commerce platform for Eyein Lenses.",
-    "image": "./projects/img/2024-07-07_lenses-eyein-sa_01.png",
-    "category": "E-commerce",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "عدسات آي إن",
-    "desc_ar": "منصة التجارة الإلكترونية لعدسات آي إن."
-  },
-  {
     "name": "Evix ERP Admin Dashboard",
     "desc": "Admin dashboard for Evix ERP platform.",
     "image": "./projects/img/2026-05-16_evix-sa-ar-admin_01.png",
@@ -154,6 +82,30 @@ window.externalProjectsData = [
     },
     "name_ar": "لوحة تحكم Evix ERP",
     "desc_ar": "لوحة تحكم للمسؤولين لمنصة Evix ERP."
+  },
+  {
+    "name": "Musaned United",
+    "desc": "Musaned United platform using NestJS and Next.js, delivering a scalable production-ready solution.",
+    "image": "./projects/img/2025-02-05_musanid-sa_01.png",
+    "category": "Full Stack",
+    "links": {
+      "view": "#",
+      "code": "#"
+    },
+    "name_ar": "مساند المتطورة",
+    "desc_ar": "منصة مساند المتطورة باستخدام NestJS و Next.js لتقديم حلول متكاملة."
+  },
+  {
+    "name": "Watan Tumuh Foundation",
+    "desc": "Digital presence and platform for Watan Tumuh Foundation.",
+    "image": "./projects/img/2026-05-16_watantumuh-org-sa_01.png",
+    "category": "Full Stack",
+    "links": {
+      "view": "#",
+      "code": "#"
+    },
+    "name_ar": "مؤسسة وطن طموح",
+    "desc_ar": "التواجد الرقمي والمنصة الخاصة بمؤسسة وطن طموح."
   },
   {
     "name": "SaaS Logistics Platform",
