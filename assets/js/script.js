@@ -192,48 +192,26 @@ initTypedText();
 let currentCodeTab = 'profile';
 const codeSnippets = {
   profile: {
-    en: `<p><span class="c-key">const</span> <span class="c-str">architect</span> = <span class="c-punc">{</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">name</span><span class="c-punc">:</span> <span class="c-str">"Dhiaa Mostafa"</span><span class="c-punc">,</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">role</span><span class="c-punc">:</span> <span class="c-str">"Senior Systems & Full-Stack Architect"</span><span class="c-punc">,</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">experience</span><span class="c-punc">:</span> <span class="c-num">6</span><span class="c-str">+ years</span><span class="c-punc">,</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">solutions_value</span><span class="c-punc">:</span> <span class="c-str">"SAR 4M+"</span><span class="c-punc">,</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">active_agents</span><span class="c-punc">:</span> <span class="c-num">7000</span><span class="c-punc">,</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">erp_clients</span><span class="c-punc">:</span> <span class="c-num">500</span> <span class="c-comm">// Evix ERP Subscribers</span></p>
-<p><span class="c-punc">};</span></p>`,
-    ar: `<p><span class="c-key">const</span> <span class="c-str">مهندس_الأنظمة</span> = <span class="c-punc">{</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">الاسم</span><span class="c-punc">:</span> <span class="c-str">"ضياء مصطفى"</span><span class="c-punc">,</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">المسمى</span><span class="c-punc">:</span> <span class="c-str">"كبير مهندسي البرمجيات والأنظمة"</span><span class="c-punc">,</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">الخبرة</span><span class="c-punc">:</span> <span class="c-num">6</span><span class="c-str">+ سنوات</span><span class="c-punc">,</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">قيمة_الحلول</span><span class="c-punc">:</span> <span class="c-str">"أكثر من 4 مليون ريال"</span><span class="c-punc">,</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">العملاء_النشطين</span><span class="c-punc">:</span> <span class="c-num">7000</span> <span class="c-comm">// سائق وسفير توصيل</span></p>
-<p><span class="c-punc">};</span></p>`
-  },
-  system: {
-    en: `<p><span class="c-comm">// System Ecosystem Config</span></p>
-<p><span class="c-key">architecture</span><span class="c-punc">:</span> <span class="c-str">"Multi-Tenant SaaS + Microservices"</span><span class="c-punc">,</span></p>
-<p><span class="c-key">core_stack</span><span class="c-punc">:</span> [<span class="c-str">"Laravel"</span>, <span class="c-str">"Node.js"</span>, <span class="c-str">"NestJS"</span>, <span class="c-str">"React"</span>]<span class="c-punc">,</span></p>
-<p><span class="c-key">databases</span><span class="c-punc">:</span> [<span class="c-str">"PostgreSQL"</span>, <span class="c-str">"Redis (Cache/Queue)"</span>, <span class="c-str">"MySQL"</span>]<span class="c-punc">,</span></p>
-<p><span class="c-key">integrations</span><span class="c-punc">:</span> [<span class="c-str">"Evix ERP"</span>, <span class="c-str">"ZATCA E-Invoicing"</span>, <span class="c-str">"Tabby"</span>]<span class="c-punc">,</span></p>
-<p><span class="c-key">performance</span><span class="c-punc">:</span> <span class="c-str">"40%+ Query Optimization via Redis"</span></p>`,
-    ar: `<p><span class="c-comm">// إعدادات بيئة الأنظمة المعمارية</span></p>
-<p><span class="c-key">معمارية_النظام</span><span class="c-punc">:</span> <span class="c-str">"SaaS متعدد المستأجرين + Microservices"</span><span class="c-punc">,</span></p>
-<p><span class="c-key">التقنيات_الرئيسية</span><span class="c-punc">:</span> [<span class="c-str">"Laravel"</span>, <span class="c-str">"Node.js"</span>, <span class="c-str">"NestJS"</span>, <span class="c-str">"React"</span>]<span class="c-punc">,</span></p>
-<p><span class="c-key">قواعد_البيانات</span><span class="c-punc">:</span> [<span class="c-str">"PostgreSQL"</span>, <span class="c-str">"Redis Cache"</span>, <span class="c-str">"MySQL"</span>]<span class="c-punc">,</span></p>
-<p><span class="c-key">التكاملات</span><span class="c-punc">:</span> [<span class="c-str">"Evix ERP"</span>, <span class="c-str">"الفوترة الضريبية زاتكا"</span>, <span class="c-str">"Tabby"</span>]</p>`
-  },
-  ai: {
-    en: `<p><span class="c-comm"># Azure OpenAI Document Pipeline</span></p>
-<p><span class="c-key">def</span> <span class="c-str">process_invoice_pdf</span>(file_path):</p>
-<p>&nbsp;&nbsp;vision_data = azure_ocr.extract(file_path)</p>
-<p>&nbsp;&nbsp;ledger_json = llm.parse(vision_data, schema=ZATCA_SCHEMA)</p>
-<p>&nbsp;&nbsp;erp.insert_double_entry_ledger(ledger_json)</p>
-<p>&nbsp;&nbsp;<span class="c-key">return</span> <span class="c-str">"STATUS 200: INVOICE_SYNCED"</span></p>`,
-    ar: `<p><span class="c-comm"># مسار معالجة الفواتير بالذكاء الاصطناعي</span></p>
-<p><span class="c-key">def</span> <span class="c-str">قراءة_ملف_الفاتورة</span>(مسار_الملف):</p>
-<p>&nbsp;&nbsp;بيانات_النص = azure_ocr.استخراج(مسار_الملف)</p>
-<p>&nbsp;&nbsp;القيد_المحاسبي = llm.تحليل(بيانات_النص, النموذج=زاتكا)</p>
-<p>&nbsp;&nbsp;erp.إدخال_القيد_المزدوج(القيد_المحاسبي)</p>
-<p>&nbsp;&nbsp;<span class="c-key">return</span> <span class="c-str">"حالة 200: تم الربط بنجاح"</span></p>`
+    en: `<p><span class="c-key">export interface</span> <span class="c-str">SystemArchitect</span> <span class="c-punc">{</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">name</span><span class="c-punc">:</span> <span class="c-str">"Dhiaa Mostafa"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">title</span><span class="c-punc">:</span> <span class="c-str">"Senior Systems & Full-Stack Architect"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">experience</span><span class="c-punc">:</span> <span class="c-str">"6+ Years"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">core_stack</span><span class="c-punc">:</span> [<span class="c-str">"Laravel"</span>, <span class="c-str">"Node.js"</span>, <span class="c-str">"NestJS"</span>, <span class="c-str">"React"</span>]<span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">specialization</span><span class="c-punc">:</span> <span class="c-str">"SaaS Multi-Tenant & Evix ERP Integrations"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">solutions_value</span><span class="c-punc">:</span> <span class="c-str">"SAR 4M+"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">active_agents</span><span class="c-punc">:</span> <span class="c-num">7000</span><span class="c-punc">;</span> <span class="c-comm">// Active Logistics Agents</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">status</span><span class="c-punc">:</span> <span class="c-str">"OPERATIONAL"</span><span class="c-punc">;</span></p>
+<p><span class="c-punc">}</span></p>`,
+    ar: `<p><span class="c-key">export interface</span> <span class="c-str">مهندس_الأنظمة</span> <span class="c-punc">{</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">الاسم</span><span class="c-punc">:</span> <span class="c-str">"ضياء مصطفى"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">المسمى</span><span class="c-punc">:</span> <span class="c-str">"كبير مهندسي البرمجيات والأنظمة"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">الخبرة</span><span class="c-punc">:</span> <span class="c-str">"+6 سنوات"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">التقنيات</span><span class="c-punc">:</span> [<span class="c-str">"Laravel"</span>, <span class="c-str">"Node.js"</span>, <span class="c-str">"NestJS"</span>, <span class="c-str">"React"</span>]<span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">التخصص</span><span class="c-punc">:</span> <span class="c-str">"الأنظمة السحابية وربط Evix ERP"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">قيمة_الحلول</span><span class="c-punc">:</span> <span class="c-str">"أكثر من 4M ريال"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">السفراء_النشطين</span><span class="c-punc">:</span> <span class="c-num">7000</span><span class="c-punc">;</span> <span class="c-comm">// سفير وسائق توصيل</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">الحالة</span><span class="c-punc">:</span> <span class="c-str">"جاهز للتشغيل"</span><span class="c-punc">;</span></p>
+<p><span class="c-punc">}</span></p>`
   }
 };
 

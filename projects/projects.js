@@ -2,7 +2,7 @@ window.externalProjectsData = [
   {
     "name": "Evix ERP Platform",
     "desc": "Enterprise cloud ERP & fleet operations management platform for logistics, inventory, accounting, HR, and drivers.",
-    "image": "./projects/img/evixdev.png",
+    "image": "./projects/project/evix-erp-platform.png",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://evixdev.com/ar",
@@ -14,7 +14,7 @@ window.externalProjectsData = [
   {
     "name": "Evix ERP & E-Invoicing",
     "desc": "Architectural design, ZATCA Phase 2 E-Invoicing compliance, and API integration of Evix ERP for enterprise clients.",
-    "image": "./projects/img/2026-05-16_evix-sa-ar_01.png",
+    "image": "./projects/project/evix-erp-e-invoicing.png",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://evix.com.sa/ar",
@@ -26,7 +26,7 @@ window.externalProjectsData = [
   {
     "name": "Miran Educational Platform",
     "desc": "Integrated e-learning platform specialized in operational training for assessment and empowerment in business organizations.",
-    "image": "./projects/img/miranedu.webp",
+    "image": "./projects/project/miran-educational-platform.webp",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://www.miranedu.com/",
@@ -38,7 +38,7 @@ window.externalProjectsData = [
   {
     "name": "Rifd Business Company",
     "desc": "Corporate platform providing business consultation, governance, strategy, human capacity building, and sustainability.",
-    "image": "./projects/img/rifd.webp",
+    "image": "./projects/project/rifd-business-company.webp",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://www.rifd.com/",
@@ -50,7 +50,7 @@ window.externalProjectsData = [
   {
     "name": "Khibrah Platform",
     "desc": "Expertise investment platform for retirees providing flexible job opportunities, continuous learning, and consulting services.",
-    "image": "./projects/img/khibra.webp",
+    "image": "./projects/project/khibrah-platform.webp",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://www.khibra.com/",
@@ -62,7 +62,7 @@ window.externalProjectsData = [
   {
     "name": "Eyein Store Platform",
     "desc": "E-commerce store specializing in contact lenses, optical frames, sunglasses, and eyewear accessories.",
-    "image": "./projects/img/2026-05-16_eyein-sa-home_01.png",
+    "image": "./projects/project/eyein-store-platform.png",
     "category": "Full Stack",
     "links": {
       "view": "https://www.eyein.com.sa/home",
@@ -71,15 +71,10 @@ window.externalProjectsData = [
     "name_ar": "متجر عين الإلكتروني",
     "desc_ar": "متجر إلكتروني متكامل للعدسات اللاصقة والنظارات الشمسية والطبية والإكسسوارات من كبرى الشركات العالمية."
   },
-
-
-
-
-
   {
     "name": "EyeinTech Solutions",
     "desc": "Corporate web platform for security solutions, surveillance systems, smart electronics, and intercom installations.",
-    "image": "./projects/img/2026-05-16_eyeintec-home_01.png",
+    "image": "./projects/project/eyeintech-solutions.png",
     "category": "Full Stack",
     "links": {
       "view": "https://eyeintec.com/home",
@@ -88,22 +83,23 @@ window.externalProjectsData = [
     "name_ar": "عين تك للحلول الأمنية",
     "desc_ar": "موقع شركة عين تك المتخصصة في أنظمة المراقبة والحلول الأمنية والإنتركوم والأجهزة الإلكترونية الحديثة."
   },
-  {
-    "name": "Eyein Code Agency",
-    "desc": "Digital agency platform specializing in custom software development, web architecture, and mobile applications.",
-    "image": "./projects/img/2026-05-16_eyeincode_01.png",
-    "category": "Full Stack",
+  
+   {
+    "name": "Evix Beauty Salon Management Platform",
+    "desc": "Comprehensive SaaS management platform tailored for beauty salons, spa centers, appointment booking, inventory, and point-of-sale (POS).",
+    "image": "./projects/project/beauty.png",
+    "category": "Enterprise Solutions",
     "links": {
-      "view": "https://eyeincode.com/",
+      "view": "https://beauty.evixdev.com/",
       "code": "#"
     },
-    "name_ar": "عين كود للبرمجيات",
-    "desc_ar": "المنصة الرقمية لشركة عين كود المتخصصة في تصميم وبرمجة المواقع الإلكترونية والتطبيقات."
+    "name_ar": "منصة إيفكس لإدارة صوالين التجميل",
+    "desc_ar": "منصة سحابية متكاملة (SaaS) لإدارة صوالين ومراكز التجميل والسبا، الحجوزات، الكاشير، الفواتير وإدارة الموظفين والخدمات."
   },
   {
     "name": "ACTES Group",
     "desc": "Corporate website and platform for ACTES Group specialized in energy systems, solar power, and technical solutions.",
-    "image": "./projects/img/actesgroup.webp",
+    "image": "./projects/project/actes-group.webp",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://www.actesgroup.com/",
@@ -115,7 +111,7 @@ window.externalProjectsData = [
   {
     "name": "Watan Tumuh Foundation",
     "desc": "Digital presence and social development platform for Watan Tumuh Foundation.",
-    "image": "./projects/img/2026-05-16_watantumuh-org-sa_01.png",
+    "image": "./projects/project/watan-tumuh-foundation.png",
     "category": "Full Stack",
     "links": {
       "view": "https://watantumuh.org.sa/",
@@ -124,82 +120,83 @@ window.externalProjectsData = [
     "name_ar": "مؤسسة وطن طموح",
     "desc_ar": "التواجد الرقمي والمنصة الخاصة بمؤسسة وطن طموح للتنمية والخدمات."
   },
-  {
-    "name": "Arab Goals Trading Co.",
-    "desc": "Enterprise web portal & e-procurement platform for plastic raw materials and petrochemical trading.",
-    "image": "./projects/img/alahdaf.webp",
-    "category": "Enterprise Solutions",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "شركة الأهداف العربية للتجارة",
-    "desc_ar": "البوابة الإلكترونية للبتروكيمياويات والمواد الخام وإدارة طلبيات الاستيراد والتوريد الصناعي."
-  },
-  {
-    "name": "Mubser Accessibility Platform",
-    "desc": "Accessibility & audio-book recording platform connecting visually impaired individuals with service providers.",
-    "image": "./projects/img/mubsir.webp",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "منصة مُبصِر للتأهيل البصري",
-    "desc_ar": "منصة لتنظيم وتسجيل الكتب الصوتية والربط بين ذوي الإعاقة البصرية ومزودي الخدمات لتعزيز جودة الحياة."
-  },
+  // {
+  //   "name": "Arab Goals Trading Co.",
+  //   "desc": "Enterprise web portal & e-procurement platform for plastic raw materials and petrochemical trading.",
+  //   "image": "./projects/project/arab-goals-trading-co.webp",
+  //   "category": "Enterprise Solutions",
+  //   "links": {
+  //     "view": "#",
+  //     "code": "#"
+  //   },
+  //   "name_ar": "شركة الأهداف العربية للتجارة",
+  //   "desc_ar": "البوابة الإلكترونية للبتروكيمياويات والمواد الخام وإدارة طلبيات الاستيراد والتوريد الصناعي."
+  // },
+  // {
+  //   "name": "Mubser Accessibility Platform",
+  //   "desc": "Accessibility & audio-book recording platform connecting visually impaired individuals with service providers.",
+  //   "image": "./projects/project/mubser-accessibility-platform.webp",
+  //   "category": "Full Stack",
+  //   "links": {
+  //     "view": "#",
+  //     "code": "#"
+  //   },
+  //   "name_ar": "منصة مُبصِر للتأهيل البصري",
+  //   "desc_ar": "منصة لتنظيم وتسجيل الكتب الصوتية والربط بين ذوي الإعاقة البصرية ومزودي الخدمات لتعزيز جودة الحياة."
+  // },
   {
     "name": "HASTI National Research Map",
     "desc": "National research priorities map platform linking academic institutions, researchers, and sustainable development goals.",
-    "image": "./projects/img/research-priorities.hasti.webp",
+    "image": "./projects/project/hasti-national-research-map.webp",
     "category": "Enterprise Solutions",
     "links": {
-      "view": "#",
+      "view": "https://research-priorities.hasti.gov.ye/",
       "code": "#"
     },
     "name_ar": "منصة الخارطة البحثية الوطنية (HASTI)",
     "desc_ar": "منصة وطنية لربط الأبحاث بالأولويات التنموية والمؤسسات التعليمية والبحثية."
   },
   {
-    "name": "SEO Players Platform",
-    "desc": "Automated sports live-streaming theme and news management system with M3U8 IPTV player integration.",
-    "image": "./projects/img/seoplayers.webp",
+    "name": "Eyein Code Agency",
+    "desc": "Digital agency platform specializing in custom software development, web architecture, and mobile applications.",
+    "image": "./projects/project/eyein-code-agency.png",
     "category": "Full Stack",
     "links": {
-      "view": "#",
+      "view": "https://eyeincode.com/",
       "code": "#"
     },
-    "name_ar": "منصة وقالب سيو بلايرز",
-    "desc_ar": "نظام وإدارة محتوى البث المباشر الرياضي وجداول المباريات التلقائية وتكامل M3U8 IPTV."
+    "name_ar": "عين كود للبرمجيات",
+    "desc_ar": "المنصة الرقمية لشركة عين كود المتخصصة في تصميم وبرمجة المواقع الإلكترونية والتطبيقات."
   },
-  {
-    "name": "Barmgely Business Portal",
-    "desc": "Custom web application and client portal for Barmgely digital services.",
-    "image": "./projects/img/2024-07-03_barmgely_01.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "https://www.barmgely.com/",
-      "code": "#"
-    },
-    "name_ar": "بوابة برمجلي",
-    "desc_ar": "تطبيق ويب مخصص وبوابة أعمال متكاملة لمنصة برمجلي."
-  },
-  {
-    "name": "Evix ERP Admin Dashboard",
-    "desc": "High-security control panel and administration dashboard for multi-tenant Evix ERP instances.",
-    "image": "./projects/img/2026-05-16_evix-sa-ar-admin_01.png",
-    "category": "Enterprise Solutions",
-    "links": {
-      "view": "https://evixdev.com/",
-      "code": "#"
-    },
-    "name_ar": "لوحة تحكم Evix ERP",
-    "desc_ar": "لوحة تحكم مركزية عالية الأمان لإدارة المستأجرين والصلاحيات في منصة Evix ERP."
-  },
+  // {
+  //   "name": "SEO Players Platform",
+  //   "desc": "Automated sports live-streaming theme and news management system with M3U8 IPTV player integration.",
+  //   "image": "./projects/project/seo-players-platform.webp",
+  //   "category": "Full Stack",
+  //   "links": {
+  //     "view": "#",
+  //     "code": "#"
+  //   },
+  //   "name_ar": "منصة وقالب سيو بلايرز",
+  //   "desc_ar": "نظام وإدارة محتوى البث المباشر الرياضي وجداول المباريات التلقائية وتكامل M3U8 IPTV."
+  // },
+  // {
+  //   "name": "Barmgely Business Portal",
+  //   "desc": "Custom web application and client portal for Barmgely digital services.",
+  //   "image": "./projects/project/barmgely-business-portal.png",
+  //   "category": "Full Stack",
+  //   "links": {
+  //     "view": "https://www.barmgely.com/",
+  //     "code": "#"
+  //   },
+  //   "name_ar": "بوابة برمجلي",
+  //   "desc_ar": "تطبيق ويب مخصص وبوابة أعمال متكاملة لمنصة برمجلي."
+  // },
+ 
   {
     "name": "Musaned United Platform",
     "desc": "Musaned United platform using NestJS and Next.js, delivering scalable microservices and real-time operations.",
-    "image": "./projects/img/2025-02-05_musanid-sa_01.png",
+    "image": "./projects/project/musaned-united-platform.png",
     "category": "Full Stack",
     "links": {
       "view": "#",
@@ -209,21 +206,21 @@ window.externalProjectsData = [
     "desc_ar": "منصة خدمات مساند المتطورة باستخدام NestJS و Next.js لمعالجة البيانات والتشغيل المتكامل."
   },
   {
-    "name": "SaaS Logistics & Fleet Platform",
-    "desc": "Multi-tenant SaaS logistics platform featuring real-time GPS tracking, dispatching, and driver management.",
-    "image": "./projects/img/2026-05-16_127-0-0-1-5566_01.png",
-    "category": "Enterprise Solutions",
+    "name": "Emarl Jewelry & Beauty Brand",
+    "desc": "E-commerce platform and luxury brand tailored for jewelry sales, cosmetics, and beauty accessories.",
+    "image": "./projects/project/emarl.png",
+    "category": "Full Stack",
     "links": {
-      "view": "#",
+      "view": "https://emarl.youcanbook.me/",
       "code": "#"
     },
-    "name_ar": "منصة لوجستية سحابية (SaaS)",
-    "desc_ar": "منصة لوجستية متعددة المستأجرين مع تتبع فوري للشحنات وإدارة الأساطيل والسائقين."
+    "name_ar": "علامة إيمارل للمجوهرات والتجميل (Emarl)",
+    "desc_ar": "منصة وعلامة تجارية فاخرة متخصصة في بيع المجوهرات، الحلي، وأدوات التجميل والعناية بالمظهر."
   },
   {
     "name": "HR & Automated Payroll System",
     "desc": "Enterprise HR management platform supporting automated payroll, WPS compliance, attendance, and leave management.",
-    "image": "./projects/img/2026-05-16_127-0-0-1-5566_02.png",
+    "image": "./projects/project/hr-automated-payroll-system.png",
     "category": "Enterprise Solutions",
     "links": {
       "view": "#",

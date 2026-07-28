@@ -437,6 +437,23 @@ html::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 
   border-color: rgba(0, 242, 254, 0.2);
 }
 
+.code-tab.single-tab {
+  background: rgba(0, 210, 255, 0.1);
+  color: #00d2ff;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.15);
+  letter-spacing: 0.5px;
+}
+.code-tab.single-tab i {
+  font-size: 0.95rem;
+}
+
 .code-copy-btn {
   background: transparent;
   border: none;
