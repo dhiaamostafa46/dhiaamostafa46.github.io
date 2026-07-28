@@ -1,126 +1,120 @@
 window.externalProjectsData = [
-{
-
-     "name": "",
-    "desc": "Architectural design and API integration of Evix ERP for enterprise clients via RESTful APIs.",
+  {
+    "name": "Evix ERP Platform",
+    "desc": "Enterprise cloud ERP & fleet operations management platform for logistics, inventory, accounting, HR, and drivers.",
     "image": "./projects/img/evixdev.png",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://evixdev.com/ar",
       "code": "#"
     },
-    "name_ar": "نظام محاسبي متكامل ",
-    "desc_ar": "منصة ERP حديثة تجمع إدارة المخزون والمحاسبة والموارد البشرية والمركبات والصيانة والسائقين في نظام واحد قوي مصمم لشركات الخدمات اللوجستية والعمليات.."
+    "name_ar": "منصة إيفيكس ERP للوجستيات",
+    "desc_ar": "منصة ERP سحابية حديثة لشركات الخدمات اللوجستية والنقل والأساطيل والمستودعات تجمع المحاسبة، المخزون، الموارد البشرية والمركبات."
   },
-
   {
-    "name": "Evix ERP Integrations",
-    "desc": "Architectural design and API integration of Evix ERP for enterprise clients via RESTful APIs.",
+    "name": "Evix ERP & E-Invoicing",
+    "desc": "Architectural design, ZATCA Phase 2 E-Invoicing compliance, and API integration of Evix ERP for enterprise clients.",
     "image": "./projects/img/2026-05-16_evix-sa-ar_01.png",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://evix.com.sa/ar",
       "code": "#"
     },
-    "name_ar": "تكامل نظام Evix ERP",
-    "desc_ar": "التصميم المعماري وربط واجهات Evix ERP للشركات عبر RESTful APIs."
-  },
-
-
-
-  {
-    "name": "Eyein Platform",
-    "desc": "Enterprise web platforms and digital solutions for corporate, nonprofit, and commercial organizations.",
-    "image": "./projects/img/2026-05-16_eyein-sa-home_01.png",
-    "category": "Enterprise Solutions",
-    "links": {
-      "view": "https://www.eyein.com.sa/home",
-      "code": "#"
-    },
-    "name_ar": "منصة آي إن",
-    "desc_ar": "منصات الويب للمؤسسات والحلول الرقمية للشركات والمنظمات."
+    "name_ar": "تكامل نظام Evix ERP والفوترة",
+    "desc_ar": "التصميم المعماري وربط واجهات Evix ERP بالفوترة الإلكترونية ZATCA المرحلة الثانية والأنظمة المؤسسية."
   },
   {
-    "name": "Eyein Technology",
-    "desc": "Corporate website and digital presence for Eyein Technology.",
-    "image": "./projects/img/2026-05-16_eyeintec-home_01.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "https://eyeintec.com/home",
-      "code": "#"
-    },
-    "name_ar": "آي إن لتقنية المعلومات",
-    "desc_ar": "موقع الشركات والتواجد الرقمي لشركة آي إن لتقنية المعلومات."
-  },
- 
-  {
-    "name": "ACTES Group",
-    "desc": "Enterprise website and platform for ACTES Group.",
-    "image": "./projects/img/2024-07-03_actesgroup_01.png",
-    "category": "Enterprise Solutions",
-    "links": {
-      "view": "https://www.actesgroup.com/",
-      "code": "#"
-    },
-    "name_ar": "مجموعة أكتس",
-    "desc_ar": "موقع الشركة والمنصة الخاصة بمجموعة أكتس."
-  },
-
-
-
-  {
-    "name": " miranedu",
-    "desc": "Enterprise website and platform for miranedu.",
+    "name": "Miran Educational Platform",
+    "desc": "Integrated e-learning platform specialized in operational training for assessment and empowerment in business organizations.",
     "image": "./projects/img/miranedu.webp",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://www.miranedu.com/",
       "code": "#"
     },
-    "name_ar": "مؤسسة ميرال",
-    "desc_ar": "موقع الشركة والمنصة الخاصة بمؤسسة ميرال."
+    "name_ar": "منصة مِران التعليمية",
+    "desc_ar": "منصة تعليم إلكتروني متكاملة متخصصة في التدريب المقرون بالتشغيل للعاملين في مجالات التقييم والتمكين لمنظمات الأعمال."
   },
-
-
-{
-    "name": " rifd",
-    "desc": "Enterprise website and platform for miranedu.",
+  {
+    "name": "Rifd Business Company",
+    "desc": "Corporate platform providing business consultation, governance, strategy, human capacity building, and sustainability.",
     "image": "./projects/img/rifd.webp",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://www.rifd.com/",
       "code": "#"
     },
-    "name_ar": "مؤسسة ميرال",
-    "desc_ar": "موقع الشركة والمنصة الخاصة بمؤسسة ميرال."
+    "name_ar": "شركة رِفد الأعمال",
+    "desc_ar": "منصة مؤسسية تقدم الاستشارات الإدارية، الحوكمة والاستراتيجية، تنمية القدرات البشرية، والتسويق والاستدامة المالية."
   },
-
-
-
-
-
-
-
-
-
-{
-    "name": " khibra",
-    "desc": "Enterprise website and platform for miranedu.",
+  {
+    "name": "Khibrah Platform",
+    "desc": "Expertise investment platform for retirees providing flexible job opportunities, continuous learning, and consulting services.",
     "image": "./projects/img/khibra.webp",
     "category": "Enterprise Solutions",
     "links": {
       "view": "https://www.khibra.com/",
       "code": "#"
     },
-    "name_ar": "مؤسسة ميرال",
-    "desc_ar": "موقع الشركة والمنصة الخاصة بمؤسسة ميرال."
+    "name_ar": "منصة خِبرة للمتقاعدين",
+    "desc_ar": "منصة وطنية للاستثمار في خبرات المتقاعدين وتوفير فرص عمل مرنة وتدريب إلكتروني وإثراء جودة الحياة والتعلم مدى الحياة."
+  },
+  {
+    "name": "Eyein Store Platform",
+    "desc": "E-commerce store specializing in contact lenses, optical frames, sunglasses, and eyewear accessories.",
+    "image": "./projects/img/2026-05-16_eyein-sa-home_01.png",
+    "category": "Full Stack",
+    "links": {
+      "view": "https://www.eyein.com.sa/home",
+      "code": "#"
+    },
+    "name_ar": "متجر عين الإلكتروني",
+    "desc_ar": "متجر إلكتروني متكامل للعدسات اللاصقة والنظارات الشمسية والطبية والإكسسوارات من كبرى الشركات العالمية."
   },
 
 
 
+
+
+  {
+    "name": "EyeinTech Solutions",
+    "desc": "Corporate web platform for security solutions, surveillance systems, smart electronics, and intercom installations.",
+    "image": "./projects/img/2026-05-16_eyeintec-home_01.png",
+    "category": "Full Stack",
+    "links": {
+      "view": "https://eyeintec.com/home",
+      "code": "#"
+    },
+    "name_ar": "عين تك للحلول الأمنية",
+    "desc_ar": "موقع شركة عين تك المتخصصة في أنظمة المراقبة والحلول الأمنية والإنتركوم والأجهزة الإلكترونية الحديثة."
+  },
+  {
+    "name": "Eyein Code Agency",
+    "desc": "Digital agency platform specializing in custom software development, web architecture, and mobile applications.",
+    "image": "./projects/img/2026-05-16_eyeincode_01.png",
+    "category": "Full Stack",
+    "links": {
+      "view": "https://eyeincode.com/",
+      "code": "#"
+    },
+    "name_ar": "عين كود للبرمجيات",
+    "desc_ar": "المنصة الرقمية لشركة عين كود المتخصصة في تصميم وبرمجة المواقع الإلكترونية والتطبيقات."
+  },
+  {
+    "name": "ACTES Group",
+    "desc": "Corporate website and platform for ACTES Group specialized in energy systems, solar power, and technical solutions.",
+    "image": "./projects/img/actesgroup.webp",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "https://www.actesgroup.com/",
+      "code": "#"
+    },
+    "name_ar": "مجموعة أكتس لحلول الطاقة",
+    "desc_ar": "الموقع الرسمي والمنصة الخاصة بمجموعة أكتس الرائدة في حلول الطاقة المتجددة وأنظمة الطاقة."
+  },
   {
     "name": "Watan Tumuh Foundation",
-    "desc": "Digital presence and platform for Watan Tumuh Foundation.",
+    "desc": "Digital presence and social development platform for Watan Tumuh Foundation.",
     "image": "./projects/img/2026-05-16_watantumuh-org-sa_01.png",
     "category": "Full Stack",
     "links": {
@@ -128,35 +122,71 @@ window.externalProjectsData = [
       "code": "#"
     },
     "name_ar": "مؤسسة وطن طموح",
-    "desc_ar": "التواجد الرقمي والمنصة الخاصة بمؤسسة وطن طموح."
+    "desc_ar": "التواجد الرقمي والمنصة الخاصة بمؤسسة وطن طموح للتنمية والخدمات."
   },
-
-
-
-
-
-
-
-
-
-
-
-   {
-    "name": "Eyein Code",
-    "desc": "Digital platform for Eyein Code.",
-    "image": "./projects/img/2026-05-16_eyeincode_01.png",
-    "category": "Full Stack",
+  {
+    "name": "Arab Goals Trading Co.",
+    "desc": "Enterprise web portal & e-procurement platform for plastic raw materials and petrochemical trading.",
+    "image": "./projects/img/alahdaf.webp",
+    "category": "Enterprise Solutions",
     "links": {
-      "view": "https://eyeincode.com/",
+      "view": "#",
       "code": "#"
     },
-    "name_ar": "آي إن كود",
-    "desc_ar": "المنصة الرقمية لشركة آي إن كود."
+    "name_ar": "شركة الأهداف العربية للتجارة",
+    "desc_ar": "البوابة الإلكترونية للبتروكيمياويات والمواد الخام وإدارة طلبيات الاستيراد والتوريد الصناعي."
   },
-  
+  {
+    "name": "Mubser Accessibility Platform",
+    "desc": "Accessibility & audio-book recording platform connecting visually impaired individuals with service providers.",
+    "image": "./projects/img/mubsir.webp",
+    "category": "Full Stack",
+    "links": {
+      "view": "#",
+      "code": "#"
+    },
+    "name_ar": "منصة مُبصِر للتأهيل البصري",
+    "desc_ar": "منصة لتنظيم وتسجيل الكتب الصوتية والربط بين ذوي الإعاقة البصرية ومزودي الخدمات لتعزيز جودة الحياة."
+  },
+  {
+    "name": "HASTI National Research Map",
+    "desc": "National research priorities map platform linking academic institutions, researchers, and sustainable development goals.",
+    "image": "./projects/img/research-priorities.hasti.webp",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "#",
+      "code": "#"
+    },
+    "name_ar": "منصة الخارطة البحثية الوطنية (HASTI)",
+    "desc_ar": "منصة وطنية لربط الأبحاث بالأولويات التنموية والمؤسسات التعليمية والبحثية."
+  },
+  {
+    "name": "SEO Players Platform",
+    "desc": "Automated sports live-streaming theme and news management system with M3U8 IPTV player integration.",
+    "image": "./projects/img/seoplayers.webp",
+    "category": "Full Stack",
+    "links": {
+      "view": "#",
+      "code": "#"
+    },
+    "name_ar": "منصة وقالب سيو بلايرز",
+    "desc_ar": "نظام وإدارة محتوى البث المباشر الرياضي وجداول المباريات التلقائية وتكامل M3U8 IPTV."
+  },
+  {
+    "name": "Barmgely Business Portal",
+    "desc": "Custom web application and client portal for Barmgely digital services.",
+    "image": "./projects/img/2024-07-03_barmgely_01.png",
+    "category": "Full Stack",
+    "links": {
+      "view": "https://www.barmgely.com/",
+      "code": "#"
+    },
+    "name_ar": "بوابة برمجلي",
+    "desc_ar": "تطبيق ويب مخصص وبوابة أعمال متكاملة لمنصة برمجلي."
+  },
   {
     "name": "Evix ERP Admin Dashboard",
-    "desc": "Admin dashboard for Evix ERP platform.",
+    "desc": "High-security control panel and administration dashboard for multi-tenant Evix ERP instances.",
     "image": "./projects/img/2026-05-16_evix-sa-ar-admin_01.png",
     "category": "Enterprise Solutions",
     "links": {
@@ -164,223 +194,42 @@ window.externalProjectsData = [
       "code": "#"
     },
     "name_ar": "لوحة تحكم Evix ERP",
-    "desc_ar": "لوحة تحكم للمسؤولين لمنصة Evix ERP."
+    "desc_ar": "لوحة تحكم مركزية عالية الأمان لإدارة المستأجرين والصلاحيات في منصة Evix ERP."
   },
   {
-    "name": "Musaned United",
-    "desc": "Musaned United platform using NestJS and Next.js, delivering a scalable production-ready solution.",
+    "name": "Musaned United Platform",
+    "desc": "Musaned United platform using NestJS and Next.js, delivering scalable microservices and real-time operations.",
     "image": "./projects/img/2025-02-05_musanid-sa_01.png",
     "category": "Full Stack",
     "links": {
       "view": "#",
       "code": "#"
     },
-    "name_ar": "مساند المتطورة",
-    "desc_ar": "منصة مساند المتطورة باستخدام NestJS و Next.js لتقديم حلول متكاملة."
+    "name_ar": "منصة مساند المتطورة",
+    "desc_ar": "منصة خدمات مساند المتطورة باستخدام NestJS و Next.js لمعالجة البيانات والتشغيل المتكامل."
   },
-
   {
-    "name": "SaaS Logistics Platform",
-    "desc": "Multi-tenant SaaS logistics platform.",
+    "name": "SaaS Logistics & Fleet Platform",
+    "desc": "Multi-tenant SaaS logistics platform featuring real-time GPS tracking, dispatching, and driver management.",
     "image": "./projects/img/2026-05-16_127-0-0-1-5566_01.png",
     "category": "Enterprise Solutions",
     "links": {
       "view": "#",
       "code": "#"
     },
-    "name_ar": "منصة لوجستية SaaS",
-    "desc_ar": "منصة لوجستية متعددة المستأجرين (SaaS)."
+    "name_ar": "منصة لوجستية سحابية (SaaS)",
+    "desc_ar": "منصة لوجستية متعددة المستأجرين مع تتبع فوري للشحنات وإدارة الأساطيل والسائقين."
   },
   {
-    "name": "HR Management System",
-    "desc": "HR Management System covering automated payroll.",
+    "name": "HR & Automated Payroll System",
+    "desc": "Enterprise HR management platform supporting automated payroll, WPS compliance, attendance, and leave management.",
     "image": "./projects/img/2026-05-16_127-0-0-1-5566_02.png",
     "category": "Enterprise Solutions",
     "links": {
       "view": "#",
       "code": "#"
     },
-    "name_ar": "نظام إدارة الموارد البشرية",
-    "desc_ar": "نظام شامل لإدارة الموارد البشرية."
-  },
-  {
-    "name": "Project Dashboard",
-    "desc": "Advanced project dashboard and management tool.",
-    "image": "./projects/img/2024-07-06_capture-11_01.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "لوحة إدارة المشاريع",
-    "desc_ar": "لوحة متقدمة لإدارة المشاريع والأعمال."
-  },
-  {
-    "name": "E-commerce System",
-    "desc": "Multi-vertical e-commerce platform integration.",
-    "image": "./projects/img/2024-07-06_capture-3_01.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "نظام التجارة الإلكترونية",
-    "desc_ar": "منصة تجارة إلكترونية متعددة القطاعات."
-  },
-  {
-    "name": "Booking System",
-    "desc": "Integrated booking and reservation system.",
-    "image": "./projects/img/2024-07-06_capture-4_01.png",
-    "category": "Enterprise Solutions",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "نظام الحجوزات",
-    "desc_ar": "نظام متكامل للحجوزات وإدارة المواعيد."
-  },
-  {
-    "name": "School Management System",
-    "desc": "School Management System platform.",
-    "image": "./projects/img/2024-07-06_capture-6_01.png",
-    "category": "Mobile App",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "نظام إدارة المدارس",
-    "desc_ar": "نظام إدارة المدارس."
-  },
-  {
-    "name": "Evix SA v1",
-    "desc": "Previous version of Evix SA platform.",
-    "image": "./projects/img/2024-07-07_evix-sa-ar_01.png",
-    "category": "Enterprise Solutions",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "منصة Evix الإصدار الأول",
-    "desc_ar": "الإصدار السابق من منصة Evix."
-  },
-  {
-    "name": "Eyein SA v1",
-    "desc": "Previous version of Eyein SA.",
-    "image": "./projects/img/2024-07-07_eyein-sa-home_01.png",
-    "category": "Enterprise Solutions",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "منصة آي إن الإصدار الأول",
-    "desc_ar": "الإصدار السابق لمنصة آي إن."
-  },
-  {
-    "name": "Eyeintec v1",
-    "desc": "Previous version of Eyeintec.",
-    "image": "./projects/img/2024-07-07_eyeintec_01.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "آي إن لتقنية المعلومات الإصدار الأول",
-    "desc_ar": "موقع شركة آي إن لتقنية المعلومات (سابقاً)."
-  },
-  {
-    "name": "System UI",
-    "desc": "System UI screenshot.",
-    "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "واجهة النظام",
-    "desc_ar": "واجهة مستخدم لأحد الأنظمة المطورة."
-  },
-  {
-    "name": "Restaurant Management",
-    "desc": "Restaurant Management System dashboard.",
-    "image": "./projects/img/screencapture-127-0-0-1-5566-2026-05-16-18_09_28.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "إدارة المطاعم",
-    "desc_ar": "لوحة تحكم نظام إدارة المطاعم."
-  },
-  {
-    "name": "Arab Goals Trading Co.",
-    "desc": "Digital platform and enterprise systems for Arab Goals Trading Company.",
-    "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "شركة الأهداف العربية للتجارة",
-    "desc_ar": "منصة رقمية وأنظمة مؤسسية لشركة الأهداف العربية للتجارة."
-  },
-  {
-    "name": "Khibrah Platform",
-    "desc": "Educational and expertise exchange platform.",
-    "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "منصة خبرة",
-    "desc_ar": "منصة تعليمية لتبادل الخبرات والاستشارات."
-  },
-  {
-    "name": "Toolars",
-    "desc": "Innovative digital tools and services.",
-    "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "Mobile App",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "Toolars",
-    "desc_ar": "أدوات وخدمات رقمية مبتكرة."
-  },
-  {
-    "name": "GWA Anime Platform",
-    "desc": "Anime streaming and community platform.",
-    "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "منصة أنمي GWA",
-    "desc_ar": "منصة مخصصة لعرض محتوى الأنمي وإدارة المجتمع."
-  },
-  {
-    "name": "Spare Parts App",
-    "desc": "Mobile application for automobile spare parts.",
-    "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "Mobile App",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "تطبيق قطع غيار",
-    "desc_ar": "تطبيق مخصص لطلب وبيع قطع غيار السيارات."
-  },
-  {
-    "name": "Falaqah Platform",
-    "desc": "Digital platform for Spare websidi.",
-    "image": "./projects/img/2026-05-09_screenshot_01.jpg",
-    "category": "Mobile App",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "منصة فلقة",
-    "desc_ar": "منصة رقمية متخصصة في خدمات قطع الغيار."
+    "name_ar": "نظام إدارة الموارد البشرية والرواتب",
+    "desc_ar": "نظام شامل لإدارة الموارد البشرية والأجور والتكامل مع حماية الأجور (WPS) وإدارة الإجازات."
   }
 ];
