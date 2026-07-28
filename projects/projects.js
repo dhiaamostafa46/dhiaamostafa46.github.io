@@ -1,4 +1,18 @@
 window.externalProjectsData = [
+{
+
+     "name": "",
+    "desc": "Architectural design and API integration of Evix ERP for enterprise clients via RESTful APIs.",
+    "image": "./projects/img/evixdev.png",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "https://evixdev.com/ar",
+      "code": "#"
+    },
+    "name_ar": "نظام محاسبي متكامل ",
+    "desc_ar": "منصة ERP حديثة تجمع إدارة المخزون والمحاسبة والموارد البشرية والمركبات والصيانة والسائقين في نظام واحد قوي مصمم لشركات الخدمات اللوجستية والعمليات.."
+  },
+
   {
     "name": "Evix ERP Integrations",
     "desc": "Architectural design and API integration of Evix ERP for enterprise clients via RESTful APIs.",
@@ -11,6 +25,9 @@ window.externalProjectsData = [
     "name_ar": "تكامل نظام Evix ERP",
     "desc_ar": "التصميم المعماري وربط واجهات Evix ERP للشركات عبر RESTful APIs."
   },
+
+
+
   {
     "name": "Eyein Platform",
     "desc": "Enterprise web platforms and digital solutions for corporate, nonprofit, and commercial organizations.",
@@ -35,18 +52,7 @@ window.externalProjectsData = [
     "name_ar": "آي إن لتقنية المعلومات",
     "desc_ar": "موقع الشركات والتواجد الرقمي لشركة آي إن لتقنية المعلومات."
   },
-  {
-    "name": "Eyein Code",
-    "desc": "Digital platform for Eyein Code.",
-    "image": "./projects/img/2026-05-16_eyeincode_01.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "https://eyeincode.com/",
-      "code": "#"
-    },
-    "name_ar": "آي إن كود",
-    "desc_ar": "المنصة الرقمية لشركة آي إن كود."
-  },
+ 
   {
     "name": "ACTES Group",
     "desc": "Enterprise website and platform for ACTES Group.",
@@ -59,18 +65,95 @@ window.externalProjectsData = [
     "name_ar": "مجموعة أكتس",
     "desc_ar": "موقع الشركة والمنصة الخاصة بمجموعة أكتس."
   },
+
+
+
   {
-    "name": "Barmgely",
-    "desc": "Custom web application and business portal for Barmgely.",
-    "image": "./projects/img/2024-07-03_barmgely_01.png",
-    "category": "Full Stack",
+    "name": " miranedu",
+    "desc": "Enterprise website and platform for miranedu.",
+    "image": "./projects/img/miranedu.webp",
+    "category": "Enterprise Solutions",
     "links": {
-      "view": "https://www.barmgely.com/",
+      "view": "https://www.miranedu.com/",
       "code": "#"
     },
-    "name_ar": "برمجلي",
-    "desc_ar": "تطبيق ويب مخصص وبوابة أعمال لمنصة برمجلي."
+    "name_ar": "مؤسسة ميرال",
+    "desc_ar": "موقع الشركة والمنصة الخاصة بمؤسسة ميرال."
   },
+
+
+{
+    "name": " rifd",
+    "desc": "Enterprise website and platform for miranedu.",
+    "image": "./projects/img/rifd.webp",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "https://www.rifd.com/",
+      "code": "#"
+    },
+    "name_ar": "مؤسسة ميرال",
+    "desc_ar": "موقع الشركة والمنصة الخاصة بمؤسسة ميرال."
+  },
+
+
+
+
+
+
+
+
+
+{
+    "name": " khibra",
+    "desc": "Enterprise website and platform for miranedu.",
+    "image": "./projects/img/khibra.webp",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "https://www.khibra.com/",
+      "code": "#"
+    },
+    "name_ar": "مؤسسة ميرال",
+    "desc_ar": "موقع الشركة والمنصة الخاصة بمؤسسة ميرال."
+  },
+
+
+
+  {
+    "name": "Watan Tumuh Foundation",
+    "desc": "Digital presence and platform for Watan Tumuh Foundation.",
+    "image": "./projects/img/2026-05-16_watantumuh-org-sa_01.png",
+    "category": "Full Stack",
+    "links": {
+      "view": "https://watantumuh.org.sa/",
+      "code": "#"
+    },
+    "name_ar": "مؤسسة وطن طموح",
+    "desc_ar": "التواجد الرقمي والمنصة الخاصة بمؤسسة وطن طموح."
+  },
+
+
+
+
+
+
+
+
+
+
+
+   {
+    "name": "Eyein Code",
+    "desc": "Digital platform for Eyein Code.",
+    "image": "./projects/img/2026-05-16_eyeincode_01.png",
+    "category": "Full Stack",
+    "links": {
+      "view": "https://eyeincode.com/",
+      "code": "#"
+    },
+    "name_ar": "آي إن كود",
+    "desc_ar": "المنصة الرقمية لشركة آي إن كود."
+  },
+  
   {
     "name": "Evix ERP Admin Dashboard",
     "desc": "Admin dashboard for Evix ERP platform.",
@@ -95,18 +178,7 @@ window.externalProjectsData = [
     "name_ar": "مساند المتطورة",
     "desc_ar": "منصة مساند المتطورة باستخدام NestJS و Next.js لتقديم حلول متكاملة."
   },
-  {
-    "name": "Watan Tumuh Foundation",
-    "desc": "Digital presence and platform for Watan Tumuh Foundation.",
-    "image": "./projects/img/2026-05-16_watantumuh-org-sa_01.png",
-    "category": "Full Stack",
-    "links": {
-      "view": "#",
-      "code": "#"
-    },
-    "name_ar": "مؤسسة وطن طموح",
-    "desc_ar": "التواجد الرقمي والمنصة الخاصة بمؤسسة وطن طموح."
-  },
+
   {
     "name": "SaaS Logistics Platform",
     "desc": "Multi-tenant SaaS logistics platform.",
