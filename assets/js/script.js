@@ -135,7 +135,7 @@ $(document).ready(function () {
 // Dynamic Page Title when tab changes
 document.addEventListener('visibilitychange', function () {
   if (document.visibilityState === "visible") {
-    document.title = "Dhiaa Mostafa | Senior Systems Architect & Full-Stack Engineer";
+    document.title = "Dhiaa Mostafa | Systems Architect & Full-Stack Engineer";
   } else {
     document.title = "Dhiaa Mostafa | Systems Architect Profile";
   }
