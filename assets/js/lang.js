@@ -172,7 +172,15 @@ const translations = {
     "footer_desc2": "Let's build something great together.",
     "footer_links": "Quick Links",
     "footer_contact": "Contact Info",
-    "footer_credit": "Designed &amp; Built by <a href=\"https://linkedin.com/in/dhiaamostafa\" target=\"_blank\">Dhiaa Mostafa</a> &nbsp;·&nbsp; &copy; 2026"
+    "footer_credit": "Designed &amp; Built by <a href=\"https://linkedin.com/in/dhiaamostafa\" target=\"_blank\">Dhiaa Mostafa</a> &nbsp;·&nbsp; &copy; 2026",
+
+    // Modal Keys
+    "modal_arch_highlights": "Architectural Highlights &amp; Overview",
+    "modal_key_features": "Key Technical Deliverables &amp; Features",
+    "modal_metrics_title": "Impact &amp; Performance Metrics",
+    "modal_stack_used": "Tech Stack Used",
+    "modal_btn_inquire": "Inquire Similar Solution",
+    "modal_btn_visit": "Visit Live App / Store"
   },
 
   ar: {
@@ -348,6 +356,14 @@ const translations = {
     "footer_desc2": "لنبنِ شيئاً رائعاً معاً.",
     "footer_links": "روابط سريعة",
     "footer_contact": "معلومات التواصل",
-    "footer_credit": "تم التصميم والتطوير بواسطة <a href=\"https://linkedin.com/in/dhiaamostafa\" target=\"_blank\">ضياء مصطفى</a> &nbsp;·&nbsp; &copy; 2026"
+    "footer_credit": "تم التصميم والتطوير بواسطة <a href=\"https://linkedin.com/in/dhiaamostafa\" target=\"_blank\">ضياء مصطفى</a> &nbsp;·&nbsp; &copy; 2026",
+
+    // Modal Keys
+    "modal_arch_highlights": "أبرز المعماريات والإنجازات المنجزة",
+    "modal_key_features": "أهم المميزات والحلول الهندسية المنجزة",
+    "modal_metrics_title": "مؤشرات الأداء والتأثير التشغيلي",
+    "modal_stack_used": "التقنيات والأدوات المستخدمة",
+    "modal_btn_inquire": "طلب حل معماري مماثل",
+    "modal_btn_visit": "زيارة التطبيق / فتح المتجر"
   }
 };

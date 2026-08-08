@@ -489,11 +489,52 @@ function openProjectModal(proj, lang = 'en') {
   if (!proj) return;
   const title = (lang === 'ar' && proj.name_ar) ? proj.name_ar : proj.name;
   const desc = (lang === 'ar' && proj.desc_ar) ? proj.desc_ar : proj.desc;
+  const features = (lang === 'ar' && proj.features_ar) ? proj.features_ar : (proj.features || []);
 
   $('#modalCategory').text(proj.category);
   $('#modalTitle').text(title);
   $('#modalImage').attr('src', proj.image);
   $('#modalDescription').text(desc);
+
+  // Features List
+  const featuresContainer = $('#modalFeaturesList');
+  featuresContainer.empty();
+  if (features.length > 0) {
+    features.forEach(ft => {
+      featuresContainer.append(`
+        <li>
+          <i class="fas fa-check-circle"></i>
+          <span>${ft}</span>
+        </li>
+      `);
+    });
+  } else {
+    const defaultFt = lang === 'ar' 
+      ? "تطوير معمارية عالية الأداء والتوافق مع أعلى معايير أمان البيانات وصلاحيات النظام." 
+      : "Engineered production-grade architecture compliant with high performance and security standards.";
+    featuresContainer.append(`
+      <li>
+        <i class="fas fa-check-circle"></i>
+        <span>${defaultFt}</span>
+      </li>
+    `);
+  }
+
+  // Metrics
+  const metricsContainer = $('#modalMetrics');
+  metricsContainer.empty();
+  const metricsList = proj.metrics || [
+    { val: "Enterprise", lbl: "Architecture" },
+    { val: "99.9%", lbl: "Reliability" }
+  ];
+  metricsList.forEach(m => {
+    metricsContainer.append(`
+      <div class="modal-metric">
+        <span class="metric-val">${m.val}</span>
+        <span class="metric-lbl">${m.lbl}</span>
+      </div>
+    `);
+  });
 
   // Stack badges
   const tagsContainer = $('#modalTags');
@@ -502,6 +543,15 @@ function openProjectModal(proj, lang = 'en') {
   sampleStack.forEach(st => {
     tagsContainer.append(`<span class="service-tag">${st}</span>`);
   });
+
+  // Visit Link button
+  const visitBtn = $('#modalVisitBtn');
+  const viewUrl = proj.link || (proj.links && proj.links.view !== '#' ? proj.links.view : '') || proj.demo_url || proj.github_url || '';
+  if (viewUrl && viewUrl !== '#') {
+    visitBtn.attr('href', viewUrl).show();
+  } else {
+    visitBtn.hide();
+  }
 
   $('#projectModal').addClass('active');
 }

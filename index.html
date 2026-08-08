@@ -80,7 +80,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <!-- Custom CSS Design System -->
-  <link rel="stylesheet" href="./assets/css/style.min.css?v=30">
+  <link rel="stylesheet" href="./assets/css/style.min.css?v=50">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
@@ -470,45 +470,79 @@
 
   <!-- Project Details Modal -->
   <div class="modal-backdrop" id="projectModal">
-    <div class="modal-content">
-      <button type="button" class="modal-close" id="modalCloseBtn">&times;</button>
-      <div class="modal-header">
-        <span class="modal-category" id="modalCategory">Category</span>
-        <h2 class="modal-title" id="modalTitle">Project Title</h2>
-      </div>
-      <div class="modal-body">
-        <div class="modal-image-container">
-          <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Project Screenshot">
+    <div class="modal-content mac-modal-content">
+      <div class="modal-window-bar">
+        <div class="mac-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
         </div>
-        <div class="modal-info">
-          <h3 data-i18n="modal_arch_highlights">Architectural Highlights</h3>
-          <p id="modalDescription">Detailed breakdown...</p>
+        <span class="modal-category-badge" id="modalCategory">Category</span>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close">&times;</button>
+      </div>
 
-          <div class="modal-metrics">
-            <div class="modal-metric">
-              <span class="metric-val">7k+</span>
-              <span class="metric-lbl">Active Users</span>
+      <div class="modal-scroll-body">
+        <div class="modal-hero-banner">
+          <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Project Screenshot">
+          <div class="modal-hero-overlay">
+            <h2 class="modal-title" id="modalTitle">Project Title</h2>
+          </div>
+        </div>
+
+        <div class="modal-inner-grid">
+          <!-- Left/Main Section: Overview & Key Accomplishments -->
+          <div class="modal-main-info">
+            <div class="modal-section-box">
+              <h3 class="modal-section-title">
+                <i class="fas fa-cubes"></i>
+                <span data-i18n="modal_arch_highlights">Architectural Highlights</span>
+              </h3>
+              <p id="modalDescription" class="modal-desc-text">Detailed breakdown...</p>
             </div>
-            <div class="modal-metric">
-              <span class="metric-val">99.99%</span>
-              <span class="metric-lbl">Uptime</span>
-            </div>
-            <div class="modal-metric">
-              <span class="metric-val">ZATCA</span>
-              <span class="metric-lbl">Compliance</span>
+
+            <div class="modal-section-box">
+              <h3 class="modal-section-title">
+                <i class="fas fa-list-check"></i>
+                <span data-i18n="modal_key_features">Key Technical Deliverables &amp; Features</span>
+              </h3>
+              <ul id="modalFeaturesList" class="modal-features-ul">
+                <!-- Dynamically populated -->
+              </ul>
             </div>
           </div>
 
-          <h4 data-i18n="modal_stack_used">Tech Stack Used</h4>
-          <div class="modal-tags" id="modalTags">
-            <!-- Badges -->
-          </div>
+          <!-- Right/Sidebar Section: Metrics, Stack, & Actions -->
+          <div class="modal-sidebar-info">
+            <div class="modal-section-box">
+              <h4 class="modal-section-title" style="font-size: 0.95rem;">
+                <i class="fas fa-chart-line"></i>
+                <span data-i18n="modal_metrics_title">Impact Metrics</span>
+              </h4>
+              <div class="modal-metrics" id="modalMetrics">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
 
-          <div class="modal-actions">
-            <a href="#contact" class="btn-primary" id="modalInquireBtn">
-              <i class="fas fa-paper-plane me-2"></i>
-              <span data-i18n="modal_btn_inquire">Inquire Similar Architecture</span>
-            </a>
+            <div class="modal-section-box">
+              <h4 class="modal-section-title" style="font-size: 0.95rem;">
+                <i class="fas fa-layer-group"></i>
+                <span data-i18n="modal_stack_used">Tech Stack Used</span>
+              </h4>
+              <div class="modal-tags" id="modalTags">
+                <!-- Badges -->
+              </div>
+            </div>
+
+            <div class="modal-actions-box">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary modal-action-btn" id="modalVisitBtn" style="display: none;">
+                <i class="fas fa-external-link-alt"></i>
+                <span data-i18n="modal_btn_visit">Visit Live App / Store</span>
+              </a>
+              <a href="#contact" class="btn-outline modal-action-btn" id="modalInquireBtn">
+                <i class="fas fa-paper-plane"></i>
+                <span data-i18n="modal_btn_inquire">Inquire Similar Solution</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -823,10 +857,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" crossorigin="anonymous" defer></script>
 
   <!-- i18n & Core Scripts -->
-  <script src="./assets/js/lang.min.js?v=40" defer></script>
-  <script src="./assets/js/i18n.min.js?v=40" defer></script>
-  <script src="./projects/projects.min.js?v=40" defer></script>
-  <script src="./assets/js/script.min.js?v=40" defer></script>
+  <script src="./assets/js/lang.min.js?v=80" defer></script>
+  <script src="./assets/js/i18n.min.js?v=80" defer></script>
+  <script src="./projects/projects.min.js?v=80" defer></script>
+  <script src="./assets/js/script.min.js?v=80" defer></script>
 
 </body>
 

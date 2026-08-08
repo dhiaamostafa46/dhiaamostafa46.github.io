@@ -29,6 +29,68 @@ window.externalProjectsData = [
     ]
   },
   {
+    "name": "Enterprise Integration Middleware Hub",
+    "desc": "Centralized middleware integration hub decoupled from core ERP, providing connector architecture, asynchronous queue workers, and data payload transformation for e-commerce platforms (Amazon, Noon, Salla, Trendyol).",
+    "image": "./projects/project/middleware-hub.png",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "#",
+      "code": "#"
+    },
+    "name_ar": "منصة التكامل والربط الوسيط للمؤسسات (Enterprise Middleware Hub)",
+    "desc_ar": "طبقة وسيطة مركزية (Middleware Hub) معزولة عن الـ ERP الأساسي، توفر معمارية موصلات قابلة للتوسع، معالجة غير متزامنة للرسائل، ومناقلة طلبيات المتاجر (Amazon، Noon، Salla، Trendyol).",
+    "features_ar": [
+      "طبقة وسيطة معزولة (Decoupled Middleware): بناء طبقة تكامل مستقلة تضمن الربط بين المنصات الخارجية و Evix ERP دون التعديل على المنطق المكتوبي للـ ERP.",
+      "معمارية موصلات مرنة (Connector Framework): إطار عمل قابل للتمدد يدعم الموصلات مع Amazon و Noon و Salla و Trendyol.",
+      "معالجة غير متزامنة (Asynchronous Queues): استخدام طوابير وشغّالات الرسائل لحماية الـ ERP من بطء أو انقطاع الخدمات الخارجية.",
+      "منع التكرار (Idempotent Processing): ضوابط تضمن عدم تكرار الطلبات أو العمليات عند إعادة المحاولة أو انقطاع الاتصال.",
+      "توحيد وتحويل البيانات (Payload Mapping): تحويل واستخراج البيانات المختلفة من الـ APIs الخارجية إلى نموذج بيانات مؤسسي موحد.",
+      "سجلات رصد وتتبع مركزية (Centralized Logging & Retries): نظام تتبع دقيق لأداء وإعادة محاولة تنفيذ الطلبات مع تسجيل الأخطاء فورياً."
+    ],
+    "features": [
+      "Decoupled Middleware Hub: Independent integration layer bridging external platforms with Evix ERP without touching core business logic.",
+      "Connector-Based Architecture: Modular plugin framework supporting plug-and-play integrations with Amazon, Noon, Salla, and Trendyol.",
+      "Asynchronous Queues & Worker Threads: Isolated queue processing protecting ERP from third-party service latency and outages.",
+      "Idempotency & Duplicate Prevention: Guarantees zero duplicate transactions during network retries or webhooks resubmissions.",
+      "Payload Mapping & Transformation: Normalizes diverse API schemas into unified enterprise data models.",
+      "Centralized Audit Logging & Retries: End-to-end tracing with automated exponential backoff retries and execution monitoring."
+    ],
+    "metrics": [
+      { "val": "Decoupled", "lbl": "Middleware Hub" },
+      { "val": "Multi-Channel", "lbl": "Amazon, Noon, Salla" },
+      { "val": "0%", "lbl": "Duplicate Trans" }
+    ]
+  },
+  {
+    "name": "Zmorod High Medical Center",
+    "desc": "Integrated medical center platform providing online appointment scheduling, specialized clinics catalog (Dentistry, Dermatology, Laser), offer management, and WhatsApp booking integration.",
+    "image": "./projects/project/zmorod-medical.png",
+    "category": "Enterprise Solutions",
+    "links": {
+      "view": "https://zmorod.com/ar",
+      "code": "#"
+    },
+    "name_ar": "مجمع الزمرد العالي الطبي (Zmorod Medical Center)",
+    "desc_ar": "منصة إلكترونية متكاملة لمجمع الزمرد العالي الطبي تتيح حجز المواعيد أونلاين، استعراض الأقسام الطبية (الأسنان، الجلدية، والليزر)، العروض الخاصة، والتكامل المباشر مع الواتساب.",
+    "features_ar": [
+      "تصميم وبناء منصة طِبية سريعة وعصرية لمجمع الزمرد العالي الطبي.",
+      "نظام حجز مواعيد وإدارة استفسارات المرضى أونلاين والمزامنة مع WhatsApp API.",
+      "استعراض الأقسام الطبية المتخصصة (طب الأسنان، الجلدية، وجلسات الليزر) مع تفاصيل الخدمات.",
+      "نظام إدارة العروض الموسمية والباقات العلاجية مع واجهات محسنة لتحسين محركات البحث (SEO)."
+    ],
+    "features": [
+      "Engineered modern, high-speed digital web platform for Zmorod High Medical Center.",
+      "Online patient appointment booking and inquiry portal with direct WhatsApp API integration.",
+      "Specialized medical clinic showcases for Dentistry, Dermatology, and Laser treatment services.",
+      "Seasonal medical offer management engine with SEO optimization and mobile responsiveness."
+    ],
+    "metrics": [
+      { "val": "Medical", "lbl": "Center Platform" },
+      { "val": "Online", "lbl": "Appointment Sync" },
+      { "val": "WhatsApp", "lbl": "API Booking" }
+    ]
+  },
+  {
     "name": "Evix ERP & E-Invoicing",
     "desc": "Architectural design, ZATCA Phase 2 E-Invoicing compliance, and API integration of Evix ERP for enterprise clients.",
     "image": "./projects/project/evix-erp-e-invoicing.png",
