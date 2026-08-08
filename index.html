@@ -423,18 +423,10 @@
       </div>
 
       <!-- Controls -->
-      <div class="skills-controls">
-        <div class="skills-search">
+      <div class="skills-controls" style="justify-content: center; margin-bottom: 2rem;">
+        <div class="skills-search" style="max-width: 500px; width: 100%;">
           <i class="fas fa-search"></i>
-          <input type="text" id="skills-search-input" placeholder="Search stack (e.g. Laravel, PostgreSQL, Docker)..." data-i18n-placeholder="skills_search_ph">
-        </div>
-        <div class="skills-category-tabs" id="skills-tabs">
-          <button type="button" class="skills-tab active" data-cat="all" data-i18n="tab_all">All Stack</button>
-          <button type="button" class="skills-tab" data-cat="Backend Engineering" data-i18n="tab_backend">Backend</button>
-          <button type="button" class="skills-tab" data-cat="Data &amp; Persistence" data-i18n="tab_databases">Databases</button>
-          <button type="button" class="skills-tab" data-cat="Enterprise Integrations" data-i18n="tab_integrations">Integrations</button>
-          <button type="button" class="skills-tab" data-cat="AI &amp; Intelligent Automation" data-i18n="tab_ai">AI &amp; Automation</button>
-          <button type="button" class="skills-tab" data-cat="Cloud &amp; DevOps" data-i18n="tab_cloud">Cloud &amp; DevOps</button>
+          <input type="text" id="skills-search-input" placeholder="Search stack (e.g. C#, .NET, Docker, ERP)..." data-i18n-placeholder="skills_search_ph">
         </div>
       </div>
 
@@ -741,6 +733,11 @@
                 <i class="fas fa-check-circle"></i> <span data-i18n="msg_success">تم الإرسال بنجاح! سيتم التواصل معك قريباً.</span>
               </div>
 
+              <!-- Error Message Container -->
+              <div id="form-error-msg" style="display: none; padding: 1rem; background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #ef4444; border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-family: var(--font-mono); font-size: 0.9rem;">
+                <i class="fas fa-exclamation-triangle"></i> <span id="form-error-text">حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.</span>
+              </div>
+
               <div class="form-group">
                 <label data-i18n="lbl_email">الاسم او Corporate Email / WhatsApp</label>
                 <input type="text" id="intake-contact" required placeholder="e.g. Eng. Khalid or khalid@company.sa" data-i18n-placeholder="ph_email">
@@ -752,7 +749,7 @@
               </div>
 
               <div class="form-actions">
-                <button type="button" class="btn-primary" id="btn-submit-form" style="width: 100%; justify-content: center;">
+                <button type="submit" class="btn-primary" id="btn-submit-form" style="width: 100%; justify-content: center;">
                   <i class="fas fa-paper-plane"></i>
                   <span data-i18n="btn_send">Send Request</span>
                 </button>
@@ -829,10 +826,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" crossorigin="anonymous" defer></script>
 
   <!-- i18n & Core Scripts -->
-  <script src="./assets/js/lang.min.js?v=15" defer></script>
-  <script src="./assets/js/i18n.min.js?v=15" defer></script>
-  <script src="./projects/projects.min.js?v=15" defer></script>
-  <script src="./assets/js/script.min.js?v=17" defer></script>
+  <script src="./assets/js/lang.min.js?v=30" defer></script>
+  <script src="./assets/js/i18n.min.js?v=30" defer></script>
+  <script src="./projects/projects.min.js?v=30" defer></script>
+  <script src="./assets/js/script.min.js?v=30" defer></script>
 
 </body>
 

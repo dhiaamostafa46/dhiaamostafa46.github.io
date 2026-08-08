@@ -56,8 +56,17 @@ const translations = {
     "srv7_desc": "Architect scalable software platforms with clean architecture principles, multi-tenancy, asynchronous processing, and secure authentication for enterprise-grade applications.",
 
     // Skills Section
-    "skills_heading": "Tech <span>Stack</span>",
-    "skills_subtitle": "Technologies and tools I work with professionally",
+    "skills_heading": "Core <span>Competencies</span>",
+    "skills_subtitle": "A high-impact breakdown of my technical stack, engineering architecture, and domain expertise",
+    "skills_search_ph": "Search stack (e.g. C#, .NET, Docker, ERP)...",
+    "tab_leadership": "Leadership & Delivery",
+    "tab_backend": "Backend & .NET",
+    "tab_databases": "Databases & SQL",
+    "tab_integrations": "Enterprise & ZATCA",
+    "tab_ai": "AI & Automation",
+    "tab_cloud": "DevOps & Cloud",
+    "tab_frontend": "Frontend & Mobile",
+    "tab_edtech": "EdTech & LMS",
 
     // Education Section
     "edu_heading": "Education & <span>Courses</span>",
@@ -223,8 +232,17 @@ const translations = {
     "srv7_desc": "تصميم منصات برمجية قابلة للتوسع بمبادئ المعمارية النظيفة (Clean Architecture)، وتعدد المستأجرين، والمعالجة غير المتزامنة، والمصادقة الآمنة للتطبيقات على مستوى الشركات.",
 
     // Skills Section
-    "skills_heading": "التقنيات <span>المستخدمة</span>",
-    "skills_subtitle": "التقنيات والأدوات التي أعمل بها باحترافية",
+    "skills_heading": "الخبرات <span>والقدرات التقنية</span>",
+    "skills_subtitle": "ملخص متكامل ومباشر لأبرز ركائز الخبرة البرمجية، هندسة الأنظمة، وقواعد البيانات",
+    "skills_search_ph": "ابحث في التقنيات (مثل C#, .NET, Docker, ERP)...",
+    "tab_leadership": "القيادة وإدارة المشاريع",
+    "tab_backend": "الواجهات الخلفية و .NET",
+    "tab_databases": "قواعد البيانات والتخزين",
+    "tab_integrations": "تكامل الشركات وزاتكا",
+    "tab_ai": "الذكاء الاصطناعي والأتمتة",
+    "tab_cloud": "السحابة و DevOps",
+    "tab_frontend": "الواجهات الأمامية والموبايل",
+    "tab_edtech": "أنظمة التعليم Blackboard",
 
     // Education Section
     "edu_heading": "التعليم <span>والدورات</span>",

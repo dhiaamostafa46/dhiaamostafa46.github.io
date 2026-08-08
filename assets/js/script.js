@@ -1,58 +1,74 @@
-// Comprehensive Stack Data Array for Instant Rendering
+// Streamlined Core Competencies Stack Data Array
 const stackData = [
   {
-    category: "Backend Engineering",
-    category_ar: "هندسة الواجهات الخلفية",
+    category: "Backend & Systems Architecture",
+    category_ar: "هندسة الواجهات الخلفية والأنظمة",
     items: [
-      { name: "Laravel", name_ar: "لارافل", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
-      { name: "Node.js", name_ar: "نود جي إس", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "NestJS", name_ar: "نيست جي إس", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" },
-      { name: "PHP", name_ar: "بي إتش بي", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
-      { name: "TypeScript", name_ar: "تايب سكريبت", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-      { name: "Express.js", name_ar: "إكسبريس", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-      { name: "RESTful APIs", name_ar: "واجهات REST", icon: "https://img.icons8.com/color/48/api.png" },
-      { name: "GraphQL", name_ar: "جراف كيو إيل", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
-      { name: "WebSockets", name_ar: "ويب سوكيتس", icon: "https://img.icons8.com/color/48/websocket.png" }
+      { name: "C# & .NET Core (.NET 6/7/8)", name_ar: "C# & .NET Core", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+      { name: "Node.js & NestJS", name_ar: "Node.js & NestJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" },
+      { name: "PHP & Laravel (MVC)", name_ar: "PHP & Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
+      { name: "RESTful APIs & WebSockets", name_ar: "REST APIs & WebSockets", icon: "https://img.icons8.com/color/48/api.png" },
+      { name: "Microservices & CQRS", name_ar: "Microservices & CQRS", icon: "https://img.icons8.com/color/48/module.png" },
+      { name: "Clean Architecture & Patterns", name_ar: "Clean Architecture", icon: "https://img.icons8.com/color/48/architecture.png" }
     ]
   },
   {
-    category: "Data & Persistence",
-    category_ar: "قواعد البيانات والتخزين",
+    category: "Databases & Data Engineering",
+    category_ar: "قواعد البيانات وهندسة الأداء",
     items: [
-      { name: "PostgreSQL", name_ar: "بوستجري إس كيو إيل", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-      { name: "MySQL", name_ar: "ماي إس كيو إيل", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-      { name: "Redis Cache & Queue", name_ar: "ريديس كاش وطوابير", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-      { name: "MongoDB", name_ar: "مونجو دي بي", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
+      { name: "SQL Server (T-SQL & Procs)", name_ar: "SQL Server & T-SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
+      { name: "PostgreSQL & MySQL", name_ar: "PostgreSQL & MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { name: "Redis (Caching & Queues)", name_ar: "Redis Caching & Queues", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+      { name: "MongoDB (NoSQL)", name_ar: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { name: "Indexing & Query Optimization", name_ar: "تحسين أداء قواعد البيانات", icon: "https://img.icons8.com/color/48/database.png" },
+      { name: "Multi-Tenant Data Isolation", name_ar: "عزل بيانات تعدد المستأجرين", icon: "https://img.icons8.com/color/48/schema.png" }
     ]
   },
   {
-    category: "Enterprise Integrations",
-    category_ar: "تكامل أنظمة الشركات",
+    category: "Mobile Development & Flutter",
+    category_ar: "تطوير تطبيقات الجوال و Flutter",
     items: [
-      { name: "Evix ERP Sync", name_ar: "ربط إيفكس ERP", icon: "https://img.icons8.com/color/48/system-task.png" },
-      { name: "ZATCA E-Invoicing Phase 2", name_ar: "الفوترة الضريبية زاتكا", icon: "https://img.icons8.com/color/48/bill.png" },
-      { name: "Tabby BNPL", name_ar: "تابي للدفع الآجل", icon: "https://img.icons8.com/color/48/bank-cards.png" },
-      { name: "HyperPay / Payment Gateways", name_ar: "بوابات الدفع الإلكتروني", icon: "https://img.icons8.com/color/48/card-in-use.png" }
+      { name: "Flutter & Dart (Cross-Platform)", name_ar: "تطوير Flutter & Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+      { name: "iOS & Android Apps Delivery", name_ar: "تطبيقات iOS و Android", icon: "https://img.icons8.com/color/48/android-os.png" },
+      { name: "State Management (Bloc / Provider)", name_ar: "إدارة الحالة Bloc & Provider", icon: "https://img.icons8.com/color/48/workflow.png" },
+      { name: "REST APIs & WebSockets Integration", name_ar: "ربط التطبيقات بالـ APIs والـ WebSockets", icon: "https://img.icons8.com/color/48/api.png" },
+      { name: "Offline Storage (SQLite / Hive)", name_ar: "قواعد البيانات المحلية SQLite & Hive", icon: "https://img.icons8.com/color/48/data-configuration.png" },
+      { name: "Push Notifications & Firebase (FCM)", name_ar: "الإشعارات الفورية Firebase FCM", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
     ]
   },
   {
-    category: "AI & Intelligent Automation",
-    category_ar: "الذكاء الاصطناعي والأتمتة",
+    category: "Enterprise Integrations & ZATCA",
+    category_ar: "تكامل أنظمة الشركات والفوترة",
     items: [
-      { name: "Azure OpenAI APIs", name_ar: "أزور أوبن إيه آي", icon: "https://img.icons8.com/color/48/brain.png" },
-      { name: "PDF OCR & Line Extraction", name_ar: "استخراج بيانات الفواتير OCR", icon: "https://img.icons8.com/color/48/document.png" },
-      { name: "RAG & Vector Search", name_ar: "البحث الشعاعي RAG", icon: "https://img.icons8.com/color/48/search-database.png" },
-      { name: "Python Automation", name_ar: "أتمتة بايثون", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" }
+      { name: "Evix ERP & SAP Sync", name_ar: "ربط Evix ERP & SAP", icon: "https://img.icons8.com/color/48/system-task.png" },
+      { name: "ZATCA Phase-2 E-Invoicing", name_ar: "الفوترة الإلكترونية زاتكا", icon: "https://img.icons8.com/color/48/bill.png" },
+      { name: "Multi-Tenant SaaS Platforms", name_ar: "منصات SaaS متعددة المستأجرين", icon: "https://img.icons8.com/color/48/cloud-network.png" },
+      { name: "Payment Gateways (Tabby, HyperPay)", name_ar: "بوابات الدفع تابي وهايبر باي", icon: "https://img.icons8.com/color/48/card-in-use.png" },
+      { name: "E-Correspondence & Archiving", name_ar: "أنظمة المراسلات والأرشفة", icon: "https://img.icons8.com/color/48/documents.png" },
+      { name: "Identity & RBAC (SSO, OAuth2)", name_ar: "أمان الصلاحيات والمصادقة", icon: "https://img.icons8.com/color/48/security-checked.png" }
     ]
   },
   {
-    category: "Cloud & DevOps",
-    category_ar: "السحابة وهندسة التشغيل",
+    category: "Cloud, DevOps & AI Automation",
+    category_ar: "السحابة، الـ DevOps والذكاء الاصطناعي",
     items: [
-      { name: "Docker Containerization", name_ar: "حاويات دوكر", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-      { name: "AWS Cloud Services", name_ar: "خدمات أبلود السحابية", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-      { name: "Git & GitHub CI/CD", name_ar: "جيت وجيت هاب", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-      { name: "Nginx & Linux Admin", name_ar: "خوادم لينكس ونجينكس", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" }
+      { name: "Azure DevOps (CI/CD)", name_ar: "Azure DevOps & CI/CD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
+      { name: "AWS Cloud Services", name_ar: "خدمات AWS السحابية", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "Docker Containerization", name_ar: "حاويات Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+      { name: "Azure OpenAI & LLM Workflows", name_ar: "أتمتة الذكاء الاصطناعي LLMs", icon: "https://img.icons8.com/color/48/brain.png" },
+      { name: "OCR & RAG Search", name_ar: "استخراج المستندات OCR & RAG", icon: "https://img.icons8.com/color/48/search-database.png" },
+      { name: "Nginx, Linux & Git", name_ar: "Linux, Nginx & Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" }
+    ]
+  },
+  {
+    category: "Team Leadership & Delivery",
+    category_ar: "القيادة التقنية وإدارة التسليم",
+    items: [
+      { name: "Team Leadership & Mentorship", name_ar: "قيادة وتوجيه الفرق البرمجية", icon: "https://img.icons8.com/color/48/manager.png" },
+      { name: "Agile / Scrum Management", name_ar: "إدارة منهجيات Agile & Scrum", icon: "https://img.icons8.com/color/48/scrum.png" },
+      { name: "Architecture & Code Reviews", name_ar: "مراجعة الأكواد والتصميم المعماري", icon: "https://img.icons8.com/color/48/code-file.png" },
+      { name: "Sprint Planning & Estimation", name_ar: "تخطيط الدورات وتقدير الجهود", icon: "https://img.icons8.com/color/48/calendar.png" },
+      { name: "SDLC & Requirements Analysis", name_ar: "تحليل متطلبات الأعمال SDLC", icon: "https://img.icons8.com/color/48/process.png" }
     ]
   }
 ];
@@ -118,6 +134,7 @@ $(document).ready(function () {
   }
 
   // Initializations
+  initTypedText();
   initCodeCard();
   initSkillsSection();
   initProjectsSection();
@@ -186,7 +203,6 @@ function initTypedText() {
     });
   }
 }
-initTypedText();
 
 /* ===== HERO CODE CARD WIDGET ===== */
 let currentCodeTab = 'profile';
@@ -221,10 +237,14 @@ function updateCodeCardContent(tab, lang = 'en') {
   const content = codeSnippets[tab] ? codeSnippets[tab]['en'] : '';
   
   const container = $('#code-card-content');
+  if (!container || !container.length) return;
+
   container.removeClass('anim-fade-up');
   
-  // Trigger reflow for animation restart
-  void container[0].offsetWidth;
+  // Trigger reflow for animation restart safely
+  if (container[0]) {
+    void container[0].offsetWidth;
+  }
   
   container.html(content);
   container.addClass('anim-fade-up');
@@ -264,28 +284,23 @@ let currentSkillCategory = 'all';
 let currentSkillSearch = '';
 
 const catIcons = {
-  "Backend Engineering": "fa-server",
-  "Data & Persistence": "fa-database",
-  "Enterprise Integrations": "fa-network-wired",
-  "AI & Intelligent Automation": "fa-brain",
-  "Cloud & DevOps": "fa-cloud"
+  "Backend & Systems Architecture": "fa-server",
+  "Databases & Data Engineering": "fa-database",
+  "Mobile Development & Flutter": "fa-mobile-alt",
+  "Enterprise Integrations & ZATCA": "fa-network-wired",
+  "Cloud, DevOps & AI Automation": "fa-cloud",
+  "Team Leadership & Delivery": "fa-user-tie"
 };
 
 function renderSkills(lang = 'en') {
   const container = $('#skillsContainer');
+  if (!container || !container.length) return;
   container.empty();
-
-  let filteredGroups = stackData.filter(group => {
-    if (currentSkillCategory !== 'all' && group.category !== currentSkillCategory) {
-      return false;
-    }
-    return true;
-  });
 
   let html = '<div class="skills-grid-container">';
   let count = 0;
 
-  filteredGroups.forEach(group => {
+  stackData.forEach(group => {
     const catName = (lang === 'ar' && group.category_ar) ? group.category_ar : group.category;
     const catIcon = catIcons[group.category] || "fa-code";
     
@@ -342,14 +357,6 @@ function renderSkills(lang = 'en') {
 function initSkillsSection() {
   const lang = localStorage.getItem('lang') || 'en';
   renderSkills(lang);
-
-  $('.skills-tab').on('click', function () {
-    $('.skills-tab').removeClass('active');
-    $(this).addClass('active');
-    currentSkillCategory = $(this).data('cat');
-    const currentLang = localStorage.getItem('lang') || 'en';
-    renderSkills(currentLang);
-  });
 
   $('#skills-search-input').on('keyup input', function () {
     currentSkillSearch = $(this).val();
@@ -544,31 +551,101 @@ function initIntakeForm() {
 
     const btn = $('#btn-submit-form');
     const originalContent = btn.html();
-    
-    // Show sending state
-    btn.html('<i class="fas fa-spinner fa-spin"></i> <span data-i18n="btn_sending">Sending...</span>').prop('disabled', true);
+    const currentLang = localStorage.getItem('lang') || 'ar';
+    const sendingText = currentLang === 'ar' ? 'جارٍ الإرسال...' : 'Sending...';
 
-    // Prepare message
-    const message = `Hello Dhiaa,%0A%0A*NEW PROJECT REQUEST*%0A- *Contact Info:* ${encodeURIComponent(contact)}%0A- *Project Details:* ${encodeURIComponent(details)}`;
+    // Hide any prior alert messages
+    $('#form-success-msg').hide();
+    $('#form-error-msg').hide().empty();
 
-    // Open WhatsApp in a new tab
-    window.open(`https://api.whatsapp.com/send?phone=966533166742&text=${message}`, '_blank');
+    // Show sending state & disable button
+    btn.html(`<i class="fas fa-spinner fa-spin"></i> <span>${sendingText}</span>`).prop('disabled', true);
 
-    // Simulate background sending completion for UI
-    setTimeout(() => {
-      // Show success message
-      $('#form-success-msg').slideDown();
-      
-      // Clear form
-      $('#intakeForm')[0].reset();
+    // Endpoint selection: Vercel/Node backend vs GitHub Pages cloud AJAX service
+    const isNodeBackend = window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
-      // Reset button
-      btn.html(originalContent).prop('disabled', false);
+    const requestPromise = isNodeBackend
+      ? fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contact, details })
+        }).then(res => res.json())
+      : fetch('https://formsubmit.co/ajax/dhiaamostafa46@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: contact,
+            contact_info: contact,
+            message: details,
+            _subject: `[Operations Console] New Project Request from ${contact}`,
+            _template: 'table'
+          })
+        }).then(res => res.json());
 
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        $('#form-success-msg').slideUp();
-      }, 5000);
-    }, 1000);
+    requestPromise
+      .then((data) => {
+        const isSuccess = data && (data.success === true || data.success === 'true' || data.ok === true);
+
+        if (isSuccess) {
+          // Show success message
+          $('#form-success-msg').slideDown();
+
+          // Reset form fields
+          $('#intakeForm')[0].reset();
+
+          // Restore button state
+          btn.html(originalContent).prop('disabled', false);
+
+          // Auto-hide success message after 7 seconds
+          setTimeout(() => {
+            $('#form-success-msg').slideUp();
+          }, 7000);
+        } else {
+          let errMsg = data.message || (currentLang === 'ar' ? 'حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً.' : 'Failed to send request.');
+          if (data.message && data.message.includes('Activation')) {
+            errMsg = currentLang === 'ar'
+              ? 'تم إرسال رابط تفعيل الخدمة لأول مرة إلى البريد الإلكتروني (dhiaamostafa46@gmail.com). يرجى تفقد البريد والضغط على رابط التفعيل لمرة واحدة فقط لتفعيل الإرسال المباشر.'
+              : 'Form activation link sent to dhiaamostafa46@gmail.com. Please check your inbox and click activate link.';
+          }
+          throw new Error(errMsg);
+        }
+      })
+      .catch((error) => {
+        let isNetworkError = false;
+        let errorMsg = error.message || '';
+
+        if (!errorMsg || errorMsg === 'Failed to fetch' || errorMsg.includes('fetch') || errorMsg.includes('NetworkError')) {
+          isNetworkError = true;
+          errorMsg = currentLang === 'ar' 
+            ? 'تعذر الاتصال بالشبكة حالياً. يمكنك الإرسال مباشرة عبر الواتساب أو البريد:'
+            : 'Network connection error. Use direct options below:';
+        }
+
+        const waMessage = `Hello Dhiaa,%0A%0A*NEW PROJECT REQUEST*%0A- *Contact Info:* ${encodeURIComponent(contact)}%0A- *Project Details:* ${encodeURIComponent(details)}`;
+        const waUrl = `https://api.whatsapp.com/send?phone=966533166742&text=${waMessage}`;
+        const mailtoUrl = `mailto:dhiaamostafa46@gmail.com?subject=${encodeURIComponent('Project Request from ' + contact)}&body=${encodeURIComponent(details)}`;
+
+        let fallbackHtml = `<div><i class="fas fa-exclamation-triangle"></i> <span id="form-error-text">${errorMsg}</span></div>`;
+        if (isNetworkError) {
+          fallbackHtml += `
+            <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(239,68,68,0.4); display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="${waUrl}" target="_blank" class="btn-secondary" style="padding: 4px 12px; font-size: 0.8rem; border-color: #10b981; color: #10b981;">
+                <i class="fab fa-whatsapp"></i> ${currentLang === 'ar' ? 'إرسال مباشر عبر WhatsApp' : 'Send via WhatsApp'}
+              </a>
+              <a href="${mailtoUrl}" target="_blank" class="btn-secondary" style="padding: 4px 12px; font-size: 0.8rem; border-color: #38bdf8; color: #38bdf8;">
+                <i class="fas fa-envelope"></i> ${currentLang === 'ar' ? 'إرسال عبر البريد المباشر' : 'Send via Email'}
+              </a>
+            </div>
+          `;
+        }
+
+        $('#form-error-msg').html(fallbackHtml).slideDown();
+
+        // Restore button state
+        btn.html(originalContent).prop('disabled', false);
+      });
   });
 }
