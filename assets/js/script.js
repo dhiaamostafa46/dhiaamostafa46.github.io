@@ -1,74 +1,77 @@
 // Streamlined Core Competencies Stack Data Array
 const stackData = [
   {
-    category: "Backend & Systems Architecture",
-    category_ar: "هندسة الواجهات الخلفية والأنظمة",
+    category: "Backend, Middleware & APIs",
+    category_ar: "هندسة الواجهات الخلفية، الـ Middleware والـ APIs",
     items: [
-      { name: "C# & .NET Core (.NET 6/7/8)", name_ar: "C# & .NET Core", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
       { name: "Node.js & NestJS", name_ar: "Node.js & NestJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" },
-      { name: "PHP & Laravel (MVC)", name_ar: "PHP & Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
-      { name: "RESTful APIs & WebSockets", name_ar: "REST APIs & WebSockets", icon: "https://img.icons8.com/color/48/api.png" },
-      { name: "Microservices & CQRS", name_ar: "Microservices & CQRS", icon: "https://img.icons8.com/color/48/module.png" },
-      { name: "Clean Architecture & Patterns", name_ar: "Clean Architecture", icon: "https://img.icons8.com/color/48/architecture.png" }
+      { name: "PHP & Laravel (MVC)", name_ar: "PHP & Laravel MVC", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
+      { name: "C# & .NET Core (.NET 6/7/8)", name_ar: "C# & .NET Core", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+      { name: "RESTful APIs & Microservices", name_ar: "RESTful APIs والمايكروسرفيسز", icon: "https://img.icons8.com/color/48/api.png" },
+      { name: "WebSockets & Real-Time Events", name_ar: "WebSockets والاتصال الفوري", icon: "https://img.icons8.com/color/48/speed.png" },
+      { name: "Custom Middleware Engineering", name_ar: "هندسة الطبقات الوسيطة Middleware", icon: "https://img.icons8.com/color/48/module.png" },
+      { name: "Redis Queues & Async Workers", name_ar: "طوابير Redis والمعالجة غير المتزامنة", icon: "https://img.icons8.com/color/48/workflow.png" }
     ]
   },
   {
-    category: "Databases & Data Engineering",
-    category_ar: "قواعد البيانات وهندسة الأداء",
+    category: "Databases & Data Modeling",
+    category_ar: "قواعد البيانات ونمذجة البيانات",
     items: [
-      { name: "SQL Server (T-SQL & Procs)", name_ar: "SQL Server & T-SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
-      { name: "PostgreSQL & MySQL", name_ar: "PostgreSQL & MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-      { name: "Redis (Caching & Queues)", name_ar: "Redis Caching & Queues", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-      { name: "MongoDB (NoSQL)", name_ar: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-      { name: "Indexing & Query Optimization", name_ar: "تحسين أداء قواعد البيانات", icon: "https://img.icons8.com/color/48/database.png" },
+      { name: "PostgreSQL (Schema & Tuning)", name_ar: "PostgreSQL وهندسة المخططات", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { name: "MySQL (Relational Architecture)", name_ar: "MySQL وقواعد البيانات العلائقية", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { name: "Microsoft SQL Server & T-SQL", name_ar: "SQL Server & T-SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
+      { name: "Redis (Caching, Pub/Sub & Queues)", name_ar: "Redis (التخزين المؤقت والطوابير)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+      { name: "MongoDB (NoSQL Document Store)", name_ar: "MongoDB وقواعد البيانات الوثائقية", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { name: "Indexing & Query Tuning (40%+ Speed)", name_ar: "تحسين وفهرسة استعلامات SQL", icon: "https://img.icons8.com/color/48/database.png" },
       { name: "Multi-Tenant Data Isolation", name_ar: "عزل بيانات تعدد المستأجرين", icon: "https://img.icons8.com/color/48/schema.png" }
     ]
   },
   {
-    category: "Mobile Development & Flutter",
-    category_ar: "تطوير تطبيقات الجوال و Flutter",
+    category: "Front-End Engineering",
+    category_ar: "هندسة الواجهات الأمامية والويب الحديث",
     items: [
-      { name: "Flutter & Dart (Cross-Platform)", name_ar: "تطوير Flutter & Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
-      { name: "iOS & Android Apps Delivery", name_ar: "تطبيقات iOS و Android", icon: "https://img.icons8.com/color/48/android-os.png" },
-      { name: "State Management (Bloc / Provider)", name_ar: "إدارة الحالة Bloc & Provider", icon: "https://img.icons8.com/color/48/workflow.png" },
-      { name: "REST APIs & WebSockets Integration", name_ar: "ربط التطبيقات بالـ APIs والـ WebSockets", icon: "https://img.icons8.com/color/48/api.png" },
-      { name: "Offline Storage (SQLite / Hive)", name_ar: "قواعد البيانات المحلية SQLite & Hive", icon: "https://img.icons8.com/color/48/data-configuration.png" },
-      { name: "Push Notifications & Firebase (FCM)", name_ar: "الإشعارات الفورية Firebase FCM", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
+      { name: "React.js & Next.js", name_ar: "React.js & Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "TypeScript & JavaScript (ES6+)", name_ar: "TypeScript & JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { name: "Tailwind CSS & Bootstrap", name_ar: "Tailwind CSS & Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+      { name: "Redux Toolkit & State Management", name_ar: "إدارة الحالة (Redux Toolkit)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+      { name: "HTML5, CSS3 & SASS", name_ar: "HTML5, CSS3 & SASS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" },
+      { name: "Single Page Apps (SPA) & HUD Panels", name_ar: "لوحات التحكم التفاعلية وتطبيقات SPA", icon: "https://img.icons8.com/color/48/dashboard.png" }
     ]
   },
   {
-    category: "Enterprise Integrations & ZATCA",
-    category_ar: "تكامل أنظمة الشركات والفوترة",
+    category: "Enterprise & Systems Integration",
+    category_ar: "تكامل الأنظمة المؤسسية والـ ERP",
     items: [
-      { name: "Evix ERP & SAP Sync", name_ar: "ربط Evix ERP & SAP", icon: "https://img.icons8.com/color/48/system-task.png" },
-      { name: "ZATCA Phase-2 E-Invoicing", name_ar: "الفوترة الإلكترونية زاتكا", icon: "https://img.icons8.com/color/48/bill.png" },
-      { name: "Multi-Tenant SaaS Platforms", name_ar: "منصات SaaS متعددة المستأجرين", icon: "https://img.icons8.com/color/48/cloud-network.png" },
-      { name: "Payment Gateways (Tabby, HyperPay)", name_ar: "بوابات الدفع تابي وهايبر باي", icon: "https://img.icons8.com/color/48/card-in-use.png" },
-      { name: "E-Correspondence & Archiving", name_ar: "أنظمة المراسلات والأرشفة", icon: "https://img.icons8.com/color/48/documents.png" },
-      { name: "Identity & RBAC (SSO, OAuth2)", name_ar: "أمان الصلاحيات والمصادقة", icon: "https://img.icons8.com/color/48/security-checked.png" }
+      { name: "Evix ERP & SAP Integrations (500+ Clients)", name_ar: "ربط Evix ERP & SAP (أكثر من 500 شركة)", icon: "https://img.icons8.com/color/48/system-task.png" },
+      { name: "Multi-Tenant SaaS Platforms (7k+ Agents)", name_ar: "منصات SaaS سحابية (7k+ مندوب توصيل)", icon: "https://img.icons8.com/color/48/cloud-network.png" },
+      { name: "ZATCA Phase-2 E-Invoicing (QR & XML)", name_ar: "الفوترة الإلكترونية زاتكا المرحلة 2", icon: "https://img.icons8.com/color/48/bill.png" },
+      { name: "Payment Gateways (Tabby BNPL, HyperPay)", name_ar: "بوابات الدفع (تابي، هايبر باي، مدى)", icon: "https://img.icons8.com/color/48/card-in-use.png" },
+      { name: "Automated Payroll & HRMS (WPS)", name_ar: "الموارد البشرية ونظام حماية الأجور (WPS)", icon: "https://img.icons8.com/color/48/conference-call.png" },
+      { name: "OAuth2, JWT & RBAC Access Control", name_ar: "المصادقة وأمان الصلاحيات (RBAC)", icon: "https://img.icons8.com/color/48/security-checked.png" }
     ]
   },
   {
-    category: "Cloud, DevOps & AI Automation",
-    category_ar: "السحابة، الـ DevOps والذكاء الاصطناعي",
+    category: "Cloud, DevOps & Software Lifecycle",
+    category_ar: "السحابة، الـ DevOps وإدارة دورة حياة البرمجيات",
     items: [
-      { name: "Azure DevOps (CI/CD)", name_ar: "Azure DevOps & CI/CD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
-      { name: "AWS Cloud Services", name_ar: "خدمات AWS السحابية", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-      { name: "Docker Containerization", name_ar: "حاويات Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-      { name: "Azure OpenAI & LLM Workflows", name_ar: "أتمتة الذكاء الاصطناعي LLMs", icon: "https://img.icons8.com/color/48/brain.png" },
-      { name: "OCR & RAG Search", name_ar: "استخراج المستندات OCR & RAG", icon: "https://img.icons8.com/color/48/search-database.png" },
-      { name: "Nginx, Linux & Git", name_ar: "Linux, Nginx & Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" }
+      { name: "AWS Cloud (EC2, S3, RDS, ECS, Lambda)", name_ar: "خدمات AWS السحابية المتكاملة", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "Docker Containerization", name_ar: "حاويات Docker للإنتاج", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+      { name: "CI/CD (GitHub Actions, Azure DevOps)", name_ar: "أتمتة النشر المستمر CI/CD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { name: "Git / GitHub / Azure DevOps Version Control", name_ar: "إدارة الإصدارات بـ Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { name: "Agile / Scrum Sprint Leadership", name_ar: "إدارة دورات Agile / Scrum", icon: "https://img.icons8.com/color/48/scrum.png" },
+      { name: "Production Troubleshooting & Unit Testing", name_ar: "استقرار الإنتاج واختبارات الأتمتة", icon: "https://img.icons8.com/color/48/services.png" }
     ]
   },
   {
-    category: "Team Leadership & Delivery",
-    category_ar: "القيادة التقنية وإدارة التسليم",
+    category: "Mobile Development & AI Automation",
+    category_ar: "تطبيقات الجوال وأتمتة الذكاء الاصطناعي",
     items: [
-      { name: "Team Leadership & Mentorship", name_ar: "قيادة وتوجيه الفرق البرمجية", icon: "https://img.icons8.com/color/48/manager.png" },
-      { name: "Agile / Scrum Management", name_ar: "إدارة منهجيات Agile & Scrum", icon: "https://img.icons8.com/color/48/scrum.png" },
-      { name: "Architecture & Code Reviews", name_ar: "مراجعة الأكواد والتصميم المعماري", icon: "https://img.icons8.com/color/48/code-file.png" },
-      { name: "Sprint Planning & Estimation", name_ar: "تخطيط الدورات وتقدير الجهود", icon: "https://img.icons8.com/color/48/calendar.png" },
-      { name: "SDLC & Requirements Analysis", name_ar: "تحليل متطلبات الأعمال SDLC", icon: "https://img.icons8.com/color/48/process.png" }
+      { name: "Flutter & Dart (Cross-Platform Mobile)", name_ar: "تطوير تطبيقات الجوال بـ Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+      { name: "AI & LLM Workflows (Azure OpenAI, Claude)", name_ar: "أتمتة الذكاء الاصطناعي ونماذج LLMs", icon: "https://img.icons8.com/color/48/brain.png" },
+      { name: "Document Processing & OCR to JSON", name_ar: "معالجة المستندات واستخراج البيانات OCR", "icon": "https://img.icons8.com/color/48/search-database.png" },
+      { name: "AI-Augmented Development (Cursor, Copilot)", name_ar: "التطوير المعزز بالذكاء الاصطناعي", "icon": "https://img.icons8.com/color/48/artificial-intelligence.png" },
+      { name: "Push Notifications & Firebase (FCM)", name_ar: "الإشعارات الفورية Firebase FCM", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+      { name: "Technical Architecture & System Design", name_ar: "التوثيق المعماري وتصميم الأنظمة", "icon": "https://img.icons8.com/color/48/code-file.png" }
     ]
   }
 ];
@@ -152,9 +155,9 @@ $(document).ready(function () {
 // Dynamic Page Title when tab changes
 document.addEventListener('visibilitychange', function () {
   if (document.visibilityState === "visible") {
-    document.title = "Dhiaa Mostafa | Systems Architect & Full-Stack Engineer";
+    document.title = "Dhiaa Mostafa | Senior Full-Stack Engineer & SaaS Architect";
   } else {
-    document.title = "Dhiaa Mostafa | Systems Architect Profile";
+    document.title = "Dhiaa Mostafa | Full-Stack & Systems Architect";
   }
 });
 
@@ -189,12 +192,12 @@ function initTypedText() {
   if (typeof Typed !== 'undefined' && $('.typing-text').length) {
     typedInstance = new Typed(".typing-text", {
       strings: [
-        " Laravel, Node.js &amp; NestJS Backends",
-        " Evix ERP &amp; Enterprise Integrations",
-        " SaaS Multi-Tenant Architectures",
-        " Azure OpenAI &amp; LLM Automation",
-        " WebSockets &amp; Real-Time Dispatchers",
-        " Redis Queues &amp; Database Tuning"
+        " Laravel, Node.js, NestJS &amp; .NET Core",
+        " Multi-Tenant SaaS (7,000+ Fleet Agents)",
+        " Evix ERP Integrations (500+ Clients)",
+        " React.js, Next.js &amp; Flutter Mobile",
+        " PostgreSQL, Redis Queues &amp; SQL Server",
+        " AI Automation &amp; LLM Workflows (OCR to JSON)"
       ],
       loop: true,
       typeSpeed: 40,
@@ -208,32 +211,22 @@ function initTypedText() {
 let currentCodeTab = 'profile';
 const codeSnippets = {
   profile: {
-    en: `<p><span class="c-key">export interface</span> <span class="c-str">SystemArchitect</span> <span class="c-punc">{</span></p>
+    en: `<p><span class="c-key">export interface</span> <span class="c-str">SeniorFullStackSaaSArchitect</span> <span class="c-punc">{</span></p>
 <p>&nbsp;&nbsp;<span class="c-key">name</span><span class="c-punc">:</span> <span class="c-str">"Dhiaa Mostafa"</span><span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">title</span><span class="c-punc">:</span> <span class="c-str">"Senior Systems & Full-Stack Architect"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">title</span><span class="c-punc">:</span> <span class="c-str">"Senior Full-Stack Engineer & SaaS Architect"</span><span class="c-punc">;</span></p>
 <p>&nbsp;&nbsp;<span class="c-key">experience</span><span class="c-punc">:</span> <span class="c-str">"6+ Years"</span><span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">core_stack</span><span class="c-punc">:</span> [<span class="c-str">"Laravel"</span>, <span class="c-str">"Node.js"</span>, <span class="c-str">"NestJS"</span>, <span class="c-str">"React"</span>]<span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">specialization</span><span class="c-punc">:</span> <span class="c-str">"SaaS Multi-Tenant & Evix ERP Integrations"</span><span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">core_stack</span><span class="c-punc">:</span> [<span class="c-str">"Node.js / NestJS"</span>, <span class="c-str">"Laravel / PHP"</span>, <span class="c-str">"C# / .NET"</span>, <span class="c-str">"React / Next.js"</span>, <span class="c-str">"Flutter"</span>]<span class="c-punc">;</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">specialization</span><span class="c-punc">:</span> <span class="c-str">"SaaS Multi-Tenancy, ERP & Middleware Architecture"</span><span class="c-punc">;</span></p>
 <p>&nbsp;&nbsp;<span class="c-key">solutions_value</span><span class="c-punc">:</span> <span class="c-str">"SAR 4M+"</span><span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">active_agents</span><span class="c-punc">:</span> <span class="c-num">7000</span><span class="c-punc">;</span> <span class="c-comm">// Active Logistics Agents</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">active_agents</span><span class="c-punc">:</span> <span class="c-num">7000</span><span class="c-punc">;</span> <span class="c-comm">// Active Delivery Fleet Agents</span></p>
+<p>&nbsp;&nbsp;<span class="c-key">enterprise_clients</span><span class="c-punc">:</span> <span class="c-num">500</span><span class="c-punc">;</span> <span class="c-comm">// Evix ERP Subscribers</span></p>
 <p>&nbsp;&nbsp;<span class="c-key">status</span><span class="c-punc">:</span> <span class="c-str">"OPERATIONAL"</span><span class="c-punc">;</span></p>
-<p><span class="c-punc">}</span></p>`,
-    ar: `<p><span class="c-key">export interface</span> <span class="c-str">مهندس_الأنظمة</span> <span class="c-punc">{</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">الاسم</span><span class="c-punc">:</span> <span class="c-str">"ضياء مصطفى"</span><span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">المسمى</span><span class="c-punc">:</span> <span class="c-str">"كبير مهندسي البرمجيات والأنظمة"</span><span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">الخبرة</span><span class="c-punc">:</span> <span class="c-str">"+6 سنوات"</span><span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">التقنيات</span><span class="c-punc">:</span> [<span class="c-str">"Laravel"</span>, <span class="c-str">"Node.js"</span>, <span class="c-str">"NestJS"</span>, <span class="c-str">"React"</span>]<span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">التخصص</span><span class="c-punc">:</span> <span class="c-str">"الأنظمة السحابية وربط Evix ERP"</span><span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">قيمة_الحلول</span><span class="c-punc">:</span> <span class="c-str">"أكثر من 4M ريال"</span><span class="c-punc">;</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">السفراء_النشطين</span><span class="c-punc">:</span> <span class="c-num">7000</span><span class="c-punc">;</span> <span class="c-comm">// سفير وسائق توصيل</span></p>
-<p>&nbsp;&nbsp;<span class="c-key">الحالة</span><span class="c-punc">:</span> <span class="c-str">"جاهز للتشغيل"</span><span class="c-punc">;</span></p>
 <p><span class="c-punc">}</span></p>`
   }
 };
 
 function updateCodeCardContent(tab, lang = 'en') {
   currentCodeTab = tab;
-  // Always force 'en' for the code card to maintain standard IDE format
   const content = codeSnippets[tab] ? codeSnippets[tab]['en'] : '';
   
   const container = $('#code-card-content');
@@ -241,7 +234,6 @@ function updateCodeCardContent(tab, lang = 'en') {
 
   container.removeClass('anim-fade-up');
   
-  // Trigger reflow for animation restart safely
   if (container[0]) {
     void container[0].offsetWidth;
   }
@@ -263,7 +255,6 @@ function initCodeCard() {
   });
 
   $('#copyCodeBtn').on('click', function() {
-    // extract pure text from the html snippet for copying
     const textToCopy = $('#code-card-content').text().trim();
     navigator.clipboard.writeText(textToCopy).then(() => {
       const btn = $(this);
@@ -280,16 +271,15 @@ function initCodeCard() {
 }
 
 /* ===== SKILLS MATRIX COMPONENT ===== */
-let currentSkillCategory = 'all';
 let currentSkillSearch = '';
 
 const catIcons = {
-  "Backend & Systems Architecture": "fa-server",
-  "Databases & Data Engineering": "fa-database",
-  "Mobile Development & Flutter": "fa-mobile-alt",
-  "Enterprise Integrations & ZATCA": "fa-network-wired",
-  "Cloud, DevOps & AI Automation": "fa-cloud",
-  "Team Leadership & Delivery": "fa-user-tie"
+  "Backend, Middleware & APIs": "fa-server",
+  "Databases & Data Modeling": "fa-database",
+  "Front-End Engineering": "fa-code",
+  "Enterprise & Systems Integration": "fa-network-wired",
+  "Cloud, DevOps & Software Lifecycle": "fa-cloud",
+  "Mobile Development & AI Automation": "fa-mobile-alt"
 };
 
 function renderSkills(lang = 'en') {
@@ -304,7 +294,6 @@ function renderSkills(lang = 'en') {
     const catName = (lang === 'ar' && group.category_ar) ? group.category_ar : group.category;
     const catIcon = catIcons[group.category] || "fa-code";
     
-    // Filter items by search query if typed
     let items = group.items.filter(item => {
       if (!currentSkillSearch) return true;
       const q = currentSkillSearch.toLowerCase();
@@ -390,15 +379,6 @@ function renderProjects(lang = 'en') {
     return true;
   });
 
-  // Sort projects: Projects with valid links first, projects without links second
-  filtered.sort((a, b) => {
-    const hasLinkA = !!(a.link || (a.links && a.links.view && a.links.view !== '#') || a.demo_url || a.github_url);
-    const hasLinkB = !!(b.link || (b.links && b.links.view && b.links.view !== '#') || b.demo_url || b.github_url);
-    if (hasLinkA && !hasLinkB) return -1;
-    if (!hasLinkA && hasLinkB) return 1;
-    return 0;
-  });
-
   if (filtered.length === 0) {
     const emptyText = lang === 'ar' ? 'لم يتم العثور على مشاريع مطابقة' : 'No matching projects found.';
     container.append(`<div class="no-projects-msg text-center" style="grid-column: 1/-1; padding: 3rem 1rem;"><p style="color: var(--text-muted); font-size: 1.1rem;">${emptyText}</p></div>`);
@@ -460,7 +440,6 @@ function renderProjects(lang = 'en') {
     container.append(cardHtml);
   });
 
-  // Show "View More" button if there are more projects
   if (hasMore) {
     const remaining = filtered.length - PROJECTS_PAGE_SIZE;
     const viewMoreText = lang === 'ar'
@@ -478,7 +457,6 @@ function renderProjects(lang = 'en') {
     });
   }
 
-  // Attach click listener for modal
   $('.work .box').on('click', function () {
     const index = $(this).data('index');
     openProjectModal(toShow[index], lang);
@@ -496,7 +474,6 @@ function openProjectModal(proj, lang = 'en') {
   $('#modalImage').attr('src', proj.image);
   $('#modalDescription').text(desc);
 
-  // Features List
   const featuresContainer = $('#modalFeaturesList');
   featuresContainer.empty();
   if (features.length > 0) {
@@ -520,12 +497,11 @@ function openProjectModal(proj, lang = 'en') {
     `);
   }
 
-  // Metrics
   const metricsContainer = $('#modalMetrics');
   metricsContainer.empty();
   const metricsList = proj.metrics || [
     { val: "Enterprise", lbl: "Architecture" },
-    { val: "99.9%", lbl: "Reliability" }
+    { val: "99.99%", lbl: "Reliability" }
   ];
   metricsList.forEach(m => {
     metricsContainer.append(`
@@ -536,15 +512,13 @@ function openProjectModal(proj, lang = 'en') {
     `);
   });
 
-  // Stack badges
   const tagsContainer = $('#modalTags');
   tagsContainer.empty();
-  const sampleStack = [proj.category, 'RESTful APIs', 'Database Optimization', 'Production Architecture'];
+  const sampleStack = [proj.category, 'Node.js & NestJS', 'Laravel & .NET', 'RESTful APIs', 'PostgreSQL & Redis'];
   sampleStack.forEach(st => {
     tagsContainer.append(`<span class="service-tag">${st}</span>`);
   });
 
-  // Visit Link button
   const visitBtn = $('#modalVisitBtn');
   const viewUrl = proj.link || (proj.links && proj.links.view !== '#' ? proj.links.view : '') || proj.demo_url || proj.github_url || '';
   if (viewUrl && viewUrl !== '#') {
@@ -571,14 +545,14 @@ function initProjectsSection() {
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
     currentProjectFilter = $(this).data('filter');
-    projectsShowAll = false; // reset on filter change
+    projectsShowAll = false;
     const currentLang = localStorage.getItem('lang') || 'en';
     renderProjects(currentLang);
   });
 
   $('#project-search-input').on('keyup input', function () {
     currentProjectSearch = $(this).val();
-    projectsShowAll = false; // reset on search change
+    projectsShowAll = false;
     const currentLang = localStorage.getItem('lang') || 'en';
     renderProjects(currentLang);
   });
@@ -604,14 +578,11 @@ function initIntakeForm() {
     const currentLang = localStorage.getItem('lang') || 'ar';
     const sendingText = currentLang === 'ar' ? 'جارٍ الإرسال...' : 'Sending...';
 
-    // Hide any prior alert messages
     $('#form-success-msg').hide();
     $('#form-error-msg').hide().empty();
 
-    // Show sending state & disable button
     btn.html(`<i class="fas fa-spinner fa-spin"></i> <span>${sendingText}</span>`).prop('disabled', true);
 
-    // Endpoint selection: Vercel/Node backend vs GitHub Pages cloud AJAX service
     const isNodeBackend = window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
     const requestPromise = isNodeBackend
@@ -640,16 +611,10 @@ function initIntakeForm() {
         const isSuccess = data && (data.success === true || data.success === 'true' || data.ok === true);
 
         if (isSuccess) {
-          // Show success message
           $('#form-success-msg').slideDown();
-
-          // Reset form fields
           $('#intakeForm')[0].reset();
-
-          // Restore button state
           btn.html(originalContent).prop('disabled', false);
 
-          // Auto-hide success message after 7 seconds
           setTimeout(() => {
             $('#form-success-msg').slideUp();
           }, 7000);
@@ -693,8 +658,6 @@ function initIntakeForm() {
         }
 
         $('#form-error-msg').html(fallbackHtml).slideDown();
-
-        // Restore button state
         btn.html(originalContent).prop('disabled', false);
       });
   });

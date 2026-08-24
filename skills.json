@@ -1,73 +1,76 @@
 [
   {
-    "category": "Backend & Systems Architecture",
-    "category_ar": "هندسة الواجهات الخلفية والأنظمة",
+    "category": "Backend, Middleware & APIs",
+    "category_ar": "هندسة الواجهات الخلفية، الـ Middleware والـ APIs",
     "items": [
-      { "name": "C# & .NET Core (.NET 6/7/8)", "name_ar": "C# & .NET Core", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
       { "name": "Node.js & NestJS", "name_ar": "Node.js & NestJS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" },
-      { "name": "PHP & Laravel (MVC)", "name_ar": "PHP & Laravel", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
-      { "name": "RESTful APIs & WebSockets", "name_ar": "REST APIs & WebSockets", "icon": "https://img.icons8.com/color/48/api.png" },
-      { "name": "Microservices & CQRS", "name_ar": "Microservices & CQRS", "icon": "https://img.icons8.com/color/48/module.png" },
-      { "name": "Clean Architecture & Patterns", "name_ar": "Clean Architecture", "icon": "https://img.icons8.com/color/48/architecture.png" }
+      { "name": "PHP & Laravel (MVC)", "name_ar": "PHP & Laravel MVC", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
+      { "name": "C# & .NET Core (.NET 6/7/8)", "name_ar": "C# & .NET Core", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+      { "name": "RESTful APIs & Microservices", "name_ar": "RESTful APIs والمايكروسرفيسز", "icon": "https://img.icons8.com/color/48/api.png" },
+      { "name": "WebSockets & Real-Time Events", "name_ar": "WebSockets والاتصال الفوري", "icon": "https://img.icons8.com/color/48/speed.png" },
+      { "name": "Custom Middleware Engineering", "name_ar": "هندسة الطبقات الوسيطة Middleware", "icon": "https://img.icons8.com/color/48/module.png" },
+      { "name": "Redis Queues & Async Workers", "name_ar": "طوابير Redis والمعالجة غير المتزامنة", "icon": "https://img.icons8.com/color/48/workflow.png" }
     ]
   },
   {
-    "category": "Databases & Data Engineering",
-    "category_ar": "قواعد البيانات وهندسة الأداء",
+    "category": "Databases & Data Modeling",
+    "category_ar": "قواعد البيانات ونمذجة البيانات",
     "items": [
-      { "name": "SQL Server (T-SQL & Procs)", "name_ar": "SQL Server & T-SQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
-      { "name": "PostgreSQL & MySQL", "name_ar": "PostgreSQL & MySQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-      { "name": "Redis (Caching & Queues)", "name_ar": "Redis Caching & Queues", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-      { "name": "MongoDB (NoSQL)", "name_ar": "MongoDB", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-      { "name": "Indexing & Query Optimization", "name_ar": "تحسين أداء قواعد البيانات", "icon": "https://img.icons8.com/color/48/database.png" },
+      { "name": "PostgreSQL (Schema & Tuning)", "name_ar": "PostgreSQL وهندسة المخططات", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { "name": "MySQL (Relational Architecture)", "name_ar": "MySQL وقواعد البيانات العلائقية", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { "name": "Microsoft SQL Server & T-SQL", "name_ar": "SQL Server & T-SQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
+      { "name": "Redis (Caching, Pub/Sub & Queues)", "name_ar": "Redis (التخزين المؤقت والطوابير)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+      { "name": "MongoDB (NoSQL Document Store)", "name_ar": "MongoDB وقواعد البيانات الوثائقية", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { "name": "Indexing & Query Tuning (40%+ Speed)", "name_ar": "تحسين وفهرسة استعلامات SQL", "icon": "https://img.icons8.com/color/48/database.png" },
       { "name": "Multi-Tenant Data Isolation", "name_ar": "عزل بيانات تعدد المستأجرين", "icon": "https://img.icons8.com/color/48/schema.png" }
     ]
   },
   {
-    "category": "Mobile Development & Flutter",
-    "category_ar": "تطوير تطبيقات الجوال و Flutter",
+    "category": "Front-End Engineering",
+    "category_ar": "هندسة الواجهات الأمامية والويب الحديث",
     "items": [
-      { "name": "Flutter & Dart (Cross-Platform)", "name_ar": "تطوير Flutter & Dart", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
-      { "name": "iOS & Android Apps Delivery", "name_ar": "تطبيقات iOS و Android", "icon": "https://img.icons8.com/color/48/android-os.png" },
-      { "name": "State Management (Bloc / Provider)", "name_ar": "إدارة الحالة Bloc & Provider", "icon": "https://img.icons8.com/color/48/workflow.png" },
-      { "name": "REST APIs & WebSockets Integration", "name_ar": "ربط التطبيقات بالـ APIs والـ WebSockets", "icon": "https://img.icons8.com/color/48/api.png" },
-      { "name": "Offline Storage (SQLite / Hive)", "name_ar": "قواعد البيانات المحلية SQLite & Hive", "icon": "https://img.icons8.com/color/48/data-configuration.png" },
-      { "name": "Push Notifications & Firebase (FCM)", "name_ar": "الإشعارات الفورية Firebase FCM", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" }
+      { "name": "React.js & Next.js", "name_ar": "React.js & Next.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { "name": "TypeScript & JavaScript (ES6+)", "name_ar": "TypeScript & JavaScript", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { "name": "Tailwind CSS & Bootstrap", "name_ar": "Tailwind CSS & Bootstrap", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
+      { "name": "Redux Toolkit & State Management", "name_ar": "إدارة الحالة (Redux Toolkit)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+      { "name": "HTML5, CSS3 & SASS", "name_ar": "HTML5, CSS3 & SASS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" },
+      { "name": "Single Page Apps (SPA) & HUD Panels", "name_ar": "لوحات التحكم التفاعلية وتطبيقات SPA", "icon": "https://img.icons8.com/color/48/dashboard.png" }
     ]
   },
   {
-    "category": "Enterprise Integrations & ZATCA",
-    "category_ar": "تكامل أنظمة الشركات والفوترة",
+    "category": "Enterprise & Systems Integration",
+    "category_ar": "تكامل الأنظمة المؤسسية والـ ERP",
     "items": [
-      { "name": "Evix ERP & SAP Sync", "name_ar": "ربط Evix ERP & SAP", "icon": "https://img.icons8.com/color/48/system-task.png" },
-      { "name": "ZATCA Phase-2 E-Invoicing", "name_ar": "الفوترة الإلكترونية زاتكا", "icon": "https://img.icons8.com/color/48/bill.png" },
-      { "name": "Multi-Tenant SaaS Platforms", "name_ar": "منصات SaaS متعددة المستأجرين", "icon": "https://img.icons8.com/color/48/cloud-network.png" },
-      { "name": "Payment Gateways (Tabby, HyperPay)", "name_ar": "بوابات الدفع تابي وهايبر باي", "icon": "https://img.icons8.com/color/48/card-in-use.png" },
-      { "name": "E-Correspondence & Archiving", "name_ar": "أنظمة المراسلات والأرشفة", "icon": "https://img.icons8.com/color/48/documents.png" },
-      { "name": "Identity & RBAC (SSO, OAuth2)", "name_ar": "أمان الصلاحيات والمصادقة", "icon": "https://img.icons8.com/color/48/security-checked.png" }
+      { "name": "Evix ERP & SAP Integrations (500+ Clients)", "name_ar": "ربط Evix ERP & SAP (أكثر من 500 شركة)", "icon": "https://img.icons8.com/color/48/system-task.png" },
+      { "name": "Multi-Tenant SaaS Platforms (7k+ Agents)", "name_ar": "منصات SaaS سحابية (7k+ مندوب توصيل)", "icon": "https://img.icons8.com/color/48/cloud-network.png" },
+      { "name": "ZATCA Phase-2 E-Invoicing (QR & XML)", "name_ar": "الفوترة الإلكترونية زاتكا المرحلة 2", "icon": "https://img.icons8.com/color/48/bill.png" },
+      { "name": "Payment Gateways (Tabby BNPL, HyperPay)", "name_ar": "بوابات الدفع (تابي، هايبر باي، مدى)", "icon": "https://img.icons8.com/color/48/card-in-use.png" },
+      { "name": "Automated Payroll & HRMS (WPS)", "name_ar": "الموارد البشرية ونظام حماية الأجور (WPS)", "icon": "https://img.icons8.com/color/48/conference-call.png" },
+      { "name": "OAuth2, JWT & RBAC Access Control", "name_ar": "المصادقة وأمان الصلاحيات (RBAC)", "icon": "https://img.icons8.com/color/48/security-checked.png" }
     ]
   },
   {
-    "category": "Cloud, DevOps & AI Automation",
-    "category_ar": "السحابة، الـ DevOps والذكاء الاصطناعي",
+    "category": "Cloud, DevOps & Software Lifecycle",
+    "category_ar": "السحابة، الـ DevOps وإدارة دورة حياة البرمجيات",
     "items": [
-      { "name": "Azure DevOps (CI/CD)", "name_ar": "Azure DevOps & CI/CD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
-      { "name": "AWS Cloud Services", "name_ar": "خدمات AWS السحابية", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-      { "name": "Docker Containerization", "name_ar": "حاويات Docker", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-      { "name": "Azure OpenAI & LLM Workflows", "name_ar": "أتمتة الذكاء الاصطناعي LLMs", "icon": "https://img.icons8.com/color/48/brain.png" },
-      { "name": "OCR & RAG Search", "name_ar": "استخراج المستندات OCR & RAG", "icon": "https://img.icons8.com/color/48/search-database.png" },
-      { "name": "Nginx, Linux & Git", "name_ar": "Linux, Nginx & Git", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" }
+      { "name": "AWS Cloud (EC2, S3, RDS, ECS, Lambda)", "name_ar": "خدمات AWS السحابية المتكاملة", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { "name": "Docker Containerization", "name_ar": "حاويات Docker للإنتاج", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+      { "name": "CI/CD (GitHub Actions, Azure DevOps)", "name_ar": "أتمتة النشر المستمر CI/CD", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { "name": "Git / GitHub / Azure DevOps Version Control", "name_ar": "إدارة الإصدارات بـ Git", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { "name": "Agile / Scrum Sprint Leadership", "name_ar": "إدارة دورات Agile / Scrum", "icon": "https://img.icons8.com/color/48/scrum.png" },
+      { "name": "Production Troubleshooting & Unit Testing", "name_ar": "استقرار الإنتاج واختبارات الأتمتة", "icon": "https://img.icons8.com/color/48/services.png" }
     ]
   },
   {
-    "category": "Team Leadership & Delivery",
-    "category_ar": "القيادة التقنية وإدارة التسليم",
+    "category": "Mobile Development & AI Automation",
+    "category_ar": "تطبيقات الجوال وأتمتة الذكاء الاصطناعي",
     "items": [
-      { "name": "Team Leadership & Mentorship", "name_ar": "قيادة وتوجيه الفرق البرمجية", "icon": "https://img.icons8.com/color/48/manager.png" },
-      { "name": "Agile / Scrum Management", "name_ar": "إدارة منهجيات Agile & Scrum", "icon": "https://img.icons8.com/color/48/scrum.png" },
-      { "name": "Architecture & Code Reviews", "name_ar": "مراجعة الأكواد والتصميم المعماري", "icon": "https://img.icons8.com/color/48/code-file.png" },
-      { "name": "Sprint Planning & Estimation", "name_ar": "تخطيط الدورات وتقدير الجهود", "icon": "https://img.icons8.com/color/48/calendar.png" },
-      { "name": "SDLC & Requirements Analysis", "name_ar": "تحليل متطلبات الأعمال SDLC", "icon": "https://img.icons8.com/color/48/process.png" }
+      { "name": "Flutter & Dart (Cross-Platform Mobile)", "name_ar": "تطوير تطبيقات الجوال بـ Flutter", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+      { "name": "AI & LLM Workflows (Azure OpenAI, Claude)", "name_ar": "أتمتة الذكاء الاصطناعي ونماذج LLMs", "icon": "https://img.icons8.com/color/48/brain.png" },
+      { "name": "Document Processing & OCR to JSON", "name_ar": "معالجة المستندات واستخراج البيانات OCR", "icon": "https://img.icons8.com/color/48/search-database.png" },
+      { "name": "AI-Augmented Development (Cursor, Copilot)", "name_ar": "التطوير المعزز بالذكاء الاصطناعي", "icon": "https://img.icons8.com/color/48/artificial-intelligence.png" },
+      { "name": "Push Notifications & Firebase (FCM)", "name_ar": "الإشعارات الفورية Firebase FCM", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+      { "name": "Technical Architecture & System Design", "name_ar": "التوثيق المعماري وتصميم الأنظمة", "icon": "https://img.icons8.com/color/48/code-file.png" }
     ]
   }
 ]
