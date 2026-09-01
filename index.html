@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4fcff">
 
   <!-- Primary SEO Meta Tags -->
   <title>Dhiaa Mostafa | Senior Full-Stack Engineer &amp; SaaS Architect</title>
@@ -83,7 +84,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <!-- Custom CSS Design System -->
-  <link rel="stylesheet" href="./assets/css/style.min.css?v=86">
+  <link rel="stylesheet" href="./assets/css/style.min.css?v=99">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
@@ -109,7 +110,7 @@
       <!-- Custom High-Tech Logo -->
       <a href="#home" class="logo">
         <div class="logo-icon-img">
-          <img src="./assets/images/logo.png" alt="Dhiaa Logo" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 1px solid var(--accent-1);">
+          <img src="./assets/images/logo.png" alt="Dhiaa Logo" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary);">
         </div>
         <span class="logo-text">Dhiaa</span>
       </a>
@@ -125,12 +126,6 @@
           <li><a href="#work" data-i18n="nav_projects">Projects</a></li>
           <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
           <li><a href="#contact" class="nav-hire-btn" data-i18n="nav_hire">System Intake</a></li>
-          <li>
-            <button type="button" id="theme-toggle" class="theme-btn">
-              <i class="fas fa-moon"></i>
-              <span id="theme-toggle-text">Dark</span>
-            </button>
-          </li>
           <li>
             <a href="#" id="lang-toggle" class="lang-btn">
               <i class="fas fa-globe"></i>
@@ -194,9 +189,17 @@
               <span class="dot green"></span>
             </div>
             <div class="code-tabs">
-              <button type="button" class="code-tab active single-tab" data-tab="profile">
-                <i class="fab fa-typescript" style="color: #3178c6; margin-right: 6px;"></i>
+              <button type="button" class="code-tab active" data-tab="profile">
+                <i class="fab fa-typescript" style="color: #38bdf8;"></i>
                 <span>profile.ts</span>
+              </button>
+              <button type="button" class="code-tab" data-tab="architecture">
+                <i class="fas fa-sitemap" style="color: #0bbab5;"></i>
+                <span>architecture.yml</span>
+              </button>
+              <button type="button" class="code-tab" data-tab="telemetry">
+                <i class="fas fa-chart-line" style="color: #fbbf24;"></i>
+                <span>telemetry.json</span>
               </button>
             </div>
           </div>
@@ -204,8 +207,8 @@
             <!-- Populated via script.js -->
           </div>
           <div class="code-card-footer">
-            <span class="status-indicator">● OPERATIONAL</span>
-            <span class="latency-indicator">LATENCY: 18ms</span>
+            <span class="status-indicator"><span class="badge-dot" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#10b981;box-shadow:0 0 8px #10b981;margin-right:6px;"></span>OPERATIONAL</span>
+            <span class="latency-indicator">LATENCY: 14ms · 99.99% UPTIME</span>
           </div>
         </div>
       </div>
@@ -425,10 +428,19 @@
       </div>
 
       <!-- Controls -->
-      <div class="skills-controls" style="justify-content: center; margin-bottom: 2rem;">
-        <div class="skills-search" style="max-width: 500px; width: 100%;">
+      <div class="skills-controls">
+        <div class="skills-search">
           <i class="fas fa-search"></i>
           <input type="text" id="skills-search-input" placeholder="Search stack (e.g. Node.js, Laravel, .NET, React, PostgreSQL)..." data-i18n-placeholder="skills_search_ph">
+        </div>
+        <div class="skills-category-tabs">
+          <button type="button" class="skills-tab active" data-cat="all" data-i18n="skills_tab_all">All Stack</button>
+          <button type="button" class="skills-tab" data-cat="backend" data-i18n="skills_tab_backend">Backend &amp; APIs</button>
+          <button type="button" class="skills-tab" data-cat="databases" data-i18n="skills_tab_databases">Databases &amp; Caching</button>
+          <button type="button" class="skills-tab" data-cat="frontend" data-i18n="skills_tab_frontend">Frontend &amp; Mobile</button>
+          <button type="button" class="skills-tab" data-cat="enterprise" data-i18n="skills_tab_enterprise">Enterprise &amp; ERP</button>
+          <button type="button" class="skills-tab" data-cat="cloud" data-i18n="skills_tab_cloud">Cloud &amp; DevOps</button>
+          <button type="button" class="skills-tab" data-cat="ai" data-i18n="skills_tab_ai">AI &amp; Automation</button>
         </div>
       </div>
 
@@ -472,15 +484,12 @@
 
   <!-- Project Details Modal -->
   <div class="modal-backdrop" id="projectModal">
-    <div class="modal-content mac-modal-content">
-      <div class="modal-window-bar">
-        <div class="mac-dots">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-        </div>
+    <div class="modal-content project-modal-content">
+      <div class="modal-header-bar">
         <span class="modal-category-badge" id="modalCategory">Category</span>
-        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close">&times;</button>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
 
       <div class="modal-scroll-body">
@@ -503,7 +512,7 @@
 
             <div class="modal-section-box">
               <h3 class="modal-section-title">
-                <i class="fas fa-list-check"></i>
+                <i class="fas fa-check-circle"></i>
                 <span data-i18n="modal_key_features">Key Technical Deliverables &amp; Features</span>
               </h3>
               <ul id="modalFeaturesList" class="modal-features-ul">
@@ -536,7 +545,7 @@
             <div class="modal-actions-box">
               <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary modal-action-btn" id="modalVisitBtn" style="display: none;">
                 <i class="fas fa-external-link-alt"></i>
-                <span data-i18n="modal_btn_visit">Visit Live App / Store</span>
+                <span data-i18n="modal_btn_visit">Visit Platform / Store</span>
               </a>
               <a href="#contact" class="btn-outline modal-action-btn" id="modalInquireBtn">
                 <i class="fas fa-paper-plane"></i>
@@ -578,6 +587,16 @@
                 <li data-i18n="exp1_li4">Designed event-driven integration processes using Redis Queues and asynchronous workers, reducing database query and API latency by over 40%.</li>
                 <li data-i18n="exp1_li5">Implemented Docker containerization, AWS cloud infrastructure (EC2, S3, RDS), and GitHub Actions CI/CD automated deployment pipelines.</li>
               </ul>
+              <div class="exp-stack-tags">
+                <span class="exp-tag">Laravel / PHP</span>
+                <span class="exp-tag">Evix ERP</span>
+                <span class="exp-tag">ZATCA Phase 2</span>
+                <span class="exp-tag">PostgreSQL</span>
+                <span class="exp-tag">Redis Queues</span>
+                <span class="exp-tag">WebSockets (7k+ Agents)</span>
+                <span class="exp-tag">Docker</span>
+                <span class="exp-tag">AWS Cloud</span>
+              </div>
             </div>
           </div>
         </div>
@@ -598,6 +617,15 @@
                 <li data-i18n="exp6_li3">Implemented secure authentication, Role-Based Access Control (RBAC), payment gateways (Tabby BNPL), and third-party APIs across multiple business platforms.</li>
                 <li data-i18n="exp6_li4">Built real-time features using WebSockets and event-driven architecture, focusing on reliability, performance, and scalability.</li>
               </ul>
+              <div class="exp-stack-tags">
+                <span class="exp-tag">Node.js &amp; NestJS</span>
+                <span class="exp-tag">TypeScript</span>
+                <span class="exp-tag">PostgreSQL</span>
+                <span class="exp-tag">MongoDB</span>
+                <span class="exp-tag">Tabby BNPL</span>
+                <span class="exp-tag">WebSockets</span>
+                <span class="exp-tag">RBAC Security</span>
+              </div>
             </div>
           </div>
         </div>
@@ -617,6 +645,14 @@
                 <li data-i18n="exp3_li3">Integrated third-party RESTful APIs and external services to connect applications with business platforms and streamline data exchange.</li>
                 <li data-i18n="exp3_li4">Optimized application performance, improved frontend responsiveness, and resolved complex database and legacy-system bottlenecks.</li>
               </ul>
+              <div class="exp-stack-tags">
+                <span class="exp-tag">React.js &amp; Next.js</span>
+                <span class="exp-tag">Node.js</span>
+                <span class="exp-tag">TypeScript</span>
+                <span class="exp-tag">MongoDB</span>
+                <span class="exp-tag">AI Workflows</span>
+                <span class="exp-tag">RESTful APIs</span>
+              </div>
             </div>
           </div>
         </div>
@@ -636,6 +672,13 @@
                 <li data-i18n="exp2_li3">Built POS integration solutions connecting sales terminals, menu management, order processing, kitchen workflows, and inventory reconciliation.</li>
                 <li data-i18n="exp2_li4">Engineered scalable RESTful APIs and backend services using ASP.NET Core, Node.js, NestJS, PostgreSQL, and SQL Server with strict data integrity.</li>
               </ul>
+              <div class="exp-stack-tags">
+                <span class="exp-tag">ASP.NET Core (C#)</span>
+                <span class="exp-tag">Laravel</span>
+                <span class="exp-tag">SQL Server</span>
+                <span class="exp-tag">Multi-Tenant SaaS</span>
+                <span class="exp-tag">POS Integrations</span>
+              </div>
             </div>
           </div>
         </div>
@@ -654,6 +697,13 @@
                 <li data-i18n="exp5_li2">Designed and implemented RESTful APIs, multi-authentication, and Role-Based Access Control (RBAC).</li>
                 <li data-i18n="exp5_li3">Integrated payment gateways and third-party APIs to support core business workflows, and containerized backend services with Docker.</li>
               </ul>
+              <div class="exp-stack-tags">
+                <span class="exp-tag">NestJS</span>
+                <span class="exp-tag">Next.js</span>
+                <span class="exp-tag">TypeScript</span>
+                <span class="exp-tag">Payment Gateways</span>
+                <span class="exp-tag">Docker</span>
+              </div>
             </div>
           </div>
         </div>
@@ -672,6 +722,12 @@
                 <li data-i18n="exp4_li2">Developed Miran (LMS platform), Khibrah (expertise platform), Mubser (accessibility platform for visually impaired), Spare (spare parts e-commerce), and SEO Players.</li>
                 <li data-i18n="exp4_li3">Built and integrated RESTful APIs with mobile applications and web platforms within Agile teams.</li>
               </ul>
+              <div class="exp-stack-tags">
+                <span class="exp-tag">Flutter &amp; Dart</span>
+                <span class="exp-tag">Cross-Platform Mobile</span>
+                <span class="exp-tag">RESTful APIs</span>
+                <span class="exp-tag">Firebase</span>
+              </div>
             </div>
           </div>
         </div>
@@ -877,10 +933,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" crossorigin="anonymous" defer></script>
 
   <!-- i18n & Core Scripts -->
-  <script src="./assets/js/lang.min.js?v=86" defer></script>
-  <script src="./assets/js/i18n.min.js?v=86" defer></script>
-  <script src="./projects/projects.min.js?v=86" defer></script>
-  <script src="./assets/js/script.min.js?v=86" defer></script>
+  <script src="./assets/js/lang.min.js?v=99" defer></script>
+  <script src="./assets/js/i18n.min.js?v=99" defer></script>
+  <script src="./projects/projects.min.js?v=99" defer></script>
+  <script src="./assets/js/script.min.js?v=99" defer></script>
 
 </body>
 

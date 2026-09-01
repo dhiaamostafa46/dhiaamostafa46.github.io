@@ -35,6 +35,7 @@ const translations = {
     "about_email": "<span>email</span> dhiaamostafa46@gmail.com",
     "about_based": "<span>location</span> Riyadh, Saudi Arabia",
     "about_origin": "<span>phone</span> +966 533 166 742",
+    "about_badge_3d": "SYSTEMS ARCHITECT",
     "about_btn_res": "<i class=\"fas fa-file-download\"></i> <span>Download Resume (PDF)</span>",
 
     // Services Section
@@ -60,6 +61,13 @@ const translations = {
     "skills_heading": "Technological <span>Matrix</span>",
     "skills_subtitle": "Languages, databases, frameworks, cloud infrastructure, and integration tools I engineer with professionally.",
     "skills_search_ph": "Search stack (e.g. Node.js, Laravel, .NET, React, PostgreSQL)...",
+    "skills_tab_all": "All Stack",
+    "skills_tab_backend": "Backend &amp; APIs",
+    "skills_tab_databases": "Databases &amp; Caching",
+    "skills_tab_frontend": "Frontend &amp; Mobile",
+    "skills_tab_enterprise": "Enterprise &amp; ERP",
+    "skills_tab_cloud": "Cloud &amp; DevOps",
+    "skills_tab_ai": "AI &amp; Automation",
 
     // Projects Section
     "proj_eyebrow": "04 — Technical Deployments &amp; System Solutions",
@@ -208,6 +216,7 @@ const translations = {
     "about_email": "<span>البريد</span> dhiaamostafa46@gmail.com",
     "about_based": "<span>الإقامة</span> الرياض، المملكة العربية السعودية",
     "about_origin": "<span>الجوال</span> +966 533 166 742",
+    "about_badge_3d": "معماري أنظمة متكاملة",
     "about_btn_res": "<i class=\"fas fa-file-download\"></i> <span>تحميل السيرة الذاتية (PDF)</span>",
 
     // Services Section
@@ -233,6 +242,13 @@ const translations = {
     "skills_heading": "المصفوفة <span>التقنية</span>",
     "skills_subtitle": "لغات البرمجة، قواعد البيانات، البنية التحتية السحابية، وأدوات التكامل التي أعمل بها باحتراف.",
     "skills_search_ph": "ابحث في التقنيات (مثل Node.js, Laravel, .NET, React, PostgreSQL)...",
+    "skills_tab_all": "جميع التقنيات",
+    "skills_tab_backend": "الواجهات الخلفية و APIs",
+    "skills_tab_databases": "قواعد البيانات والتخزين",
+    "skills_tab_frontend": "الواجهات والجوال",
+    "skills_tab_enterprise": "أنظمة الشركات و ERP",
+    "skills_tab_cloud": "السحابة و DevOps",
+    "skills_tab_ai": "الذكاء الاصطناعي والأتمتة",
 
     // Projects Section
     "proj_eyebrow": "04 — الأنظمة والمنصات المنفذة",

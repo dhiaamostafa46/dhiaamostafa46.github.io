@@ -1,10 +1,5 @@
 /*
- * DEEP REAL-WORLD AI & SOFTWARE SYSTEM ARCHITECTURE ENGINE
- * Features:
- * - 3D Raycasting Hover Interaction: Hovering nodes illuminates connected synapses.
- * - Layered Neural Network: Input Tokens -> Hidden Processing Layers -> LLM Output.
- * - API Data Request Packets: Pulse particles traveling through microservices conduits.
- * - Smooth Scroll & Cursor Telemetry Alignment.
+ * REAL-WORLD AI & SYSTEM ARCHITECTURE 3D CANVAS (CLEAN LIFE PALETTE)
  */
 (function () {
   const canvas = document.getElementById("network-canvas");
@@ -35,14 +30,12 @@
   const masterGroup = new THREE.Group();
   scene.add(masterGroup);
 
-  // Colors
-  const C_CYAN = 0x00f2fe;
-  const C_VIOLET = 0x8b5cf6;
-  const C_INDIGO = 0x6366f1;
-  const C_EMERALD = 0x10b981;
-  const C_GOLD = 0xf59e0b;
+  // Clean Life Color Palette for 3D Graph
+  const C_TEAL = 0x0bbab5;    // Vibrant Cyan / Teal
+  const C_NAVY = 0x003d66;    // Deep Navy
+  const C_BLUE = 0x00548c;    // Primary Blue
 
-  // ===== 1. LAYERED 3D NEURAL NETWORK ARCHITECTURE =====
+  // ===== 1. LAYERED NEURAL ARCHITECTURE =====
   const neuralGroup = new THREE.Group();
   masterGroup.add(neuralGroup);
 
@@ -54,9 +47,9 @@
   ];
 
   const nodeGeo = new THREE.SphereGeometry(0.38, 16, 16);
-  const inputMat = new THREE.MeshBasicMaterial({ color: C_CYAN, transparent: true, opacity: 0.95 });
-  const hiddenMat = new THREE.MeshBasicMaterial({ color: C_VIOLET, transparent: true, opacity: 0.85 });
-  const outputMat = new THREE.MeshBasicMaterial({ color: C_EMERALD, transparent: true, opacity: 0.95 });
+  const inputMat = new THREE.MeshBasicMaterial({ color: C_TEAL, transparent: true, opacity: 0.85 });
+  const hiddenMat = new THREE.MeshBasicMaterial({ color: C_BLUE, transparent: true, opacity: 0.75 });
+  const outputMat = new THREE.MeshBasicMaterial({ color: C_NAVY, transparent: true, opacity: 0.85 });
 
   const allNodes = [];
   const layerNodes = [];
@@ -99,7 +92,7 @@
   const linePositions = new Float32Array(synapseEdges.length * 6);
   const lineGeo = new THREE.BufferGeometry();
   lineGeo.setAttribute("position", new THREE.BufferAttribute(linePositions, 3));
-  const lineMat = new THREE.LineBasicMaterial({ color: C_INDIGO, transparent: true, opacity: 0.2 });
+  const lineMat = new THREE.LineBasicMaterial({ color: C_TEAL, transparent: true, opacity: 0.25 });
   const synapseLines = new THREE.LineSegments(lineGeo, lineMat);
   neuralGroup.add(synapseLines);
 
@@ -114,8 +107,8 @@
   updateSynapses();
 
   // ===== 2. API REQUEST DATA PACKETS =====
-  const packetGeo = new THREE.SphereGeometry(0.3, 12, 12);
-  const packetMat = new THREE.MeshBasicMaterial({ color: C_CYAN, transparent: true, opacity: 0 });
+  const packetGeo = new THREE.SphereGeometry(0.28, 12, 12);
+  const packetMat = new THREE.MeshBasicMaterial({ color: C_TEAL, transparent: true, opacity: 0 });
   const dataPackets = [];
 
   for (let i = 0; i < 12; i++) {
@@ -133,7 +126,7 @@
 
   dataPackets.forEach((p, i) => setTimeout(() => launchPacket(p), i * 300));
 
-  // Pointer, Raycasting & Scroll Parallax
+  // Pointer & Scroll Parallax
   let targetRotX = 0, targetRotY = 0;
   let scrollY = 0;
   const raycaster = new THREE.Raycaster();
@@ -142,8 +135,8 @@
   function setPointer(e) {
     const x = e.clientX;
     const y = e.clientY;
-    targetRotY = ((x / window.innerWidth) * 2 - 1) * 0.3;
-    targetRotX = ((y / window.innerHeight) * 2 - 1) * 0.18;
+    targetRotY = ((x / window.innerWidth) * 2 - 1) * 0.25;
+    targetRotX = ((y / window.innerHeight) * 2 - 1) * 0.15;
 
     mouse.x = (x / window.innerWidth) * 2 - 1;
     mouse.y = - (y / window.innerHeight) * 2 + 1;
@@ -159,7 +152,7 @@
   });
 
   const clock = new THREE.Clock();
-  const idleSpin = prefersReducedMotion ? 0 : 0.0008;
+  const idleSpin = prefersReducedMotion ? 0 : 0.0006;
 
   function animate() {
     requestAnimationFrame(animate);
@@ -172,7 +165,7 @@
     // Scroll Camera Trajectory
     const maxScroll = (document.documentElement.scrollHeight - window.innerHeight) || 1;
     const scrollPercent = scrollY / maxScroll;
-    const targetCamY = - scrollPercent * 30;
+    const targetCamY = - scrollPercent * 28;
     camera.position.y += (targetCamY - camera.position.y) * 0.05;
 
     // Raycasting Hover Highlights
@@ -185,7 +178,7 @@
 
     if (intersects.length > 0) {
       const hovered = intersects[0].object;
-      hovered.scale.lerp(new THREE.Vector3(1.6, 1.6, 1.6), 0.2);
+      hovered.scale.lerp(new THREE.Vector3(1.5, 1.5, 1.5), 0.2);
     }
 
     // Animate Data Packets
