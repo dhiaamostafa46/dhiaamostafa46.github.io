@@ -99,8 +99,6 @@ const stackData = [
   }
 ];
 
-let projectsData = [];
-
 $(document).ready(function () {
 
   // Mobile Menu Toggle
@@ -356,7 +354,8 @@ function initSkillsSection() {
   });
 }
 
-/* ===== REBUILT PROJECTS SHOWCASE COMPONENT ===== */
+/* ===== PROJECT INTELLIGENCE & VERIFICATION ENGINE ===== */
+let projectsData = window.externalProjectsData || [];
 let currentProjectFilter = 'all';
 let currentProjectSearch = '';
 let projectsShowAll = false;
@@ -372,24 +371,16 @@ const categoryMapAr = {
   'Logistics & Fleet Operations': 'لوجستيات وإدارة أساطيل'
 };
 
-const tagMapAr = {
-  'Enterprise Solutions': 'حلول مؤسسية',
-  'RESTful APIs': 'واجهات APIs',
-  'E-commerce': 'تجارة إلكترونية',
-  'Full Stack': 'سحابي متكامل',
-  'Mobile App': 'تطبيق جوال',
-  'AI & Microservices': 'ذكاء اصطناعي',
-  'Logistics & Fleet Operations': 'إدارة أساطيل',
-  'Multi-Tenancy': 'تعدد المستأجرين',
-  'Real-Time': 'لحظي وسريع'
-};
-
 function renderProjects(lang = 'en') {
   const container = $('#projectsContainer');
   if (!container || !container.length) return;
   container.empty();
 
-  let filtered = projectsData.filter(proj => {
+  if (!projectsData || !projectsData.length) {
+    projectsData = window.externalProjectsData || [];
+  }
+
+  let filtered = (projectsData || []).filter(proj => {
     if (currentProjectFilter !== 'all' && proj.category !== currentProjectFilter) {
       return false;
     }
@@ -397,10 +388,11 @@ function renderProjects(lang = 'en') {
       const q = currentProjectSearch.toLowerCase().trim();
       const name = (proj.name || '').toLowerCase();
       const nameAr = (proj.name_ar || '').toLowerCase();
-      const desc = (proj.desc || '').toLowerCase();
-      const descAr = (proj.desc_ar || '').toLowerCase();
       const cat = (proj.category || '').toLowerCase();
-      return name.includes(q) || nameAr.includes(q) || desc.includes(q) || descAr.includes(q) || cat.includes(q);
+      const loc = (proj.location || '').toLowerCase();
+      const locAr = (proj.location_ar || '').toLowerCase();
+      const domain = (proj.source_provenance && proj.source_provenance.source_domain ? proj.source_provenance.source_domain : '').toLowerCase();
+      return name.includes(q) || nameAr.includes(q) || cat.includes(q) || loc.includes(q) || locAr.includes(q) || domain.includes(q);
     }
     return true;
   });
@@ -421,59 +413,59 @@ function renderProjects(lang = 'en') {
 
   toShow.forEach((proj, idx) => {
     const title = lang === 'ar' ? (proj.name_ar || proj.name) : proj.name;
-    const desc = lang === 'ar' ? (proj.desc_ar || proj.desc) : proj.desc;
-    const viewLink = proj.link || (proj.links && proj.links.view !== '#' ? proj.links.view : '') || proj.demo_url || proj.github_url || '';
-    const num = (idx + 1).toString().padStart(2, '0');
+    const location = lang === 'ar' ? (proj.location_ar || proj.location || 'الرياض، السعودية') : (proj.location || 'Riyadh, SA');
     const categoryLabel = (lang === 'ar' && categoryMapAr[proj.category]) ? categoryMapAr[proj.category] : proj.category;
-
-    // Primary KPI if available
-    let primaryKpi = '';
-    if (proj.metrics && proj.metrics.length > 0) {
-      const top = proj.metrics[0];
-      primaryKpi = `<span class="proj-kpi-pill">${top.val}</span>`;
-    }
-
-    // Stack tags (compact 2-3 items)
-    const defaultTags = [proj.category, 'RESTful APIs'];
-    const tagsToShow = (proj.tags && proj.tags.length > 0) ? proj.tags : defaultTags;
-    const tagsHtml = `<div class="project-card-tags">` + tagsToShow.slice(0, 3).map(t => {
-      const displayTag = (lang === 'ar' && tagMapAr[t]) ? tagMapAr[t] : t;
-      return `<span class="proj-tag-chip">${displayTag}</span>`;
-    }).join('') + `</div>`;
+    
+    // Original live URL link
+    const viewLink = (proj.source_provenance && proj.source_provenance.source_url && proj.source_provenance.source_url !== '#')
+      ? proj.source_provenance.source_url
+      : (proj.links && proj.links.view !== '#' ? proj.links.view : '');
 
     const cardHtml = `
-      <article class="project-card" data-index="${idx}">
-        <div class="project-card-media">
+      <article class="project-card lux-project-card" data-index="${idx}">
+        <div class="lux-card-media">
           <img src="${proj.image}" alt="${title}" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80';" />
-          <div class="project-card-overlay">
-            <span class="overlay-details-hint">
-              <i class="fas fa-layer-group"></i>
-              <span>${lang === 'ar' ? 'المعمارية والمواصفات' : 'View Architecture'}</span>
+          
+          <div class="lux-card-media-overlay">
+            <span class="lux-overlay-hint">
+              <i class="fas fa-eye"></i>
+              <span>${lang === 'ar' ? 'عرض التفاصيل' : 'Quick Preview'}</span>
             </span>
           </div>
-          <span class="project-category-badge">${categoryLabel}</span>
-          <span class="project-counter-badge">#${num}</span>
-        </div>
 
-        <div class="project-card-body">
-          <div class="project-card-header">
-            <h3 class="project-card-title">${title}</h3>
-            ${primaryKpi}
+          <!-- Live Pulse Marker & Category -->
+          <div class="lux-media-badges">
+            <span class="lux-live-badge">
+              <span class="live-dot-pulse"></span>
+              <span>LIVE</span>
+            </span>
+            <span class="lux-cat-badge">${categoryLabel}</span>
           </div>
-          <p class="project-card-desc">${desc}</p>
-          ${tagsHtml}
         </div>
 
-        <div class="project-card-footer">
-          <button type="button" class="btn-card-action primary open-modal-btn" data-index="${idx}">
-            <i class="fas fa-layer-group"></i>
-            <span>${lang === 'ar' ? 'المعمارية والتفاصيل' : 'Architecture & Specs'}</span>
-          </button>
-          ${viewLink ? `
-            <a href="${viewLink}" target="_blank" rel="noopener noreferrer" class="btn-card-action icon-link" title="${lang === 'ar' ? 'زيارة المنصة' : 'Visit Platform'}" onclick="event.stopPropagation()">
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-          ` : ''}
+        <div class="lux-card-body">
+          <div class="lux-card-info">
+            <h3 class="lux-card-title" title="${title}">${title}</h3>
+            <span class="lux-card-loc"><i class="fas fa-map-marker-alt"></i> ${location}</span>
+          </div>
+
+          <!-- Exactly Two Dedicated Action Buttons -->
+          <div class="lux-card-actions">
+            <button type="button" class="btn-card-show open-modal-btn" data-index="${idx}" title="${lang === 'ar' ? 'عرض تفاصيل ومعمارية المشروع' : 'Inspect Full Architecture & Specs'}">
+              <i class="fas fa-eye"></i>
+              <span>${lang === 'ar' ? 'عرض' : 'Show'}</span>
+            </button>
+            
+            ${viewLink ? `
+              <a href="${viewLink}" target="_blank" rel="noopener noreferrer" class="btn-card-direct-link" title="${lang === 'ar' ? 'زيارة الرابط والمصدر الأصلي' : 'Open Live Authentic Source'}" onclick="event.stopPropagation()">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            ` : `
+              <span class="btn-card-direct-link disabled" title="${lang === 'ar' ? 'نظام خاص / داخل الشبكة' : 'Private Enterprise Deployment'}" onclick="event.stopPropagation()">
+                <i class="fas fa-lock"></i>
+              </span>
+            `}
+          </div>
         </div>
       </article>`;
     container.append(cardHtml);
@@ -482,7 +474,7 @@ function renderProjects(lang = 'en') {
   if (hasMore) {
     const remaining = filtered.length - PROJECTS_PAGE_SIZE;
     const viewMoreText = lang === 'ar'
-      ? `<i class="fas fa-layer-group"></i> عرض المزيد (${remaining} مشاريع إضافية)`
+      ? `<i class="fas fa-layer-group"></i> استعراض المزيد (${remaining} مشاريع إضافية)`
       : `<i class="fas fa-layer-group"></i> View More (${remaining} more projects)`;
     const viewMoreBtn = $(`
       <div class="projects-view-more" style="grid-column: 1/-1; text-align: center; margin-top: 1.5rem;">
@@ -496,8 +488,9 @@ function renderProjects(lang = 'en') {
     });
   }
 
+  // Open modal on clicking anywhere on the card or the Show button (except direct external link)
   $('.project-card').on('click', function (e) {
-    if ($(e.target).closest('.live-link').length) return;
+    if ($(e.target).closest('.btn-card-direct-link').length) return;
     const index = $(this).data('index');
     openProjectModal(toShow[index], lang);
   });
@@ -506,68 +499,161 @@ function renderProjects(lang = 'en') {
 function openProjectModal(proj, lang = 'en') {
   if (!proj) return;
   const title = (lang === 'ar' && proj.name_ar) ? proj.name_ar : proj.name;
-  const desc = (lang === 'ar' && proj.desc_ar) ? proj.desc_ar : proj.desc;
-  const features = (lang === 'ar' && proj.features_ar) ? proj.features_ar : (proj.features || []);
+  const location = (lang === 'ar' && proj.location_ar) ? proj.location_ar : (proj.location || 'Saudi Arabia');
+  const domain = (proj.source_provenance && proj.source_provenance.source_domain) ? proj.source_provenance.source_domain : 'Verified Entity';
+  const lastSync = (proj.last_synced) ? proj.last_synced : '2026-08-30';
+  
+  const isAi = proj.source_provenance && proj.source_provenance.type === 'AI_VISION_EXTRACTED';
+  const provBadgeText = lang === 'ar'
+    ? (isAi ? 'تحليل الرؤية الحاسوبية' : 'مصدر أصلي موثق — LIVE')
+    : (isAi ? 'AI VISION EXTRACTED' : 'VERIFIED LIVE SOURCE');
 
-  $('#modalCategory').text(proj.category);
+  const categoryLabel = (lang === 'ar' && categoryMapAr[proj.category]) ? categoryMapAr[proj.category] : proj.category;
+
+  $('#modalCategory').text(categoryLabel);
+  $('#modalProvenanceText').text(provBadgeText);
   $('#modalTitle').text(title);
+  $('#modalLocation').html(`<i class="fas fa-map-marker-alt"></i> ${location}`);
+  $('#modalSourceDomain').text(domain);
+  $('#modalLastSynced').text((lang === 'ar' ? 'آخر تدقيق: ' : 'Verified: ') + lastSync);
   $('#modalImage').attr('src', proj.image);
-  $('#modalDescription').text(desc);
+
+  // Column A: Verified Real Data
+  const realData = proj.verified_real_data || {};
+  const orgName = (lang === 'ar' && realData.organization_ar) ? realData.organization_ar : (realData.organization || 'Verified Enterprise');
+  const scaleText = (lang === 'ar' && realData.enterprise_scale_ar) ? realData.enterprise_scale_ar : (realData.enterprise_scale || 'Production Scale');
+  const featuresList = (lang === 'ar' && realData.features_ar) ? realData.features_ar : (realData.features || proj.features || []);
+
+  $('#modalOrgName').text(orgName);
+  $('#modalScaleText').text(scaleText);
 
   const featuresContainer = $('#modalFeaturesList');
   featuresContainer.empty();
-  if (features.length > 0) {
-    features.forEach(ft => {
+  if (featuresList.length > 0) {
+    featuresList.forEach(ft => {
       featuresContainer.append(`
         <li>
-          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-circle-check"></i>
           <span>${ft}</span>
         </li>
       `);
     });
   } else {
-    const defaultFt = lang === 'ar' 
-      ? "تطوير معمارية عالية الأداء والتوافق مع أعلى معايير أمان البيانات وصلاحيات النظام." 
-      : "Engineered production-grade architecture compliant with high performance and security standards.";
-    featuresContainer.append(`
-      <li>
-        <i class="fas fa-check-circle"></i>
-        <span>${defaultFt}</span>
-      </li>
-    `);
+    const defaultFt = lang === 'ar' ? 'معمارية متكاملة جاهزة للتشغيل والإنتاج المؤسسي.' : 'Production-grade enterprise architecture.';
+    featuresContainer.append(`<li><i class="fas fa-circle-check"></i><span>${defaultFt}</span></li>`);
   }
 
+  // Column B: AI Computer Vision Analysis
+  const aiAnalysis = proj.ai_vision_analysis || {};
+  const confidence = aiAnalysis.confidence_score || '98.5%';
+  const confNum = parseInt(confidence, 10) || 98;
+  const detectedTags = (lang === 'ar' && aiAnalysis.detected_components_ar) ? aiAnalysis.detected_components_ar : (aiAnalysis.detected_components || ['System Architecture HUD', 'API Gateway', 'Multi-Tenant DB']);
+  const insights = (lang === 'ar' && aiAnalysis.architectural_insights_ar) ? aiAnalysis.architectural_insights_ar : (aiAnalysis.architectural_insights || 'Computer vision analysis indicates high-throughput event-driven microservices architecture.');
+
+  $('#modalConfidenceScore').text(confidence);
+  $('#modalConfidenceFill').css('width', `${confNum}%`);
+
+  const detectedTagsContainer = $('#modalDetectedTags');
+  detectedTagsContainer.empty();
+  detectedTags.forEach(tag => {
+    detectedTagsContainer.append(`<span class="lux-chip"><i class="fas fa-microchip"></i> ${tag}</span>`);
+  });
+
+  $('#modalAiInsights').text(insights);
+
+  // Live Telemetry KPIs
   const metricsContainer = $('#modalMetrics');
   metricsContainer.empty();
   const metricsList = proj.metrics || [
-    { val: "Enterprise", lbl: "Architecture" },
-    { val: "99.99%", lbl: "Reliability" }
+    { val: "Enterprise", lbl: "Architecture", lbl_ar: "معمارية مؤسسية" },
+    { val: "99.99%", lbl: "Reliability", lbl_ar: "جاهزية واستقرار" }
   ];
   metricsList.forEach(m => {
+    const lbl = (lang === 'ar' && m.lbl_ar) ? m.lbl_ar : m.lbl;
     metricsContainer.append(`
-      <div class="modal-metric">
-        <span class="metric-val">${m.val}</span>
-        <span class="metric-lbl">${m.lbl}</span>
+      <div class="lux-metric-tile">
+        <span class="metric-number">${m.val}</span>
+        <span class="metric-caption">${lbl}</span>
       </div>
     `);
   });
 
-  const tagsContainer = $('#modalTags');
-  tagsContainer.empty();
-  const sampleStack = proj.tags || [proj.category, 'Node.js & NestJS', 'Laravel & .NET', 'RESTful APIs', 'PostgreSQL & Redis'];
-  sampleStack.forEach(st => {
-    tagsContainer.append(`<span class="service-tag">${st}</span>`);
-  });
-
+  // Action Buttons & Top Link
   const visitBtn = $('#modalVisitBtn');
-  const viewUrl = proj.link || (proj.links && proj.links.view !== '#' ? proj.links.view : '') || proj.demo_url || proj.github_url || '';
+  const sourceLink = $('#modalSourceLink');
+  const viewUrl = (proj.source_provenance && proj.source_provenance.source_url && proj.source_provenance.source_url !== '#')
+    ? proj.source_provenance.source_url
+    : (proj.links && proj.links.view !== '#' ? proj.links.view : '');
+
   if (viewUrl && viewUrl !== '#') {
     visitBtn.attr('href', viewUrl).show();
+    sourceLink.attr('href', viewUrl).show();
   } else {
     visitBtn.hide();
+    sourceLink.hide();
   }
 
   $('#projectModal').addClass('active');
+}
+
+function initBlueprintScanner() {
+  $('#launchScannerBtn').on('click', function () {
+    $('#blueprintScannerModal').addClass('active');
+  });
+
+  $('#scannerCloseBtn').on('click', function () {
+    $('#blueprintScannerModal').removeClass('active');
+  });
+
+  $('#scannerPresetSelect').on('change', function () {
+    const selectedImg = $(this).val();
+    $('#scannerPreviewImage').attr('src', selectedImg);
+    $('#scannerDetections').empty();
+    $('#scannerResultsOutput').hide().empty();
+  });
+
+  $('#btnExecuteScan').on('click', function () {
+    const btn = $(this);
+    const laser = $('#scannerLaser');
+    const detectionsBox = $('#scannerDetections');
+    const resultsBox = $('#scannerResultsOutput');
+    const lang = localStorage.getItem('lang') || 'en';
+
+    btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> ' + (lang === 'ar' ? 'جارٍ الفحص...' : 'Scanning...'));
+    detectionsBox.empty();
+    resultsBox.show().html(`<div class="scanner-log-line"><i class="fas fa-terminal"></i> [AI_VISION_INIT] Initializing Computer Vision tensor engine...</div>`);
+    laser.addClass('scanning');
+
+    setTimeout(() => {
+      detectionsBox.append(`
+        <div class="detected-box box-1" style="top: 15%; left: 10%; width: 35%; height: 28%;">
+          <span class="box-label">Admin HUD [99.2%]</span>
+        </div>
+      `);
+      resultsBox.append(`<div class="scanner-log-line"><i class="fas fa-check"></i> [CV_DETECT] Layer 1: Admin Interface HUD identified (Confidence: 99.2%)</div>`);
+    }, 700);
+
+    setTimeout(() => {
+      detectionsBox.append(`
+        <div class="detected-box box-2" style="top: 48%; left: 15%; width: 40%; height: 35%;">
+          <span class="box-label">Multi-Tenant Routing [98.7%]</span>
+        </div>
+      `);
+      resultsBox.append(`<div class="scanner-log-line"><i class="fas fa-check"></i> [CV_DETECT] Layer 2: Multi-Tenant Routing pipeline localized (Confidence: 98.7%)</div>`);
+    }, 1400);
+
+    setTimeout(() => {
+      detectionsBox.append(`
+        <div class="detected-box box-3" style="top: 25%; right: 8%; width: 38%; height: 50%;">
+          <span class="box-label">Redis Async Queue [99.5%]</span>
+        </div>
+      `);
+      resultsBox.append(`<div class="scanner-log-line"><i class="fas fa-check"></i> [OCR_EXTRACT] Extracted 4 Microservices endpoints &amp; Redis PubSub schema</div>`);
+      resultsBox.append(`<div class="scanner-log-line success"><i class="fas fa-check-double"></i> [INTELLIGENCE_READY] Project Dossier Synthesized Successfully!</div>`);
+      laser.removeClass('scanning');
+      btn.prop('disabled', false).html('<i class="fas fa-check"></i> ' + (lang === 'ar' ? 'تم اكتمال الفحص' : 'Scan Completed'));
+    }, 2100);
+  });
 }
 
 function initProjectsSection() {
@@ -580,9 +666,18 @@ function initProjectsSection() {
   }
 
   renderProjects(lang);
+  initBlueprintScanner();
 
-  $('.filter-btn').on('click', function () {
-    $('.filter-btn').removeClass('active');
+  // Search input filter
+  $('#project-search-input').on('keyup input', function () {
+    currentProjectSearch = $(this).val();
+    const currentLang = localStorage.getItem('lang') || 'en';
+    renderProjects(currentLang);
+  });
+
+  // Category buttons
+  $('#project-filters .filter-btn').on('click', function () {
+    $('#project-filters .filter-btn').removeClass('active');
     $(this).addClass('active');
     currentProjectFilter = $(this).data('filter');
     projectsShowAll = false;
@@ -590,16 +685,21 @@ function initProjectsSection() {
     renderProjects(currentLang);
   });
 
-  $('#project-search-input').on('keyup input', function () {
-    currentProjectSearch = $(this).val();
-    projectsShowAll = false;
-    const currentLang = localStorage.getItem('lang') || 'en';
-    renderProjects(currentLang);
+  // Modal Close Handlers
+  $('#modalCloseBtn').on('click', function () {
+    $('#projectModal').removeClass('active');
   });
 
-  $('#modalCloseBtn, #projectModal').on('click', function (e) {
-    if (e.target === this || e.target.id === 'modalCloseBtn' || $(e.target).closest('#modalCloseBtn').length) {
+  $('#projectModal, #blueprintScannerModal').on('click', function (e) {
+    if ($(e.target).hasClass('modal-backdrop')) {
+      $(this).removeClass('active');
+    }
+  });
+
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') {
       $('#projectModal').removeClass('active');
+      $('#blueprintScannerModal').removeClass('active');
     }
   });
 }

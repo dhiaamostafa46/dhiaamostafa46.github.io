@@ -84,7 +84,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <!-- Custom CSS Design System -->
-  <link rel="stylesheet" href="./assets/css/style.min.css?v=99">
+  <link rel="stylesheet" href="./assets/css/style.min.css?v=140">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
@@ -451,21 +451,27 @@
   </section>
 
 
-  <!-- Section 5: Projects -->
+  <!-- Section 5: Projects / Project Intelligence Platform -->
   <section class="work" id="work">
     <div class="site-container">
       <div class="section-head text-center">
-        <span class="eyebrow" data-i18n="proj_eyebrow">04 — Technical Deployments &amp; System Solutions</span>
-        <h2 class="heading" data-i18n="proj_heading">Featured <span>Projects</span></h2>
-        <p class="section-subtitle" data-i18n="proj_subtitle">Enterprise systems, multi-tenant SaaS platforms, and digital solutions I've architected &amp; built.</p>
+        <span class="eyebrow" data-i18n="proj_eyebrow">04 — Project Intelligence &amp; Verification Engine</span>
+        <h2 class="heading" data-i18n="proj_heading">Enterprise Project <span>Intelligence</span></h2>
+        <p class="section-subtitle" data-i18n="proj_subtitle">Real-time data ingestion from authentic sources combined with AI Computer Vision blueprint extraction and performance telemetry.</p>
       </div>
 
-      <!-- Controls -->
+      <!-- Intelligence Controls & Scanner Bar -->
       <div class="projects-controls">
-        <div class="project-search">
-          <i class="fas fa-search"></i>
-          <input type="text" id="project-search-input" placeholder="Search projects by name or technology..." data-i18n-placeholder="proj_search_ph">
+        <div class="projects-controls-top">
+          <div class="project-search">
+            <i class="fas fa-search"></i>
+            <input type="text" id="project-search-input" placeholder="Search projects by name, domain or technology..." data-i18n-placeholder="proj_search_ph">
+          </div>
+          <button type="button" class="btn-scanner-launch" id="launchScannerBtn" data-i18n="proj_scan_btn">
+            <i class="fas fa-microchip"></i> AI Blueprint Scanner
+          </button>
         </div>
+
         <div class="project-filters" id="project-filters">
           <button type="button" class="filter-btn active" data-filter="all" data-i18n="proj_filter_all">All Projects</button>
           <button type="button" class="filter-btn" data-filter="Enterprise Solutions" data-i18n="proj_filter_ent">Enterprise &amp; ERP</button>
@@ -482,77 +488,158 @@
   </section>
 
 
-  <!-- Project Details Modal -->
+  <!-- Project Case Study Modal (World-Class Clean Design) -->
   <div class="modal-backdrop" id="projectModal">
-    <div class="modal-content project-modal-content">
-      <div class="modal-header-bar">
-        <span class="modal-category-badge" id="modalCategory">Category</span>
-        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close">
+    <div class="modal-content case-study-modal">
+      
+      <!-- Top Navigation Header -->
+      <div class="case-header">
+        <div class="case-header-left">
+          <span class="case-live-pill">
+            <span class="live-dot-pulse"></span>
+            <span id="modalProvenanceText">LIVE PRODUCTION</span>
+          </span>
+          <span class="case-category-pill" id="modalCategory">Enterprise ERP</span>
+          <span class="case-location-pill" id="modalLocation"><i class="fas fa-map-marker-alt"></i> Riyadh, SA</span>
+        </div>
+        <button type="button" class="case-close-btn" id="modalCloseBtn" aria-label="Close">
           <i class="fas fa-times"></i>
         </button>
       </div>
 
-      <div class="modal-scroll-body">
-        <div class="modal-hero-banner">
-          <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Project Screenshot">
-          <div class="modal-hero-overlay">
-            <h2 class="modal-title" id="modalTitle">Project Title</h2>
+      <!-- Scrollable Editorial Body -->
+      <div class="case-scroll-body">
+        
+        <!-- Case Title & Identity -->
+        <div class="case-identity-block">
+          <span class="case-org-tag" id="modalOrgName">Bander Trading Group</span>
+          <h2 class="case-title" id="modalTitle">Evix ERP Platform</h2>
+          <div class="case-source-bar">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="case-source-link" id="modalSourceLink">
+              <i class="fas fa-link"></i> <span id="modalSourceDomain">evixdev.com</span> <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+            </a>
+            <span class="case-verify-stamp" id="modalLastSynced"><i class="fas fa-shield-check"></i> Verified Production Architecture</span>
           </div>
         </div>
 
-        <div class="modal-inner-grid">
-          <div class="modal-main-info">
-            <div class="modal-section-box">
-              <h3 class="modal-section-title">
-                <i class="fas fa-cubes"></i>
-                <span data-i18n="modal_arch_highlights">Architectural Highlights &amp; Overview</span>
-              </h3>
-              <p id="modalDescription" class="modal-desc-text">Detailed breakdown...</p>
-            </div>
+        <!-- Showcase Visual Mockup Frame -->
+        <div class="case-visual-frame">
+          <img id="modalImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Project Screenshot">
+        </div>
 
-            <div class="modal-section-box">
-              <h3 class="modal-section-title">
-                <i class="fas fa-check-circle"></i>
-                <span data-i18n="modal_key_features">Key Technical Deliverables &amp; Features</span>
-              </h3>
-              <ul id="modalFeaturesList" class="modal-features-ul">
-                <!-- Dynamically populated -->
-              </ul>
+        <!-- KPI Numerical Telemetry Grid -->
+        <div class="case-kpi-grid" id="modalMetrics">
+          <!-- Populated dynamically: 3-4 clean number cards -->
+        </div>
+
+        <!-- Two Column Deep Dive -->
+        <div class="case-details-grid">
+          
+          <!-- Column 1: Core System Capabilities -->
+          <div class="case-card-panel">
+            <div class="case-panel-header">
+              <div class="case-panel-icon"><i class="fas fa-layer-group"></i></div>
+              <div>
+                <h3 class="case-panel-title" data-i18n="modal_verified_source_title">Architecture &amp; Core Deliverables</h3>
+                <span class="case-panel-sub" id="modalScaleText">500+ Active Enterprise Clients</span>
+              </div>
             </div>
+            <ul id="modalFeaturesList" class="case-features-list">
+              <!-- Dynamically populated -->
+            </ul>
           </div>
 
-          <div class="modal-sidebar-info">
-            <div class="modal-section-box">
-              <h4 class="modal-section-title" style="font-size: 0.95rem;">
-                <i class="fas fa-chart-line"></i>
-                <span data-i18n="modal_metrics_title">Impact &amp; Performance Metrics</span>
-              </h4>
-              <div class="modal-metrics" id="modalMetrics">
-                <!-- Dynamically populated -->
+          <!-- Column 2: AI Vision & Technical Architecture -->
+          <div class="case-card-panel">
+            <div class="case-panel-header">
+              <div class="case-panel-icon ai-icon"><i class="fas fa-microchip"></i></div>
+              <div>
+                <h3 class="case-panel-title" data-i18n="modal_ai_vision_title">AI Blueprint &amp; System Extraction</h3>
+                <span class="case-panel-sub"><span data-i18n="modal_confidence_label">Vision Confidence</span>: <strong id="modalConfidenceScore" style="color: #10b981;">98.7%</strong></span>
               </div>
             </div>
 
-            <div class="modal-section-box">
-              <h4 class="modal-section-title" style="font-size: 0.95rem;">
-                <i class="fas fa-layer-group"></i>
-                <span data-i18n="modal_stack_used">Tech Stack Used</span>
-              </h4>
-              <div class="modal-tags" id="modalTags">
+            <!-- Detected Modules -->
+            <div class="case-modules-section">
+              <h4 class="case-section-subtitle"><i class="fas fa-cubes"></i> <span data-i18n="modal_detected_components">Detected System Modules</span></h4>
+              <div class="case-chips-wrap" id="modalDetectedTags">
                 <!-- Badges -->
               </div>
             </div>
 
-            <div class="modal-actions-box">
-              <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary modal-action-btn" id="modalVisitBtn" style="display: none;">
-                <i class="fas fa-external-link-alt"></i>
-                <span data-i18n="modal_btn_visit">Visit Platform / Store</span>
-              </a>
-              <a href="#contact" class="btn-outline modal-action-btn" id="modalInquireBtn">
-                <i class="fas fa-paper-plane"></i>
-                <span data-i18n="modal_btn_inquire">Inquire Similar Solution</span>
-              </a>
+            <!-- Architectural Insight -->
+            <div class="case-insight-box">
+              <h4 class="case-section-subtitle"><i class="fas fa-brain"></i> <span data-i18n="modal_insights_title">Architectural Intelligence Synthesis</span></h4>
+              <p id="modalAiInsights" class="case-insight-text">Analysis narrative...</p>
             </div>
           </div>
+
+        </div>
+
+      </div>
+
+      <!-- Modal Bottom Sticky Actions -->
+      <div class="case-footer-actions">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary case-cta-btn" id="modalVisitBtn">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+          <span data-i18n="modal_btn_visit">Visit Live Platform</span>
+        </a>
+        <a href="#contact" class="btn-outline case-cta-btn" id="modalInquireBtn">
+          <i class="fas fa-paper-plane"></i>
+          <span data-i18n="modal_btn_inquire">Inquire Similar Solution</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- AI Computer Vision Blueprint Scanner Modal -->
+  <div class="modal-backdrop" id="blueprintScannerModal">
+    <div class="modal-content blueprint-scanner-modal-content">
+      <div class="modal-header-bar">
+        <div class="modal-provenance-badge-wrap">
+          <span class="modal-provenance-badge" style="background: rgba(11, 186, 181, 0.12); color: var(--secondary-dark);">
+            <i class="fas fa-microchip"></i> <span data-i18n="scanner_modal_title">AI Blueprint Scanner</span>
+          </span>
+        </div>
+        <button type="button" class="modal-close-btn" id="scannerCloseBtn" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="scanner-modal-body">
+        <div class="scanner-intro text-center">
+          <h3 class="scanner-title" data-i18n="scanner_modal_title">AI Computer Vision &amp; Blueprint Scanner</h3>
+          <p class="scanner-desc" data-i18n="scanner_modal_desc">Upload or select any project screenshot or architecture diagram to run instant Computer Vision extraction.</p>
+        </div>
+
+        <div class="scanner-viewport" id="scannerViewport">
+          <div class="scanner-laser-line" id="scannerLaser"></div>
+          <img id="scannerPreviewImage" src="./projects/project/evix-admin-control-panel.png" alt="Scanning Target">
+          <div class="scanner-overlay-boxes" id="scannerDetections">
+            <!-- Simulated bounding boxes -->
+          </div>
+        </div>
+
+        <div class="scanner-controls-row">
+          <div class="scanner-presets-select">
+            <label for="scannerPresetSelect" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.3rem; display: block;">Select Blueprint Sample:</label>
+            <select id="scannerPresetSelect" class="scanner-select">
+              <option value="./projects/project/evix-admin-control-panel.png">Evix ERP Dispatcher Blueprint (Architecture)</option>
+              <option value="./projects/project/saas-logistics-fleet-platform.png">BTC Fleet Real-Time WebSockets Map</option>
+              <option value="./projects/project/evix-erp-e-invoicing.png">ZATCA Phase-2 ECDSA Cryptographic Pipeline</option>
+              <option value="./projects/project/middleware-hub.png">Enterprise Integration Middleware Diagram</option>
+              <option value="./projects/project/ai-workflow-automation.png">Azure OpenAI OCR Document Pipeline</option>
+            </select>
+          </div>
+          <button type="button" class="btn-primary btn-run-scan" id="btnExecuteScan" data-i18n="scanner_btn_run">
+            <i class="fas fa-bolt"></i> Run AI Vision Scan
+          </button>
+        </div>
+
+        <div class="scanner-results-output" id="scannerResultsOutput" style="display: none;">
+          <!-- Real-time extraction logs -->
         </div>
       </div>
     </div>
@@ -933,10 +1020,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" crossorigin="anonymous" defer></script>
 
   <!-- i18n & Core Scripts -->
-  <script src="./assets/js/lang.min.js?v=99" defer></script>
-  <script src="./assets/js/i18n.min.js?v=99" defer></script>
-  <script src="./projects/projects.min.js?v=99" defer></script>
-  <script src="./assets/js/script.min.js?v=99" defer></script>
+  <script src="./assets/js/lang.min.js?v=140" defer></script>
+  <script src="./assets/js/i18n.min.js?v=140" defer></script>
+  <script src="./projects/projects.min.js?v=140" defer></script>
+  <script src="./assets/js/script.min.js?v=140" defer></script>
 
 </body>
 
