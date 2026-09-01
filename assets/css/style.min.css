@@ -2526,6 +2526,10 @@ html[dir="rtl"] .metric-caption {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.4rem;
   }
+  .modal-content.case-study-modal {
+    width: 92vw;
+    height: 88vh;
+  }
   .case-details-grid {
     grid-template-columns: 1fr;
     gap: 1.4rem;
@@ -2535,26 +2539,156 @@ html[dir="rtl"] .metric-caption {
   }
 }
 
-@media (max-width: 680px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .modal-backdrop {
+    padding: 0;
+    align-items: flex-end;
   }
-  .case-scroll-body {
-    padding: 1.4rem;
-  }
-  .case-footer-actions {
-    padding: 1rem 1.4rem;
-    flex-direction: column;
+  .modal-content.case-study-modal {
+    width: 100vw;
+    max-width: 100vw;
+    height: 92vh;
+    max-height: 92vh;
+    border-radius: 20px 20px 0 0;
+    border: none;
+    box-shadow: 0 -10px 40px rgba(0, 20, 40, 0.35);
   }
   .case-header {
-    padding: 0 1.2rem;
+    height: 54px;
+    padding: 0 1.1rem;
   }
-  .case-card-panel {
-    padding: 1.2rem;
+  .case-header-left {
+    gap: 0.4rem;
+  }
+  .case-live-pill, .case-category-pill {
+    padding: 0.22rem 0.65rem;
+    font-size: 0.68rem;
+  }
+  .case-location-pill {
+    display: none;
+  }
+  .case-scroll-body {
+    padding: 1.2rem 1.1rem 1.8rem;
+  }
+  .case-identity-block {
+    margin-bottom: 1rem;
+  }
+  .case-org-tag {
+    font-size: 0.72rem;
+  }
+  .case-title {
+    font-size: 1.35rem;
+    line-height: 1.3;
+    margin-bottom: 0.45rem;
+  }
+  .case-source-bar {
+    gap: 0.5rem;
+  }
+  .case-source-link {
+    padding: 0.22rem 0.65rem;
+    font-size: 0.72rem;
+  }
+  .case-verify-stamp {
+    font-size: 0.7rem;
+  }
+  .case-visual-frame {
+    aspect-ratio: 16 / 9.5;
+    max-height: 220px;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
   }
   .case-kpi-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
+    gap: 0.55rem;
+    margin-bottom: 1.2rem;
+  }
+  .lux-metric-tile {
+    padding: 0.85rem 0.6rem;
+    border-radius: 12px;
+  }
+  .metric-number {
+    font-size: 1.25rem;
+  }
+  .metric-caption {
+    font-size: 0.68rem;
+  }
+  .case-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .case-card-panel {
+    padding: 1.1rem;
+    border-radius: 14px;
+  }
+  .case-panel-header {
+    gap: 0.65rem;
+    padding-bottom: 0.65rem;
+  }
+  .case-panel-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+  .case-panel-title {
+    font-size: 0.95rem;
+  }
+  .case-panel-sub {
+    font-size: 0.72rem;
+  }
+  .case-features-list li {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.82rem;
+    gap: 0.5rem;
+  }
+  .case-insight-text {
+    padding: 0.7rem 0.85rem;
+    font-size: 0.8rem;
+  }
+  .case-footer-actions {
+    padding: 0.85rem 1.1rem;
+    flex-direction: column;
+    gap: 0.55rem;
+    border-radius: 0;
+  }
+  .case-cta-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.82rem;
+    width: 100%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .lux-project-card {
+    border-radius: 18px;
+  }
+  .lux-card-body {
+    padding: 1rem 1.15rem;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .lux-card-title {
+    font-size: 0.98rem;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+  }
+  .lux-card-loc {
+    font-size: 0.74rem;
+  }
+  .btn-card-show {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.76rem;
+  }
+  .btn-card-direct-link {
+    width: 36px;
+    height: 36px;
+    font-size: 0.82rem;
   }
   .scanner-viewport {
     height: 220px;
