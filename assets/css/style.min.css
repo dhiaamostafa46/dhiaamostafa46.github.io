@@ -2486,7 +2486,20 @@ html[dir="rtl"] .scanner-desc {
   line-height: 1.65;
 }
 
+html[dir="rtl"] .case-identity-block,
+html[dir="rtl"] .case-panel-header,
+html[dir="rtl"] .case-features-list li,
+html[dir="rtl"] .case-modules-section,
+html[dir="rtl"] .case-insight-box {
+  text-align: right;
+}
+
+html[dir="rtl"] .case-source-bar {
+  justify-content: flex-start;
+}
+
 html[dir="rtl"] .case-insight-text {
+  text-align: right;
   border-left: none;
   border-right: 3px solid var(--secondary);
 }
