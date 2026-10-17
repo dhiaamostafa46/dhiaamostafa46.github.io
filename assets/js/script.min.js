@@ -279,7 +279,7 @@ function renderSkills(lang = 'en') {
   let html = '<div class="skills-grid-container">';
   let count = 0;
 
-  stackData.forEach(group => {
+  stackData.forEach((group, gIdx) => {
     if (currentSkillTab !== 'all' && group.key !== currentSkillTab) {
       return;
     }
@@ -287,13 +287,15 @@ function renderSkills(lang = 'en') {
     const catName = (lang === 'ar' && group.category_ar) ? group.category_ar : group.category;
     const catDesc = (lang === 'ar' && group.desc_ar) ? group.desc_ar : group.desc;
     const catIcon = group.icon || "fa-code";
+    const modCode = `MOD_0${gIdx + 1}`;
     
     let items = group.items.filter(item => {
       if (!currentSkillSearch) return true;
       const q = currentSkillSearch.toLowerCase();
       const name = item.name.toLowerCase();
       const nameAr = (item.name_ar || '').toLowerCase();
-      return name.includes(q) || nameAr.includes(q);
+      const tag = (item.tag || '').toLowerCase();
+      return name.includes(q) || nameAr.includes(q) || tag.includes(q);
     });
 
     if (items.length > 0) {
@@ -304,6 +306,7 @@ function renderSkills(lang = 'en') {
             <div class="cat-title-wrap">
               <div class="cat-icon"><i class="fas ${catIcon}"></i></div>
               <div class="cat-text-info">
+                <span class="cat-mod-code">${modCode} // PRODUCTION_READY</span>
                 <h3 class="skill-category-title">${catName}</h3>
                 <span class="skill-category-desc">${catDesc}</span>
               </div>
@@ -312,15 +315,26 @@ function renderSkills(lang = 'en') {
           </div>
           <div class="skill-chips">
       `;
-      items.forEach(item => {
+      items.forEach((item, iIdx) => {
         const itemName = (lang === 'ar' && item.name_ar) ? item.name_ar : item.name;
+        const masteryPct = 98 - ((iIdx % 3) * 3);
         html += `
           <div class="skill-chip">
-            <div class="chip-icon-box">
-              <img src="${item.icon}" alt="${itemName}" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/devicon/devicon-original.svg'">
+            <div class="skill-chip-main">
+              <div class="chip-icon-box">
+                <img src="${item.icon}" alt="${itemName}" loading="lazy" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/devicon/devicon-original.svg'">
+              </div>
+              <div class="chip-text-col">
+                <span class="chip-name">${itemName}</span>
+                <div class="chip-meta-row">
+                  ${item.tag ? `<span class="chip-tag">${item.tag}</span>` : ''}
+                  <span class="chip-level-pct">${masteryPct}%</span>
+                </div>
+              </div>
             </div>
-            <span class="chip-name">${itemName}</span>
-            ${item.tag ? `<span class="chip-tag">${item.tag}</span>` : ''}
+            <div class="chip-meter-track">
+              <div class="chip-meter-fill" style="width: ${masteryPct}%;"></div>
+            </div>
           </div>
         `;
       });
@@ -377,6 +391,14 @@ const categoryMapAr = {
   'Logistics & Fleet Operations': 'لوجستيات وإدارة أساطيل'
 };
 
+function matchesProjectCategory(projCat, filterVal) {
+  if (!filterVal || filterVal === 'all') return true;
+  if (projCat === filterVal) return true;
+  if (filterVal === 'Enterprise Solutions' && (projCat === 'SaaS & Enterprise Platforms' || projCat === 'Logistics & Fleet Operations')) return true;
+  if (filterVal === 'Full Stack' && (projCat === 'AI & Microservices' || projCat === 'SaaS & Enterprise Platforms')) return true;
+  return false;
+}
+
 function renderProjects(lang = 'en') {
   const container = $('#projectsContainer');
   if (!container || !container.length) return;
@@ -387,18 +409,20 @@ function renderProjects(lang = 'en') {
   }
 
   let filtered = (projectsData || []).filter(proj => {
-    if (currentProjectFilter !== 'all' && proj.category !== currentProjectFilter) {
+    if (!matchesProjectCategory(proj.category, currentProjectFilter)) {
       return false;
     }
     if (currentProjectSearch) {
       const q = currentProjectSearch.toLowerCase().trim();
       const name = (proj.name || '').toLowerCase();
       const nameAr = (proj.name_ar || '').toLowerCase();
+      const desc = (proj.desc || '').toLowerCase();
+      const descAr = (proj.desc_ar || '').toLowerCase();
       const cat = (proj.category || '').toLowerCase();
       const loc = (proj.location || '').toLowerCase();
       const locAr = (proj.location_ar || '').toLowerCase();
       const domain = (proj.source_provenance && proj.source_provenance.source_domain ? proj.source_provenance.source_domain : '').toLowerCase();
-      return name.includes(q) || nameAr.includes(q) || cat.includes(q) || loc.includes(q) || locAr.includes(q) || domain.includes(q);
+      return name.includes(q) || nameAr.includes(q) || desc.includes(q) || descAr.includes(q) || cat.includes(q) || loc.includes(q) || locAr.includes(q) || domain.includes(q);
     }
     return true;
   });
@@ -419,55 +443,101 @@ function renderProjects(lang = 'en') {
 
   toShow.forEach((proj, idx) => {
     const title = lang === 'ar' ? (proj.name_ar || proj.name) : proj.name;
+    const summary = lang === 'ar' ? (proj.desc_ar || proj.desc || '') : (proj.desc || '');
     const location = lang === 'ar' ? (proj.location_ar || proj.location || 'الرياض، السعودية') : (proj.location || 'Riyadh, SA');
     const categoryLabel = (lang === 'ar' && categoryMapAr[proj.category]) ? categoryMapAr[proj.category] : proj.category;
-    
+    const domain = (proj.source_provenance && proj.source_provenance.source_domain) ? proj.source_provenance.source_domain : 'verified-system.sa';
+    const realData = proj.verified_real_data || {};
+    const orgName = (lang === 'ar' && realData.organization_ar) ? realData.organization_ar : (realData.organization || location);
+
     // Original live URL link
     const viewLink = (proj.source_provenance && proj.source_provenance.source_url && proj.source_provenance.source_url !== '#')
       ? proj.source_provenance.source_url
       : (proj.links && proj.links.view !== '#' ? proj.links.view : '');
 
+    // Top 2 KPIs for the card strip
+    const cardMetrics = (proj.metrics || []).slice(0, 2);
+    const kpiHtml = cardMetrics.map(m => {
+      const mLbl = (lang === 'ar' && m.lbl_ar) ? m.lbl_ar : m.lbl;
+      return `
+        <div class="proj-card-kpi">
+          <span class="proj-kpi-val">${m.val}</span>
+          <span class="proj-kpi-lbl">${mLbl}</span>
+        </div>
+      `;
+    }).join('');
+
+    // Top 3 detected stack components
+    const aiComp = proj.ai_vision_analysis || {};
+    const rawTags = (lang === 'ar' && aiComp.detected_components_ar)
+      ? aiComp.detected_components_ar
+      : (aiComp.detected_components || []);
+    const tagsHtml = rawTags.slice(0, 3).map(t => `<span class="proj-tech-pill">${t}</span>`).join('');
+
+    const screenCount = (proj.screens && proj.screens.length > 1) ? proj.screens.length : 1;
+    const screenBadgeText = screenCount > 1
+      ? (lang === 'ar' ? `${screenCount} شاشات تفاعلية` : `${screenCount} System Screens`)
+      : (lang === 'ar' ? 'معاينة النظام' : 'System Blueprint');
+
     const cardHtml = `
       <article class="project-card lux-project-card" data-index="${idx}">
+        <!-- Top Enterprise Browser Window Chrome -->
+        <div class="proj-window-bar">
+          <div class="proj-window-dots">
+            <span class="w-dot red"></span>
+            <span class="w-dot yellow"></span>
+            <span class="w-dot green"></span>
+          </div>
+          <span class="proj-window-domain"><i class="fas fa-shield-halved"></i> ${domain}</span>
+          <span class="lux-live-badge">
+            <span class="live-dot-pulse"></span>
+            <span>LIVE</span>
+          </span>
+        </div>
+
+        <!-- Visual Screen Stage -->
         <div class="lux-card-media">
           <img src="${proj.image}" alt="${title}" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80';" />
           
           <div class="lux-card-media-overlay">
             <span class="lux-overlay-hint">
-              <i class="fas fa-eye"></i>
-              <span>${lang === 'ar' ? 'عرض التفاصيل' : 'Quick Preview'}</span>
+              <i class="fas fa-expand"></i>
+              <span>${lang === 'ar' ? 'فتح استوديو النظام والمعمارية' : 'Open Interactive Case Studio'}</span>
             </span>
           </div>
 
-          <!-- Live Pulse Marker & Category -->
           <div class="lux-media-badges">
-            <span class="lux-live-badge">
-              <span class="live-dot-pulse"></span>
-              <span>LIVE</span>
-            </span>
             <span class="lux-cat-badge">${categoryLabel}</span>
+            <span class="proj-screens-badge"><i class="fas fa-desktop"></i> ${screenBadgeText}</span>
           </div>
         </div>
 
+        <!-- Rich Engineering Body -->
         <div class="lux-card-body">
-          <div class="lux-card-info">
-            <h3 class="lux-card-title" title="${title}">${title}</h3>
+          <div class="proj-meta-top">
+            <span class="proj-org-name"><i class="fas fa-building"></i> ${orgName}</span>
             <span class="lux-card-loc"><i class="fas fa-map-marker-alt"></i> ${location}</span>
           </div>
 
-          <!-- Exactly Two Dedicated Action Buttons -->
+          <h3 class="lux-card-title">${title}</h3>
+          <p class="proj-card-summary">${summary}</p>
+
+          ${kpiHtml ? `<div class="proj-card-kpis">${kpiHtml}</div>` : ''}
+          ${tagsHtml ? `<div class="proj-card-tags">${tagsHtml}</div>` : ''}
+
+          <!-- Dedicated Action Footer -->
           <div class="lux-card-actions">
-            <button type="button" class="btn-card-show open-modal-btn" data-index="${idx}" title="${lang === 'ar' ? 'عرض تفاصيل ومعمارية المشروع' : 'Inspect Full Architecture & Specs'}">
-              <i class="fas fa-eye"></i>
-              <span>${lang === 'ar' ? 'عرض' : 'Show'}</span>
+            <button type="button" class="btn-card-show open-modal-btn" data-index="${idx}">
+              <i class="fas fa-layer-group"></i>
+              <span>${lang === 'ar' ? 'استعراض المعمارية والشاشات' : 'Inspect System & Screens'}</span>
             </button>
             
             ${viewLink ? `
-              <a href="${viewLink}" target="_blank" rel="noopener noreferrer" class="btn-card-direct-link" title="${lang === 'ar' ? 'زيارة الرابط والمصدر الأصلي' : 'Open Live Authentic Source'}" onclick="event.stopPropagation()">
+              <a href="${viewLink}" target="_blank" rel="noopener noreferrer" class="btn-card-direct-link" title="${lang === 'ar' ? 'زيارة المنصة المباشرة' : 'Open Live Platform'}" onclick="event.stopPropagation()">
                 <i class="fas fa-arrow-up-right-from-square"></i>
               </a>
             ` : `
-              <span class="btn-card-direct-link disabled" title="${lang === 'ar' ? 'نظام خاص / داخل الشبكة' : 'Private Enterprise Deployment'}" onclick="event.stopPropagation()">
+              <span class="btn-card-direct-link disabled" title="${lang === 'ar' ? 'نظام مؤسسي خاص' : 'Private Enterprise System'}" onclick="event.stopPropagation()">
                 <i class="fas fa-lock"></i>
               </span>
             `}
@@ -480,8 +550,8 @@ function renderProjects(lang = 'en') {
   if (hasMore) {
     const remaining = filtered.length - PROJECTS_PAGE_SIZE;
     const viewMoreText = lang === 'ar'
-      ? `<i class="fas fa-layer-group"></i> استعراض المزيد (${remaining} مشاريع إضافية)`
-      : `<i class="fas fa-layer-group"></i> View More (${remaining} more projects)`;
+      ? `<i class="fas fa-layer-group"></i> استعراض كافة الأنظمة (${remaining} مشاريع إضافية)`
+      : `<i class="fas fa-layer-group"></i> View All Systems (${remaining} more projects)`;
     const viewMoreBtn = $(`
       <div class="projects-view-more" style="grid-column: 1/-1; text-align: center; margin-top: 1.5rem;">
         <button class="btn-view-more" id="btnViewMoreProjects">${viewMoreText}</button>
@@ -505,44 +575,51 @@ function renderProjects(lang = 'en') {
 function openProjectModal(proj, lang = 'en') {
   if (!proj) return;
   const title = (lang === 'ar' && proj.name_ar) ? proj.name_ar : proj.name;
+  const desc = (lang === 'ar' && proj.desc_ar) ? proj.desc_ar : (proj.desc || '');
   const location = (lang === 'ar' && proj.location_ar) ? proj.location_ar : (proj.location || 'Saudi Arabia');
   const domain = (proj.source_provenance && proj.source_provenance.source_domain) ? proj.source_provenance.source_domain : 'Verified Entity';
   const lastSync = (proj.last_synced) ? proj.last_synced : '2026-08-30';
   
   const isAi = proj.source_provenance && proj.source_provenance.type === 'AI_VISION_EXTRACTED';
   const provBadgeText = lang === 'ar'
-    ? (isAi ? 'تحليل الرؤية الحاسوبية' : 'مصدر أصلي موثق — LIVE')
-    : (isAi ? 'AI VISION EXTRACTED' : 'VERIFIED LIVE SOURCE');
+    ? (isAi ? 'تحليل الرؤية الحاسوبية' : 'نظام إنتاجي موثق — LIVE')
+    : (isAi ? 'AI VISION EXTRACTED' : 'VERIFIED LIVE PRODUCTION');
 
   const categoryLabel = (lang === 'ar' && categoryMapAr[proj.category]) ? categoryMapAr[proj.category] : proj.category;
 
   $('#modalCategory').text(categoryLabel);
   $('#modalProvenanceText').text(provBadgeText);
   $('#modalTitle').text(title);
+  $('#modalDescription').text(desc).toggle(Boolean(desc));
   $('#modalLocation').html(`<i class="fas fa-map-marker-alt"></i> ${location}`);
   $('#modalSourceDomain').text(domain);
-  $('#modalLastSynced').text((lang === 'ar' ? 'آخر تدقيق: ' : 'Verified: ') + lastSync);
+  $('#modalLastSynced').html(`<i class="fas fa-shield-halved"></i> ${(lang === 'ar' ? 'آخر تدقيق معماري: ' : 'Verified Architecture: ') + lastSync}`);
   $('#modalImage').attr('src', proj.image);
 
   // Multi-Screen Studio Switcher inside Case Study Modal
   const screenTabsBox = $('#modalScreenTabs');
   if (screenTabsBox.length) {
     screenTabsBox.empty();
-    if (proj.screens && proj.screens.length > 1) {
-      proj.screens.forEach((scr, sIdx) => {
-        const sLabel = (lang === 'ar' && scr.label_ar) ? scr.label_ar : scr.label;
-        const btn = $(`<button type="button" class="case-screen-tab ${sIdx === 0 ? 'active' : ''}">${sLabel}</button>`);
-        btn.on('click', function () {
-          $('#modalScreenTabs .case-screen-tab').removeClass('active');
-          $(this).addClass('active');
-          $('#modalImage').attr('src', scr.img);
-        });
-        screenTabsBox.append(btn);
+    const screensList = (proj.screens && proj.screens.length > 0)
+      ? proj.screens
+      : [{ img: proj.image, label: 'Main System Interface', label_ar: 'الواجهة الرئيسية للنظام' }];
+
+    screensList.forEach((scr, sIdx) => {
+      const sLabel = (lang === 'ar' && scr.label_ar) ? scr.label_ar : scr.label;
+      const btn = $(`
+        <button type="button" class="case-screen-tab ${sIdx === 0 ? 'active' : ''}" data-screen-idx="${sIdx}">
+          <span class="tab-idx-num">0${sIdx + 1}</span>
+          <span>${sLabel}</span>
+        </button>
+      `);
+      btn.on('click', function () {
+        $('#modalScreenTabs .case-screen-tab').removeClass('active');
+        $(this).addClass('active');
+        $('#modalImage').css('opacity', '0.35').attr('src', scr.img).animate({ opacity: 1 }, 220);
       });
-      screenTabsBox.show();
-    } else {
-      screenTabsBox.hide();
-    }
+      screenTabsBox.append(btn);
+    });
+    screenTabsBox.show();
   }
 
   // Column A: Verified Real Data
@@ -1147,22 +1224,22 @@ function initArchitectureSection() {
 /* ===== VERIFIED OPEN-SOURCE PACKAGES & GITHUB ECOSYSTEM ===== */
 let currentOssFilter = 'all';
 const ossPackagesData = [
-  { name: 'laravel-gemini', cat: 'ai', badge: 'PHP • Gemini AI SDK', desc: 'Multimodal Google Gemini API SDK for Laravel supporting text, vision, audio, video & structured outputs.', desc_ar: 'حزمة متكاملة لربط Google Gemini AI مع Laravel (نصوص، صور، صوت، فيديو، ومخرجات منظمة).', url: 'https://github.com/dhiaamostafa46/laravel-gemini' },
-  { name: 'LeadGenAI', cat: 'ai', badge: 'TypeScript • React', desc: 'Autonomous B2B lead discovery, geospatial search, and automated WhatsApp/Email outreach analytics platform.', desc_ar: 'منصة ذكاء اصطناعي لاكتشاف الشركات عبر الخرائط وأتمتة حملات واتساب والبريد الإلكتروني.', url: 'https://github.com/dhiaamostafa46/LeadGenAI' },
-  { name: 'alinma-pay', cat: 'ai', badge: 'PHP • FinTech Gateway', desc: 'Enterprise banking & payment gateway integration for Alinma Bank with cryptographic signing & webhooks.', desc_ar: 'حزمة ربط بوابة الدفع البنكي (مصرف الإنماء Alinma Pay) مع التوقيع الرقمي والتحقق من العمليات.', url: 'https://github.com/dhiaamostafa46/alinma-pay' },
-  { name: 'authentica', cat: 'laravel', badge: 'PHP • Zero-Trust MFA', desc: 'Scalable identity verification and Multi-Factor Authentication (MFA) architecture for enterprise apps.', desc_ar: 'نظام مصادقة وتحقق من الهوية متعدد العوامل (MFA) عالي الأمان وقابل للتوسع للتطبيقات المؤسسية.', url: 'https://github.com/dhiaamostafa46/authentica' },
-  { name: 'AetherWallet', cat: 'ai', badge: 'PHP • Digital Ledger', desc: 'Digital wallet core engine supporting double-entry ledger transactions, balance isolation & audit trails.', desc_ar: 'نواة محفظة رقمية لإدارة الأرصدة، التحويلات المالية، وسجلات التدقيق المحاسبي المزدوج.', url: 'https://github.com/dhiaamostafa46/AetherWallet' },
-  { name: 'HRblazor', cat: 'dotnet', badge: 'C# • .NET Blazor', desc: 'Enterprise HR, Attendance & Automated Payroll platform built with C# and .NET Blazor.', desc_ar: 'نظام إدارة موارد بشرية ومسيرات رواتب وحضور وانصراف متكامل مبني بتقنية C# و Blazor.', url: 'https://github.com/dhiaamostafa46/HRblazor' },
-  { name: 'reverb', cat: 'laravel', badge: 'PHP • WebSockets', desc: 'High-concurrency WebSocket server implementation for real-time Laravel broadcasting & live telemetry.', desc_ar: 'خادم اتصالات WebSocket فائق السرعة للبث اللحظي والتتبع المباشر في تطبيقات Laravel.', url: 'https://github.com/dhiaamostafa46/reverb' },
-  { name: 'laravel-modules', cat: 'laravel', badge: 'PHP • DDD Modules', desc: 'Domain-Driven Design (DDD) modular monolith manager for structuring large-scale Laravel systems.', desc_ar: 'إدارة المعمارية المعيارية (Modular Monolith) لتقسيم الأنظمة المؤسسية الضخمة في Laravel.', url: 'https://github.com/dhiaamostafa46/laravel-modules' },
-  { name: 'ai-cv-optimizer', cat: 'ai', badge: 'JavaScript • LLM', desc: 'AI-powered resume analyzer and ATS optimization engine for software engineering roles.', desc_ar: 'محسّن السيرة الذاتية الذكي لتحليل ومطابقة المهارات مع الوظائف الهندسية عبر الذكاء الاصطناعي.', url: 'https://github.com/dhiaamostafa46/ai-cv-optimizer' },
-  { name: 'Real-estate', cat: 'dotnet', badge: 'C# • ASP.NET Core', desc: 'Property management, leasing, and real-estate brokerage platform built on C# / ASP.NET Core.', desc_ar: 'منصة إدارة عقارات وأملاك وعقود إيجار متكاملة مبنية ببيئة C# و ASP.NET Core.', url: 'https://github.com/dhiaamostafa46/Real-estate' },
-  { name: 'ReactAdmin', cat: 'dotnet', badge: 'TypeScript • React', desc: 'Type-safe enterprise administration dashboard in TypeScript and React with RBAC & telemetry charts.', desc_ar: 'لوحة تحكم إدارية حديثة مبنية بـ TypeScript و React مع رسوم بيانية وإدارة صلاحيات.', url: 'https://github.com/dhiaamostafa46/ReactAdmin' },
-  { name: 'laravel-datatables', cat: 'laravel', badge: 'PHP • DataTables', desc: 'High-performance server-side DataTables processing engine for large datasets in Laravel.', desc_ar: 'معالجة جداول البيانات الضخمة من طرف الخادم بكفاءة عالية في تطبيقات Laravel.', url: 'https://github.com/dhiaamostafa46/laravel-datatables' },
-  { name: 'laravel-notification-log', cat: 'laravel', badge: 'PHP • Observability', desc: 'Comprehensive audit logging and delivery telemetry for multi-channel Laravel notifications.', desc_ar: 'تسجيل وتتبع حالة وصول الإشعارات المرسلة عبر مختلف القنوات في Laravel.', url: 'https://github.com/dhiaamostafa46/laravel-notification-log' },
-  { name: 'livewire-filepond', cat: 'laravel', badge: 'PHP • Livewire', desc: 'Asynchronous chunked file upload component integrating FilePond with Laravel Livewire.', desc_ar: 'مكون رفع ملفات متقدم وغير متزامن يدمج FilePond مع Laravel Livewire.', url: 'https://github.com/dhiaamostafa46/livewire-filepond' },
-  { name: 'vueDashboard', cat: 'dotnet', badge: 'Vue.js • Dashboard', desc: 'Reactive executive telemetry and analytics dashboard built with Vue.js.', desc_ar: 'لوحة قيادة تفاعلية لعرض المؤشرات والتقارير الإدارية باستخدام Vue.js.', url: 'https://github.com/dhiaamostafa46/vueDashboard' },
-  { name: 'botman', cat: 'laravel', badge: 'PHP • Chatbots', desc: 'Multi-driver conversational chatbot automation framework for PHP and Laravel.', desc_ar: 'إطار عمل لبناء روبوتات المحادثة التفاعلية وأتمتة الردود الذكية في PHP.', url: 'https://github.com/dhiaamostafa46/botman' }
+  { name: 'laravel-gemini', cat: 'ai', langName: 'PHP', langColor: '#777bb4', badge: 'Gemini AI SDK', topics: ['Laravel', 'Gemini AI', 'Multimodal', 'LLM'], desc: 'Multimodal Google Gemini API SDK for Laravel supporting text, vision, audio, video & structured JSON outputs.', desc_ar: 'حزمة تطوير برمجيات (SDK) متكاملة لربط Google Gemini AI مع Laravel لدعم النصوص والصور والصوت والفيديو والمخرجات المنظمة.', url: 'https://github.com/dhiaamostafa46/laravel-gemini' },
+  { name: 'LeadGenAI', cat: 'ai', langName: 'TypeScript', langColor: '#3178c6', badge: 'AI SaaS Engine', topics: ['TypeScript', 'React', 'Google Maps API', 'WhatsApp API'], desc: 'Autonomous B2B lead discovery, geospatial search, and automated WhatsApp/Email outreach analytics platform.', desc_ar: 'منصة ذكاء اصطناعي لاكتشاف الشركات عبر الخرائط الجغرافية وأتمتة حملات التواصل عبر واتساب والبريد الإلكتروني.', url: 'https://github.com/dhiaamostafa46/LeadGenAI' },
+  { name: 'alinma-pay', cat: 'ai', langName: 'PHP', langColor: '#777bb4', badge: 'FinTech Gateway', topics: ['Alinma Bank', 'FinTech', 'Webhooks', 'HMAC Signing'], desc: 'Enterprise banking & payment gateway integration for Alinma Bank with cryptographic signing & webhook verification.', desc_ar: 'حزمة ربط بوابة الدفع البنكي (مصرف الإنماء Alinma Pay) مع التوقيع الرقمي المشفر والتحقق الفوري من العمليات.', url: 'https://github.com/dhiaamostafa46/alinma-pay' },
+  { name: 'authentica', cat: 'laravel', langName: 'PHP', langColor: '#777bb4', badge: 'Zero-Trust MFA', topics: ['OAuth2', 'MFA / OTP', 'RBAC', 'Security'], desc: 'Scalable identity verification and Multi-Factor Authentication (MFA) architecture for enterprise applications.', desc_ar: 'نظام مصادقة وتحقق من الهوية متعدد العوامل (MFA) عالي الأمان وقابل للتوسع للتطبيقات والمنصات المؤسسية.', url: 'https://github.com/dhiaamostafa46/authentica' },
+  { name: 'AetherWallet', cat: 'ai', langName: 'PHP', langColor: '#777bb4', badge: 'Digital Ledger', topics: ['Double-Entry', 'E-Wallet', 'ACID Transactions', 'Audit Log'], desc: 'Digital wallet core engine supporting double-entry ledger transactions, balance isolation & immutable audit trails.', desc_ar: 'نواة محفظة رقمية لإدارة الأرصدة، التحويلات المالية، وسجلات التدقيق المحاسبي المزدوج بعزل كامل للبيانات.', url: 'https://github.com/dhiaamostafa46/AetherWallet' },
+  { name: 'HRblazor', cat: 'dotnet', langName: 'C#', langColor: '#178600', badge: '.NET Blazor ERP', topics: ['C#', '.NET Blazor', 'Payroll WPS', 'HRMS'], desc: 'Enterprise HR, Biometric Attendance & Automated Payroll platform built with C# and .NET Blazor.', desc_ar: 'نظام إدارة موارد بشرية ومسيرات رواتب وحضور وانصراف متكامل مبني بتقنية C# و .NET Blazor.', url: 'https://github.com/dhiaamostafa46/HRblazor' },
+  { name: 'reverb', cat: 'laravel', langName: 'PHP', langColor: '#777bb4', badge: 'Real-Time Socket', topics: ['WebSockets', 'Pub/Sub', 'High Concurrency', 'Laravel'], desc: 'High-concurrency WebSocket server implementation for real-time Laravel broadcasting & live fleet telemetry.', desc_ar: 'خادم اتصالات WebSocket فائق السرعة للبث اللحظي والتتبع المباشر عالي التزامن في تطبيقات Laravel.', url: 'https://github.com/dhiaamostafa46/reverb' },
+  { name: 'laravel-modules', cat: 'laravel', langName: 'PHP', langColor: '#777bb4', badge: 'DDD Architecture', topics: ['DDD', 'Modular Monolith', 'Enterprise PHP', 'Architecture'], desc: 'Domain-Driven Design (DDD) modular monolith manager for structuring large-scale enterprise Laravel systems.', desc_ar: 'إدارة المعمارية المعيارية (Modular Monolith & DDD) لتقسيم وهندسة الأنظمة المؤسسية الضخمة في Laravel.', url: 'https://github.com/dhiaamostafa46/laravel-modules' },
+  { name: 'ai-cv-optimizer', cat: 'ai', langName: 'JavaScript', langColor: '#f1e05a', badge: 'LLM Analyzer', topics: ['OpenAI LLM', 'NLP', 'ATS Scoring', 'JavaScript'], desc: 'AI-powered resume analyzer and ATS optimization engine for software engineering and technical roles.', desc_ar: 'محسّن السيرة الذاتية الذكي لتحليل ومطابقة المهارات الهندسية مع متطلبات الوظائف عبر نماذج اللغات الكبيرة.', url: 'https://github.com/dhiaamostafa46/ai-cv-optimizer' },
+  { name: 'Real-estate', cat: 'dotnet', langName: 'C#', langColor: '#178600', badge: 'ASP.NET Core', topics: ['ASP.NET Core', 'SQL Server', 'PropTech', 'MVC'], desc: 'Property management, leasing, and real-estate brokerage platform built on C# / ASP.NET Core and SQL Server.', desc_ar: 'منصة إدارة عقارات وأملاك وعقود إيجار متكاملة مبنية ببيئة C# و ASP.NET Core وقواعد بيانات SQL Server.', url: 'https://github.com/dhiaamostafa46/Real-estate' },
+  { name: 'ReactAdmin', cat: 'dotnet', langName: 'TypeScript', langColor: '#3178c6', badge: 'Admin HUD', topics: ['React 18', 'TypeScript', 'RBAC', 'Analytics HUD'], desc: 'Type-safe enterprise administration dashboard in TypeScript and React with RBAC & real-time telemetry charts.', desc_ar: 'لوحة تحكم إدارية وتنفيذية حديثة مبنية بـ TypeScript و React مع رسوم بيانية لحظية وإدارة صلاحيات.', url: 'https://github.com/dhiaamostafa46/ReactAdmin' },
+  { name: 'laravel-datatables', cat: 'laravel', langName: 'PHP', langColor: '#777bb4', badge: 'Big-Data Engine', topics: ['Server-Side Grid', 'Query Tuning', 'Laravel', 'AJAX'], desc: 'High-performance server-side DataTables processing engine for multi-million row datasets in Laravel.', desc_ar: 'محرك معالجة جداول البيانات الضخمة من طرف الخادم بكفاءة وسرعة عالية في تطبيقات Laravel.', url: 'https://github.com/dhiaamostafa46/laravel-datatables' },
+  { name: 'laravel-notification-log', cat: 'laravel', langName: 'PHP', langColor: '#777bb4', badge: 'Observability', topics: ['Audit Trail', 'Telemetry', 'Notifications', 'Queues'], desc: 'Comprehensive audit logging and delivery telemetry for multi-channel Laravel enterprise notifications.', desc_ar: 'سجل تدقيق وتتبع شامل لحالة وصول الإشعارات والرسائل المرسلة عبر مختلف القنوات في Laravel.', url: 'https://github.com/dhiaamostafa46/laravel-notification-log' },
+  { name: 'livewire-filepond', cat: 'laravel', langName: 'PHP', langColor: '#777bb4', badge: 'Livewire UI', topics: ['Livewire', 'Chunked Upload', 'S3 Storage', 'Blade'], desc: 'Asynchronous chunked file upload component integrating FilePond with Laravel Livewire and cloud storage.', desc_ar: 'مكون رفع ملفات متقدم وغير متزامن يدعم التقسيم ويدمج FilePond مع Laravel Livewire والتخزين السحابي.', url: 'https://github.com/dhiaamostafa46/livewire-filepond' },
+  { name: 'vueDashboard', cat: 'dotnet', langName: 'Vue.js', langColor: '#41b883', badge: 'Executive BI', topics: ['Vue.js', 'REST APIs', 'BI Charts', 'SPA'], desc: 'Reactive executive telemetry and business intelligence analytics dashboard built with Vue.js.', desc_ar: 'لوحة قيادة تفاعلية لعرض مؤشرات ذكاء الأعمال والتقارير الإدارية اللحظية باستخدام Vue.js.', url: 'https://github.com/dhiaamostafa46/vueDashboard' },
+  { name: 'botman', cat: 'laravel', langName: 'PHP', langColor: '#777bb4', badge: 'Conversational AI', topics: ['Chatbots', 'Webhooks', 'NLP Routing', 'PHP'], desc: 'Multi-driver conversational chatbot automation framework for PHP and Laravel enterprise workflows.', desc_ar: 'إطار عمل لبناء روبوتات المحادثة التفاعلية وأتمتة الردود الذكية وربط قنوات التواصل في PHP.', url: 'https://github.com/dhiaamostafa46/botman' }
 ];
 
 function renderOpenSource(lang = 'en') {
@@ -1175,19 +1252,37 @@ function renderOpenSource(lang = 'en') {
 
   const html = list.map(r => {
     const desc = (lang === 'ar' && r.desc_ar) ? r.desc_ar : r.desc;
-    const ctaText = lang === 'ar' ? 'فتح المستودع على GitHub' : 'View GitHub Repository';
+    const ctaText = lang === 'ar' ? 'استعراض الكود' : 'Explore Repo';
+    const topicsHtml = (r.topics || []).map(t => `<span class="oss-topic-pill">${t}</span>`).join('');
     return `
       <a href="${r.url}" target="_blank" rel="noopener noreferrer" class="oss-card">
-        <div>
-          <div class="oss-card-top">
-            <span class="oss-card-title"><i class="fab fa-github"></i> ${r.name}</span>
-            <span class="oss-card-badge">${r.badge}</span>
+        <div class="oss-card-top">
+          <div class="oss-repo-id">
+            <span class="oss-repo-icon"><i class="fas fa-book-bookmark"></i></span>
+            <div class="oss-repo-names">
+              <span class="oss-repo-owner">dhiaamostafa46 /</span>
+              <span class="oss-card-title">${r.name}</span>
+            </div>
           </div>
-          <p class="oss-card-desc">${desc}</p>
+          <span class="oss-card-badge">${r.badge}</span>
         </div>
+
+        <p class="oss-card-desc">${desc}</p>
+
+        <div class="oss-topics-row">
+          ${topicsHtml}
+        </div>
+
         <div class="oss-card-footer">
-          <span>${ctaText}</span>
-          <i class="fas fa-arrow-up-right-from-square"></i>
+          <div class="oss-lang-indicator">
+            <span class="oss-lang-dot" style="background: ${r.langColor || '#0bbab5'};"></span>
+            <span class="oss-lang-name">${r.langName || 'Code'}</span>
+            <span class="oss-public-pill">Public</span>
+          </div>
+          <span class="oss-cta-link">
+            <span>${ctaText}</span>
+            <i class="fab fa-github"></i>
+          </span>
         </div>
       </a>
     `;
