@@ -144,17 +144,23 @@ $(document).ready(function () {
   });
 
   // Initializations
+  initThemeToggle();
   initTypedText();
   initCodeCard();
+  initArchitectureSection();
   initSkillsSection();
   initProjectsSection();
+  initOpenSourceSection();
   initIntakeForm();
+  init3DTilt();
 
   // Listen to Language Changes
   document.addEventListener('languageChanged', function (e) {
     const lang = e.detail.lang;
+    renderArchitecture(lang);
     renderSkills(lang);
     renderProjects(lang);
+    renderOpenSource(lang);
     updateCodeCardContent(currentCodeTab, lang);
   });
 });
@@ -518,6 +524,27 @@ function openProjectModal(proj, lang = 'en') {
   $('#modalLastSynced').text((lang === 'ar' ? 'آخر تدقيق: ' : 'Verified: ') + lastSync);
   $('#modalImage').attr('src', proj.image);
 
+  // Multi-Screen Studio Switcher inside Case Study Modal
+  const screenTabsBox = $('#modalScreenTabs');
+  if (screenTabsBox.length) {
+    screenTabsBox.empty();
+    if (proj.screens && proj.screens.length > 1) {
+      proj.screens.forEach((scr, sIdx) => {
+        const sLabel = (lang === 'ar' && scr.label_ar) ? scr.label_ar : scr.label;
+        const btn = $(`<button type="button" class="case-screen-tab ${sIdx === 0 ? 'active' : ''}">${sLabel}</button>`);
+        btn.on('click', function () {
+          $('#modalScreenTabs .case-screen-tab').removeClass('active');
+          $(this).addClass('active');
+          $('#modalImage').attr('src', scr.img);
+        });
+        screenTabsBox.append(btn);
+      });
+      screenTabsBox.show();
+    } else {
+      screenTabsBox.hide();
+    }
+  }
+
   // Column A: Verified Real Data
   const realData = proj.verified_real_data || {};
   const orgName = (lang === 'ar' && realData.organization_ar) ? realData.organization_ar : (realData.organization || 'Verified Enterprise');
@@ -802,3 +829,401 @@ function initIntakeForm() {
       });
   });
 }
+
+/* ===== DEVELOPER DARK / LIGHT THEME TOGGLE ===== */
+function initThemeToggle() {
+  let savedTheme = 'light';
+  try {
+    savedTheme = localStorage.getItem('dm_dev_theme') || 'light';
+  } catch (e) {}
+
+  if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
+
+  function updateThemeIcon() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const icon = $('#theme-toggle i');
+    if (icon.length) {
+      icon.attr('class', isDark ? 'fas fa-sun' : 'fas fa-moon');
+    }
+  }
+  updateThemeIcon();
+
+  $('#theme-toggle').on('click', function (e) {
+    e.preventDefault();
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('dm_dev_theme', 'light'); } catch (err) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('dm_dev_theme', 'dark'); } catch (err) {}
+    }
+    updateThemeIcon();
+  });
+}
+
+/* ===== INTERACTIVE 3D SYSTEM ARCHITECTURE TOPOLOGY ===== */
+let currentArchNode = 'backend';
+const archTopologyNodes = [
+  {
+    id: 'frontend',
+    tier: 1,
+    code: '01 // PRESENTATION & SPA',
+    title: 'Frontend & Executive Dashboards',
+    title_ar: 'الواجهات الأمامية ولوحات التحكم',
+    mini: 'React • Next.js • Blazor • Flutter',
+    desc: 'Engineering responsive Single-Page Applications (SPA), executive telemetry HUDs, POS interfaces, and cross-platform Flutter mobile apps.',
+    desc_ar: 'بناء واجهات تطبيقات المؤسسات (SPA) ولوحات التحكم الإدارية ونقاط البيع التفاعلية وتطبيقات الجوال بـ Flutter.',
+    projects: [
+      'Evix Cloud ERP v2 Executive UI & Multi-Tenant Super Admin',
+      'LeadGen AI Geospatial Analytics Dashboard (React & TypeScript)',
+      'Evix HR Mobile App (Flutter) & HRblazor (.NET Blazor)'
+    ],
+    projects_ar: [
+      'واجهة الإصدار الحديث لنظام Evix Cloud ERP v2 ولوحة Super Admin',
+      'لوحة قيادة منصة LeadGen AI التفاعلية بـ React و TypeScript',
+      'تطبيق Evix HR بـ Flutter ونظام الموارد البشرية HRblazor'
+    ],
+    tags: ['React.js & Next.js', 'TypeScript', '.NET Blazor', 'Flutter & Dart', 'Tailwind CSS'],
+    linksTo: ['apis', 'auth', 'backend']
+  },
+  {
+    id: 'apis',
+    tier: 1,
+    code: '02 // API GATEWAY',
+    title: 'RESTful APIs & Middleware Hub',
+    title_ar: 'بوابات الـ REST APIs والربط الوسيط',
+    mini: 'REST APIs • Webhooks • Connectors',
+    desc: 'Designing decoupled middleware hubs and high-throughput RESTful APIs connecting ERPs with Amazon, Noon, Salla, Trendyol, and payment gateways.',
+    desc_ar: 'تصميم طبقات ربط وسيطة معزولة وواجهات برمجية عالية الأداء تربط الـ ERP مع أمازون، نون، سلة، وبوابات الدفع.',
+    projects: [
+      'Enterprise Integration Middleware Hub (Amazon, Noon, Salla, Trendyol)',
+      'Evix ERP & BTC Logistics Fleet API Gateway (500+ Clients)',
+      'Cryptographic Webhook Handlers in AlinmaPay FinTech SDK'
+    ],
+    projects_ar: [
+      'منصة التكامل والربط الوسيط للمؤسسات (أمازون، نون، سلة، ترينديول)',
+      'بوابات الربط البرمجي لمنظومة Evix ERP وتطبيقات المندوبين',
+      'معالجة Webhooks المشفرة في حزمة الدفع البنكي AlinmaPay'
+    ],
+    tags: ['RESTful APIs', 'Decoupled Middleware', 'Idempotency Guard', 'Webhooks', 'Rate Limiting'],
+    linksTo: ['frontend', 'auth', 'backend', 'integrations']
+  },
+  {
+    id: 'auth',
+    tier: 1,
+    code: '03 // ZERO-TRUST SECURITY',
+    title: 'Authentication, MFA & RBAC',
+    title_ar: 'المصادقة والأمان متعدد العوامل',
+    mini: 'Authentica MFA • OAuth2 • JWT • RBAC',
+    desc: 'Securing multi-tenant enterprise platforms with Multi-Factor Authentication (MFA), granular Role-Based Access Control (RBAC), and ECDSA signing.',
+    desc_ar: 'حماية الأنظمة المؤسسية عبر مصادقة متعددة العوامل (MFA)، وصلاحيات دقيقة مبنية على الأدوار (RBAC)، والتوقيع الرقمي.',
+    projects: [
+      'Authentica Open-Source MFA & Identity Verification Package',
+      'Multi-Tenant RBAC Permission Matrix across Evix Cloud ERP',
+      'ECDSA Cryptographic Stamp & CSID Certificates for ZATCA Phase-2'
+    ],
+    projects_ar: [
+      'حزمة Authentica مفتوحة المصدر للمصادقة والتحقق متعدد العوامل',
+      'مصفوفة الصلاحيات والأدوار للمنشآت في Evix Cloud ERP',
+      'التوقيع الرقمي ECDSA وشهادات CSID للفوترة الإلكترونية زاتكا'
+    ],
+    tags: ['Authentica MFA', 'OAuth2 & JWT', 'Multi-Tenant RBAC', 'ECDSA Signing'],
+    linksTo: ['frontend', 'apis', 'backend']
+  },
+  {
+    id: 'backend',
+    tier: 2,
+    code: '04 // BACKEND CORE',
+    title: 'Backend Services & Modular DDD',
+    title_ar: 'خدمات الهندسة الخلفية ومعمارية DDD',
+    mini: 'Laravel • Node.js/NestJS • .NET Core',
+    desc: 'Core enterprise domain logic engineered using Domain-Driven Design (DDD), Modular Monoliths, and event-driven microservices.',
+    desc_ar: 'القلب الهندسي للأنظمة المؤسسية: بناء معمارية معيارية قابلة للتوسع (DDD & Microservices) تفصل منطق الأعمال المحاسبي واللوجستي.',
+    projects: [
+      'Evix Cloud ERP Core (Double-Entry Accounting, POS, Inventory, HR)',
+      'laravel-modules DDD Modular Architecture Manager',
+      'Musanid United & Enterprise Platforms in NestJS & ASP.NET Core'
+    ],
+    projects_ar: [
+      'نواة نظام Evix Cloud ERP (المحاسبة المزدوجة، المخزون، نقاط البيع، HR)',
+      'حزمة laravel-modules لإدارة المعمارية المعيارية DDD',
+      'منصة مساند المتحدة والأنظمة المؤسسية بـ NestJS و ASP.NET Core'
+    ],
+    tags: ['Laravel MVC', 'Node.js & NestJS', 'C# & .NET Core', 'DDD Architecture', 'PHP 8.x'],
+    linksTo: ['apis', 'auth', 'databases', 'redis', 'queues', 'integrations']
+  },
+  {
+    id: 'redis',
+    tier: 2,
+    code: '05 // REAL-TIME & CACHE',
+    title: 'Redis Caching & WebSockets',
+    title_ar: 'التخزين المؤقت والبث اللحظي',
+    mini: 'Redis • Reverb WS • 7k+ GPS Agents',
+    desc: 'Sub-20ms WebSocket event broadcasting for 7,000+ active delivery couriers and Redis caching delivering 40%+ API speed gains.',
+    desc_ar: 'بث لحظي عبر WebSockets لأكثر من 7,000 مندوب توصيل نشط، وتخزين مؤقت عبر Redis يرفع سرعة الـ APIs بأكثر من 40%.',
+    projects: [
+      'BTC Logistics Real-Time Fleet Tracking (7,000+ Active Agents)',
+      'Laravel Reverb High-Concurrency WebSocket Server',
+      'Evix ERP High-Speed Redis Caching Layer (+40% Throughput)'
+    ],
+    projects_ar: [
+      'منصة BTC اللوجستية لتتبع 7,000+ مندوب وسائق لحظياً بالـ GPS',
+      'خادم الاتصالات اللحظية Laravel Reverb WebSockets',
+      'طبقة التخزين المؤقت بـ Redis في نظام Evix ERP (+40% سرعة)'
+    ],
+    tags: ['Redis Pub/Sub', 'WebSockets', 'Laravel Reverb', 'Georadius Indexing', '+40% API Speed'],
+    linksTo: ['backend', 'queues', 'databases']
+  },
+  {
+    id: 'queues',
+    tier: 2,
+    code: '06 // ASYNC PIPELINES',
+    title: 'Background Jobs & Event Queues',
+    title_ar: 'الطوابير والمعالجة غير المتزامنة',
+    mini: 'Redis Queues • Workers • WPS Batching',
+    desc: 'Offloading intensive workloads—ZATCA e-invoice clearance, 7,000+ staff payroll generation, and multi-channel notifications—into resilient worker queues.',
+    desc_ar: 'تفريغ العمليات الكثيفة (اعتماد فواتير زاتكا، مسيرات رواتب 7,000+ موظف، والإشعارات) إلى طوابير خلفية عالية الاعتمادية.',
+    projects: [
+      'Automated Saudi WPS Payroll Engine (7,000+ Staff & Drivers)',
+      'ZATCA Phase-2 Asynchronous XML Stamping & Reporting Workers',
+      'laravel-notification-log Telemetry & LeadGen AI Outreach Queues'
+    ],
+    projects_ar: [
+      'محرك مسيرات الرواتب الآلية المتوافق مع حماية الأجور WPS',
+      'طوابير التوقيع والربط الفوري مع بوابة الفوترة الإلكترونية زاتكا',
+      'حزمة تتبع الإشعارات laravel-notification-log وأتمتة LeadGen AI'
+    ],
+    tags: ['Redis Queues', 'Async Workers', 'Event-Driven Pipelines', 'Batch Processing'],
+    linksTo: ['backend', 'redis', 'integrations', 'cloud']
+  },
+  {
+    id: 'databases',
+    tier: 3,
+    code: '07 // MULTI-TENANT DATA',
+    title: 'Databases & Tenant Isolation',
+    title_ar: 'قواعد البيانات وعزل المستأجرين',
+    mini: 'PostgreSQL • MySQL • SQL Server',
+    desc: 'Strict database-per-tenant isolation for 500+ enterprise organizations, double-entry ledger integrity, and advanced SQL query tuning.',
+    desc_ar: 'عزل تام لقواعد البيانات لأكثر من 500 منشأة مشتركة (Database-per-Tenant)، وضبط الفهارس وتحسين استعلامات SQL المعقدة.',
+    projects: [
+      'Evix Cloud ERP Multi-Tenant Database Architecture (500+ Clients)',
+      'AetherWallet Double-Entry Digital Ledger Core',
+      'HASTI National Research Taxonomy & Server-Side DataTables'
+    ],
+    projects_ar: [
+      'معمارية قواعد البيانات المعزولة لأكثر من 500 شركة في Evix ERP',
+      'نواة المحفظة الرقمية AetherWallet لسجلات القيود المحاسبية المزدوجة',
+      'فهرسة الخارطة البحثية الوطنية HASTI وحزمة laravel-datatables'
+    ],
+    tags: ['PostgreSQL', 'MySQL', 'MS SQL Server', 'Database-per-Tenant', 'MongoDB'],
+    linksTo: ['backend', 'redis', 'cloud']
+  },
+  {
+    id: 'integrations',
+    tier: 3,
+    code: '08 // FINTECH, ZATCA & AI',
+    title: 'ZATCA, Banking Gateways & LLMs',
+    title_ar: 'التكاملات البنكية، زاتكا، والذكاء الاصطناعي',
+    mini: 'ZATCA Phase-2 • AlinmaPay • Gemini AI',
+    desc: 'Connecting enterprise platforms with ZATCA Phase-2 tax authorities, Alinma Bank / Tabby / HyperPay gateways, and Azure OpenAI / Gemini LLMs.',
+    desc_ar: 'ربط الأنظمة المؤسسية مع هيئة الزكاة والضريبة (ZATCA Phase 2)، مصرف الإنماء وتابي وهايبر باي، ونماذج Azure OpenAI و Gemini AI.',
+    projects: [
+      'laravel-gemini Multimodal Google Gemini AI SDK for Laravel',
+      'alinma-pay Enterprise Banking Payment Gateway Integration',
+      'AI OCR-to-JSON Document Pipeline & ZATCA Phase-2 E-Invoicing'
+    ],
+    projects_ar: [
+      'حزمة laravel-gemini لربط Google Gemini AI متعدد الوسائط',
+      'حزمة alinma-pay للربط المباشر مع بوابة دفع مصرف الإنماء',
+      'منظومة استخراج البيانات OCR بالذكاء الاصطناعي والفوترة الإلكترونية زاتكا'
+    ],
+    tags: ['ZATCA Phase-2', 'AlinmaPay SDK', 'Google Gemini AI', 'Azure OpenAI OCR', 'Tabby & HyperPay'],
+    linksTo: ['apis', 'backend', 'queues']
+  },
+  {
+    id: 'cloud',
+    tier: 3,
+    code: '09 // CLOUD & DEVOPS',
+    title: 'AWS Cloud, Docker & CI/CD',
+    title_ar: 'البنية السحابية واستقرار الإنتاج',
+    mini: 'AWS (EC2/S3/RDS) • Docker • 99.99% SLA',
+    desc: 'Containerized production deployments on AWS using Docker and automated GitHub Actions / Azure DevOps CI/CD pipelines with 99.99% uptime.',
+    desc_ar: 'تشغيل الأنظمة السحابية على AWS باستخدام حاويات Docker ومسارات النشر المستمر CI/CD عبر GitHub Actions بجاهزية 99.99%.',
+    projects: [
+      'AWS Cloud Infrastructure (EC2, S3, RDS) for Evix & BTC Logistics',
+      'Zero-Downtime Docker & GitHub Actions CI/CD Pipelines',
+      'Production Telemetry & Performance Monitoring'
+    ],
+    projects_ar: [
+      'البنية السحابية على AWS لمنظومة Evix ERP ومنصة BTC اللوجستية',
+      'مسارات النشر المؤتمت CI/CD عبر Docker و GitHub Actions',
+      'مراقبة الأداء اللحظي واستقرار الإنتاج بنسبة 99.99%'
+    ],
+    tags: ['AWS Cloud (EC2, S3, RDS)', 'Docker Containers', 'GitHub Actions CI/CD', '99.99% Uptime SLA'],
+    linksTo: ['databases', 'queues', 'backend']
+  }
+];
+
+function renderArchitecture(lang = 'en') {
+  const tiersWrap = $('#archTiersGrid');
+  const inspector = $('#archInspector');
+  if (!tiersWrap.length || !inspector.length) return;
+
+  const activeNode = archTopologyNodes.find(n => n.id === currentArchNode) || archTopologyNodes[3];
+  const connected = activeNode.linksTo || [];
+
+  let tiersHtml = '';
+  [1, 2, 3].forEach((tierNum, idx) => {
+    const nodes = archTopologyNodes.filter(n => n.tier === tierNum);
+    tiersHtml += `<div class="arch-tier-row">`;
+    nodes.forEach(n => {
+      const isAct = n.id === activeNode.id;
+      const isConn = connected.includes(n.id);
+      const cls = isAct ? 'arch-node-btn active' : (isConn ? 'arch-node-btn connected' : 'arch-node-btn');
+      const title = (lang === 'ar' && n.title_ar) ? n.title_ar : n.title;
+      tiersHtml += `
+        <button type="button" class="${cls}" data-node="${n.id}">
+          <div class="arch-node-top">
+            <span>${n.code}</span>
+            <span class="arch-node-dot"></span>
+          </div>
+          <div class="arch-node-title">${title}</div>
+          <div class="arch-node-mini">${n.mini}</div>
+        </button>
+      `;
+    });
+    tiersHtml += `</div>`;
+    if (idx < 2) {
+      tiersHtml += `<div class="arch-flow-conduit"></div>`;
+    }
+  });
+  tiersWrap.html(tiersHtml);
+
+  const actTitle = (lang === 'ar' && activeNode.title_ar) ? activeNode.title_ar : activeNode.title;
+  const actDesc = (lang === 'ar' && activeNode.desc_ar) ? activeNode.desc_ar : activeNode.desc;
+  const actProjs = (lang === 'ar' && activeNode.projects_ar) ? activeNode.projects_ar : activeNode.projects;
+  const lblVerified = (typeof translations !== 'undefined' && translations[lang] && translations[lang].arch_verified_in)
+    ? translations[lang].arch_verified_in
+    : (lang === 'ar' ? 'الأنظمة والمشاريع المطبّق فيها فعلياً:' : 'Verified Production Implementations:');
+  const lblStack = (typeof translations !== 'undefined' && translations[lang] && translations[lang].arch_tech_stack)
+    ? translations[lang].arch_tech_stack
+    : (lang === 'ar' ? 'التقنيات والأنماط المعمارية:' : 'Core Technologies & Patterns:');
+
+  inspector.html(`
+    <div>
+      <span class="arch-inspector-badge">${activeNode.code} // ACTIVE LAYER</span>
+      <h3 class="arch-inspector-title">${actTitle}</h3>
+      <p class="arch-inspector-desc">${actDesc}</p>
+      <span class="arch-inspector-lbl">${lblVerified}</span>
+      <ul class="arch-inspector-list">
+        ${actProjs.map(p => `<li><i class="fas fa-check-circle"></i> <span>${p}</span></li>`).join('')}
+      </ul>
+    </div>
+    <div>
+      <span class="arch-inspector-lbl">${lblStack}</span>
+      <div class="service-tags">
+        ${activeNode.tags.map(t => `<span class="service-tag">${t}</span>`).join('')}
+      </div>
+    </div>
+  `);
+
+  $('.arch-node-btn').on('click', function () {
+    currentArchNode = $(this).data('node');
+    const curLang = localStorage.getItem('lang') || 'en';
+    renderArchitecture(curLang);
+  });
+}
+
+function initArchitectureSection() {
+  const lang = localStorage.getItem('lang') || 'en';
+  renderArchitecture(lang);
+}
+
+/* ===== VERIFIED OPEN-SOURCE PACKAGES & GITHUB ECOSYSTEM ===== */
+let currentOssFilter = 'all';
+const ossPackagesData = [
+  { name: 'laravel-gemini', cat: 'ai', badge: 'PHP • Gemini AI SDK', desc: 'Multimodal Google Gemini API SDK for Laravel supporting text, vision, audio, video & structured outputs.', desc_ar: 'حزمة متكاملة لربط Google Gemini AI مع Laravel (نصوص، صور، صوت، فيديو، ومخرجات منظمة).', url: 'https://github.com/dhiaamostafa46/laravel-gemini' },
+  { name: 'LeadGenAI', cat: 'ai', badge: 'TypeScript • React', desc: 'Autonomous B2B lead discovery, geospatial search, and automated WhatsApp/Email outreach analytics platform.', desc_ar: 'منصة ذكاء اصطناعي لاكتشاف الشركات عبر الخرائط وأتمتة حملات واتساب والبريد الإلكتروني.', url: 'https://github.com/dhiaamostafa46/LeadGenAI' },
+  { name: 'alinma-pay', cat: 'ai', badge: 'PHP • FinTech Gateway', desc: 'Enterprise banking & payment gateway integration for Alinma Bank with cryptographic signing & webhooks.', desc_ar: 'حزمة ربط بوابة الدفع البنكي (مصرف الإنماء Alinma Pay) مع التوقيع الرقمي والتحقق من العمليات.', url: 'https://github.com/dhiaamostafa46/alinma-pay' },
+  { name: 'authentica', cat: 'laravel', badge: 'PHP • Zero-Trust MFA', desc: 'Scalable identity verification and Multi-Factor Authentication (MFA) architecture for enterprise apps.', desc_ar: 'نظام مصادقة وتحقق من الهوية متعدد العوامل (MFA) عالي الأمان وقابل للتوسع للتطبيقات المؤسسية.', url: 'https://github.com/dhiaamostafa46/authentica' },
+  { name: 'AetherWallet', cat: 'ai', badge: 'PHP • Digital Ledger', desc: 'Digital wallet core engine supporting double-entry ledger transactions, balance isolation & audit trails.', desc_ar: 'نواة محفظة رقمية لإدارة الأرصدة، التحويلات المالية، وسجلات التدقيق المحاسبي المزدوج.', url: 'https://github.com/dhiaamostafa46/AetherWallet' },
+  { name: 'HRblazor', cat: 'dotnet', badge: 'C# • .NET Blazor', desc: 'Enterprise HR, Attendance & Automated Payroll platform built with C# and .NET Blazor.', desc_ar: 'نظام إدارة موارد بشرية ومسيرات رواتب وحضور وانصراف متكامل مبني بتقنية C# و Blazor.', url: 'https://github.com/dhiaamostafa46/HRblazor' },
+  { name: 'reverb', cat: 'laravel', badge: 'PHP • WebSockets', desc: 'High-concurrency WebSocket server implementation for real-time Laravel broadcasting & live telemetry.', desc_ar: 'خادم اتصالات WebSocket فائق السرعة للبث اللحظي والتتبع المباشر في تطبيقات Laravel.', url: 'https://github.com/dhiaamostafa46/reverb' },
+  { name: 'laravel-modules', cat: 'laravel', badge: 'PHP • DDD Modules', desc: 'Domain-Driven Design (DDD) modular monolith manager for structuring large-scale Laravel systems.', desc_ar: 'إدارة المعمارية المعيارية (Modular Monolith) لتقسيم الأنظمة المؤسسية الضخمة في Laravel.', url: 'https://github.com/dhiaamostafa46/laravel-modules' },
+  { name: 'ai-cv-optimizer', cat: 'ai', badge: 'JavaScript • LLM', desc: 'AI-powered resume analyzer and ATS optimization engine for software engineering roles.', desc_ar: 'محسّن السيرة الذاتية الذكي لتحليل ومطابقة المهارات مع الوظائف الهندسية عبر الذكاء الاصطناعي.', url: 'https://github.com/dhiaamostafa46/ai-cv-optimizer' },
+  { name: 'Real-estate', cat: 'dotnet', badge: 'C# • ASP.NET Core', desc: 'Property management, leasing, and real-estate brokerage platform built on C# / ASP.NET Core.', desc_ar: 'منصة إدارة عقارات وأملاك وعقود إيجار متكاملة مبنية ببيئة C# و ASP.NET Core.', url: 'https://github.com/dhiaamostafa46/Real-estate' },
+  { name: 'ReactAdmin', cat: 'dotnet', badge: 'TypeScript • React', desc: 'Type-safe enterprise administration dashboard in TypeScript and React with RBAC & telemetry charts.', desc_ar: 'لوحة تحكم إدارية حديثة مبنية بـ TypeScript و React مع رسوم بيانية وإدارة صلاحيات.', url: 'https://github.com/dhiaamostafa46/ReactAdmin' },
+  { name: 'laravel-datatables', cat: 'laravel', badge: 'PHP • DataTables', desc: 'High-performance server-side DataTables processing engine for large datasets in Laravel.', desc_ar: 'معالجة جداول البيانات الضخمة من طرف الخادم بكفاءة عالية في تطبيقات Laravel.', url: 'https://github.com/dhiaamostafa46/laravel-datatables' },
+  { name: 'laravel-notification-log', cat: 'laravel', badge: 'PHP • Observability', desc: 'Comprehensive audit logging and delivery telemetry for multi-channel Laravel notifications.', desc_ar: 'تسجيل وتتبع حالة وصول الإشعارات المرسلة عبر مختلف القنوات في Laravel.', url: 'https://github.com/dhiaamostafa46/laravel-notification-log' },
+  { name: 'livewire-filepond', cat: 'laravel', badge: 'PHP • Livewire', desc: 'Asynchronous chunked file upload component integrating FilePond with Laravel Livewire.', desc_ar: 'مكون رفع ملفات متقدم وغير متزامن يدمج FilePond مع Laravel Livewire.', url: 'https://github.com/dhiaamostafa46/livewire-filepond' },
+  { name: 'vueDashboard', cat: 'dotnet', badge: 'Vue.js • Dashboard', desc: 'Reactive executive telemetry and analytics dashboard built with Vue.js.', desc_ar: 'لوحة قيادة تفاعلية لعرض المؤشرات والتقارير الإدارية باستخدام Vue.js.', url: 'https://github.com/dhiaamostafa46/vueDashboard' },
+  { name: 'botman', cat: 'laravel', badge: 'PHP • Chatbots', desc: 'Multi-driver conversational chatbot automation framework for PHP and Laravel.', desc_ar: 'إطار عمل لبناء روبوتات المحادثة التفاعلية وأتمتة الردود الذكية في PHP.', url: 'https://github.com/dhiaamostafa46/botman' }
+];
+
+function renderOpenSource(lang = 'en') {
+  const container = $('#ossContainer');
+  if (!container.length) return;
+
+  const list = currentOssFilter === 'all'
+    ? ossPackagesData
+    : ossPackagesData.filter(r => r.cat === currentOssFilter);
+
+  const html = list.map(r => {
+    const desc = (lang === 'ar' && r.desc_ar) ? r.desc_ar : r.desc;
+    const ctaText = lang === 'ar' ? 'فتح المستودع على GitHub' : 'View GitHub Repository';
+    return `
+      <a href="${r.url}" target="_blank" rel="noopener noreferrer" class="oss-card">
+        <div>
+          <div class="oss-card-top">
+            <span class="oss-card-title"><i class="fab fa-github"></i> ${r.name}</span>
+            <span class="oss-card-badge">${r.badge}</span>
+          </div>
+          <p class="oss-card-desc">${desc}</p>
+        </div>
+        <div class="oss-card-footer">
+          <span>${ctaText}</span>
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
+    `;
+  }).join('');
+
+  container.html(html);
+}
+
+function initOpenSourceSection() {
+  const lang = localStorage.getItem('lang') || 'en';
+  renderOpenSource(lang);
+
+  $('#oss-filters .filter-btn').on('click', function () {
+    $('#oss-filters .filter-btn').removeClass('active');
+    $(this).addClass('active');
+    currentOssFilter = $(this).data('oss-filter') || 'all';
+    const curLang = localStorage.getItem('lang') || 'en';
+    renderOpenSource(curLang);
+  });
+}
+
+/* ===== 3D VANILLA TILT INITIALIZATION ===== */
+function init3DTilt() {
+  if (typeof VanillaTilt === 'undefined') return;
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!canHover || reduced) return;
+
+  const tiltTargets = document.querySelectorAll('.code-card, .monitor-screen, .service-card, .degree-card, .cert-card');
+  if (tiltTargets.length) {
+    VanillaTilt.init(Array.from(tiltTargets), {
+      max: 5,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.12
+    });
+  }
+}
+

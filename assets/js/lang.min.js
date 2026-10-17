@@ -198,7 +198,23 @@ const translations = {
     "modal_metrics_title": "Impact &amp; Performance Metrics",
     "modal_stack_used": "Tech Stack Used",
     "modal_btn_inquire": "Inquire Similar Solution",
-    "modal_btn_visit": "Visit Live App / Store"
+    "modal_btn_visit": "Visit Live App / Store",
+
+    // Interactive System Architecture & Open-Source Keys
+    "nav_opensource": "Open Source",
+    "arch_eyebrow": "02B — Interactive 3D System Topology",
+    "arch_heading": "Enterprise System <span>Architecture</span>",
+    "arch_subtitle": "Click any architectural layer to inspect data-flow connections, production implementations, and tech stack.",
+    "arch_verified_in": "Verified Production Implementations:",
+    "arch_tech_stack": "Core Technologies &amp; Patterns:",
+    "oss_eyebrow": "04B — Open-Source Packages &amp; GitHub Ecosystem",
+    "oss_heading": "Open-Source <span>Packages</span>",
+    "oss_subtitle": "16 featured open-source SDKs, FinTech banking gateways, and enterprise packages published on GitHub (out of 27+ repositories).",
+    "oss_filter_all": "All Packages (16)",
+    "oss_filter_laravel": "Laravel & PHP (7)",
+    "oss_filter_ai": "AI & FinTech (5)",
+    "oss_filter_dotnet": ".NET & TypeScript (4)",
+    "oss_btn_all_github": "<i class=\"fab fa-github\"></i> Explore All 27+ Repositories on GitHub"
   },
 
   ar: {
@@ -400,6 +416,22 @@ const translations = {
     "modal_metrics_title": "مؤشرات الأداء والتأثير التشغيلي",
     "modal_stack_used": "التقنيات والأدوات المستخدمة",
     "modal_btn_inquire": "طلب حل معماري مماثل",
-    "modal_btn_visit": "زيارة التطبيق / فتح المتجر"
+    "modal_btn_visit": "زيارة التطبيق / فتح المتجر",
+
+    // Interactive System Architecture & Open-Source Keys
+    "nav_opensource": "المصادر المفتوحة",
+    "arch_eyebrow": "02B — المخطط الهندسي التفاعلي للأنظمة",
+    "arch_heading": "معمارية الأنظمة <span>وتدفق البيانات</span>",
+    "arch_subtitle": "اضغط على أي طبقة معمارية لاستعراض ترابط البيانات، الأنظمة الإنتاجية المطبقة فيها، والتقنيات المعتمدة.",
+    "arch_verified_in": "الأنظمة والمشاريع المطبّق فيها فعلياً:",
+    "arch_tech_stack": "التقنيات والأنماط المعمارية:",
+    "oss_eyebrow": "04B — الحزم البرمجية والمستودعات مفتوحة المصدر",
+    "oss_heading": "الحزم البرمجية <span>والمستودعات</span>",
+    "oss_subtitle": "16 حزمة برمجية ومستودعاً مفتوح المصدر في الذكاء الاصطناعي، الدفع البنكي، والأنظمة المؤسسية على GitHub (من أصل +27 مستودعاً).",
+    "oss_filter_all": "الكل (16)",
+    "oss_filter_laravel": "Laravel و PHP (7)",
+    "oss_filter_ai": "الذكاء الاصطناعي و FinTech (5)",
+    "oss_filter_dotnet": ".NET و TypeScript (4)",
+    "oss_btn_all_github": "<i class=\"fab fa-github\"></i> استعراض كافة المستودعات (+27) على GitHub"
   }
 };
