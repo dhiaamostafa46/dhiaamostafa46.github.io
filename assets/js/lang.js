@@ -68,6 +68,7 @@ const translations = {
     "skills_tab_enterprise": "Enterprise &amp; ERP",
     "skills_tab_cloud": "Cloud &amp; DevOps",
     "skills_tab_ai": "AI &amp; Automation",
+    "skills_tab_design3d": "3D Design &amp; Motion",
 
     // Projects Section - Project Intelligence Platform
     "proj_eyebrow": "04 — Project Intelligence &amp; Verification Engine",
@@ -286,6 +287,7 @@ const translations = {
     "skills_tab_enterprise": "أنظمة الشركات و ERP",
     "skills_tab_cloud": "السحابة و DevOps",
     "skills_tab_ai": "الذكاء الاصطناعي والأتمتة",
+    "skills_tab_design3d": "التصميم ثلاثي الأبعاد والحركة",
 
     // Projects Section - Project Intelligence Platform
     "proj_eyebrow": "04 — استخبارات ومعالجة بيانات المشاريع",

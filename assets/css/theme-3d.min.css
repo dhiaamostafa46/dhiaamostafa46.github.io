@@ -1,0 +1,227 @@
+/* ==========================================================================
+   3D THEME LAYER — cinematic depth for the whole site.
+   Loaded after style.min.css so it refines (not replaces) the existing system.
+   Light and dark modes both use the existing CSS variables.
+   ========================================================================== */
+
+:root {
+  --depth-shadow-soft: 0 18px 40px -18px rgba(0, 61, 102, 0.35);
+  --depth-shadow-lift: 0 34px 70px -24px rgba(0, 61, 102, 0.45), 0 0 0 1px rgba(11, 186, 181, 0.18);
+  --depth-glow: 0 0 42px -6px rgba(11, 186, 181, 0.55);
+  --depth-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --depth-persp: 1200px;
+}
+
+/* ---------- Cinematic backdrop: layered light + faint perspective grid ---------- */
+body {
+  background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(900px 600px at 85% -10%, rgba(11, 186, 181, 0.16), transparent 60%),
+    radial-gradient(800px 700px at -10% 30%, rgba(0, 84, 140, 0.14), transparent 60%),
+    linear-gradient(transparent 95%, rgba(0, 61, 102, 0.05) 100%),
+    linear-gradient(90deg, transparent 95%, rgba(0, 61, 102, 0.05) 100%);
+  background-size: auto, auto, 100% 48px, 48px 100%;
+  background-attachment: fixed;
+}
+
+/* ---------- Section headings: stronger depth ---------- */
+.heading {
+  text-shadow: 0 2px 0 rgba(0, 61, 102, 0.08), 0 14px 30px rgba(0, 61, 102, 0.18);
+}
+
+.eyebrow {
+  letter-spacing: 0.18em;
+  text-shadow: 0 0 18px rgba(11, 186, 181, 0.45);
+}
+
+/* ---------- Generic 3D card behaviour ---------- */
+.service-card,
+.skill-category,
+.skill-chip,
+.lux-project-card,
+.cert-card,
+.degree-card,
+.contact-info-card,
+.stat-item,
+.card-content,
+.timeline .content,
+.filter-btn,
+.skills-tab {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.55s var(--depth-ease),
+    box-shadow 0.55s var(--depth-ease),
+    border-color 0.4s ease,
+    background-color 0.4s ease;
+  will-change: transform;
+}
+
+.service-card,
+.skill-category,
+.lux-project-card,
+.cert-card,
+.degree-card,
+.contact-info-card {
+  box-shadow: var(--depth-shadow-soft);
+  position: relative;
+}
+
+/* Light sheen that sweeps across cards on hover — reads as a reflective surface */
+.service-card::after,
+.skill-category::after,
+.lux-project-card::after,
+.cert-card::after,
+.contact-info-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.28) 48%, transparent 66%);
+  background-size: 250% 100%;
+  background-position: 120% 0;
+  pointer-events: none;
+  transition: background-position 0.9s var(--depth-ease);
+  z-index: 2;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover,
+  .lux-project-card:hover,
+  .cert-card:hover,
+  .degree-card:hover,
+  .contact-info-card:hover {
+    transform: perspective(var(--depth-persp)) rotateX(5deg) rotateY(-6deg) translateZ(18px);
+    box-shadow: var(--depth-shadow-lift), var(--depth-glow);
+  }
+
+  .service-card:hover::after,
+  .lux-project-card:hover::after,
+  .cert-card:hover::after,
+  .contact-info-card:hover::after {
+    background-position: -40% 0;
+  }
+
+  .skill-category:hover {
+    transform: perspective(var(--depth-persp)) rotateX(3deg) rotateY(-3deg) translateZ(10px);
+    box-shadow: var(--depth-shadow-lift);
+  }
+
+  .skill-category:hover::after {
+    background-position: -40% 0;
+  }
+
+  .skill-chip:hover {
+    transform: perspective(600px) translateZ(14px) rotateX(-6deg);
+    box-shadow: 0 16px 30px -12px rgba(0, 61, 102, 0.35);
+  }
+
+  .stat-item:hover,
+  .card-content:hover {
+    transform: perspective(var(--depth-persp)) translateZ(14px) rotateX(4deg);
+  }
+
+  .filter-btn:hover,
+  .skills-tab:hover {
+    transform: perspective(400px) translateY(-3px) translateZ(8px);
+  }
+}
+
+/* ---------- Buttons: physical pressable 3D ---------- */
+.btn-primary,
+.btn-outline {
+  transform-style: preserve-3d;
+  transition: transform 0.25s var(--depth-ease), box-shadow 0.25s var(--depth-ease);
+}
+
+.btn-primary {
+  box-shadow: 0 6px 0 rgba(0, 40, 69, 0.9), 0 18px 30px -10px rgba(11, 186, 181, 0.55);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) translateZ(12px);
+  box-shadow: 0 9px 0 rgba(0, 40, 69, 0.9), 0 24px 40px -12px rgba(11, 186, 181, 0.6);
+}
+
+.btn-primary:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0, 40, 69, 0.9), 0 8px 16px -8px rgba(11, 186, 181, 0.5);
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px) translateZ(8px);
+  box-shadow: var(--depth-shadow-soft);
+}
+
+/* ---------- Timeline: give the spine depth ---------- */
+.timeline .content {
+  box-shadow: var(--depth-shadow-soft);
+}
+
+.timeline .content:hover {
+  transform: perspective(var(--depth-persp)) translateX(4px) translateZ(12px) rotateY(-2deg);
+  box-shadow: var(--depth-shadow-lift);
+}
+
+/* ---------- Dark mode: glowing edges instead of flat borders ---------- */
+[data-theme="dark"] body {
+  background-image:
+    radial-gradient(900px 600px at 85% -10%, rgba(11, 186, 181, 0.22), transparent 60%),
+    radial-gradient(800px 700px at -10% 30%, rgba(0, 120, 200, 0.18), transparent 60%),
+    linear-gradient(transparent 95%, rgba(11, 186, 181, 0.06) 100%),
+    linear-gradient(90deg, transparent 95%, rgba(11, 186, 181, 0.06) 100%);
+}
+
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .skill-category,
+[data-theme="dark"] .lux-project-card,
+[data-theme="dark"] .cert-card,
+[data-theme="dark"] .contact-info-card {
+  box-shadow: 0 24px 50px -22px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .service-card:hover,
+[data-theme="dark"] .lux-project-card:hover,
+[data-theme="dark"] .cert-card:hover {
+  box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(11, 186, 181, 0.45), var(--depth-glow);
+}
+
+/* ---------- Arabic (RTL): mirror the tilt direction so depth still reads correctly ---------- */
+[dir="rtl"] .service-card:hover,
+[dir="rtl"] .lux-project-card:hover,
+[dir="rtl"] .cert-card:hover {
+  transform: perspective(var(--depth-persp)) rotateX(5deg) rotateY(6deg) translateZ(18px);
+}
+
+/* ---------- Touch devices: no hover tilt, keep shadows only ---------- */
+@media (hover: none) {
+  .service-card:hover,
+  .skill-category:hover,
+  .lux-project-card:hover,
+  .cert-card:hover,
+  .skill-chip:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Accessibility: honour reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .service-card:hover,
+  .skill-category:hover,
+  .lux-project-card:hover,
+  .cert-card:hover,
+  .skill-chip:hover,
+  .stat-item:hover,
+  .card-content:hover,
+  .btn-primary:hover,
+  .btn-outline:hover {
+    transform: none !important;
+  }
+}
