@@ -85,10 +85,9 @@
 
   <!-- Custom CSS Design System -->
   <link rel="stylesheet" href="./assets/css/style.min.css?v=187">
-  <link rel="stylesheet" href="./assets/css/theme-3d.min.css?v=186">
-  <link rel="stylesheet" href="./assets/css/pro.min.css?v=2">
 
   <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="./assets/css/studio.min.css?v=6">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
 
   <!-- Favicon -->
@@ -98,12 +97,8 @@
 <body>
 
   <!-- Fullscreen Fixed 3D Canvas Background for Real-World Neural Architecture -->
-  <canvas id="network-canvas"></canvas>
 
   <!-- Ambient Glow Effects -->
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-  <div class="ambient-glow glow-3"></div>
 
   <!-- Header Navigation & Custom SVG Logo -->
   <header class="header">
@@ -117,6 +112,11 @@
         <span class="logo-text">Dhiaa</span>
       </a>
 
+      <div class="rail-id">
+        <p class="rail-role" data-i18n="hero_greeting">Senior Full-Stack Engineer &amp; SaaS Architect</p>
+        <p class="rail-loc">Riyadh · KSA</p>
+      </div>
+
       <div id="menu" class="fas fa-bars"></div>
 
       <nav class="navbar">
@@ -124,7 +124,7 @@
           <li><a class="active" href="#home" data-i18n="nav_home">Home</a></li>
           <li><a href="#about" data-i18n="nav_about">About</a></li>
           <li><a href="#services" data-i18n="nav_services">Services</a></li>
-          <li><a href="#architecture" data-i18n="arch_heading">Architecture</a></li>
+          <li><a href="#architecture" data-i18n="nav_arch">Architecture</a></li>
           <li><a href="#skills" data-i18n="nav_skills">Stack</a></li>
           <li><a href="#work" data-i18n="nav_projects">Projects</a></li>
           <li><a href="#opensource" data-i18n="nav_opensource">Open Source</a></li>
@@ -431,8 +431,8 @@
   <section class="architecture-section" id="architecture">
     <div class="site-container">
       <div class="section-head text-center">
-        <span class="eyebrow" data-i18n="arch_eyebrow">02B — Interactive 3D System Topology</span>
-        <h2 class="heading" data-i18n="arch_heading">Enterprise <span>System Architecture</span></h2>
+        <span class="eyebrow" data-i18n="arch_eyebrow">03 / Architecture</span>
+        <h2 class="heading" data-i18n="arch_heading">System <span>architecture</span></h2>
         <p class="section-subtitle" data-i18n="arch_subtitle">Interactive blueprint of my production cloud architecture. Select any node across the 3 tiers to inspect protocols, throughput SLAs, and verified project deployments.</p>
       </div>
 
@@ -989,8 +989,8 @@
         <div class="intake-form-wrapper">
           <form class="intake-form" id="intakeForm">
             <div class="form-header">
-              <span class="form-title" data-i18n="intake_title">[ OPERATIONS_CONSOLE_INTAKE ]</span>
-              <span class="form-status">■ CONFIGURE_REQUEST</span>
+              <span class="form-title" data-i18n="intake_title">Project brief</span>
+              
             </div>
             
             <!-- Success Message Container -->
@@ -1081,16 +1081,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" crossorigin="anonymous" defer></script>
 
   <!-- Three.js -->
-  <script src="./assets/js/network-graph.min.js?v=190" defer></script>
 
   <!-- Vanilla Tilt.js -->
 
   <!-- i18n & Core Scripts -->
-  <script src="./assets/js/lang.min.js?v=185" defer></script>
+  <script src="./assets/js/lang.min.js?v=192" defer></script>
   <script src="./assets/js/i18n.min.js?v=185" defer></script>
   <script src="./projects/projects.min.js?v=185" defer></script>
   <script src="./assets/js/script.min.js?v=185" defer></script>
-  <script src="./assets/js/pro.min.js?v=1" defer></script>
+  <script src="./assets/js/studio.min.js?v=1" defer></script>
 
 </body>
 

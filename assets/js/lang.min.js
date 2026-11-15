@@ -18,7 +18,7 @@ const translations = {
     "hero_btn_res": "<i class=\"fas fa-file-alt\"></i> <span>Resume PDF</span>",
 
     // About Section
-    "about_eyebrow": "01 — Systems &amp; Architecture Profile",
+    "about_eyebrow": "01 / Profile",
     "about_heading": "About <span>Me</span>",
     "about_role_tag": "// Senior Full-Stack Engineer &amp; SaaS Architect · 6+ Years",
     "about_stat1_num": "6+",
@@ -39,8 +39,8 @@ const translations = {
     "about_btn_res": "<i class=\"fas fa-file-download\"></i> <span>Download Resume (PDF)</span>",
 
     // Services Section
-    "services_eyebrow": "02 — Service Data Pipeline Workflow",
-    "services_heading": "Architectural <span>Capabilities</span>",
+    "services_eyebrow": "02 / Services",
+    "services_heading": "What I <span>build</span>",
     "services_subtitle": "Enterprise software services engineered for scale, reliability, and business impact.",
     "srv1_title": "Backend, Middleware &amp; Microservices",
     "srv1_desc": "Designing scalable production-grade backends with high concurrency. Event-driven Laravel and Node.js microservices, C# / .NET Core, custom Middleware connectors, RESTful APIs, and WebSockets.",
@@ -57,8 +57,8 @@ const translations = {
     "srv_inquire": "Request Spec",
 
     // Skills Section
-    "skills_eyebrow": "03 — Tech Dependency Graph",
-    "skills_heading": "Technological <span>Matrix</span>",
+    "skills_eyebrow": "04 / Stack",
+    "skills_heading": "Technical <span>stack</span>",
     "skills_subtitle": "Languages, databases, frameworks, cloud infrastructure, and integration tools I engineer with professionally.",
     "skills_search_ph": "Search stack (e.g. Node.js, Laravel, .NET, React, PostgreSQL)...",
     "skills_tab_all": "All Stack",
@@ -71,8 +71,8 @@ const translations = {
     "skills_tab_design3d": "3D Design &amp; Motion",
 
     // Projects Section - Project Intelligence Platform
-    "proj_eyebrow": "04 — Project Intelligence &amp; Verification Engine",
-    "proj_heading": "Enterprise Project <span>Intelligence</span>",
+    "proj_eyebrow": "05 / Selected work",
+    "proj_heading": "Selected <span>work</span>",
     "proj_subtitle": "Real-time data ingestion from authentic sources combined with AI Computer Vision blueprint extraction and performance telemetry.",
     "proj_search_ph": "Search projects by name or technology...",
     "proj_filter_all": "All Projects",
@@ -103,7 +103,7 @@ const translations = {
     "scanner_scanning_text": "Scanning Blueprint via Computer Vision...",
 
     // Experience Section
-    "exp_eyebrow": "05 — Professional Journey",
+    "exp_eyebrow": "07 / Experience",
     "exp_heading": "Work <span>Experience</span>",
     "exp_subtitle": "My professional software engineering career across Saudi Arabia, Gulf region, and remote roles.",
     "exp_current": "<span class=\"badge-dot\"></span>Current",
@@ -156,7 +156,7 @@ const translations = {
     "exp4_li3": "Built and integrated RESTful APIs with mobile applications and web platforms within Agile teams.",
 
     // Education Section
-    "edu_eyebrow": "06 — Academic &amp; Qualifications",
+    "edu_eyebrow": "08 / Education",
     "edu_heading": "Education &amp; <span>Certifications</span>",
     "edu_subtitle": "Academic degree &amp; professional engineering bootcamps",
     "edu_degree": "Bachelor's Degree in Information Technology",
@@ -170,10 +170,10 @@ const translations = {
     "edu_c3_sub": "Flutter &amp; Dart Mobile Development",
 
     // Contact & Intake Section
-    "contact_eyebrow": "07 — Operations Console &amp; Intake Portal",
-    "contact_heading": "System Intake <span>Portal</span>",
+    "contact_eyebrow": "09 / Contact",
+    "contact_heading": "Start a <span>project</span>",
     "contact_subtitle": "Configure your project specifications below to generate an instant technical brief, or contact me directly.",
-    "intake_title": "[ OPERATIONS_CONSOLE_INTAKE ]",
+    "intake_title": "Project brief",
     "lbl_email": "Name or Corporate Email / WhatsApp",
     "ph_email": "e.g. Eng. Khalid or khalid@company.sa",
     "lbl_details": "Project Overview &amp; Requirements",
@@ -203,13 +203,14 @@ const translations = {
 
     // Interactive System Architecture & Open-Source Keys
     "nav_opensource": "Open Source",
-    "arch_eyebrow": "02B — Interactive 3D System Topology",
-    "arch_heading": "Enterprise System <span>Architecture</span>",
+    "nav_arch": "Architecture",
+    "arch_eyebrow": "03 / Architecture",
+    "arch_heading": "System <span>architecture</span>",
     "arch_subtitle": "Click any architectural layer to inspect data-flow connections, production implementations, and tech stack.",
     "arch_verified_in": "Verified Production Implementations:",
     "arch_tech_stack": "Core Technologies &amp; Patterns:",
-    "oss_eyebrow": "04B — Open-Source Packages &amp; GitHub Ecosystem",
-    "oss_heading": "Open-Source <span>Packages</span>",
+    "oss_eyebrow": "06 / Open source",
+    "oss_heading": "Open <span>source</span>",
     "oss_subtitle": "16 featured open-source SDKs, FinTech banking gateways, and enterprise packages published on GitHub (out of 27+ repositories).",
     "oss_filter_all": "All Packages (16)",
     "oss_filter_laravel": "Laravel & PHP (7)",
@@ -237,7 +238,7 @@ const translations = {
     "hero_btn_res": "<i class=\"fas fa-file-alt\"></i> <span>السيرة الذاتية PDF</span>",
 
     // About Section
-    "about_eyebrow": "01 — الملف الهندسي والمعماري",
+    "about_eyebrow": "01 / نبذة",
     "about_heading": "نبذة <span>عني</span>",
     "about_role_tag": "// مهندس برمجيات أول ومعماري أنظمة SaaS · 6+ سنوات",
     "about_stat1_num": "+6",
@@ -258,8 +259,8 @@ const translations = {
     "about_btn_res": "<i class=\"fas fa-file-download\"></i> <span>تحميل السيرة الذاتية (PDF)</span>",
 
     // Services Section
-    "services_eyebrow": "02 — مسار الخدمات والقدرات الهندسية",
-    "services_heading": "القدرات <span>المعمارية والهندسية</span>",
+    "services_eyebrow": "02 / الخدمات",
+    "services_heading": "ما <span>أبنيه</span>",
     "services_subtitle": "حلول برمجية مؤسسية مصممة لتحقيق الأداء العالي، والموثوقية، والتأثير التجاري الملموس.",
     "srv1_title": "الواجهات الخلفية، Middleware والمايكروسرفيسز",
     "srv1_desc": "تصميم وبناء خدمات خلفية جاهزة للإنتاج وتتحمل الضغط العالي بـ Laravel و Node.js و NestJS و .NET Core، وبناء طبقات Middleware وسيطة متطورة وواجهات RESTful APIs و WebSockets.",
@@ -276,8 +277,8 @@ const translations = {
     "srv_inquire": "طلب مواصفة فنية",
 
     // Skills Section
-    "skills_eyebrow": "03 — مصفوفة التقنيات والقدرات",
-    "skills_heading": "المصفوفة <span>التقنية</span>",
+    "skills_eyebrow": "04 / التقنيات",
+    "skills_heading": "المهارات <span>التقنية</span>",
     "skills_subtitle": "لغات البرمجة، قواعد البيانات، البنية التحتية السحابية، وأدوات التكامل التي أعمل بها باحتراف.",
     "skills_search_ph": "ابحث في التقنيات (مثل Node.js, Laravel, .NET, React, PostgreSQL)...",
     "skills_tab_all": "جميع التقنيات",
@@ -290,8 +291,8 @@ const translations = {
     "skills_tab_design3d": "التصميم ثلاثي الأبعاد والحركة",
 
     // Projects Section - Project Intelligence Platform
-    "proj_eyebrow": "04 — استخبارات ومعالجة بيانات المشاريع",
-    "proj_heading": "استخبارات وتحليل <span>بيانات المشاريع</span>",
+    "proj_eyebrow": "05 / أعمال مختارة",
+    "proj_heading": "أعمال <span>مختارة</span>",
     "proj_subtitle": "معالجة وتدقيق بيانات المشاريع الحقيقية من مصادرها الأصلية مع استخراج العناصر من المخططات بالرؤية الحاسوبية والذكاء الاصطناعي.",
     "proj_search_ph": "ابحث في المشاريع باسم المشروع، النطاق، أو التقنية...",
     "proj_filter_all": "جميع المشاريع",
@@ -322,7 +323,7 @@ const translations = {
     "scanner_scanning_text": "جارٍ فحص وتحليل المخطط بالرؤية الحاسوبية...",
 
     // Experience Section
-    "exp_eyebrow": "05 — المسيرة المهنية",
+    "exp_eyebrow": "07 / الخبرات",
     "exp_heading": "الخبرات <span>المهنية</span>",
     "exp_subtitle": "مسيرتي المهنية في هندسة البرمجيات وتطوير الأنظمة في المملكة العربية السعودية والخليج.",
     "exp_current": "<span class=\"badge-dot\"></span>الحالي",
@@ -375,7 +376,7 @@ const translations = {
     "exp4_li3": "بناء وربط واجهات RESTful APIs مع تطبيقات الجوال ومنصات الويب المتكاملة ضمن فرق أجايل.",
 
     // Education Section
-    "edu_eyebrow": "06 — المؤهلات الأكاديمية والشهادات",
+    "edu_eyebrow": "08 / التعليم",
     "edu_heading": "التعليم <span>والشهادات المهنية</span>",
     "edu_subtitle": "الدرجة الأكاديمية والمعسكرات التدريبية المتقدمة",
     "edu_degree": "بكالوريوس تقنية معلومات",
@@ -389,10 +390,10 @@ const translations = {
     "edu_c3_sub": "تطوير تطبيقات Flutter &amp; Dart",
 
     // Contact & Intake Section
-    "contact_eyebrow": "07 — لوحة العمليات واستقبال الطلبات",
-    "contact_heading": "بوابة استقبال <span>المشاريع</span>",
+    "contact_eyebrow": "09 / التواصل",
+    "contact_heading": "ابدأ <span>مشروعك</span>",
     "contact_subtitle": "حدد تفاصيل مشروعك أدناه لإرسال طلب فني مباشر، أو تواصل معي عبر القنوات المتاحة.",
-    "intake_title": "[ OPERATIONS_CONSOLE_INTAKE ]",
+    "intake_title": "ملخص المشروع",
     "lbl_email": "الاسم أو البريد المؤسسي / الواتساب",
     "ph_email": "مثال: م. خالد أو khalid@company.sa",
     "lbl_details": "نبذة عن المشروع والمتطلبات التقنية",
@@ -422,13 +423,14 @@ const translations = {
 
     // Interactive System Architecture & Open-Source Keys
     "nav_opensource": "المصادر المفتوحة",
-    "arch_eyebrow": "02B — المخطط الهندسي التفاعلي للأنظمة",
-    "arch_heading": "معمارية الأنظمة <span>وتدفق البيانات</span>",
+    "nav_arch": "المعمارية",
+    "arch_eyebrow": "03 / المعمارية",
+    "arch_heading": "معمارية <span>الأنظمة</span>",
     "arch_subtitle": "اضغط على أي طبقة معمارية لاستعراض ترابط البيانات، الأنظمة الإنتاجية المطبقة فيها، والتقنيات المعتمدة.",
     "arch_verified_in": "الأنظمة والمشاريع المطبّق فيها فعلياً:",
     "arch_tech_stack": "التقنيات والأنماط المعمارية:",
-    "oss_eyebrow": "04B — الحزم البرمجية والمستودعات مفتوحة المصدر",
-    "oss_heading": "الحزم البرمجية <span>والمستودعات</span>",
+    "oss_eyebrow": "06 / المصادر المفتوحة",
+    "oss_heading": "المصادر <span>المفتوحة</span>",
     "oss_subtitle": "16 حزمة برمجية ومستودعاً مفتوح المصدر في الذكاء الاصطناعي، الدفع البنكي، والأنظمة المؤسسية على GitHub (من أصل +27 مستودعاً).",
     "oss_filter_all": "الكل (16)",
     "oss_filter_laravel": "Laravel و PHP (7)",
