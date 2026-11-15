@@ -96,6 +96,23 @@ const stackData = [
       { name: "Firebase & Push Notifications", name_ar: "الإشعارات الفورية Firebase FCM", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg", tag: "FCM" },
       { name: "System Architecture & UML", name_ar: "التوثيق المعماري وتصميم الأنظمة", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", tag: "Arch" }
     ]
+  },
+  {
+    key: "design3d",
+    category: "3D Design & Motion",
+    category_ar: "تصميم ثلاثي الأبعاد والحركة",
+    desc: "Advertising-grade 3D art direction, spatial interfaces & cinematic motion",
+    desc_ar: "إخراج فني ثلاثي الأبعاد بمستوى إعلاني، واجهات مكانية وحركة سينمائية",
+    icon: "fa-cube",
+    items: [
+      { name: "3D Art Direction", name_ar: "الإخراج الفني ثلاثي الأبعاد", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg", tag: "Art" },
+      { name: "Advanced 3D Modeling", name_ar: "النمذجة ثلاثية الأبعاد المتقدمة", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg", tag: "Model" },
+      { name: "Cinematic Lighting", name_ar: "الإضاءة السينمائية", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg", tag: "Light" },
+      { name: "Material & Texture Design", name_ar: "تصميم الخامات والملمس", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg", tag: "PBR" },
+      { name: "Spatial UI/UX", name_ar: "واجهات ثلاثية الأبعاد المكانية", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", tag: "UX" },
+      { name: "Creative Web Design", name_ar: "تصميم الويب الإبداعي", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", tag: "Web" },
+      { name: "Motion Design", name_ar: "تصميم الحركة", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", tag: "Motion" }
+    ]
   }
 ];
 
