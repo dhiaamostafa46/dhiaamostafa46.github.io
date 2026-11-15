@@ -443,3 +443,85 @@ html body #scroll-top:hover { background: var(--signal) !important; color: var(-
   .theme-toggle-btn, .lang-btn, #menu, .btn-primary, .btn-outline, .skills-tab, .filter-btn, .btn-card-show { min-height: 44px; min-width: 44px; }
   .social-icons a { min-width: 44px; min-height: 44px; display: inline-grid; place-items: center; }
 }
+
+/* ======================================================================
+   v2 — profile-focused refinements (from portfolio-review feedback)
+   30-second scan: claim + proof numbers + 1 clear CTA above the fold.
+   Removed: decorative code card, typed tagline, duplicate stats.
+   ====================================================================== */
+.hero-widget-col, .hero-typed-line, .about-text-col .stats-grid { display: none !important; }
+.hero-title { font-size: clamp(3.4rem, 1rem + 9vw, 8rem) !important; margin-bottom: 1.5rem !important; }
+.hero-subtitle { max-width: 52ch; }
+.hero-btns { margin: 2rem 0 2.75rem !important; }
+.proof { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--ink); margin-bottom: 2rem; }
+.proof-item { padding: 1.25rem 1.25rem 1.25rem 0; border-inline-end: 1px solid var(--rule); display: flex; flex-direction: column; gap: .35rem; }
+.proof-item + .proof-item { padding-inline-start: 1.25rem; }
+.proof-item:last-child { border-inline-end: 0; }
+.proof-num { font-family: var(--font-serif); font-size: clamp(2rem, 1.2rem + 2.4vw, 3.2rem); line-height: 1; color: var(--ink); }
+.proof-lbl { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+html[dir="rtl"] .proof-num { font-family: "IBM Plex Sans Arabic", serif; font-weight: 600; }
+.home { min-height: auto; padding-top: clamp(5rem, 12vh, 9rem) !important; }
+@media (max-width: 640px) {
+  .proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proof-item:nth-child(3) { padding-inline-start: 0; }
+  .proof-item:nth-child(2) { border-inline-end: 0; }
+  .proof-item:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+
+/* Architecture: one calm blueprint, inspector underneath */
+.arch-workbench { grid-template-columns: minmax(0, 1fr) !important; border: 0 !important; border-top: 1px solid var(--ink) !important; gap: 2rem !important; }
+.arch-workbench > * { padding: 0 !important; }
+.arch-diagram-panel { padding-top: 1.5rem !important; }
+.arch-tiers-grid { display: grid; gap: 0 !important; }
+.arch-tier-row { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 0 !important; }
+.arch-flow-conduit { display: none !important; }
+html body .arch-node-btn {
+  display: flex !important; flex-direction: column; gap: .5rem; text-align: start; cursor: pointer; border-radius: 0 !important;
+  border: 1px solid var(--rule) !important; margin: 0 -1px -1px 0 !important; padding: 1.1rem 1.1rem 1.25rem !important;
+  background: transparent !important; box-shadow: none !important; transform: none !important; min-width: 0; transition: background .25s, border-color .25s;
+}
+html body .arch-node-btn * { background: transparent !important; border: 0 !important; padding: 0 !important; box-shadow: none !important; border-radius: 0 !important; filter: none !important; }
+html body .arch-node-btn:hover { background: var(--paper-2) !important; border-color: var(--ink-3) !important; }
+html body .arch-node-btn.connected { border-color: var(--ink-3) !important; }
+html body .arch-node-btn.active { border-color: var(--signal) !important; background: var(--paper-2) !important; position: relative; z-index: 1; }
+.arch-node-top { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; color: var(--signal) !important; }
+.arch-node-dot { width: 6px; height: 6px; border-radius: 50% !important; background: var(--rule) !important; }
+.arch-node-btn.active .arch-node-dot { background: var(--signal) !important; }
+.arch-node-title { font-family: var(--font-serif) !important; font-size: 1.2rem !important; line-height: 1.15; color: var(--ink) !important; font-weight: 400 !important; }
+.arch-node-mini { font-family: var(--font-mono); font-size: .68rem !important; line-height: 1.5; color: var(--ink-3) !important; }
+.arch-inspector-panel { border: 0 !important; background: none !important; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .5rem 3rem; align-items: start; padding-top: 1.5rem !important; border-top: 1px solid var(--rule) !important; }
+.arch-inspector-panel > * { grid-column: 1; }
+.arch-inspector-panel > .arch-inspector-lbl, .arch-inspector-panel > .arch-inspector-list, .arch-inspector-panel > .arch-inspector-lbl ~ * { grid-column: 2; }
+.arch-inspector-badge { background: none !important; border: 0 !important; padding: 0 !important; border-radius: 0 !important; font-family: var(--font-mono); font-size: .7rem; color: var(--signal) !important; letter-spacing: .08em; text-transform: uppercase; }
+.arch-inspector-title { font-size: 2rem !important; line-height: 1.1; font-weight: 400 !important; }
+.arch-inspector-lbl { font-family: var(--font-mono); font-size: .68rem !important; letter-spacing: .08em; color: var(--ink-3) !important; text-transform: uppercase; margin-top: .75rem; }
+.arch-inspector-list { list-style: none; padding: 0; display: grid; gap: 0; }
+.arch-inspector-list li { background: none !important; border: 0 !important; border-bottom: 1px solid var(--rule) !important; border-radius: 0 !important; padding: .7rem 0 !important; font-size: .92rem; display: flex; gap: .7rem; }
+.arch-inspector-list li i { color: var(--signal) !important; background: none !important; }
+@media (max-width: 960px) {
+  .arch-tier-row { grid-template-columns: minmax(0, 1fr) !important; }
+  .arch-inspector-panel { grid-template-columns: minmax(0, 1fr); }
+  .arch-inspector-panel > * , .arch-inspector-panel > .arch-inspector-lbl ~ * { grid-column: 1 !important; }
+}
+
+/* Education: degree on its own row, certifications in three columns */
+.education-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 0 2rem !important; }
+.education-grid > .degree-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: .5rem 2rem; padding: 1.75rem 0 !important; }
+.education-grid > .degree-card h3 { font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.3rem); }
+.cert-card { padding: 1.5rem 0 !important; }
+.cert-card h3 { font-size: 1.35rem; line-height: 1.15; overflow-wrap: normal; hyphens: auto; }
+.cert-card [class*="badge"], .cert-card [class*="pill"], .cert-card [class*="tag"], .degree-card [class*="tag"] { background: none !important; border: 0 !important; padding: 0 !important; color: var(--signal) !important; font-family: var(--font-mono); font-size: .68rem !important; text-transform: uppercase; letter-spacing: .08em; border-radius: 0 !important; }
+@media (max-width: 960px) { .education-grid { grid-template-columns: minmax(0, 1fr) !important; } .education-grid > .degree-card { grid-template-columns: minmax(0, 1fr); } }
+
+html body .arch-node-btn .arch-node-top, html body .arch-node-btn .arch-node-title, html body .arch-node-btn .arch-node-mini, html body .arch-node-btn .arch-node-dot {
+  border: 0 !important; background-color: transparent !important; padding: 0 !important; box-shadow: none !important; border-radius: 0 !important;
+}
+html body .arch-node-btn .arch-node-dot { width: 6px; height: 6px; border-radius: 50% !important; background-color: var(--rule) !important; }
+html body .arch-node-btn.active .arch-node-dot { background-color: var(--signal) !important; }
+.education-grid { display: block !important; }
+.certs-grid { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 2rem; }
+.education-grid > .degree-card { border-bottom: 1px solid var(--rule) !important; }
+.cert-icon, .edu-icon { display: none !important; }
+@media (max-width: 960px) { .certs-grid { grid-template-columns: minmax(0, 1fr); } }
+.proof-num { font-size: clamp(1.9rem, 1rem + 2vw, 2.7rem); white-space: nowrap; }
+@media (max-width: 768px) { .hero-btns { align-items: flex-start !important; justify-content: flex-start !important; } .hero-btns > * { justify-content: flex-start !important; } }

@@ -396,7 +396,7 @@ let projectsData = window.externalProjectsData || [];
 let currentProjectFilter = 'all';
 let currentProjectSearch = '';
 let projectsShowAll = false;
-const PROJECTS_PAGE_SIZE = 9;
+const PROJECTS_PAGE_SIZE = 6;
 
 const categoryMapAr = {
   'Enterprise Solutions': 'أنظمة وحلول مؤسسية',

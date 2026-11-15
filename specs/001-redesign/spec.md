@@ -24,3 +24,11 @@ fake "mastery %" bars, console-style jargon. Read as template, not as a senior b
 - No horizontal overflow 320–2560px, EN + AR (RTL), light + dark
 - Touch targets ≥44px on coarse pointers; text ≥12px; visible focus
 - Page readable with JS disabled
+
+## Revision 2 — portfolio-review feedback
+Findings (reviews of developer portfolios): skill % bars are universally criticised; reviewers decide in
+seconds, so claim + proof must be above the fold; case studies with outcomes beat screenshots; fewer, stronger
+projects; mobile + accessibility matter.
+Applied: no skill bars; hero = claim + 4 proof numbers + one CTA ("View selected work"); decorative code card,
+typed tagline and duplicate stats removed; project list shows 6 first; architecture rebuilt as a plain 3×3
+blueprint grid with inspector below; education = degree row + 3 certifications; jargon CTAs → "Get in touch".

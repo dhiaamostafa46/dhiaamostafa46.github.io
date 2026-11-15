@@ -7,14 +7,14 @@ const translations = {
     "nav_skills": "Stack",
     "nav_projects": "Projects",
     "nav_experience": "Experience",
-    "nav_hire": "System Intake",
+    "nav_hire": "Get in touch",
 
     // Hero Section
     "hero_badge": "<span class=\"badge-dot\"></span> Senior Full-Stack Engineer &amp; SaaS Architect",
     "hero_greeting": "Senior Full-Stack Engineer &amp; SaaS Architect",
     "hero_title": "Dhiaa <span>Mostafa</span>",
     "hero_subtitle": "Senior Full-Stack Engineer &amp; SaaS Architect with 6+ years of experience specializing in scalable multi-tenant systems, backend engineering, ERP &amp; API integrations, Middleware architecture, and production-grade RESTful APIs across Saudi Arabia and the Gulf.",
-    "hero_btn_exp": "<span>Explore Architecture</span> <i class=\"fas fa-arrow-down\"></i>",
+    "hero_btn_exp": "<span>View selected work</span> <i class=\"fas fa-arrow-down\"></i>",
     "hero_btn_res": "<i class=\"fas fa-file-alt\"></i> <span>Resume PDF</span>",
 
     // About Section
@@ -227,7 +227,7 @@ const translations = {
     "nav_skills": "المهارات",
     "nav_projects": "المشاريع",
     "nav_experience": "الخبرات",
-    "nav_hire": "طلب مشروع",
+    "nav_hire": "تواصل معي",
 
     // Hero Section
     "hero_badge": "<span class=\"badge-dot\"></span> مهندس برمجيات (Full-Stack) أول · معماري أنظمة SaaS",
