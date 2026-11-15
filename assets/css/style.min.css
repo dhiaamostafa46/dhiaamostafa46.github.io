@@ -3902,3 +3902,146 @@ html[data-theme="dark"] .proj-tech-pill {
 
 
 
+
+/* ==========================================================================
+   RESPONSIVE / A11Y / TYPOGRAPHY REFINEMENTS (spec-driven design pass)
+   Spec: no horizontal overflow 320px-2560px, touch targets >= 44px on touch
+   devices, body text >= 12px, visible focus, reduced-motion support.
+   ========================================================================== */
+
+/* 1. Grid/flex children may shrink: prevents wide code blocks and long
+      nowrap content from pushing the hero past the viewport (clipped text). */
+.hero-container > *,
+.about-grid > *,
+.contact-grid > *,
+.footer-grid > *,
+.arch-workbench > *,
+.projects-controls > * {
+  min-width: 0;
+}
+.hero-text-col,
+.hero-widget-col,
+.code-card {
+  min-width: 0;
+  max-width: 100%;
+}
+.hero-title,
+.hero-subtitle,
+.hero-text-col p,
+h1, h2, h3 {
+  overflow-wrap: anywhere;
+}
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+img, svg, video, canvas { max-width: 100%; }
+img { height: auto; }
+
+/* 2. Minimum readable sizes for mono/meta text */
+.code-tab,
+.availability-badge,
+.code-card-foot,
+.stat-label,
+.badge-exp {
+  font-size: max(0.75rem, 12px);
+}
+
+/* 3. Keyboard focus */
+:focus-visible {
+  outline: 3px solid var(--secondary, #0bbab5);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* 4. Touch targets (coarse pointers: phones and tablets) */
+@media (pointer: coarse) {
+  .theme-toggle-btn,
+  .lang-btn,
+  #menu {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .code-tab,
+  .skills-tab,
+  .filter-btn,
+  .service-link,
+  .navbar ul li a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .social-icons a { min-width: 44px; min-height: 44px; }
+}
+
+/* 5. Small phones */
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(1.6rem, 8vw, 1.8rem) !important; }
+  .availability-badge { font-size: 0.78rem; padding: 0.45rem 1rem; max-width: 100%; }
+  .code-card-body { font-size: 0.78rem; }
+  .site-container { padding-inline: 1rem; }
+  .btn-primary, .btn-outline { min-height: 48px; }
+}
+@media (max-width: 360px) {
+  html { font-size: 15px; }
+  .header { padding-inline: 0.8rem; }
+}
+
+/* 6. Large screens: keep line length comfortable */
+@media (min-width: 1600px) {
+  html { font-size: 17px; }
+}
+
+/* 7. Mobile browser UI: use dynamic viewport height where supported */
+@supports (height: 100dvh) {
+  .home { min-height: 100dvh; }
+}
+@media (max-width: 768px) {
+  .home { min-height: auto !important; }
+}
+
+/* 8. Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 9. Raise sub-12px meta text to a readable floor */
+.status-indicator, .latency-indicator, .service-tag, .case-category-pill,
+.case-org-tag, .case-verify-stamp, .case-panel-sub, .current-badge,
+.exp-tag, .badge-tag, .card-label, .form-status, .code-card-foot span {
+  font-size: max(0.75rem, 12px);
+}
+.code-tabs { flex-wrap: wrap; min-width: 0; }
+@media (max-width: 768px) {
+  .code-tabs { flex-wrap: nowrap; }
+  .code-tab { flex-shrink: 0; }
+}
+
+/* 10. Navigation: never wrap labels; collapse to hamburger before it gets crowded */
+.header-container { max-width: 1320px; gap: 1rem; }
+.logo { flex-shrink: 0; }
+.navbar ul { gap: clamp(0.9rem, 1.5vw, 1.8rem); }
+.navbar ul li a { white-space: nowrap; }
+.nav-hire-btn { display: inline-flex; align-items: center; white-space: nowrap; line-height: 1.2; }
+
+@media (min-width: 769px) and (max-width: 1240px) {
+  #menu { display: block; }
+  .navbar {
+    position: absolute; top: 100%; left: 0; width: 100%;
+    background: var(--bg-primary, #fff); border-bottom: 1px solid var(--mint-border);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0, 61, 102, 0.15);
+  }
+  .navbar.nav-toggle { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  .navbar ul { flex-direction: column; padding: 1.5rem; gap: 1rem; align-items: stretch; }
+  .navbar ul li { width: 100%; text-align: center; }
+  .navbar ul li a { display: block; padding: 0.6rem; font-size: 1rem; }
+  .nav-hire-btn, .lang-btn {
+    width: 100%; justify-content: center; padding: 0.75rem 1rem !important; display: flex !important;
+  }
+  .navbar ul li:has(.theme-toggle-btn) { display: flex; justify-content: center; }
+}
